@@ -1,0 +1,78 @@
+site_name: UseMe
+site_author: botlaram
+site_description: "this Mkdocs contains Python Modules, Devops Applications and Cheat Code for tools (GIT, DOCKER, K8, HELM)"
+repo_url: "https://github.com/botlaram"
+
+nav:
+    - Home: index.md
+    - Ansible: ansible.md
+    - Computer Networking: networking.md
+    - Linux Cmd: linux.md
+    - Packer: packer.md
+    - Cheat Code: cheat_code.md
+
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      primary: teal
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      primary: teal
+      accent: lime
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+extra:
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/botlaram
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ramakrishna-botla-772a8918b/
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+
+copyright: |
+  &copy; <a href="https://github.com/botlaram"  target="_blank" rel="noopener">botlar4</a>
