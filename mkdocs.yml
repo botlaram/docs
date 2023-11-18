@@ -5,11 +5,13 @@ repo_url: "https://github.com/botlaram"
 
 nav:
     - Home: index.md
-    - Ansible: ansible.md
+    - Python: py_modules.md
     - Computer Networking: networking.md
+    - Ansible: ansible.md
     - Linux Cmd: linux.md
     - Packer: packer.md
     - Cheat Code: cheat_code.md
+    - Publish: publish.md
 
 
 theme:
