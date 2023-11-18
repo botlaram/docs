@@ -172,7 +172,7 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
     kubectl get pods
 
     #if using service principal connection (Configure Service Principal to access Keyvault)
-    Add your service principal credentials as a Kubernetes [secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+    Add your service principal credentials as a Kubernetes secrets
 
     oc create secret generic secrets-store-creds --from-literal clientid=<service_principal_client_id>
 
