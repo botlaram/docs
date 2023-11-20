@@ -256,3 +256,34 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
     # print a test secret held in secrets-store
     kubectl exec "pod-name" -- cat /mnt/secrets-store/secret1
     ```
+
+#### Volume Snapshot
+
+- volume snapshot using Openshift, this feature assist to create a snap of volume in given time, so that those volume can utilised for test/prod by specifying the volumesnapshot name
+
+- following are steps to create Snapshot using Openshift
+  
+    1. select PVC for which you want to take snapshot, click on the options and select "create Snapshot"
+    ![Volumesnap1](./png/volumesnap1.png)
+    
+    2. Select the "VolumeSnapshotClass" (will be provided by Openshift)
+    note : for creating volumeSnapshot, a VolumeSnapshotClass should be available.
+    ![Volumesnap2](./png/volumesnap2.png)   
+    
+    3. select "Create"
+    ![Volumesnap3](./png/volumesnap3.png)
+
+    4. after successful creation of snapshots, verify it by selecting VolumeSnapshots
+    ![Volumesnap4](./png/volumesnap4.png)  
+
+    5. now to restore the volumeSnapshot, create a new PVC (provided in options).
+    ![Volumesnap5](./png/volumesnap5.png) 
+
+    6. select the StorageClass for PVC
+    ![Volumesnap6](./png/volumesnap6.png)
+
+    7. after successful creation of PVC , verify it by selecting PersistentVolumeClaims
+    ![Volumesnap8](./png/volumesnap8.png)
+
+    8. now to use volume create by VolumeSnapshot, update the PVC name to pod, which is created using VolumeSnapshot.
+    ![Volumesnap9](./png/volumesnap9.png)
