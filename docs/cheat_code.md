@@ -46,6 +46,7 @@
 | Git configuration list                           | `git config-list`
 | Git init                                         | ` git init <Repo Name>`
 | Git clone                                        | `git clone <remote Url>`
+| git clone particular branch                      | `git clone -b <branch-name> <git-url>`
 | Create branch                                    | `git branch <branch name>`
 | List all branch names                            | `git branch -a` <br> `git branch --list ` 
 | Checkout branch                                  | `git checkout <branch name>`
