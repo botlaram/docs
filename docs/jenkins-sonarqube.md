@@ -1,45 +1,48 @@
-## Demo project Jenkins-Sonarqube (Code Anaylsis)
+# Demo project Jenkins-Sonarqube (Code Anaylsis)
 
-
-1. As we are hosting Jenkins and Sonarqube on 8080 and 9090 respectively  
-kill host (8080 and 9090)  if it is used in backend.
+1. As we are hosting Jenkins and Sonarqube on 8080 and 9090 respectively kill host (8080 and 9090)  if it is used in backend.
 
 ```shell
-netstat -ano | findstr 9090 
+netstat -ano | findstr 9090
 
-netstat -ano | findstr 8080  
+netstat -ano | findstr 8080
 
-TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       7440  
-TCP    [::]:8080              [::]:0                 LISTENING       7440  
+TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       7440
+TCP    [::]:8080              [::]:0                 LISTENING       7440
 
 taskkill /F /PID 7440
 SUCCESS: The process with PID 7440 has been terminated.
 ```
 
-2. build docker image following to the docker-compose.yaml file  
-```shell 
+2. Build docker image following to the docker-compose.yaml file.
+   
+```shell
 docker-compose up -d
 ```
 
 3. URL for jenkins and sonarqube
-   1. Jenkins URL: http://localhost:8080  
-   Unlock Jenkins and complete the setup wizard using the initialAdminPassword.
-   2. SonarQube URL: http://localhost:9000  
-   Default credentials: admin/admin
+   1. Jenkins URL: <http://localhost:8080>
+    Unlock Jenkins and complete the setup wizard using the initialAdminPassword.
+   2. SonarQube URL: <http://localhost:9000>
+    Default credentials: admin/admin
 
 4. Jenkins password
+
 ```shell
 docker exec -it jenkins-container cat /var/jenkins_home/secrets/initialAdminPassword
 ```
+
 5. To shutdown all containers
+
 ```shell
 docker-compose down
 ```
 
 6. Restart containers
+
 ```shell
 docker-compose restart
-or 
+or
 docker-compose restart <service-name>
 or
 docker-compose restart jenkins
@@ -52,10 +55,10 @@ docker-compose restart sonarqube
 
 8. Create a wehbook in github
    1. In github > repository > setting > wehbook
-   2. Add webhook payload url to "http://192.168.56.1:8080/github-webhook/" (jenkins URL)
-   3. Select 
+   2. Add webhook payload url to "<http://192.168.56.1:8080/github-webhook/>" (jenkins URL)
+   3. Select
       * pull requests
-      * push 
+      * push
       * Let me select individual events
    4. then select add Wehbook at bottom.
 
@@ -69,6 +72,7 @@ docker-compose restart sonarqube
    7. Select "Build Now" this will trigger a pipeline
 
 10. Commit any file to the git repo and Jenkins build will trigger automatically
+
 11. In Sonarqube select create a project manually
     1. Enter the details  
     ![Alt text](image.png)
@@ -84,7 +88,7 @@ docker-compose restart sonarqube
 12. In Jenkins install Sonarqube and SSHEasy2 plugin  
     1. Dashboard > Manage Jenkins > Plugins > Search [Sonarqube Scanner, SSHEasy2] install
 
-13. Add Tools Configuration  
+13. Add Tools Configuration
     1. Dashboard > Manage Jenkins > Tools
     2. Select SonarQube Scanner installations, Enter name and Save
 
@@ -98,12 +102,13 @@ docker-compose restart sonarqube
     ![Alt text](image-6.png)
     6. In Server authentication token > Select token name and Save
 
-15. In Jenkins Add Sonar-Qube projectkey 
+15. In Jenkins Add Sonar-Qube projectkey
     1. Dashboard > Automated-Pipeline > Configuration
-    2. Select Build Steps 
+    2. Select Build Steps
     3. Select Execute SonarQube Scanner
     4. Add projectKey(from Step 11.5) in Analysis properties
 
-16. In Jenkins select respective Pipeline and Select Build Now  
+16. In Jenkins select respective Pipeline and Select Build Now
+
 17. In Sonarqube > Project (you can watch scanning status)
-![Alt text](image-7.png)
+    ![Alt text](image-7.png)

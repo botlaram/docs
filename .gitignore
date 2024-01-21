@@ -1,0 +1,13 @@
+##environments
+.venv
+venv/
+.env
+env/
+
+##ignore files
+./py_files/create_male_demo*
+/py_files/create_female_demo*
+documentation/
+
+##log files
+*.log

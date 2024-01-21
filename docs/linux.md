@@ -66,15 +66,15 @@ It contains Owner, Group, Public
 | Execute                                        | Command
 | ---------------------------------------------- | ------------------------------------------------
 | for Help command                               | man "tar"
-| extract files                         | x                             
-| list the contents of archive           | t                               
-| append files to existing archive         | r                            
-| use gzip compression                    | z                              
-| use bzip2 compression                             | j                               
-| create tar file             | tar cf "file-name.tar" "file/directory-name"                           
-| extract tar file               | tar -xvf "file-name.tar"  -v: contents of tar, -f: tar filename                      
+| extract files                                  | x
+| list the contents of archive                   | t
+| append files to existing archive               | r
+| use gzip compression                           | z
+| use bzip2 compression                          | j
+| create tar file                                | tar cf "file-name.tar" "file/directory-name"
+| extract tar file           | tar -xvf "file-name.tar"  -v: contents of tar, -f: tar filename
 | compress files                   | gzip  "fil-ename"
-| decompress files                   | gunzip "file-name"  
+| decompress files                   | gunzip "file-name"
 | to update system                     | sudo apt update
 
 ### Advance Commands
@@ -91,15 +91,11 @@ It contains Owner, Group, Public
 | change password for user          | passwd "user-name"
 | switch user          | su
 | check current user   | whoami
-| system Disk usage | df 
+| system Disk usage | df
 | mount file system           | sudo mount /dev/folder /mnt/folder
 | check packages or app install path  | which cmake
 | save terminal output to txt file | `touch file.txt` `ls | tee file.txt`
 | Check cPU, RAM usage  | htop
-
-
-
-
 |cut                                             | Cut out sections of a file
 |gzip                                            | Compress or decompress files using gzip
 |gunzip                                          | Decompress files compressed with gzip

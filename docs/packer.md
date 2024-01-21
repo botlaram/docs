@@ -1,8 +1,5 @@
 # Packer
 
-
-
-
 - [Packer](#packer)
   - [What is Packer?](#what-is-packer)
   - [Stages of Packer](#stages-of-packer)

@@ -1,0 +1,54 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.234.0/containers/ubuntu
+{
+  "name": "Docs",
+  "build": {
+      "dockerfile": "Dockerfile",
+      "args": {},
+      "context": ".."
+  },
+  "runArgs": [
+      "-v",
+      "/var/run/docker.sock:/var/run/docker.sock:rw",
+      "--env",
+      "LOCAL_WORKSPACE_FOLDER=${localWorkspaceFolder}"
+  ],
+  // Add the IDs of extensions you want installed when the container is created.
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              // cspell:disable
+              "DavidAnson.vscode-markdownlint",
+              "eamodio.gitlens",
+              "EditorConfig.EditorConfig",
+              "redhat.ansible",
+              "ms-python.python",
+              "ms-python.vscode-pylance",
+              "ms-azure-devops.azure-pipelines",
+              "streetsidesoftware.code-spell-checker"
+              // cspell:enable
+          ],
+          "settings": {
+              "http.proxyStrictSSL": false,  // FIXME
+              "python.defaultInterpreterPath": "/usr/bin/python3",
+              "cSpell.files": [
+                  "**"
+              ],
+              "markdownlint.config": {
+                  "default": true,
+                  "MD013": {
+                      "line_length": 120,
+                      "code_blocks": false,
+                      "tables": false
+                  }
+              }
+          }
+      }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Needed for newer SmartGit to work
+  "postStartCommand": "pip3 install -r requirements.txt"
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+//   "remoteUser": "vscode"
+}

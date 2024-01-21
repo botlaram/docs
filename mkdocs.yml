@@ -5,12 +5,12 @@ repo_url: "https://github.com/botlaram"
 
 nav:
     - Home: index.md
-    - Python: py_modules.md
+    - Cheat Code: cheat_code.md
+    - Devops_Project: DevOps_Project.md
     - Computer Networking: networking.md
-    - Ansible: ansible.md
+    # - Ansible: ansible.md
     - Linux Cmd: linux.md
     - Packer: packer.md
-    - Cheat Code: cheat_code.md
     - Publish: publish.md
 
 
@@ -47,6 +47,7 @@ theme:
 plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
 extra:
   consent:
     title: Cookie consent
