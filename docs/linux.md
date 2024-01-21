@@ -33,8 +33,14 @@
    - update members of the admin group
      - `%<username> ALL=(ALL) NOPASSWD:ALL`     #add this line
 
-
 It contains Owner, Group, Public
+
+### Change host name
+
+```shell
+sudo hostnamectl set-hostname <enter-hostname>
+/bin/bash
+```
 
 #### chmod [calculator](https://chmod-calculator.com/) 
 
@@ -43,20 +49,20 @@ It contains Owner, Group, Public
 | Execute                                        | Command
 | ---------------------------------------------- | ------------------------------------------------
 | for Help command                               | man "ls", man "mkdir"
-| Change directory                               | cd                                              
-| List directory contents                        | ls                                              
-| Print working directory                        | pwd                                             
-| Create a new directory                         | mkdir "dir-name"                                
+| Change directory                               | cd
+| List directory contents                        | ls
+| Print working directory                        | pwd
+| Create a new directory                         | mkdir "dir-name"
 | Remove an empty directory                      | rmdir "dir-name"
 | Delete directory                               | rm -r "dir-name"  
 | Remove files                                   | rm "file-name"
-| Concatenate and display files                  | cat "file-name"                                 
-| Create an empty file                           | touch "file-name"                               
-| create file with adding content                | vim "file-name"                                    
+| Concatenate and display files                  | cat "file-name"
+| Create an empty file                           | touch "file-name"
+| create file with adding content                | vim "file-name"
 | Vim command      | to write use `i` as insert, to save `ESC : wq`, to save without editing `ESC : q!`
-| Move or rename files and directories            | mv "file-name" "dir-name"/"file-name" 
-| Copy file to new file                | cp "file-name1" "file-name2"                                 
-| Copy file to other folder             | cp "file-name1" "dir-name"/"file-name1"           
+| Move or rename files and directories            | mv "file-name" "dir-name"/"file-name"
+| Copy file to new file                | cp "file-name1" "file-name2"
+| Copy file to other folder             | cp "file-name1" "dir-name"/"file-name1"
 | Modify Permission of file/dir           | chmod "777" "file/dir-name"
 | Change ownership of file/dir           | chown "user-name" "file/dir-name"
 | Change ownership & group for file/dir           | chown "user-name":"grp-name" "file/dir-name"
@@ -73,7 +79,7 @@ It contains Owner, Group, Public
 | use bzip2 compression                          | j
 | create tar file                                | tar cf "file-name.tar" "file/directory-name"
 | extract tar file           | tar -xvf "file-name.tar"  -v: contents of tar, -f: tar filename
-| compress files                   | gzip  "fil-ename"
+| compress files                   | gzip  "file-name"
 | decompress files                   | gunzip "file-name"
 | to update system                     | sudo apt update
 
@@ -81,18 +87,18 @@ It contains Owner, Group, Public
 
 | Execute                                        | Command
 | ---------------------------------------------- | ------------------------------------------------
-| send file to other system using IP add.         | scp "file-path" root@IPofothersystem:/path
-| check network connectivity           | ping google.com
-| display network configure   | ifconfig
-| display network connection             | netstat
-| control system service & settings     | `systemctl`
+| send file to other system using IP add.        | scp "file-path" root@IPofothersystem:/path
+| check network connectivity                     | ping google.com
+| display network configure                      | ifconfig
+| display network connection                     | netstat
+| control system service & settings              | `systemctl`
 | to start nginx | `systemctl start nginx` `systemctl status nginx` `systemctl stop nginx`
-| add new user                  | useradd "user-name"
-| change password for user          | passwd "user-name"
-| switch user          | su
-| check current user   | whoami
-| system Disk usage | df
-| mount file system           | sudo mount /dev/folder /mnt/folder
+| add new user                                   | useradd "user-name"
+| change password for user                       | passwd "user-name"
+| switch user                                    | su
+| check current user                             | whoami
+| system Disk usage                              | df
+| mount file system                              | sudo mount /dev/folder /mnt/folder
 | check packages or app install path  | which cmake
 | save terminal output to txt file | `touch file.txt` `ls | tee file.txt`
 | Check cPU, RAM usage  | htop
@@ -152,38 +158,37 @@ It contains Owner, Group, Public
 |groupmod                                        | Modify a group
 |finger                                          | Display information about users on the system
 |last                                            | Display information about recent logins
-
-history — Display command history
-echo — Print a message to the terminal
-printf — Format and print data
-lshw — Displays hardware information
-lspci — Displays information about PCI buses and devices.
-lsusb — Displays information about USB buses and devices.
-hwinfo — Displays detailed hardware information.
-free — Displays memory usage.
-vmstat — Displays system memory, processor, and I/O statistics.
-iostat — Displays CPU and disk I/O statistics.
-uptime — Displays system uptime and load averages.
-journalctl — Displays the system journal.
-dmesg — Displays the kernel ring buffer.
-crontab — Schedules recurring tasks.
-at — Schedules a one-time task.
-service — Manages system services.
-systemctl — Controls system services in systemd-based distributions.
-traceroute — Traces the network path to a remote host.
-bzip2 — Compresses files using the bzip2 algorithm.
-unzip — Extracts files from a ZIP archive.
-tee — Redirect output to multiple files
-chroot — Change the root directory for a process
-ps aux — Display information about all running processes
-less — Display file contents in a paginated format
-more — Display file contents one page at a time
-ln — Create links between files
-realpath — Print the resolved absolute path of a file
-watch — Execute a command periodically and display the output
-cal — Display a calendar
-tar -xzvf — Extract files from a compressed archive
-tar -czvf — Create a compressed archive
-whereis — Locate the binary, source, and manual page files for a command
-locate — Find files by name
-which — Display the full path to an executable
+|Display command history                         | history
+| Print a message to the terminal                | echo
+| Format and print data                          | printf
+|  Displays hardware information                 | lshw
+| Displays information about PCI buses and devices.  | lspci
+| Displays information about USB buses and devices.  | lsusb
+| Displays detailed hardware information.        | hwinfo
+| Displays memory usage.                         | free
+| Displays system memory, processor, and I/O statistics.  | vmstat
+| Displays CPU and disk I/O statistics.          | iostat
+| Displays system uptime and load averages.      | uptime
+| Displays the system journal.                   | journalctl
+| Displays the kernel ring buffer.               | dmesg
+| Schedules recurring tasks.                     | crontab
+| Schedules a one-time task.                     | at
+| Manages system services.                       | service
+| Controls system services in systemd-based distributions.  | systemctl
+| Traces the network path to a remote host.      | traceroute
+| Compresses files using the bzip2 algorithm.    | bzip2
+| Extracts files from a ZIP archive.             | unzip
+| Redirect output to multiple files              | tee
+| Change the root directory for a process        | chroot
+| Display information about all running processes  | ps aux
+| Display file contents in a paginated format    | less
+| Display file contents one page at a time       | more
+| Create links between files                     | ln
+| Print the resolved absolute path of a file     | realpath
+| Execute a command periodically and display the output  | watch
+| Display a calendar                             | cal
+| Extract files from a compressed archive        | tar -xzvf
+| Create a compressed archive                    | tar -czvf
+| Locate the binary, source, and manual page files for a command  | whereis
+| Find files by name                             | locate
+| Display the full path to an executable         | which
