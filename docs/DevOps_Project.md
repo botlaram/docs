@@ -8,3 +8,12 @@ In this project you will be guided how to host Jenkins and Sonarqube using docke
 * here you can fine [**README.md**](https://github.com/botlaram/devops_projects/blob/jenkins-sonarqube/README.md)
 
 * [**Repo_link**](https://github.com/botlaram/devops_projects/blob/jenkins-sonarqube/)
+
+### Build Docker using Git Actions
+**Git Actions**: GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.
+This project is quick most simple and easy to implement on how to build a Docker container using GitHub Actions.  
+We will use Python Image and create a Flask web server that serves an `index.html` file. GitHub Actions will be used to automate the container building process, ensuring that the container is built consistently for every new commit into branch.
+
+* here you can fine [**README.md**](https://github.com/botlaram/devops_projects/blob/docker-img-gitaction/README.md)
+
+* [**Repo_link**](https://github.com/botlaram/devops_projects/blob/docker-img-gitaction/)
