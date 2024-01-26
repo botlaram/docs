@@ -3,7 +3,7 @@ hide:
   - tags
 ---
 
-# [Computer Networking](https://www.geeksforgeeks.org/computer-network-tutorials/?ref=lbp)
+# Computer Networking
 
 - [Computer Networking](#computer-networking)
   - [Protocol:](#protocol)
@@ -175,3 +175,9 @@ netstat -a -o | find "9090"
 taskkill /F /PID 12345
 
 ```
+
+
+## Some of the Best Documentation Links
+
+* [GeeksForGeeks](https://www.geeksforgeeks.org/computer-network-tutorials/)  
+* [AWS-Networking](https://aws.amazon.com/what-is/?faq-hub-cards.sort-by=item.additionalFields.sortDate&faq-hub-cards.sort-order=desc&awsf.tech-category=tech-category%23networking-content-dev&awsm.page-faq-hub-cards=1)
