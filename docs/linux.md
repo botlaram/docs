@@ -1,50 +1,88 @@
 
-### Document for Linux Directory usage:
+# All About Linux
 
-[Linux folder usage](https://www.debian.org/releases/buster/amd64/apcs02.en.html)
+- [All About Linux](#all-about-linux)
+  - [Linux folder usage](#linux-folder-usage)
+  - [Chmod](#chmod)
+  - [Steps to Add New User](#steps-to-add-new-user)
+  - [Change host name](#change-host-name)
+  - [Linux commands](#linux-commands)
+    - [Mostly used commands](#mostly-used-commands)
+    - [Tar Commands](#tar-commands)
+    - [Advance Commands](#advance-commands)
 
-### Chmod
+## [Linux folder usage](https://www.debian.org/releases/buster/amd64/apcs02.en.html)
 
-`drwxrwxrwx > rwx abbrevates as Read, Write , Delete/Execute`
+## Chmod
 
- - Chmod is use for Modify permission of file/directory. 
-   - syntax `chmod 777 "file-name/folder-name"`
+* Chmod is use for Modify permission of file/directory
 
+```shell
+chmod 777 "file-name/folder-name"
+p
+drwxrwxrwx > rwx abbrevates as Read, Write , Delete/Execute
+```
 
- - Chown is use for providing permissions or changing the ownership to other User
-   - syntax to change Owner/User `chown "user-name" "file/folder-name"`
-   - to change Owner and Group `chown "user-name":"group-name" "file/folder-name"`
+* Chown is use for providing permissions or changing the ownership to other User
 
-### Add User
- - to add user in linux
-   - syntax `sudo adduser <user-name>`  #it will ask for password enter new password
- 
- - switch to new user
-   - syntax `su - <user-name>`  
- 
- - after login with new user
-   - try to execute `apt-get update` #you may be get error as incident will be reported.
- 
- - update the permissions for new user
-   - `exit`  #logout from the new user
- 
- - for the root user
-   - `sudo visudo`
-   - update members of the admin group
-     - `%<username> ALL=(ALL) NOPASSWD:ALL`     #add this line
+```shell
+change Owner/User >  `chown "user-name" "file/folder-name"`
+
+change Owner and Group > `chown "user-name":"group-name" "file/folder-name"`
+```
+
+* Chmod [calculator](https://chmod-calculator.com/)
+
+## Steps to Add New User
+
+1. to add user in linux
+
+```shell
+sudo adduser <user-name>  #it will ask for password enter new password
+```
+
+2. switch to new user
+
+```shell
+su - <user-name>
+```
+
+3. after login with new user, try to execute
+
+```shell
+apt-get update #you may be get error as incident will be reported.
+```
+
+4. update the permissions for new user, intially logout from the new user
+
+```shell
+exit
+```
+
+5. from the root user, execute the following command
+
+```shell
+sudo visudo
+```
+
+6. update members of the admin group
+
+```shell
+%<username> ALL=(ALL) NOPASSWD:ALL     #add this line
+```
 
 It contains Owner, Group, Public
 
-### Change host name
+## Change host name
 
 ```shell
 sudo hostnamectl set-hostname <enter-hostname>
 /bin/bash
 ```
 
-#### chmod [calculator](https://chmod-calculator.com/) 
+## Linux commands
 
-### Linux commands
+### Mostly used commands
 
 | Execute                                        | Command
 | ---------------------------------------------- | ------------------------------------------------

@@ -9,7 +9,7 @@ nav:
     - Devops_Project: DevOps_Project.md
     - Computer Networking: networking.md
     # - Ansible: ansible.md
-    - Linux Cmd: linux.md
+    - Linux : linux.md
     - Packer: packer.md
     - Publish: publish.md
 
