@@ -1,23 +1,24 @@
 # welcome to best side of Documentation, this page contains some of the IMP things to know as a Developer
 - [welcome to best side of Documentation, this page contains some of the IMP things to know as a Developer](#welcome-to-best-side-of-documentation-this-page-contains-some-of-the-imp-things-to-know-as-a-developer)
-    - [GIT](#git)
-      - [Git Shallow](#git-shallow)
-      - [Git lfs](#git-lfs)
-    - [Docker](#docker)
-      - [CMD Vs ENTRYPOINT](#cmd-vs-entrypoint)
-      - [Docker-Squash](#docker-squash)
-      - [Automated Nginx Reverse Proxy for Docker](#automated-nginx-reverse-proxy-for-docker)
-      - [Dockerizer](#dockerizer)
-    - [Kubernetes](#kubernetes)
-      - [Storage Class and Persistent Volume](#storage-class-and-persistent-volume)
-      - [Goodbye etcd, Hello PostgreSQL: Running Kubernetes with an SQL Database](#goodbye-etcd-hello-postgresql-running-kubernetes-with-an-sql-database)
-      - [Migrate data from one PVC to other (this can done within same Namespace)](#migrate-data-from-one-pvc-to-other-this-can-done-within-same-namespace)
-      - [Fetch secrets from Az-KeyVault to use secrets in Pods.](#fetch-secrets-from-az-keyvault-to-use-secrets-in-pods)
-      - [Volume Snapshot](#volume-snapshot)
+  - [GIT](#git)
+    - [Git Shallow](#git-shallow)
+    - [Git lfs](#git-lfs)
+  - [Docker](#docker)
+    - [CMD Vs ENTRYPOINT](#cmd-vs-entrypoint)
+    - [Docker-Squash](#docker-squash)
+    - [Automated Nginx Reverse Proxy for Docker](#automated-nginx-reverse-proxy-for-docker)
+    - [Dockerizer](#dockerizer)
+  - [Kubernetes](#kubernetes)
+    - [Storage Class and Persistent Volume](#storage-class-and-persistent-volume)
+    - [Goodbye etcd, Hello PostgreSQL: Running Kubernetes with an SQL Database](#goodbye-etcd-hello-postgresql-running-kubernetes-with-an-sql-database)
+    - [Migrate data from one PVC to other (this can done within same Namespace)](#migrate-data-from-one-pvc-to-other-this-can-done-within-same-namespace)
+    - [Fetch secrets from Az-KeyVault to use secrets in Pods.](#fetch-secrets-from-az-keyvault-to-use-secrets-in-pods)
+    - [Volume Snapshot](#volume-snapshot)
 
-### GIT
 
-#### [Git Shallow](https://www.atlassian.com/git/tutorials/big-repositories)
+## GIT
+
+### [Git Shallow](https://www.atlassian.com/git/tutorials/big-repositories)
 
 - git shallow allows to clone large size repositories with lesser time.  
 - a "shallow clone" refers to a clone of a repository that only contains a limited history of the repository's commits. When you perform a shallow clone, Git retrieves only a subset of the commits from the remote repository, truncating the history beyond a certain depth. This can be useful when you are only interested in the recent history of a project and don't need the entire commit history.  
@@ -26,16 +27,14 @@
 - To convert a shallow clone to a full clone with the entire commit history, you can use command:  
 ```git fetch --unshallow```
 
-
-
-#### [Git lfs](https://www.atlassian.com/git/tutorials/git-lfs)
+### [Git lfs](https://www.atlassian.com/git/tutorials/git-lfs)
 
 - Git LFS (Large File Storage) is an extension to Git that deals with large files by replacing them with text pointers inside the Git repository, while storing the actual file content in an external storage system. This allows you to version control large binary files, such as audio, video, datasets, and other large assets, without causing significant bloat in your Git repository.
 
 
-### Docker
+## Docker
 
-#### [CMD Vs ENTRYPOINT](https://medium.com/container-talks/understand-cmd-and-entrypoint-differences-in-docker-d11105cc5454#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkMzM0NDk3NTA2YWNiNzRjZGVlZGFhNjYxODRkMTU1NDdmODM2OTMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQ1Mzc2NzM5NjYzNjY4NTAyNjIiLCJlbWFpbCI6ImRvbnRhc2tlbWFpbGFkZHJlc3NAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTY5Nzk3ODI3MiwibmFtZSI6IkJvdGxhIFJhbSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMNGMyWXZLXzFlSllMX3ZLX3drSWFiREx0c3dYeWFadzU0MF91UjBTT1E9czk2LWMiLCJnaXZlbl9uYW1lIjoiQm90bGEiLCJmYW1pbHlfbmFtZSI6IlJhbSIsImxvY2FsZSI6ImVuLUdCIiwiaWF0IjoxNjk3OTc4NTcyLCJleHAiOjE2OTc5ODIxNzIsImp0aSI6IjAwZWMxMjA1MDYwOTNiYzcwZDk3N2RmMzM2M2IxNjlmYWRjOGZhNTYifQ.hYAhN7EWsZTI6H-Fscm1-5ykfRTcCBpYr2KBKZjyY75PJr_y1IcmTgA3F3KIJhFiSBOjXP3xuUpBkuKLBuyMIPP_DLJYwobjVlyX3Cftalqw-R9lAZvTkBpplboLL0G4zKl4mC1Rk1-WgI0tI1Bc7NSHSTKYIEFuCQcBskuvUspNdZyQBvgpHJznTsAcZKtvhM5TP4ya1JLmjwJcqtjEroyqlxNtoLFuBf5LRlmp0Dxtn6niImG84yCt4v7yzNS93OCuqT6rEczF_ZqkD8zNG9WaH7Fsgz6KwIuUH0bGYcVtGt9GbFrSSyAqXfii0a2ZMM39bv9ywsfc-2lZqJXMVQ)
+### [CMD Vs ENTRYPOINT](https://medium.com/container-talks/understand-cmd-and-entrypoint-differences-in-docker-d11105cc5454#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkMzM0NDk3NTA2YWNiNzRjZGVlZGFhNjYxODRkMTU1NDdmODM2OTMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQ1Mzc2NzM5NjYzNjY4NTAyNjIiLCJlbWFpbCI6ImRvbnRhc2tlbWFpbGFkZHJlc3NAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTY5Nzk3ODI3MiwibmFtZSI6IkJvdGxhIFJhbSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMNGMyWXZLXzFlSllMX3ZLX3drSWFiREx0c3dYeWFadzU0MF91UjBTT1E9czk2LWMiLCJnaXZlbl9uYW1lIjoiQm90bGEiLCJmYW1pbHlfbmFtZSI6IlJhbSIsImxvY2FsZSI6ImVuLUdCIiwiaWF0IjoxNjk3OTc4NTcyLCJleHAiOjE2OTc5ODIxNzIsImp0aSI6IjAwZWMxMjA1MDYwOTNiYzcwZDk3N2RmMzM2M2IxNjlmYWRjOGZhNTYifQ.hYAhN7EWsZTI6H-Fscm1-5ykfRTcCBpYr2KBKZjyY75PJr_y1IcmTgA3F3KIJhFiSBOjXP3xuUpBkuKLBuyMIPP_DLJYwobjVlyX3Cftalqw-R9lAZvTkBpplboLL0G4zKl4mC1Rk1-WgI0tI1Bc7NSHSTKYIEFuCQcBskuvUspNdZyQBvgpHJznTsAcZKtvhM5TP4ya1JLmjwJcqtjEroyqlxNtoLFuBf5LRlmp0Dxtn6niImG84yCt4v7yzNS93OCuqT6rEczF_ZqkD8zNG9WaH7Fsgz6KwIuUH0bGYcVtGt9GbFrSSyAqXfii0a2ZMM39bv9ywsfc-2lZqJXMVQ)
 
 - CMD and ENTRYPOINT are instructions used in Dockerfiles to define the command that will be run when a container is started. However, they serve different purposes and have distinct behaviors.
 
@@ -56,13 +55,13 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
 ```docker run my-image "Goodbye, World!"```
 
 
-#### [Docker-Squash](http://jasonwilder.com/blog/2014/08/19/squashing-docker-images/)
+### [Docker-Squash](http://jasonwilder.com/blog/2014/08/19/squashing-docker-images/)
 
 - In this article, detailed explain about Image Layering and how to use docker-squash command to reduce the size of Image.
 
-#### [Automated Nginx Reverse Proxy for Docker](http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/)
+### [Automated Nginx Reverse Proxy for Docker](http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/)
 
-#### [Dockerizer](https://alex.dzyoba.com/blog/packer-for-docker/)
+### [Dockerizer](https://alex.dzyoba.com/blog/packer-for-docker/)
 
 - Dockerizer is the concept to use Docker in more efficient way, so that developer and reuse the code and additional install packages as per dependency.  
 
@@ -70,17 +69,17 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
     1. in Dockerfile each RUN command create new layer (which can create huge Image size while pushing to Registry)  
     2. Dockerizer contains Ansible & Packer concept which then help to create Image more efficient way,  installing required dependency/packages and making code reusability.
 
-### Kubernetes
+## Kubernetes
 
-#### [Storage Class and Persistent Volume](https://medium.com/devops-mojo/kubernetes-storage-options-overview-persistent-volumes-pv-claims-pvc-and-storageclass-sc-k8s-storage-df71ca0fccc3)
+### [Storage Class and Persistent Volume](https://medium.com/devops-mojo/kubernetes-storage-options-overview-persistent-volumes-pv-claims-pvc-and-storageclass-sc-k8s-storage-df71ca0fccc3)
 
-#### [Goodbye etcd, Hello PostgreSQL: Running Kubernetes with an SQL Database](https://martinheinz.dev/blog/100)
+### [Goodbye etcd, Hello PostgreSQL: Running Kubernetes with an SQL Database](https://martinheinz.dev/blog/100)
 
 - etcd is the brain of every Kubernetes cluster, the key-value storage keeping track of all the objects in a cluster. It's intertwined and tightly coupled with Kubernetes, and it might seem like an inseparable part of a cluster, or is it?
 
     In this article it is explained how we could replace etcd with PostgreSQL database, as well as why and when it might make sense to do so.
 
-#### Migrate data from one PVC to other (this can done within same Namespace)
+### Migrate data from one PVC to other (this can done within same Namespace)
 
 - well, for hostin any web applications or storing output files we need some kind of dataStorage. At some point our local storage wont be efficient approach when it comes to Prod Version & for multiple user.
 
@@ -162,7 +161,7 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
     ```
     6. to execute the job ```oc apply -f job.yaml```
 
-#### [Fetch secrets from Az-KeyVault to use secrets in Pods](https://azure.github.io/secrets-store-csi-driver-provider-azure/docs/getting-started/).
+### [Fetch secrets from Az-KeyVault to use secrets in Pods](https://azure.github.io/secrets-store-csi-driver-provider-azure/docs/getting-started/).
 
 - as secrets key plays a vital role when its comes to use credentials for authentication purpose and various implement.
 
@@ -272,7 +271,7 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
     kubectl exec "pod-name" -- cat /mnt/secrets-store/secret1
     ```
 
-#### Volume Snapshot
+### Volume Snapshot
 
 - volume snapshot using Openshift, this feature assist to create a snap of volume in given time, so that those volume can utilised for test/prod by specifying the volumesnapshot name
 

@@ -19,7 +19,7 @@
 
 ```shell
 chmod 777 "file-name/folder-name"
-p
+
 drwxrwxrwx > rwx abbrevates as Read, Write , Delete/Execute
 ```
 
