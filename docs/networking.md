@@ -31,6 +31,7 @@ hide:
   - [HTTPS Status Code](#https-status-code)
   - [SMTP: (Sender Mail Transfer Protocol)](#smtp-sender-mail-transfer-protocol)
   - [Delete local host running backend using netstat](#delete-local-host-running-backend-using-netstat)
+  - [Some of the Important Port Number.](#some-of-the-important-port-number)
   - [Some of the Best Documentation Links](#some-of-the-best-documentation-links)
 
 ## Protocol
@@ -171,6 +172,28 @@ netstat -a -o | find "9090"
 taskkill /F /PID 12345
 
 ```
+
+## Some of the Important Port Number.
+
+1. 𝐃𝐨𝐜𝐤𝐞𝐫 𝐃𝐚𝐞𝐦𝐨𝐧: -Port: 2375 (unencrypted) and 2376 (encrypted)
+2. 𝐉𝐞𝐧𝐤𝐢𝐧𝐬: -Runs on 𝐇𝐓𝐓𝐏 𝐩𝐨𝐫𝐭 8080 𝐨r 𝐇𝐓𝐓𝐏𝐒 𝐩𝐨𝐫𝐭 8443
+3. 𝐇𝐓𝐓𝐏 (𝐇𝐲𝐩𝐞𝐫𝐭𝐞𝐱𝐭 𝐓𝐫𝐚𝐧𝐬𝐟𝐞𝐫 𝐏𝐫𝐨𝐭𝐨𝐜𝐨𝐥):- Default Port: 80
+4. 𝐇𝐓𝐓𝐏𝐒 (𝐇𝐲𝐩𝐞𝐫𝐭𝐞𝐱𝐭 𝐓𝐫𝐚𝐧𝐬𝐟𝐞𝐫 𝐏𝐫𝐨𝐭𝐨𝐜𝐨𝐥 𝐒𝐞𝐜𝐮𝐫𝐞): - Default Port: 443
+5. 𝐒𝐒𝐇 (𝐒𝐞𝐜𝐮𝐫𝐞 𝐒𝐡𝐞𝐥𝐥): - Default Port: 22
+6. 𝐅𝐓𝐏 (𝐅𝐢𝐥𝐞 𝐓𝐫𝐚𝐧𝐬𝐟𝐞𝐫 𝐏𝐫𝐨𝐭𝐨𝐜𝐨𝐥): - Control Port: 21 - Data Port: 20
+7. 𝐒𝐌𝐓𝐏 (𝐒𝐢𝐦𝐩𝐥𝐞 𝐌𝐚𝐢𝐥 𝐓𝐫𝐚𝐧𝐬𝐟𝐞𝐫 𝐏𝐫𝐨𝐭𝐨𝐜𝐨𝐥): - Port: 25
+8. 𝐃𝐍𝐒 (𝐃𝐨𝐦𝐚𝐢𝐧 𝐍𝐚𝐦𝐞 𝐒𝐲𝐬𝐭𝐞𝐦): - Port: 53
+9. 𝐑𝐃𝐏 (𝐑𝐞𝐦𝐨𝐭𝐞 𝐃𝐞𝐬𝐤𝐭𝐨𝐩 𝐏𝐫𝐨𝐭𝐨𝐜𝐨𝐥): - Port: 3389
+10. 𝐌𝐲𝐒𝐐𝐋 𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞: - Port: 3306
+11. 𝐏𝐨𝐬𝐭𝐠𝐫𝐞𝐒𝐐𝐋 𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞: - Port: 5432
+12. 𝐌𝐨𝐧𝐠𝐨𝐃𝐁: - Port: 27017
+13. 𝐊𝐮𝐛𝐞𝐫𝐧𝐞𝐭𝐞𝐬 𝐀𝐏𝐈 𝐒𝐞𝐫𝐯𝐞𝐫: - Port: 6443
+14. 𝐍𝐠𝐢𝐧𝐱: - Default HTTP Port: 80 - Default HTTPS Port: 443
+15. 𝐄𝐥𝐚𝐬𝐭𝐢𝐜𝐬𝐞𝐚𝐫𝐜𝐡: - Port: 9200
+16. 𝐀𝐩𝐚𝐜𝐡𝐞 𝐓𝐨𝐦𝐜𝐚𝐭: - Default HTTP Port: 8080 - Default HTTPS Port: 8443
+17. 𝐏𝐫𝐨𝐦𝐞𝐭𝐡𝐞𝐮𝐬: - Port: 9090
+18. 𝐆𝐫𝐚𝐟𝐚𝐧𝐚: - Default HTTP Port: 3000
+19. 𝐆𝐢𝐭: - SSH Port: 22 - Git Protocol Port: 9418
 
 ## Some of the Best Documentation Links
 
