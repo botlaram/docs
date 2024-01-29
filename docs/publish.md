@@ -1,20 +1,4 @@
 # welcome to best side of Documentation, this page contains some of the IMP things to know as a Developer
-- [welcome to best side of Documentation, this page contains some of the IMP things to know as a Developer](#welcome-to-best-side-of-documentation-this-page-contains-some-of-the-imp-things-to-know-as-a-developer)
-  - [GIT](#git)
-    - [Git Shallow](#git-shallow)
-    - [Git lfs](#git-lfs)
-  - [Docker](#docker)
-    - [CMD Vs ENTRYPOINT](#cmd-vs-entrypoint)
-    - [Docker-Squash](#docker-squash)
-    - [Automated Nginx Reverse Proxy for Docker](#automated-nginx-reverse-proxy-for-docker)
-    - [Dockerizer](#dockerizer)
-  - [Kubernetes](#kubernetes)
-    - [Storage Class and Persistent Volume](#storage-class-and-persistent-volume)
-    - [Goodbye etcd, Hello PostgreSQL: Running Kubernetes with an SQL Database](#goodbye-etcd-hello-postgresql-running-kubernetes-with-an-sql-database)
-    - [Migrate data from one PVC to other (this can done within same Namespace)](#migrate-data-from-one-pvc-to-other-this-can-done-within-same-namespace)
-    - [Fetch secrets from Az-KeyVault to use secrets in Pods.](#fetch-secrets-from-az-keyvault-to-use-secrets-in-pods)
-    - [Volume Snapshot](#volume-snapshot)
-
 
 ## GIT
 

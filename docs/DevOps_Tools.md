@@ -50,7 +50,7 @@ Docker is a software development tool and a virtualization technology that makes
 
 ### After Containers
 
-![Alt text](./png/docker2.png) (copy from docker tutorial folder)
+![Alt text](./png/after-docker.png) (copy from docker tutorial folder)
 
 1. Own Isolated Environment
 2. Can install necessary pacakages and dependencies

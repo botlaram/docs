@@ -5,35 +5,6 @@ hide:
 
 # Computer Networking
 
-- [Computer Networking](#computer-networking)
-  - [Protocol](#protocol)
-    - [TCP (Transmission Control Protocol)](#tcp-transmission-control-protocol)
-    - [HTTP (Hypertext Transfer Protocol)](#http-hypertext-transfer-protocol)
-    - [UDP (User Datagram Protocol)](#udp-user-datagram-protocol)
-  - [Router](#router)
-  - [Port Number](#port-number)
-  - [Internet speed](#internet-speed)
-  - [OSI Model](#osi-model)
-    - [Physical Layer (Layer 1)](#physical-layer-layer-1)
-    - [Data Link Layer (Layer 2)](#data-link-layer-layer-2)
-    - [Network Layer (Layer 3)](#network-layer-layer-3)
-    - [Transport Layer (Layer 4)](#transport-layer-layer-4)
-    - [Session Layer (Layer 5)](#session-layer-layer-5)
-    - [Presentation Layer (Layer 6)](#presentation-layer-layer-6)
-    - [Application Layer (Layer 7)](#application-layer-layer-7)
-  - [TCP/IP](#tcpip)
-    - [Application Layer](#application-layer)
-    - [Transport Layer](#transport-layer)
-    - [Internet Layer](#internet-layer)
-    - [Link Layer](#link-layer)
-  - [OSI vs TCP/IP](#osi-vs-tcpip)
-  - [HTTPS Request](#https-request)
-  - [HTTPS Status Code](#https-status-code)
-  - [SMTP: (Sender Mail Transfer Protocol)](#smtp-sender-mail-transfer-protocol)
-  - [Delete local host running backend using netstat](#delete-local-host-running-backend-using-netstat)
-  - [Some of the Important Port Number.](#some-of-the-important-port-number)
-  - [Some of the Best Documentation Links](#some-of-the-best-documentation-links)
-
 ## Protocol
 
   Protocol refers to a set of rules and conventions that define how data is transmitted, received, and processed between devices and systems connected to the network. These rules ensure that devices can understand and communicate with each other effectively, enabling the seamless exchange of information across the internet.
