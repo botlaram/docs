@@ -6,12 +6,11 @@ repo_url: "https://github.com/botlaram"
 nav:
     - Home: index.md
     - Cheat Code: cheat_code.md
-    - Devops_Project: DevOps_Project.md
-    - Computer Networking: networking.md
-    # - Ansible: ansible.md
     - Linux : linux.md
-    - Packer: packer.md
+    - Computer Networking: networking.md
+    - DevOps_Tools: DevOps_Tools.md
     - Publish: publish.md
+    - Devops_Project: DevOps_Project.md
 
 
 theme:
