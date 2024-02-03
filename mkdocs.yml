@@ -6,8 +6,9 @@ repo_url: "https://github.com/botlaram"
 nav:
     - Home: index.md
     - Cheat Code: cheat_code.md
-    - Linux : linux.md
+    - Linux: linux.md
     - Computer Networking: networking.md
+    - DSA: DSA.md
     - DevOps_Tools: DevOps_Tools.md
     - Publish: publish.md
     - Devops_Project: DevOps_Project.md
