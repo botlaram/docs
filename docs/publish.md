@@ -15,7 +15,6 @@
 
 - Git LFS (Large File Storage) is an extension to Git that deals with large files by replacing them with text pointers inside the Git repository, while storing the actual file content in an external storage system. This allows you to version control large binary files, such as audio, video, datasets, and other large assets, without causing significant bloat in your Git repository.
 
-
 ## Docker
 
 ### [CMD Vs ENTRYPOINT](https://medium.com/container-talks/understand-cmd-and-entrypoint-differences-in-docker-d11105cc5454#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkMzM0NDk3NTA2YWNiNzRjZGVlZGFhNjYxODRkMTU1NDdmODM2OTMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQ1Mzc2NzM5NjYzNjY4NTAyNjIiLCJlbWFpbCI6ImRvbnRhc2tlbWFpbGFkZHJlc3NAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTY5Nzk3ODI3MiwibmFtZSI6IkJvdGxhIFJhbSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMNGMyWXZLXzFlSllMX3ZLX3drSWFiREx0c3dYeWFadzU0MF91UjBTT1E9czk2LWMiLCJnaXZlbl9uYW1lIjoiQm90bGEiLCJmYW1pbHlfbmFtZSI6IlJhbSIsImxvY2FsZSI6ImVuLUdCIiwiaWF0IjoxNjk3OTc4NTcyLCJleHAiOjE2OTc5ODIxNzIsImp0aSI6IjAwZWMxMjA1MDYwOTNiYzcwZDk3N2RmMzM2M2IxNjlmYWRjOGZhNTYifQ.hYAhN7EWsZTI6H-Fscm1-5ykfRTcCBpYr2KBKZjyY75PJr_y1IcmTgA3F3KIJhFiSBOjXP3xuUpBkuKLBuyMIPP_DLJYwobjVlyX3Cftalqw-R9lAZvTkBpplboLL0G4zKl4mC1Rk1-WgI0tI1Bc7NSHSTKYIEFuCQcBskuvUspNdZyQBvgpHJznTsAcZKtvhM5TP4ya1JLmjwJcqtjEroyqlxNtoLFuBf5LRlmp0Dxtn6niImG84yCt4v7yzNS93OCuqT6rEczF_ZqkD8zNG9WaH7Fsgz6KwIuUH0bGYcVtGt9GbFrSSyAqXfii0a2ZMM39bv9ywsfc-2lZqJXMVQ)
@@ -23,21 +22,29 @@
 - CMD and ENTRYPOINT are instructions used in Dockerfiles to define the command that will be run when a container is started. However, they serve different purposes and have distinct behaviors.
 
 - CMD Instruction:
-The CMD instruction in a Dockerfile sets the default command and/or parameters for the container. It provides defaults for an executing container, but these defaults can be overridden by specifying the command and parameters at runtime when the container is started.
-> FROM ubuntu:latest  
-> CMD ["echo", "Hello, World!"]  
 
-    In this example, if no command is specified when running the container, it will execute the default echo "Hello, World!". However, a user can override the CMD instruction by specifying a different command when running the container:  
+The CMD instruction in a Dockerfile sets the default command and/or parameters for the container. It provides defaults for an executing container, but these defaults can be overridden by specifying the command and parameters at runtime when the container is started.
+
+```shell
+FROM ubuntu:latest  
+CMD ["echo", "Hello, World!"]  
+```
+
+In this example, if no command is specified when running the container, it will execute the default echo "Hello, World!". However, a user can override the CMD instruction by specifying a different command when running the container:
+
 ```docker run my-image echo Goodbye, World!```
 
 - ENTRYPOINT Instruction:
+
 The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when the container starts. Unlike CMD, the ENTRYPOINT instruction does not allow for default parameters that can be overridden. Instead, any parameters specified at runtime are passed as arguments to the command defined in ENTRYPOINT.
-> FROM ubuntu:latest
-> ENTRYPOINT ["echo", "Hello, World!"]  
 
-    In this example, if no command is specified when running the container, it will execute the default echo "Hello, World!". However, if a user provides a command, it will be treated as arguments to the ENTRYPOINT:  
+```shell
+FROM ubuntu:latest
+ENTRYPOINT ["echo", "Hello, World!"]  
+```
+
+In this example, if no command is specified when running the container, it will execute the default echo "Hello, World!". However, if a user provides a command, it will be treated as arguments to the ENTRYPOINT:  
 ```docker run my-image "Goodbye, World!"```
-
 
 ### [Docker-Squash](http://jasonwilder.com/blog/2014/08/19/squashing-docker-images/)
 
@@ -73,7 +80,8 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
 
 - here is the simple code snippet to create a StorageClass, PVC
     1. Create StorageClass yaml
-    ```
+
+    ```yaml
     kind: StorageClass
     apiVersion: storage.k8s.io/v1beta1
     metadata:
@@ -87,7 +95,8 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
     ```
 
     2. create PVC pointing to storage class
-    ```
+
+    ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
@@ -104,11 +113,12 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
     ```
 
     3. To copy data to new StorageClass we need to create a new PVC pointing to newStorageClass, the above PVC yaml snippets can be helpful to create new PVC
-    
+
     4. Once PVC gets create, nxt is to start copying PVC by deploying helper job. Here we need to mention two PVC name for copying data from src to destination in Job
-    
+
     5. helper Job yaml file for copying data ( in this Job we need to mention to folder path within the pod to copy files one PVC to other)
-    ```
+
+    ```yaml
     apiVersion: batch/v1
     kind: Job
     metadata:
@@ -143,9 +153,10 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
                     mountPath: "/mnt/dst"
                 restartPolicy: OnFailure
     ```
+
     6. to execute the job ```oc apply -f job.yaml```
 
-### [Fetch secrets from Az-KeyVault to use secrets in Pods](https://azure.github.io/secrets-store-csi-driver-provider-azure/docs/getting-started/).
+### [Fetch secrets from Az-KeyVault to use secrets in Pods](https://azure.github.io/secrets-store-csi-driver-provider-azure/docs/getting-started/)
 
 - as secrets key plays a vital role when its comes to use credentials for authentication purpose and various implement.
 
@@ -155,7 +166,7 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
 
 - Following steps mentioned about fetching KV from Azure
 
-    ```
+    ```yaml
     ##add helm repo for Secrets Store CSI Driver and the Azure Keyvault Provider
     helm repo add csi-secrets-store-provider-azure https://azure.github.io/secrets-store-csi-driver-provider-azure/charts
 
@@ -263,11 +274,11 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
   
     1. select PVC for which you want to take snapshot, click on the options and select "create Snapshot"
     ![Volumesnap1](./png/volumesnap1.png)
-    
+
     2. Select the "VolumeSnapshotClass" (will be provided by Openshift)
     note : for creating volumeSnapshot, a VolumeSnapshotClass should be available.
-    ![Volumesnap2](./png/volumesnap2.png)   
-    
+    ![Volumesnap2](./png/volumesnap2.png)
+
     3. select "Create"
     ![Volumesnap3](./png/volumesnap3.png)
 
@@ -275,7 +286,7 @@ The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when 
     ![Volumesnap4](./png/volumesnap4.png)  
 
     5. now to restore the volumeSnapshot, create a new PVC (provided in options).
-    ![Volumesnap5](./png/volumesnap5.png) 
+    ![Volumesnap5](./png/volumesnap5.png)
 
     6. select the StorageClass for PVC
     ![Volumesnap6](./png/volumesnap6.png)
