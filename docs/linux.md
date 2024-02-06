@@ -1,15 +1,4 @@
-
 # All About Linux
-
-- [All About Linux](#all-about-linux)
-  - [Linux folder usage](#linux-folder-usage)
-  - [Chmod](#chmod)
-  - [Steps to Add New User](#steps-to-add-new-user)
-  - [Change host name](#change-host-name)
-  - [Linux commands](#linux-commands)
-    - [Mostly used commands](#mostly-used-commands)
-    - [Tar Commands](#tar-commands)
-    - [Advance Commands](#advance-commands)
 
 ## [Linux folder usage](https://www.debian.org/releases/buster/amd64/apcs02.en.html)
 
@@ -35,13 +24,13 @@ change Owner and Group > `chown "user-name":"group-name" "file/folder-name"`
 
 ## Steps to Add New User
 
-1. to add user in linux
+1. to add user in linux.
 
 ```shell
 sudo adduser <user-name>  #it will ask for password enter new password
 ```
 
-2. switch to new user
+2. Then it will show you some options like.
 
 ```shell
 su - <user-name>
@@ -52,6 +41,14 @@ su - <user-name>
 ```shell
 apt-get update #you may be get error as incident will be reported.
 ```
+
+4. switch to new user
+
+
+
+3. 
+
+
 
 4. update the permissions for new user, intially logout from the new user
 

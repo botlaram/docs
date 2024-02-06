@@ -81,3 +81,58 @@ Adding a Song: To add a new song to the playlist, we create a new node and updat
 Deleting a Song: To remove a song from the playlist, we adjust the references of the neighboring nodes to bypass the deleted node.  
 Playing Songs: We can traverse the linked list from the beginning (head) to the end, playing each song in the playlist sequentially.  
 Reordering Songs: We can easily rearrange the playlist by modifying the references between nodes without moving the actual song data.
+
+## Stack
+
+Stack is a linear data structure that follows the Last In, First Out (LIFO) principle. This means that the last element added to the stack is the first one to be removed. Think of it as a stack of plates where you can only remove the top plate or add a new plate on top.
+
+### Using List as a Stack in Python
+
+```python
+s=[]
+s.append("https://google.com")
+s.append("https://google.com/facebook")
+s.append("https://google.com/feeds")
+s.append("https://google.com/photos")
+print(s)
+print(s.pop())
+print(s.pop())
+print(s)
+```
+
+In python we can use List as stack, but the problem is that List is dynamic array.
+Lets take an example, If we have a list with capacity of 10
+for suppose if you have to insert 11th element in the List
+but the capacity was 10
+Since, it is dynamic array it will create new array with capacity of 10*2 and copy all existing element to new memory and add 11th element.
+as shown in below figure
+
+Lets, assume if we have million elements and to add one more element.
+it will utilize more resources to copy into new array.
+
+![stack](./png/stack1.png)
+
+**Therefore, using List as Stack in python is not recommended.**
+
+Recommended approach is to use [collections.deque](https://www.geeksforgeeks.org/deque-in-python/) instead.
+
+### Real time example of Stack
+
+A real-life example of a stack in the context of web pages can be seen in the browser's history mechanism.
+
+Browser History Mechanism:
+When you visit web pages using a web browser, each page you visit is added to a history stack. The browser keeps track of the sequence of pages you have visited, and you can navigate through them using the browser's back and forward buttons.
+
+Navigation:
+
+When you visit a new page, it gets pushed onto the top of the history stack.
+If you click the browser's back button, the current page is popped off the stack, and you are taken to the previous page.
+If you click the forward button, the next page in the stack is popped, and you move forward in the browsing history.
+Stack Structure:
+
+Each page visited is analogous to an element in the stack.
+When you navigate back, you are essentially popping the top page off the stack and moving to the page beneath it.
+When you navigate forward, you are popping the page you previously went back from.
+Implementation:
+
+Browsers typically implement the history stack using a data structure similar to a stack, where pages are added to the top (pushed) when visited and removed from the top (popped) when navigating back or forward.
