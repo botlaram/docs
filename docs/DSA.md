@@ -7,7 +7,7 @@
 
 Linear search, also known as sequential search, is a simple search algorithm that checks each element in a list or array until the target element is found or the entire list is traversed. It starts searching from the beginning of the list and compares each element with the target element until a match is found or the end of the list is reached.
 
-![alt text](./png/linear-search.png)
+![linear-search](./png/linear-search.png)
 
 ### Realtime Example Linear Search
 
@@ -85,6 +85,9 @@ Reordering Songs: We can easily rearrange the playlist by modifying the referenc
 ## Stack
 
 Stack is a linear data structure that follows the Last In, First Out (LIFO) principle. This means that the last element added to the stack is the first one to be removed. Think of it as a stack of plates where you can only remove the top plate or add a new plate on top.
+
+![stack](./png/stack2.png)
+
 
 ### Using List as a Stack in Python
 
