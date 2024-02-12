@@ -19,15 +19,15 @@ Imagine you have a list of contacts stored in your phone, and you want to find t
 
 Binary search is a searching algorithm that efficiently finds the position of a target value within a sorted array. It works by repeatedly dividing the search interval in half. Here's how it works:
 
-Initial Step: Binary search requires the array to be sorted initially. Let's say you have a sorted array arr.
+1. Initial Step: Binary search requires the array to be sorted initially. Let's say you have a sorted array arr.
 
-Divide: Start with the whole array. Calculate the midpoint of the array.
+2. Divide: Start with the whole array. Calculate the midpoint of the array.
 
-Compare: Compare the target value with the element at the midpoint. If the target value matches the midpoint value, the search is successful.
+3. Compare: Compare the target value with the element at the midpoint. If the target value matches the midpoint value, the search is successful.
 
-Adjust Search Range: If the target value is less than the midpoint value, then the target, if present, must be in the lower half of the array. If the target value is greater, then it must be in the upper half.
+4. Adjust Search Range: If the target value is less than the midpoint value, then the target, if present, must be in the lower half of the array. If the target value is greater, then it must be in the upper half.
 
-Repeat: Repeat steps 2-4 until the target value is found or until the search interval is empty.
+5. Repeat: Repeat steps 2-4 until the target value is found or until the search interval is empty.
 
 ![alt text](./png/binary_search.png)
 
@@ -139,3 +139,29 @@ When you navigate forward, you are popping the page you previously went back fro
 Implementation:
 
 Browsers typically implement the history stack using a data structure similar to a stack, where pages are added to the top (pushed) when visited and removed from the top (popped) when navigating back or forward.
+
+## Bubble sort
+
+Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. It is called Bubble Sort because with each pass through the list, the smaller elements gradually "bubble" up to their correct positions.
+
+Here's how Bubble Sort works:
+
+1. Comparison: The algorithm compares each pair of adjacent items in the list, from the beginning to the end.
+
+2. Swap: If the elements are in the wrong order (i.e., the current element is greater than the next element), they are swapped.
+
+3. Iteration: This process is repeated for each pair of adjacent elements in the list until no more swaps are needed, indicating that the list is sorted.
+
+![alt text](./png/bubblesort.png)
+
+### Real time example of Bubble sort
+
+let's consider a real-life example where Bubble Sort might be used: sorting a hand of playing cards.
+
+Imagine you have a hand of playing cards that are in a random order, and you want to arrange them in ascending order based on their values (e.g., from Ace to King for each suit).
+
+1. Comparison: To sort the cards, you would compare adjacent cards in the hand.
+
+2. Swap: If the current card is greater than the next card, you would swap their positions.
+
+3. Iteration: You would repeat this process multiple times, traversing the hand of cards, until the entire hand is sorted.
