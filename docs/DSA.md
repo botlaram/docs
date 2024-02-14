@@ -3,6 +3,7 @@
 <br>
 <p align="center"><img src="https://i.ibb.co/hB0gQWq/dsa.png" height="200"></p>
 
+## [BigoCheatsheet](https://www.bigocheatsheet.com/)
 ## Linear Search
 
 Linear search, also known as sequential search, is a simple search algorithm that checks each element in a list or array until the target element is found or the entire list is traversed. It starts searching from the beginning of the list and compares each element with the target element until a match is found or the end of the list is reached.
@@ -29,7 +30,7 @@ Binary search is a searching algorithm that efficiently finds the position of a 
 
 5. Repeat: Repeat steps 2-4 until the target value is found or until the search interval is empty.
 
-![alt text](./png/binary_search.png)
+![Binary Search](./png/binary_search.png)
 
 ### Realtime Example Binary Search
 
@@ -41,7 +42,7 @@ Imagine you are searching for a particular book in a library with thousands of b
 
 Linked list consists of a sequence of elements called nodes. Each node contains two parts: the data and a reference (or pointer) to the next node in the sequence. Linked lists offer dynamic memory allocation, efficient insertion and deletion operations, and are especially useful when the size of the data structure is unknown or frequently changing.
 
-![alt text](./png/linkedlist.png)
+![LinkedList](./png/linkedlist.png)
 
 ### Why Linked List
 
@@ -140,6 +141,31 @@ Implementation:
 
 Browsers typically implement the history stack using a data structure similar to a stack, where pages are added to the top (pushed) when visited and removed from the top (popped) when navigating back or forward.
 
+## Queue
+
+Queue is a linear data structure that follows the First In, First Out (FIFO) principle. It's similar to a queue of people waiting in line for something, where the person who joins the queue first is served first, and so on. In a queue, elements are added at one end called the rear (also known as enqueue operation), and elements are removed from the other end called the front (also known as dequeue operation).
+
+Properties of a Queue:
+FIFO (First In, First Out): The element that is added first will be the first one to be removed.
+
+1. Insertion (enqueue) operation: Adds an element to the rear of the queue.
+
+2. Deletion (dequeue) operation: Removes an element from the front of the queue.
+
+3. Peek operation: Returns the element at the front of the queue without removing it.
+
+4. Empty and Full conditions: A queue may have restrictions on its size, and when it reaches its maximum capacity, it's considered full. An empty queue has no elements.
+
+![Queue](./png/queue.png)
+
+### Real-life Examples of Queues
+
+* **Waiting Lines**: Queues model scenarios like waiting lines in banks, ATMs, restaurants, and amusement parks where the first person to join the line is the first one to be served.
+
+* **Print Queue**: When multiple users send documents to a shared printer, their print jobs are queued up. The printer serves each print job in the order it was received.
+
+* **Breadth-First Search (BFS) Traversal**: In graph algorithms like BFS traversal, a queue is used to keep track of vertices that need to be visited next.
+
 ## Bubble sort
 
 Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. It is called Bubble Sort because with each pass through the list, the smaller elements gradually "bubble" up to their correct positions.
@@ -152,7 +178,7 @@ Here's how Bubble Sort works:
 
 3. Iteration: This process is repeated for each pair of adjacent elements in the list until no more swaps are needed, indicating that the list is sorted.
 
-![alt text](./png/bubblesort.png)
+![Bubble Sort](./png/bubblesort.png)
 
 ### Real time example of Bubble sort
 
