@@ -1,7 +1,7 @@
 # All About Linux
 
 ## [Linux folder usage](https://www.debian.org/releases/buster/amd64/apcs02.en.html)
-
+![Linux-fhs](./png/linux-fhs.png)
 ## Chmod
 
 * Chmod is use for Modify permission of file/directory
@@ -24,51 +24,26 @@ change Owner and Group > `chown "user-name":"group-name" "file/folder-name"`
 
 ## Steps to Add New User
 
-1. to add user in linux.
-
 ```shell
+# To add user in linux
 sudo adduser <user-name>  #it will ask for password enter new password
-```
 
-2. Then it will show you some options like.
-
-```shell
+# After adding the user, you can switch to the new user's shell environment using the following command:
 su - <user-name>
-```
 
-3. after login with new user, try to execute
-
-```shell
+# after login with new user, try to execute
 apt-get update #you may be get error as incident will be reported.
-```
 
-4. switch to new user
-
-
-
-3. 
-
-
-
-4. update the permissions for new user, intially logout from the new user
-
-```shell
+# update the permissions for new user, intially logout from the new user
 exit
-```
 
-5. from the root user, execute the following command
-
-```shell
+# from the root user, execute the following command
 sudo visudo
-```
 
-6. update members of the admin group
+# update members of the admin group
 
-```shell
 %<username> ALL=(ALL) NOPASSWD:ALL     #add this line
 ```
-
-It contains Owner, Group, Public
 
 ## Change host name
 
