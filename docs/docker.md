@@ -37,7 +37,7 @@ ENTRYPOINT ["/bin/bash"]
 ## docker commands
 
 ```shell
-docker build -t global-registry/z0108306/phoenix:docker-demo .
+docker build -t image-url:docker-demo .
 (-t for <name>:<tag> | default it will take as latest)
 
 docker run -it "image-id"
@@ -46,8 +46,8 @@ docker run -it -p 8000:8000 d9b65d5d6ab2
 
 docker login global-registry
 
-docker push global-registry/z0108306/phoenix:docker-demo
+docker push image-url:docker-demo
 
 # docker image pull
-docker pull global-registry/z0108306/phoenix:docker-demo
+docker image-url:docker-demo
 ```

@@ -23,6 +23,7 @@
 | Create and run a container from an image, with custom name: | `docker run --name <container_name> <image_name>`
 | Run a container with and publish a container’s port(s) to the host. | `docker run -p <host_port>:<container_port> <image_name>`
 | Run a container in the background                  | `docker run -d <image_name>`
+| Run a container in container with copy/volume | `docker run -it -v <src>:<container-dst> <image-id>`
 | Start or stop an existing container:      | `docker start | stop <container_name> (or <container-id>)`
 | Kill running container                             | `docker kill $ID`
 | Remove a stopped container:                        | `docker rm <container_name>`
