@@ -296,3 +296,11 @@ In this example, if no command is specified when running the container, it will 
 
     8. now to use volume create by VolumeSnapshot, update the PVC name to pod, which is created using VolumeSnapshot.
     ![Volumesnap9](./png/volumesnap9.png)
+
+### Deployment rollout strategies
+
+[tutorial link](https://www.youtube.com/watch?v=lxc4EXZOOvE&t=95s)
+
+[byte-byte go link](https://www.youtube.com/watch?v=AWVTKBUnoIg)
+
+[source-code link](https://github.com/antonputra/tutorials/tree/main/lessons/171)
