@@ -447,4 +447,4 @@ As you venture into your next Kubernetes project, I hope this guide serves as a 
 
 ### How to fix K8 deployement
 
-![fix-deployment](./png/how_to_fix_k8_deployement.PNG)
+![fix-deployment](./png/how_to_fix_k8_deployement.png)
