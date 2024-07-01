@@ -15,7 +15,7 @@ SUCCESS: The process with PID 7440 has been terminated.
 ```
 
 2. Build docker image following to the docker-compose.yaml file.
-   
+
 ```shell
 docker-compose up -d
 ```

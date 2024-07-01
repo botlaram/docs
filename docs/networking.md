@@ -33,7 +33,7 @@ It is commonly used for real-time applications like video streaming, online gami
 
 Every Router/Modem has Global IP address, this IP address is shared to each device(computer/mobile) that connected to Router/Modem.  
 for eg: If you run multiple applications as google, whatsapp and send request to internet, the device configure to send back response to particular Application using Port number.  
-In simple IP address is to figureout which device/router you are using and Port number is to find from which Application response need to send.  
+In simple IP address is to figure out which device/router you are using and Port number is to find from which Application response need to send.  
 
 ## Port Number
 
@@ -82,7 +82,7 @@ It ensures reliable data delivery, flow control, and error recovery using protoc
 ### Session Layer (Layer 5)
 
 The session layer establishes, maintains, and terminates connections (sessions) between applications on different devices.  
-It manages dialogues between applications, synchronization, and checkpointing for data exchange.
+It manages dialogues between applications, synchronization, and check pointing for data exchange.
 
 ### Presentation Layer (Layer 6)
 
@@ -185,7 +185,6 @@ In the realm of networking, proxies play a crucial role in enhancing security, p
   Reverse proxy protects the server’s identity by not letting the clients know about servers. In simple words, clients think that the reverse proxy serves all the requests, while behind there can be multiple servers.
 
 ![PROXY](./png/forward-reverse-proxy.gif)
-
 
 It is used for server anonymity, load balancing, DDoS protection, etc.
 

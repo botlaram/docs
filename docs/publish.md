@@ -444,3 +444,7 @@ On the flip side, if your application lives in the fast-paced realm of event-dri
 Remember, choosing between HPA and KEDA isn't about which is better overall, but which is better for your specific needs. So take stock of your application's requirements, your team's expertise, and your long-term scaling strategy before making the call.
 
 As you venture into your next Kubernetes project, I hope this guide serves as a useful roadmap for your autoscaling decisions. And hey, since you're all about diving deeper, maybe explore setting up these autoscaling strategies in a hands-on way. Trust me, there's no better teacher than experience.
+
+### How to fix K8 deployement
+
+![fix-deployment](./png/how_to_fix_k8_deployement.PNG)
