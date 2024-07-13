@@ -1,30 +1,30 @@
 # Commands
 
-### Python commands
+## Python commands
 
 | Execute                                          | Command
-| ------------------------------------------------ | ----------------------------------------------
+| ------------------------------------------------ | --------------------------------------
 | Create virtual env                  | `python -m venv venv`
 | Activate virtual environment        | Windows`./venv/bin/activate` <br> Linux`source venv/bin/activate`
 | Deactivate virtual environment      | `deactivate`
 | Install requirements.txt            | `pip install -r requirements.txt`
 | Create requirements.txt | `pip freeze > requirements.txt`
 
-### Docker commands
+## Docker commands
 
 | Execute                                          | Command
 | ------------------------------------------------ | ----------------------------------------------
 | Build an Image from a Dockerfile                 | `docker build -t <image_name>`
 | List all images                                  | `docker images / docker images ls`
 | Run the container (--rm remove filesystem and associated resources (such as networking resources) when the container stops)      | `docker run --rm -p 80:5001 <image name>`
-| Build an Image from a Dockerfile without the cache | docker build -t <image_name> . –no-cache 
+| Build an Image from a Dockerfile without the cache | docker build -t <image_name> . –no-cache
 | Delete an Image                                   | `docker rmi <image_name>`
 | Remove all unused images                          | `docker image prune`
 | Create and run a container from an image, with custom name: | `docker run --name <container_name> <image_name>`
 | Run a container with and publish a container’s port(s) to the host. | `docker run -p <host_port>:<container_port> <image_name>`
 | Run a container in the background                  | `docker run -d <image_name>`
 | Run a container in container with copy/volume | `docker run -it -v <src>:<container-dst> <image-id>`
-| Start or stop an existing container:      | `docker start | stop <container_name> (or <container-id>)`
+| Start or stop an existing container:  | `docker start | stop <container_name> or <container-id>`
 | Kill running container                             | `docker kill $ID`
 | Remove a stopped container:                        | `docker rm <container_name>`
 | Open a shell inside a running container:           | `docker exec -it <container_name> sh`
@@ -37,7 +37,7 @@
 | prune your entire system                           |  `docker system prune`
 | change docker tag                                  | `docker tag <image_id> <new_image_name:tag>`
 
-### Git commands
+## Git commands
 
 | Execute                                          | Command
 | ------------------------------------------------ | -------------------------
@@ -48,7 +48,7 @@
 | Git clone                                        | `git clone <remote Url>`
 | git clone particular branch                      | `git clone -b <branch-name> <git-url>`
 | Create branch                                    | `git branch <branch name>`
-| List all branch names                            | `git branch -a` <br> `git branch --list` 
+| List all branch names                            | `git branch -a` <br> `git branch --list`
 | Checkout branch                                  | `git checkout <branch name>`
 | Checkout and switch to new branch                | `git checkout -b <branchname>`
 | Git add single file                              | `git add <Filename> <Filename>`
@@ -77,7 +77,7 @@
 | Git Diff Branches                                | `git diff <branch 1> < branch 2>`
 | clone other's code and push to your repo  | `git clone` <br> `git remote -v` <br> `git remote set-url origin <add-your-url>` <br> `git remote -v` <br> `git push origin`
 
-### Kubernetes commands
+## Kubernetes commands
 
 | Execute                                          | Command
 | ------------------------------------------------ | -----------------------------------
@@ -116,7 +116,7 @@
 | Delete all pods                                  | `kubectl delete pods --all -n development`
 | Delete deployments                               | `kubectl delete deployment "deployment-name"`
 
-### Helm commands
+## Helm commands
 
 | Execute                                          | Command
 | ------------------------------------------------ | -------------------------
@@ -145,7 +145,7 @@
 | Helm show values                                  | `helm show values bitnami/kube-state-metrics`
 | Helm uninstall                                  | `helm uninstall "release-name" . -n "namespace"`
 
-### Openshift commands
+## Openshift commands
 
 | Execute                                          | Command
 | ------------------------------------------------ | ---------------------------------------

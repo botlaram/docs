@@ -10,6 +10,7 @@ nav:
     - Computer Networking: networking.md
     - DSA: DSA.md
     - DevOps_Tools: DevOps_Tools.md
+    - K8: kubernetes.md
     - Publish: publish.md
     - Devops_Project: DevOps_Project.md
 

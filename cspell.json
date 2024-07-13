@@ -1,0 +1,9 @@
+{
+    "settings": {
+        "language": "en",
+        "ignoreWords": [],
+        "requireWords": [
+            "azurefile"
+        ]
+    }
+}
