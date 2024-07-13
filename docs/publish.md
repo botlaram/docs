@@ -445,21 +445,17 @@ Remember, choosing between HPA and KEDA isn't about which is better overall, but
 
 As you venture into your next Kubernetes project, I hope this guide serves as a useful roadmap for your autoscaling decisions. And hey, since you're all about diving deeper, maybe explore setting up these autoscaling strategies in a hands-on way. Trust me, there's no better teacher than experience.
 
-### How to fix K8 deployement
+### Scenario based questions
+
+1. How to fix K8 deployement
 
 ![fix-deployment](./png/how_to_fix_k8_deployement.png)
 
-### Scenario based questions
-
-1. how to manage k8 resource (so that pods should not exceeds resources / should not consume
+2. How to manage k8 resource (so that pods should not exceeds resources / should not consume
 whole cluster/namespace Quota
 
 ![k8-scenarion1](./png/k8-scenario1.png)
 
-2. how to upgrade k8 version
+3. How to upgrade [k8 version](https://devopscube.com/setup-kubernetes-cluster-kubeadm/)
 
-got through blog [here](https://devopscube.com/setup-kubernetes-cluster-kubeadm/)
-
-3. how to fix StatefulSet with Persistent Volume not working after Cloud Migration
-
-https://www.youtube.com/watch?v=uBhjymTV0ro&t=1220s
+4. How to fix StatefulSet with Persistent Volume not working after [Cloud Migration](https://www.youtube.com/watch?v=uBhjymTV0ro&t=1220)
