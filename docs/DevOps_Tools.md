@@ -24,9 +24,9 @@ Docker is a software development tool and a virtualization technology that makes
 
 ![docker-vs-vm](./png/containers-vs-virtual-machines.jpg)
 
-![Alt text](./png/dockervsVM.gif)
+![Alt text](./gif/dockervsVM.gif)
 
-![Alt text](./png/Container_VM.gif)
+![Alt text](./gif/Container_VM.gif)
 
 #### Advantages of using Docker over VMs
 
@@ -86,7 +86,7 @@ docker cp command: To copy the file from docker host to the docker containers
 
 ### Demo (use flask application)
 
-![Alt text](./png/docker-workflow.gif)
+![Alt text](./gif/docker-workflow.gif)
 
 1. Run application in local system
 2. Create a Dockerfile mount the application
@@ -151,4 +151,4 @@ Cloud Comparision cheat sheet 2023
 
 Azure Cloud Service Cheat Sheet
 
-![Azurecloud](./png/Azure_cloud_service_cheat_sheet.gif)
+![Azurecloud](./gif/Azure_cloud_service_cheat_sheet.gif)

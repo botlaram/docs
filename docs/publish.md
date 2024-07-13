@@ -448,3 +448,18 @@ As you venture into your next Kubernetes project, I hope this guide serves as a 
 ### How to fix K8 deployement
 
 ![fix-deployment](./png/how_to_fix_k8_deployement.png)
+
+### Scenario based questions
+
+1. how to manage k8 resource (so that pods should not exceeds resources / should not consume
+whole cluster/namespace Quota
+
+![k8-scenarion1](./png/k8-scenario1.png)
+
+2. how to upgrade k8 version
+
+got through blog [here](https://devopscube.com/setup-kubernetes-cluster-kubeadm/)
+
+3. how to fix StatefulSet with Persistent Volume not working after Cloud Migration
+
+https://www.youtube.com/watch?v=uBhjymTV0ro&t=1220s

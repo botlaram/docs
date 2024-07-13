@@ -53,7 +53,7 @@ Dynamic/Private Ports (49152-65535): Port numbers from 49152 to 65535 are consid
 
 ## OSI Model
 
-![Port Number](./png/OSI_Model_workflow.gif)
+![Port Number](./gif/OSI_Model_workflow.gif)
 
 The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes the functions of a telecommunication or computing system into seven distinct layers. The model was developed by the International Organization for Standardization (ISO) to promote interoperability and facilitate communication between different systems and devices. Each layer in the OSI model represents a specific set of functions and services, and it helps in understanding and troubleshooting network communication.
 
@@ -121,7 +121,7 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 
 ## OSI vs TCP/IP
 
-![Port Number](./png/OSIvsTCP.gif)
+![Port Number](./gif/OSIvsTCP.gif)
 
 ## HTTPS Request
 
@@ -134,6 +134,10 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 ## SMTP: (Sender Mail Transfer Protocol)
 
 ![SMTP](./png/smtp.png)
+
+## Load balancer Algorithm
+
+![load-balancer](./gif/load_balancer_methods.gif)
 
 ## Delete local host running backend using netstat
 
@@ -184,7 +188,7 @@ In the realm of networking, proxies play a crucial role in enhancing security, p
 
   Reverse proxy protects the server’s identity by not letting the clients know about servers. In simple words, clients think that the reverse proxy serves all the requests, while behind there can be multiple servers.
 
-![PROXY](./png/forward-reverse-proxy.gif)
+![PROXY](./gif/forward-reverse-proxy.gif)
 
 It is used for server anonymity, load balancing, DDoS protection, etc.
 

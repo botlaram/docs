@@ -40,7 +40,7 @@
 ### Git commands
 
 | Execute                                          | Command
-| ------------------------------------------------ | ----------------------------------------------
+| ------------------------------------------------ | -------------------------
 | Git configuration/set username                   | `git config--global user.name "<User name>"`
 | Git configuration/set email                    | `git config --global user.email "xyz123@gmail.com"`
 | Git configuration list                           | `git config-list`
@@ -59,7 +59,7 @@
 | Git push                                         | `git push`
 | Undo git add / Unstage All Files                 | `git reset`
 | Undo git file / Unstage a Specific File:         | `git reset <file_name>`
-| unstage a file but keep its changes in working dir  | `git reset HEAD <file_name>`
+| Unstage a file but keep its changes in working dir  | `git reset HEAD <file_name>` or `git reset HEAD`
 | Undo the Commit and Discard Changes              | `git reset --hard HEAD~1`
 | Undo the Commit and Keep Changes                 | `git reset HEAD~1`
 | Delete branch                                    | `git branch -d <branch_name>`
@@ -75,14 +75,15 @@
 | Track the changes after committing a file        | `git diff HEAD`
 | Track the changes between two commits            | `git diff <commit1-sha> <commit2-sha>`
 | Git Diff Branches                                | `git diff <branch 1> < branch 2>`
+| clone other's code and push to your repo  | `git clone` <br> `git remote -v` <br> `git remote set-url origin <add-your-url>` <br> `git remote -v` <br> `git push origin`
 
 ### Kubernetes commands
 
 | Execute                                          | Command
-| ------------------------------------------------ | ----------------------------------------------
+| ------------------------------------------------ | -----------------------------------
 | To start Minikube                                | `minikube start`
-| host minikube dashboard                          |   `minikube dashboard`
-| host minikube dashboard url                      |   `minikube dashboard --url`
+| host minikube dashboard                          | `minikube dashboard`
+| host minikube dashboard url                      | `minikube dashboard --url`
 | Create a namespace                               | `kubectl create namespace development`
 | Create a deployment using kubectl command        | `kubectl create deployment "nameofdeployment" --image="imagename"`<br> Example: `kubectl create deployment nginx-deploy --image=nginx`
 | Deploy using a YAML file                         | `kubectl apply -f deployment.yaml`
@@ -117,38 +118,37 @@
 
 ### Helm commands
 
-| Execute                                           | Commands |
-| ------------------------------------------------- | -------- |
-| Helm repo add bitnami                             | `helm repo add bitnami https://charts.bitnami.com/bitnami` |
-| Helm repo update                                  | `helm repo update` |
-| Helm repo list                                    | `helm repo list` |
-| Minikube start                                    | `minikube start` |
-| Kubectl create namespace                          | `kubectl create ns "namespace"` |
-| Helm install kube-state-metrics                   | `helm install kube-state-metrics bitnami/kube-state-metrics -n metrics` |
-| Helm create chart                                 | `helm create "chart-name"` |
-| Helm lint                                         | `helm lint .` |
-| Helm template with debug                          | `helm template --dry-run --debug "release-name" .`|
-| Helm install status                               | `helm ls -n "namespace"` |
-| Kubectl get all                                   | `kubectl get all -n "namespace"` |
-| Helm install with namespace                       | `helm install demo-001 . -n development` |
-| Helm upgrade                                      | `helm upgrade "release-name" .` |
-| Helm upgrade with namespace                       | `helm upgrade demo-001 . -n development` |
-| Helm history                                      | `helm history "release-name"` |
-| Helm rollback                                     | `helm rollback "release-name"` |
-| Helm rollback with revision                       | `helm rollback "release-name" "revision-number"` |
-| Helm upgrade with specific version                | `helm upgrade kube-state-metrics bitnami/kube-state-metrics --version 0.4.0 -n metrics` |
-| Helm delete                                       | `helm delete "release-name"` |
-| Helm install with updated values                  | `helm install "release-name" --set data.type="9090"` |
-| Kubectl port-forward for kube-state-metrics       | `kubectl port-forward svc/kube-state-metrics 8080:8080 -n metrics` |
-| Helm show chart                                   | `helm show chart bitnami/kube-state-metrics` |
-| Helm show values                                  | `helm show values bitnami/kube-state-metrics` |
-| Helm uninstall                                  | `helm uninstall "release-name" . -n "namespace"` |
-
+| Execute                                          | Command
+| ------------------------------------------------ | -------------------------
+| Helm repo add bitnami                             | `helm repo add bitnami https://charts.bitnami.com/bitnami`
+| Helm repo update                                  | `helm repo update`
+| Helm repo list                                    | `helm repo list`
+| Minikube start                                    | `minikube start`
+| Kubectl create namespace                          | `kubectl create ns "namespace"`
+| Helm install kube-state-metrics                   | `helm install kube-state-metrics bitnami/kube-state-metrics -n metrics`
+| Helm create chart                                 | `helm create "chart-name"`
+| Helm lint                                         | `helm lint .`
+| Helm template with debug                          | `helm template --dry-run --debug "release-name" .`
+| Helm install status                               | `helm ls -n "namespace"`
+| Kubectl get all                                   | `kubectl get all -n "namespace"`
+| Helm install with namespace                       | `helm install demo-001 . -n development`
+| Helm upgrade                                      | `helm upgrade "release-name" .`
+| Helm upgrade with namespace                       | `helm upgrade demo-001 . -n development`
+| Helm history                                      | `helm history "release-name"`
+| Helm rollback                                     | `helm rollback "release-name"`
+| Helm rollback with revision                       | `helm rollback "release-name" "revision-number"`
+| Helm upgrade with specific version                | `helm upgrade kube-state-metrics bitnami/kube-state-metrics --version 0.4.0 -n metrics`
+| Helm delete                                       | `helm delete "release-name"`
+| Helm install with updated values                  | `helm install "release-name" --set data.type="9090"`
+| Kubectl port-forward for kube-state-metrics       | `kubectl port-forward svc/kube-state-metrics 8080:8080 -n metrics`
+| Helm show chart                                   | `helm show chart bitnami/kube-state-metrics`
+| Helm show values                                  | `helm show values bitnami/kube-state-metrics`
+| Helm uninstall                                  | `helm uninstall "release-name" . -n "namespace"`
 
 ### Openshift commands
 
 | Execute                                          | Command
-| ------------------------------------------------ | ----------------------------------------------
+| ------------------------------------------------ | ---------------------------------------
 | OpenShift login                                  | `oc login`
 | Create new project                               | `oc new-project <project-name>`
 | Switch to specific project                       | `oc project <project-name>`

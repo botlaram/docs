@@ -1,9 +1,16 @@
-FROM python:3.10-slim as builder
+FROM python:3.9-slim
 
-
-USER root
-
+# Install necessary packages
 RUN apt-get update && apt-get install -y \
-    graphviz git \
+    sudo \
+    git \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
+# # Create a non-root user named vscode and add it to the sudo group
+# RUN useradd -ms /bin/bash vscode \
+#     && echo 'vscode ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/nopasswd \
+#     && chmod 0440 /etc/sudoers.d/nopasswd
+
+# # Set the default user
+# USER vscode
