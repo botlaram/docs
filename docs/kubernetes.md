@@ -60,8 +60,7 @@ That's how Kubernetes comes to the rescue! Kubernetes provides you with a framew
    - You cannot make requests to service (pods) from outside the cluster.
    - You can optionally set cluster IP in the service definition file.
 
-   ```Use Cases: Inter service communication within the cluster. For example, communication between the front-end and back-end components of your app.
-   ```
+   ```Use Cases: Inter service communication within the cluster. For example, communication between the front-end and back-end components of your app.```
 
    ```yaml
    apiVersion: v1
@@ -87,9 +86,7 @@ That's how Kubernetes comes to the rescue! Kubernetes provides you with a framew
    - Node port must be in the range of 30000–32767. Manually allocating a port to the service is optional. If it is undefined, Kubernetes will automatically assign one.
    - If you are going to choose node port explicitly, ensure that the port was not already used by another service.
 
-   ```Use Cases : When you want to enable external connectivity to your service.
-   Using a NodePort gives you the freedom to set up your own load balancing solution, to configure environments that are not fully supported by Kubernetes, or even to expose one or more nodes’ IPs directly. Prefer to place a load balancer above your nodes to avoid node failure.
-   ```
+   ```Use Cases : When you want to enable external connectivity to your service. Using a NodePort gives you the freedom to set up your own load balancing solution, to configure environments that are not fully supported by Kubernetes, or even to expose one or more nodes’ IPs directly. Prefer to place a load balancer above your nodes to avoid node failure.```
 
    ```yaml
    apiVersion: v1
@@ -119,8 +116,7 @@ That's how Kubernetes comes to the rescue! Kubernetes provides you with a framew
    - The actual creation of the load balancer happens asynchronously.
    - Every time you want to expose a service to the outside world, you have to create a new LoadBalancer and get an IP address.
 
-   ```Use Cases: When you are using a cloud provider to host your Kubernetes cluster.
-   ```
+   ```Use Cases: When you are using a cloud provider to host your Kubernetes cluster.```
 
    ```yaml
    apiVersion: v1
@@ -141,15 +137,13 @@ That's how Kubernetes comes to the rescue! Kubernetes provides you with a framew
    ```
 
 4. ExternalName
-
+   
    - Services of type ExternalName map a Service to a DNS name, not to a typical selector such as my-service.
    - You specify these Services with the `spec.externalName` parameter.
    - It maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value.
    - No proxy of any kind is established.
 
-   ```Use Cases : This is commonly used to create a service within Kubernetes to represent an external datastore like a database that runs externally to Kubernetes.
-   You can use that ExternalName service (as a local service) when Pods from one namespace to talk to a service in another namespace.
-   ```
+   ```Use Cases : This is commonly used to create a service within Kubernetes to represent an external datastore like a database that runs externally to Kubernetes. You can use that ExternalName service (as a local service) when Pods from one namespace to talk to a service in another namespace.```
 
    ```yaml
    apiVersion: v1
