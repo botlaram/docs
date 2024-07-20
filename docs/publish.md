@@ -57,8 +57,11 @@ In this example, if no command is specified when running the container, it will 
 - Dockerizer is the concept to use Docker in more efficient way, so that developer and reuse the code and additional install packages as per dependency.  
 
 - Reason for using Dockerizer:
+
   - In Dockerfile each RUN command create new layer (which can create huge Image size while pushing to Registry).
   - Dockerizer contains Ansible & Packer concept which then help to create Image more efficient way,  installing required dependency/packages and making code reusability.
+
+### [Reduce Docker Image Size](https://devopscube.com/reduce-docker-image-size/)
 
 ## Kubernetes
 
@@ -277,7 +280,9 @@ In this article it is explained how we could replace etcd with PostgreSQL databa
     ![Volumesnap1](./png/volumesnap1.png)
 
 2. Select the "VolumeSnapshotClass" (will be provided by Openshift)
-note : for creating volumeSnapshot, a VolumeSnapshotClass should be available.
+
+    note : for creating volumeSnapshot, a VolumeSnapshotClass should be available.
+
     ![Volumesnap2](./png/volumesnap2.png)
 
 3. Select "Create"
@@ -366,7 +371,7 @@ To share these hard-earned lessons with you. In this article, we're going to dis
 
 #### Real-World Scenarios
 
-Real Cases for Using HPA Over KEDA
+##### Real Cases for Using HPA Over KEDA
 
 1. Basic Web Application
 
@@ -402,7 +407,7 @@ Real Cases for Using HPA Over KEDA
 
    Operational Ease: HPA requires less ongoing maintenance and has fewer components to manage compared to KEDA, making it a good choice for smaller teams or simpler applications.
 
-- Real Cases for Using KEDA Over HPA
+##### Real Cases for Using KEDA Over HPA
 
 1. Event-Driven ML Inference
    Scenario: You have a machine learning application for real-time fraud detection. Transactions are events funneled into an AWS SQS queue.
@@ -439,14 +444,14 @@ Real Cases for Using HPA Over KEDA
 
    Adaptability: The platform's extensible design allows for custom scalers, making it adaptable to a wide range of use-cases.
 
-- Conclusion
+##### Conclusion
 
-   So there you have it, folks! We've journeyed through the world of Kubernetes autoscaling, dissecting both HPA and KEDA to understand their strengths, limitations, and ideal use-cases. From my early days of being enamored with HPA's simplicity to discovering the event-driven magic of KEDA, it's been a ride full of lessons.
+So there you have it, folks! We've journeyed through the world of Kubernetes autoscaling, dissecting both HPA and KEDA to understand their strengths, limitations, and ideal use-cases. From my early days of being enamored with HPA's simplicity to discovering the event-driven magic of KEDA, it's been a ride full of lessons.
 
-   If you're dealing with predictable workloads and need a quick, straightforward solution, HPA is your reliable workhorse. It's like your trusty old hammer; it might not have all the bells and whistles, but it gets the job done efficiently.
+If you're dealing with predictable workloads and need a quick, straightforward solution, HPA is your reliable workhorse. It's like your trusty old hammer; it might not have all the bells and whistles, but it gets the job done efficiently.
 
-   On the flip side, if your application lives in the fast-paced realm of event-driven architectures or requires scaling based on custom metrics, KEDA is your Swiss Army knife. It's built for the complexities and nuances of modern, cloud-native applications.
+On the flip side, if your application lives in the fast-paced realm of event-driven architectures or requires scaling based on custom metrics, KEDA is your Swiss Army knife. It's built for the complexities and nuances of modern, cloud-native applications.
 
-   Remember, choosing between HPA and KEDA isn't about which is better overall, but which is better for your specific needs. So take stock of your application's requirements, your team's expertise, and your long-term scaling strategy before making the call.
+Remember, choosing between HPA and KEDA isn't about which is better overall, but which is better for your specific needs. So take stock of your application's requirements, your team's expertise, and your long-term scaling strategy before making the call.
 
-   As you venture into your next Kubernetes project, I hope this guide serves as a useful roadmap for your autoscaling decisions. And hey, since you're all about diving deeper, maybe explore setting up these autoscaling strategies in a hands-on way. Trust me, there's no better teacher than experience.
+As you venture into your next Kubernetes project, I hope this guide serves as a useful roadmap for your autoscaling decisions. And hey, since you're all about diving deeper, maybe explore setting up these autoscaling strategies in a hands-on way. Trust me, there's no better teacher than experience.

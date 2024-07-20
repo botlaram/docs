@@ -1,26 +1,28 @@
 # All About Linux
 
 ## [Linux folder usage](https://www.debian.org/releases/buster/amd64/apcs02.en.html)
+
 ![Linux-fhs](./png/linux-fhs.png)
+
 ## Chmod
 
-* Chmod is use for Modify permission of file/directory
+- Chmod is use for Modify permission of file/directory
 
-```shell
-chmod 777 "file-name/folder-name"
+    ```shell
+    chmod 777 "file-name/folder-name"
 
-drwxrwxrwx > rwx abbrevates as Read, Write , Delete/Execute
-```
+    drwxrwxrwx > rwx abbreviates as Read, Write , Delete/Execute
+    ```
 
-* Chown is use for providing permissions or changing the ownership to other User
+- Chown is use for providing permissions or changing the ownership to other User
 
-```shell
-change Owner/User >  `chown "user-name" "file/folder-name"`
+    ```shell
+    change Owner/User >  `chown "user-name" "file/folder-name"`
 
-change Owner and Group > `chown "user-name":"group-name" "file/folder-name"`
-```
+    change Owner and Group > `chown "user-name":"group-name" "file/folder-name"`
+    ```
 
-* Chmod [calculator](https://chmod-calculator.com/)
+- Chmod [calculator](https://chmod-calculator.com/)
 
 ## Steps to Add New User
 
@@ -96,7 +98,7 @@ sudo hostnamectl set-hostname <enter-hostname>
 ### Advance Commands
 
 | Execute                                        | Command
-| ---------------------------------------------- | ------------------------------------------------
+| ---------------------------------------------- | -------------------------------------
 | send file to other system using IP add.        | scp "file-path" root@IPofothersystem:/path
 | check network connectivity                     | ping google.com
 | display network configure                      | ifconfig
@@ -109,9 +111,9 @@ sudo hostnamectl set-hostname <enter-hostname>
 | check current user                             | whoami
 | system Disk usage                              | df
 | mount file system                              | sudo mount /dev/folder /mnt/folder
-| check packages or app install path  | which cmake
-| save terminal output to txt file | `touch file.txt` `ls | tee file.txt`
-| Check cPU, RAM usage  | htop
+| check packages or app install path             | which cmake
+| save terminal output to txt file               | `touch file.txt` or `ls \| tee file.txt`
+| Check cPU, RAM usage                           | htop
 |cut                                             | Cut out sections of a file
 |gzip                                            | Compress or decompress files using gzip
 |gunzip                                          | Decompress files compressed with gzip
@@ -171,7 +173,7 @@ sudo hostnamectl set-hostname <enter-hostname>
 |Display command history                         | history
 | Print a message to the terminal                | echo
 | Format and print data                          | printf
-|  Displays hardware information                 | lshw
+| Displays hardware information                 | lshw
 | Displays information about PCI buses and devices.  | lspci
 | Displays information about USB buses and devices.  | lsusb
 | Displays detailed hardware information.        | hwinfo

@@ -55,105 +55,104 @@ That's how Kubernetes comes to the rescue! Kubernetes provides you with a framew
 
 1. Cluster IP
 
-   - ClusterIP is the default and most common service type.
-   - Kubernetes will assign a cluster-internal IP address to ClusterIP service. This makes the service only reachable within the cluster.
-   - You cannot make requests to service (pods) from outside the cluster.
-   - You can optionally set cluster IP in the service definition file.
+    - ClusterIP is the default and most common service type.
+    - Kubernetes will assign a cluster-internal IP address to ClusterIP service. This makes the service only reachable within the cluster.
+    - You cannot make requests to service (pods) from outside the cluster.
+    - You can optionally set cluster IP in the service definition file.
 
-   ```Use Cases: Inter service communication within the cluster. For example, communication between the front-end and back-end components of your app.```
+    ```Use Cases: Inter service communication within the cluster. For example, communication between the front-end and back-end components of your app.```
 
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: my-backend-service
-   spec:
-     type: ClusterIP # Optional field (default)
-     clusterIP: 10.10.0.1 # within service cluster ip range
-     ports:
-     - name: http
-       protocol: TCP
-       port: 80
-       targetPort: 8080
-   ```
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: my-backend-service
+    spec:
+      type: ClusterIP # Optional field (default)
+      clusterIP: 10.10.0.1 # within service cluster ip range
+      ports:
+      - name: http
+        protocol: TCP
+        port: 80
+        targetPort: 8080
+    ```
 
 2. NodePort
+    - NodePort service is an extension of ClusterIP service. A ClusterIP Service, to which the NodePort Service routes, is automatically created.
+    - It exposes the service outside of the cluster by adding a cluster-wide port on top of ClusterIP.
+    - NodePort exposes the service on each Node’s IP at a static port (the NodePort). Each node proxies that port into your Service. So, external traffic has access to fixed port on each Node. It means any request to your cluster on that port gets forwarded to the service.
+    - You can contact the NodePort Service, from outside the cluster, by requesting `<NodeIP>:<NodePort>`.
+    - Node port must be in the range of 30000–32767. Manually allocating a port to the service is optional. If it is undefined, Kubernetes will automatically assign one.
+    - If you are going to choose node port explicitly, ensure that the port was not already  used by another service.
 
-   - NodePort service is an extension of ClusterIP service. A ClusterIP Service, to which the - - NodePort Service routes, is automatically created.
-   - It exposes the service outside of the cluster by adding a cluster-wide port on top of ClusterIP.
-   - NodePort exposes the service on each Node’s IP at a static port (the NodePort). Each node proxies that port into your Service. So, external traffic has access to fixed port on each Node. It means any request to your cluster on that port gets forwarded to the service.
-   - You can contact the NodePort Service, from outside the cluster, by requesting `<NodeIP>:<NodePort>`.
-   - Node port must be in the range of 30000–32767. Manually allocating a port to the service is optional. If it is undefined, Kubernetes will automatically assign one.
-   - If you are going to choose node port explicitly, ensure that the port was not already used by another service.
+    ```Use Cases : When you want to enable external connectivity to your service. Using a NodePort gives you the freedom to set up your own load balancing solution, to configure environments that are not fully supported by Kubernetes, or even to expose one or more nodes’ IPs directly. Prefer to place a load balancer above your nodes to avoid node failure.```
 
-   ```Use Cases : When you want to enable external connectivity to your service. Using a NodePort gives you the freedom to set up your own load balancing solution, to configure environments that are not fully supported by Kubernetes, or even to expose one or more nodes’ IPs directly. Prefer to place a load balancer above your nodes to avoid node failure.```
-
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: my-frontend-service
-   spec:
-     type: NodePort
-     selector:
-       app: web
-     ports:
-     - name: http
-       protocol: TCP
-       port: 80
-       targetPort: 8080
-       nodePort: 30000 # 30000-32767, Optional field
-   ```
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: my-frontend-service
+    spec:
+      type: NodePort
+      selector:
+        app: web
+      ports:
+      - name: http
+        protocol: TCP
+        port: 80
+        targetPort: 8080
+        nodePort: 30000 # 30000-32767, Optional field
+    ```
 
 3. LoadBalancer
 
-   - LoadBalancer service is an extension of NodePort service. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
-   - It integrates NodePort with cloud-based load balancers.
-   - It exposes the Service externally using a cloud provider’s load balancer.
-   - Each cloud provider (AWS, Azure, GCP, etc) has its own native load balancer implementation.
-   - The cloud provider will create a load balancer, which then automatically routes requests to your Kubernetes Service.
-   - Traffic from the external load balancer is directed at the backend Pods. The cloud provider decides how it is load balanced.
-   - The actual creation of the load balancer happens asynchronously.
-   - Every time you want to expose a service to the outside world, you have to create a new LoadBalancer and get an IP address.
+    - LoadBalancer service is an extension of NodePort service. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
+    - It integrates NodePort with cloud-based load balancers.
+    - It exposes the Service externally using a cloud provider’s load balancer.
+    - Each cloud provider (AWS, Azure, GCP, etc) has its own native load balancer implementation.
+    - The cloud provider will create a load balancer, which then automatically routes requests to your Kubernetes Service.
+    - Traffic from the external load balancer is directed at the backend Pods. The cloud  provider decides how it is load balanced.
+    - The actual creation of the load balancer happens asynchronously.
+    - Every time you want to expose a service to the outside world, you have to create a new LoadBalancer and get an IP address.
 
-   ```Use Cases: When you are using a cloud provider to host your Kubernetes cluster.```
+    ```Use Cases: When you are using a cloud provider to host your Kubernetes cluster.```
 
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: my-frontend-service
-   spec:
-     type: LoadBalancer
-     clusterIP: 10.0.171.123
-     loadBalancerIP: 123.123.123.123
-     selector:
-       app: web
-     ports:
-     - name: http
-       protocol: TCP
-       port: 80
-       targetPort: 8080
-   ```
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: my-frontend-service
+    spec:
+      type: LoadBalancer
+      clusterIP: 10.0.171.123
+      loadBalancerIP: 123.123.123.123
+      selector:
+        app: web
+      ports:
+      - name: http
+        protocol: TCP
+        port: 80
+        targetPort: 8080
+    ```
 
 4. ExternalName
-   
-   - Services of type ExternalName map a Service to a DNS name, not to a typical selector such as my-service.
-   - You specify these Services with the `spec.externalName` parameter.
-   - It maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value.
-   - No proxy of any kind is established.
 
-   ```Use Cases : This is commonly used to create a service within Kubernetes to represent an external datastore like a database that runs externally to Kubernetes. You can use that ExternalName service (as a local service) when Pods from one namespace to talk to a service in another namespace.```
+    - Services of type ExternalName map a Service to a DNS name, not to a typical selector such as my-service.
+    - You specify these Services with the `spec.externalName` parameter.
+    - It maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value.
+    - No proxy of any kind is established.
 
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: my-service
-   spec:
-     type: ExternalName
-     externalName: my.database.example.com
-   ```
+    ```Use Cases : This is commonly used to create a service within Kubernetes to represent an external datastore like a database that runs externally to Kubernetes. You can use that ExternalName service (as a local service) when Pods from one namespace to talk to a service in another namespace.```
+
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: my-service
+    spec:
+      type: ExternalName
+      externalName: my.database.example.com
+    ```
 
 ### Ingress
 
@@ -189,18 +188,18 @@ That's how Kubernetes comes to the rescue! Kubernetes provides you with a framew
 
 - template for storage class
 
-```yaml
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: azurefile-sc
-provisioner: kubernetes.io/azure-file
-reclaimPolicy: Retain
-mountOptions:
-  - dir_mode=0777
-  - file_mode=0777
-volumeBindingMode: WaitForFirstConsumer
-```
+  ```yaml
+  apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    name: azurefile-sc
+  provisioner: kubernetes.io/azure-file
+  reclaimPolicy: Retain
+  mountOptions:
+    - dir_mode=0777
+    - file_mode=0777
+  volumeBindingMode: WaitForFirstConsumer
+  ```
 
 - Field/Parameters details:
   
@@ -218,6 +217,12 @@ volumeBindingMode: WaitForFirstConsumer
 #### Architecture of Persistent Volume
 
 ![pvc](./png/pvc-architecture.png)
+
+### [RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+
+service account: user groups
+role: define permissions to user
+role binding: connect role with service account
 
 ## Scenario based questions
 

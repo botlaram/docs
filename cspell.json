@@ -5,5 +5,16 @@
         "requireWords": [
             "azurefile"
         ]
-    }
+    },
+    "words": [
+        "azurefile",
+        "chgrp",
+        "drwxrwxrwx",
+        "nslookup",
+        "realpath",
+        "timedatectl",
+        "traceroute",
+        "userdel",
+        "usermod"
+    ]
 }

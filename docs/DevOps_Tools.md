@@ -142,13 +142,3 @@ In Immutable Deploying and Configuration is done before hosting to server
 In Immutable using One Packer we can spin up multiple server
 
 ![imMutable](./png/immutable3.png)
-
-## Cheat Sheet
-
-Cloud Comparision cheat sheet 2023
-
-![cloud-comparision](./png/cloud-comparision_cheat_sheet.jpg)
-
-Azure Cloud Service Cheat Sheet
-
-![Azurecloud](./gif/Azure_cloud_service_cheat_sheet.gif)
