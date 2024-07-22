@@ -2,9 +2,9 @@
 
 ## Cheat Sheet
 
-Cloud Comparision 2023
+Cloud Comparision
 
-![cloud-comparison](./png/cloud-comparision_cheat_sheet.jpg)
+![cloud-comparison](./gif/cloud-actions.gif)
 
 Azure Cloud Service Cheat Sheet
 

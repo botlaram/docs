@@ -277,6 +277,7 @@ In this article it is explained how we could replace etcd with PostgreSQL databa
 - Following are steps to create Snapshot using Openshift
   
 1. select PVC for which you want to take snapshot, click on the options and select "create Snapshot"
+
     ![Volumesnap1](./png/volumesnap1.png)
 
 2. Select the "VolumeSnapshotClass" (will be provided by Openshift)
@@ -317,57 +318,57 @@ To share these hard-earned lessons with you. In this article, we're going to dis
 
 - What is HPA?
   
-  HPA automatically adjusts the number of pod replicas in a deployment or replica set based on observed metrics like CPU or memory usage. You set a target—like 70% CPU utilization—and HPA does the rest, scaling the pods in or out to maintain that level. It's like putting your scaling operations on cruise control.
+    HPA automatically adjusts the number of pod replicas in a deployment or replica set based on observed metrics like CPU or memory usage. You set a target—like 70% CPU utilization—and HPA does the rest, scaling the pods in or out to maintain that level. It's like putting your scaling operations on cruise control.
 
 - Why Was HPA Devised?
   
-  Back in the day, before the cloud-native era, scaling was often a manual and painful process. You'd have to provision new servers, configure them, and then deploy your application. This was time-consuming, error-prone, and not very agile.
-  
-  When Kubernetes came along, it revolutionized how we think about deploying and managing applications. But Kubernetes needed a way to handle automatic scaling to truly make the platform dynamic and responsive to the actual needs of running applications. That's where HPA comes in.
-  
-  Simplicity: HPA is designed to be simple and straightforward. You don't need a Ph.D. in distributed systems to set it up. Just specify the metric and the target, and you're good to go.
-  
-  Resource Efficiency: Before autoscaling, you'd often over-provision resources to handle potential spikes in traffic, which is wasteful. HPA allows you to use resources more efficiently by scaling based on actual needs.
-  
-  Operational Ease: With HPA, the operational burden is reduced. You don't have to wake up in the middle of the night to scale your application manually; HPA has got your back.
-  
-  Built-In Metrics: Initially, HPA was designed to work with basic metrics like CPU and memory, which are often good enough indicators for many types of workloads.
-  
-  So, in a nutshell, HPA was devised to make life easier for DevOps folks like us, allowing for more efficient use of resources and simplifying operational complexities. It's like the Swiss Army knife of Kubernetes scaling for straightforward use-cases. What do you think? Want to dive deeper into any aspect of HPA?
-  
-  So... When to Use HPA?  Predictable Workloads: If you're dealing with an application that has a fairly predictable pattern—like a web app that gets more traffic during the day and less at night—HPA is a solid choice. You can set it to scale based on CPU or memory usage, which are often good indicators of load for these types of apps.
-  
-  Simple Metrics: HPA is great when you're looking at straightforward metrics like CPU and memory. If you don't need to scale based on more complex or custom metrics, HPA is easier to set up and manage.
+    Back in the day, before the cloud-native era, scaling was often a manual and painful process. You'd have to provision new servers, configure them, and then deploy your application. This was time-consuming, error-prone, and not very agile.
 
-  Quick Setup: If you're in a situation where you need to get autoscaling up and running quickly, HPA is your friend. Being a native Kubernetes feature, it's well-documented and supported, making it easier to implement.
-  
-  Stateless Applications: HPA is particularly well-suited for stateless applications where each pod is interchangeable. This makes it easier to scale pods in and out without worrying about maintaining state.
-  
-  Built-In Kubernetes Support: Since HPA is a built-in feature, it comes with the advantage of native integration into the Kubernetes ecosystem, including monitoring and logging through tools like Prometheus and Grafana.
+    When Kubernetes came along, it revolutionized how we think about deploying and managing applications. But Kubernetes needed a way to handle automatic scaling to truly make the platform dynamic and responsive to the actual needs of running applications. That's where HPA comes in.
+
+    Simplicity: HPA is designed to be simple and straightforward. You don't need a Ph.D. in distributed systems to set it up. Just specify the metric and the target, and you're good to go.
+
+    Resource Efficiency: Before autoscaling, you'd often over-provision resources to handle potential spikes in traffic, which is wasteful. HPA allows you to use resources more efficiently by scaling based on actual needs.
+
+    Operational Ease: With HPA, the operational burden is reduced. You don't have to wake up in the middle of the night to scale your application manually; HPA has got your back.
+
+    Built-In Metrics: Initially, HPA was designed to work with basic metrics like CPU and memory, which are often good enough indicators for many types of workloads.
+
+    So, in a nutshell, HPA was devised to make life easier for DevOps folks like us, allowing for more efficient use of resources and simplifying operational complexities. It's like the Swiss Army knife of Kubernetes scaling for straightforward use-cases. What do you think? Want to dive deeper into any aspect of HPA?
+
+    So... When to Use HPA?  Predictable Workloads: If you're dealing with an application that has a fairly predictable pattern—like a web app that gets more traffic during the day and less at night—HPA is a solid choice. You can set it to scale based on CPU or memory usage, which are often good indicators of load for these types of apps.
+
+    Simple Metrics: HPA is great when you're looking at straightforward metrics like CPU and memory. If you don't need to scale based on more complex or custom metrics, HPA is easier to set up and manage.
+
+    Quick Setup: If you're in a situation where you need to get autoscaling up and running quickly, HPA is your friend. Being a native Kubernetes feature, it's well-documented and supported, making it easier to implement.
+
+    Stateless Applications: HPA is particularly well-suited for stateless applications where each pod is interchangeable. This makes it easier to scale pods in and out without worrying about maintaining state.
+
+    Built-In Kubernetes Support: Since HPA is a built-in feature, it comes with the advantage of native integration into the Kubernetes ecosystem, including monitoring and logging through tools like Prometheus and Grafana.
 
 - What is KEDA?
   
-  KEDA stands for Kubernetes Event-Driven Autoscaling. Unlike HPA, which is more about scaling based on system metrics like CPU and memory, KEDA is designed to scale your application based on events. These events could be anything from the length of a message queue to the number of unprocessed database records.
+    KEDA stands for Kubernetes Event-Driven Autoscaling. Unlike HPA, which is more about scaling based on system metrics like CPU and memory, KEDA is designed to scale your application based on events. These events could be anything from the length of a message queue to the number of unprocessed database records.
   
-  KEDA works by deploying a custom metric server and custom resources in your Kubernetes cluster. It then integrates with various event sources like Kafka, RabbitMQ, Azure Event Hubs, and many more, allowing you to scale your application based on metrics from these systems.
+    KEDA works by deploying a custom metric server and custom resources in your Kubernetes cluster. It then integrates with various event sources like Kafka, RabbitMQ, Azure Event Hubs, and many more, allowing you to scale your application based on metrics from these systems.
 
 - Why Was KEDA Devised?
-  
-  Event-Driven Architectures: Modern applications are increasingly adopting event-driven architectures, where services communicate asynchronously through events. Traditional autoscalers like HPA aren't designed to handle this kind of workload.
-  
-  Complex Metrics: While HPA is great for simple metrics, what if you need to scale based on the length of a Kafka topic or the number of messages in an Azure Queue? That's where KEDA comes in.
-  
-  Zero to N Scaling: One of the coolest features of KEDA is its ability to scale your application back to zero when there are no events to process. This can lead to significant cost savings.
-  
-  Extensibility: KEDA is designed to be extensible, allowing you to write your own scalers or use community-contributed ones. This makes it incredibly flexible and adaptable to various use-cases.
-  
-  Multi-Cloud and On-Premises: KEDA supports a wide range of event sources, making it suitable for both cloud and on-premises deployments.
-  
-  The Gap that KEDA Fills Over HPA
-  
-  While HPA is like your reliable sedan, KEDA is more like a tricked-out sports car with all the bells and whistles. It was devised to fill the gaps left by HPA, particularly for applications that are event-driven or that require scaling based on custom or external metrics.
-  
-  So, if you're dealing with complex, event-driven architectures, or if you need to scale based on metrics that HPA doesn't support out of the box, KEDA is your go-to. It's like the next evolution in Kubernetes autoscaling, designed for the complexities of modern, cloud-native applications.
+
+    Event-Driven Architectures: Modern applications are increasingly adopting event-driven architectures, where services communicate asynchronously through events. Traditional autoscalers like HPA aren't designed to handle this kind of workload.
+
+    Complex Metrics: While HPA is great for simple metrics, what if you need to scale based on the length of a Kafka topic or the number of messages in an Azure Queue? That's where KEDA comes in.
+
+    Zero to N Scaling: One of the coolest features of KEDA is its ability to scale your application back to zero when there are no events to process. This can lead to significant cost savings.
+
+    Extensibility: KEDA is designed to be extensible, allowing you to write your own scalers or use community-contributed ones. This makes it incredibly flexible and adaptable to various use-cases.
+
+    Multi-Cloud and On-Premises: KEDA supports a wide range of event sources, making it suitable for both cloud and on-premises deployments.
+
+    The Gap that KEDA Fills Over HPA
+
+    While HPA is like your reliable sedan, KEDA is more like a tricked-out sports car with all the bells and whistles. It was devised to fill the gaps left by HPA, particularly for applications that are event-driven or that require scaling based on custom or external metrics.
+
+    So, if you're dealing with complex, event-driven architectures, or if you need to scale based on metrics that HPA doesn't support out of the box, KEDA is your go-to. It's like the next evolution in Kubernetes autoscaling, designed for the complexities of modern, cloud-native applications.
 
 #### Real-World Scenarios
 
@@ -455,3 +456,9 @@ On the flip side, if your application lives in the fast-paced realm of event-dri
 Remember, choosing between HPA and KEDA isn't about which is better overall, but which is better for your specific needs. So take stock of your application's requirements, your team's expertise, and your long-term scaling strategy before making the call.
 
 As you venture into your next Kubernetes project, I hope this guide serves as a useful roadmap for your autoscaling decisions. And hey, since you're all about diving deeper, maybe explore setting up these autoscaling strategies in a hands-on way. Trust me, there's no better teacher than experience.
+
+## Publisher's
+
+### [Devopscube](https://devopscube.com/)
+
+### [ByteBytego](https://substack.com/@bytebytego399569)
