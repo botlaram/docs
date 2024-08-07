@@ -2,7 +2,7 @@
 
 ## Cheat Sheet
 
-### Cloud Comparision
+### Cloud Comparison
 
 ![cloud-comparison](./gif/cloud-actions.gif)
 
@@ -20,7 +20,7 @@
 
 ### What is Cloud ?
 
-In simpler terms, imagine the cloud as a vast, virtual space where you can store files, run software, and access various services over the internet. 
+In simpler terms, imagine the cloud as a vast, virtual space where you can store files, run software, and access various services over the internet.
 
 It's like having a powerful computer somewhere out there on the web that you can use for tasks without needing to own or physically manage the hardware. This allows users to access data and applications from anywhere with an internet connection.
 
@@ -111,3 +111,17 @@ When deciding between IaaS, PaaS, and SaaS in Azure, consider factors such as:
 - **Resource Control:** Choose IaaS if you need more control over the underlying infrastructure.
 
 - **Cost Considerations:** Evaluate pricing models for each service and choose based on your budget and usage patterns.
+
+## Cheat Sheet
+
+### Cloud Comparison
+
+![cloud-comparison](./gif/cloud-actions.gif)
+
+### Azure Cloud Service Cheat Sheet
+
+![Azure cloud](./gif/Azure_cloud_service_cheat_sheet.gif)
+
+### Azure Resource Hierarchy
+
+![Azure Resource](./png/azure-resource-hierarchy1.png)
