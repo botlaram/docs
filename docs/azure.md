@@ -1,30 +1,14 @@
-<!-- # Cloud
-
-## Cheat Sheet
-
-### Cloud Comparison
-
-![cloud-comparison](./gif/cloud-actions.gif)
-
-### Azure Cloud Service Cheat Sheet
-
-![Azure cloud](./gif/Azure_cloud_service_cheat_sheet.gif)
-
-### Azure Resource Hierarchy
-
-![Azure Resource](./png/azure-resource-hierarchy1.png) -->
-
-# Zero to Hero
+# All about Azure Cloud
 
 ## Basics of Cloud Computing
 
-### What is Cloud ?
+### What is Cloud
 
 In simpler terms, imagine the cloud as a vast, virtual space where you can store files, run software, and access various services over the internet.
 
 It's like having a powerful computer somewhere out there on the web that you can use for tasks without needing to own or physically manage the hardware. This allows users to access data and applications from anywhere with an internet connection.
 
-### What is Cloud Computing ?
+### What is Cloud Computing
 
 Cloud computing is a technology model that involves the delivery of computing services over the internet. Instead of owning and maintaining physical servers and infrastructure, users can access and use computing resources, applications, and storage provided by either third-party service providers (public cloud) or their own organization (private cloud) through the internet. These services are hosted in data centers located around the world.
 
@@ -52,7 +36,7 @@ In essence, cloud computing can involve both third-party providers (public cloud
 
 **What It's Like:** It's like having your private computer space, but sometimes you use the shared internet space too.
 
-**Example:** A business storing sensitive data in its private space but using the public cloud for extra storage or specific tasks.
+**Example:** A business storing sensitive data in its private space but using the public cloud for hosting web-application or using virtual machines from other cloud providers.
 
 ### In a Nutshell
 
@@ -64,7 +48,7 @@ In essence, cloud computing can involve both third-party providers (public cloud
 
 ## IaaS vs PaaS vs SaaS models in Azure
 
-### Infrastructure as a Service (IaaS)
+### Infrastructure as a Service
 
 IaaS is a cloud computing model that provides virtualized computing resources over the internet. In Azure, IaaS offerings include virtual machines, storage, and networking components. Users have more control over the infrastructure but are responsible for managing and maintaining the operating system, middleware, and applications.
 
@@ -76,7 +60,7 @@ IaaS is a cloud computing model that provides virtualized computing resources ov
 
 - **Flexibility:** IaaS is suitable for a wide range of applications, offering flexibility in terms of technology stack.
 
-### Platform as a Service (PaaS)
+### Platform as a Service
 
 PaaS is a cloud computing model that provides a platform allowing customers to develop, run, and manage applications without dealing with the complexity of underlying infrastructure. In Azure, PaaS offerings include Azure App Service, Azure SQL Database, and Azure Functions.
 
@@ -88,7 +72,7 @@ PaaS is a cloud computing model that provides a platform allowing customers to d
 
 - **Reduced Maintenance:** Azure handles tasks like patching, updates, and maintenance, freeing up resources for innovation.
 
-### Software as a Service (SaaS)
+### Software as a Service
 
 SaaS is a cloud computing model that delivers software applications over the internet. Users can access the software through a web browser without the need for installation or maintenance. In Azure, SaaS offerings include Microsoft 365, Dynamics 365, and many third-party applications.
 
@@ -111,6 +95,10 @@ When deciding between IaaS, PaaS, and SaaS in Azure, consider factors such as:
 - **Resource Control:** Choose IaaS if you need more control over the underlying infrastructure.
 
 - **Cost Considerations:** Evaluate pricing models for each service and choose based on your budget and usage patterns.
+
+### IAAS-PAAS-SAAS
+
+![iaaspaassaas](./png/iaaspaassaas.png)
 
 ## Cheat Sheet
 
