@@ -21,6 +21,7 @@
         "timedatectl",
         "traceroute",
         "userdel",
-        "usermod"
+        "usermod",
+        "vnet"
     ]
 }
