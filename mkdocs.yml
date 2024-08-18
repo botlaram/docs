@@ -1,6 +1,6 @@
 site_name: UseMe
 site_author: botlaram
-site_description: "this Mkdocs contains Python Modules, Devops Applications and Cheat Code for tools (GIT, DOCKER, K8, HELM)"
+site_description: "this Mkdocs contains Python Modules, about Devops and Cheat Code"
 repo_url: "https://github.com/botlaram"
 
 nav:
