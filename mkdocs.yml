@@ -6,6 +6,7 @@ repo_url: "https://github.com/botlaram"
 nav:
 - Home: index.md
 - Cheat Code: cheat_code.md
+- Python: python.md
 - Linux: linux.md
 - Computer Networking: networking.md
 - DSA: DSA.md

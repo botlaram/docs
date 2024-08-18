@@ -1,8 +1,40 @@
-##Builtin
- 
-### Args and Kwargs
+# Python
 
+All about python modules, syntax and function
+
+## For-loop
+
+```python
+# print even
+list=[4,5,25,6,8,8,9,2,2,3,97,52,96,32,84,19]
+for i in list:
+    if i%2 == 0:
+        print(i, end="")
+        
+# using while loop
+candy=10
+withdrawal=12
+i=1
+while i <= withdrawal:
+    if i > candy:
+        print(f"{i} : out of stock")
+        break
+    print(f"{i} : withdrawal")
+    i+=1
+
+# create list by taking input from user
+
+list=[]
+enter_range=int(input("enter the range to create list of elements"))
+for i in range(enter_range):
+    enter_num=input(f"enter element {i+1} :")
+    list.append(enter_num)
+print(list)
 ```
+
+## Args and Kwargs
+
+```python
 ##args
 
 def sum(*args):
@@ -25,23 +57,58 @@ student(name="John",age=30)
 student(name="Ram",age=26)
 
 ```
- 
-### Lambda
 
+## Dictionary
+
+```python
+person = {
+    "name":"ram",
+    "age":25,
+    "gender":"male",
+    "profession":"engineer"
+}
+
+## find value with key
+print(person.get("age"))
+
+##print all dict
+print(person)
+
+#or using for loop
+for i,j in person.items():
+    print(f"keys: {i} , values :{j}")
+    
+##print all keys
+print(person.keys())
+
+##print all values
+print(person.values())
+
+##items return list containing all values in tuple 
+print(person.items())
+
+
+##update dict
+person.update({"salary":"100000"})
+print(person)
+
+print(person.get("amount"))
 ```
+
+## Lambda
+
+```python
 ##passing argument in lambda
 
-nums=[2,4,6,8,10]
+numbers=[2,4,6,8,10]
 
-def mul(x):
+def multiple(x):
 
     for i in x:
         i=i*2
         print(i,end=" ")
 
-mul(nums)
-
- 
+multiple(numbers)
 
 ##passing argument in lambda using map
  
@@ -50,8 +117,8 @@ print(doubled_map)
 ```
 
 ### Filter
-```
 
+```python
 ##filter is similar to mapping
  
 nums_list = [1,2,3,4,5,6,7,8,9]
@@ -73,11 +140,11 @@ print(even_list)
 
 ### Mapping
 
-```
+```python
 double_num = []
 numbers = (5,6,7,8,9)
 
-for num in  numbers:
+for num in numbers:
     double_num.append(num * 2)
 
 print(double_num)
@@ -90,30 +157,57 @@ def double(num):
 double_List = list(map(double,numbers))
 print(double_List)
 ```
- 
+
 ### List Comprehension
 
-```
+```text
 syntax > [return-value for-loop if-condition]
 
 ```
 
+```python
+## with out list comprehension 
+## print number which are divisible by 3
+
+ls=[]
+for i in range(100):
+    if i%3==0:
+        ls.append(i)
+print(ls)
+
+## using list comprehension
+
+ls=[i for i in range(100) if i%3==0]
+print(ls)
 ```
+
+### Dictionary Comprehension
+
+```text
+syntax > {return-value for-loop if-condition}
+```
+
+```python
+
+dict1={i:f"item{i}" for i in range(100)}
+print(dict1)
+
 nums_List=[5,6,7,8]
- 
-##listcomprehension for maping
+
+## listcomprehension for maping
 
 mapping = list(x*2 for x in nums_List)
 print(mapping)
  
-##listcomprehension for filtering
+## listcomprehension for filtering
 
 filtering = list(x for x in nums_List if x%2==0)
 print(filtering)
 ```
- 
-### Decorator
-```
+
+## Decorator
+
+```python
 def first(func):    ##passing the func as an argument
     def second():
         print("execute the first line")
@@ -126,23 +220,20 @@ def middle():
     print("execute the middle line")
    
 # mid = first(middle)  ##another way to call decorate
-middle
+middle()
 ```
 
-### Read Write File
+## Read Write File
 
-```
+```python
 f = open("./read_write_demo.txt","r")  ##r=read
 print(f.read())   ##read() to print the txt 
 f.close() ##close
 ```
- 
+
 ### Logging
 
-- for creating a log file for each different py file for those whose function are imported
-from different py file
-
-```
+```python
 import logging
 
 ##using getlogger to create seperate log files
@@ -163,11 +254,12 @@ def something():
     logger.info("this is a something function")
 ```
 
-### Class
+## Class
 
-```
+### basic class structure
 
-#basic class structure
+```python
+
 
 class Student:
     ##self hold the value of instant obj
@@ -191,35 +283,29 @@ class Student:
 
    
 
-##for every class we need to define obj
-
-##here b1 var is obj for class Book
+## for every class we need to define obj
+## here b1 var is obj for class Book
 
 b1 = Student("RAM",26)  ##b1 here is obj
-
 b1.hello()   ##obj.method
-
 print(b1.get_name())    ##obj.method
-
 b1.get_details()
 
  
-
 b2=Student("Krishna",11)   ##use the same class by creating another obj
 b2.get_details()
-
 ```
 
-#### Isinstance
+### Isinstance
 
-```
+```python
 
 x = isinstance("Hello", (float, int, str, list, dict, tuple))
 print(x)
 
 ```
 
-```
+```python
 class Myclass:
     name = "John"
 
@@ -227,9 +313,9 @@ obj = Myclass()
 x = isinstance(obj, Myclass)
 ```
 
-#### Dataclass
+### Dataclass
 
-```
+```python
 #without dataclass
 
 class Person():
@@ -257,36 +343,36 @@ book=Book("Peaceofmind","Unknown",50.50)
 print(book.price)
 ```
 
-#### Method-Static
+### Method-Static
 
-```
+```python
 ##class method :A class method is a method which is bound to the class and not the object of the class.
-##static method : A static method is used when we want to create a function without using self as instance-(just to create a independent fucntin)
+##static method : A static method is used when we want to create a function without using self as instance-(just to create a independent fucntion)
 
 from datetime import date
 
 class Person:
-	def __init__(self, name, age):
-		self.name = name
-		self.age = age
-
-	# a class method to create a
-	# Person object by birth year.
-	@classmethod
-	def fromBirthYear(cls, name, year):
-		return cls(name, date.today().year - year)
-
-	# a static method to check if a
-	# Person is adult or not.
-	@staticmethod
-	def isAdult(age):
-		return age > 18
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+    # a class method to create a
+    # Person object by birth year.
+    @classmethod
+    def fromBirthYear(cls, name, year):
+        return cls(name, date.today().year - year)
+    
+    # a static method to check if a
+    # Person is adult or not.
+    @staticmethod
+    def isAdult(age):
+        return age > 18
 
     ##static method eg 2
     ##this function is independent of the class ,created without using self as instance
-	@staticmethod
-	def thankyou(msg):
-		return msg
+    @staticmethod
+    def thankyou(msg):
+        return msg
 
 person1 = Person('ram', 21)
 person2 = Person.fromBirthYear('ram', 1997)
@@ -302,9 +388,9 @@ print(Person.thankyou("thanks for looking up this file"))
 
 ```
 
-#### Inheritance
+### Inheritance
 
-```
+```python
 class Publisher:
 
     def __init__(self,title,price) -> None:
