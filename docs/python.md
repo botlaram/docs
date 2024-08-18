@@ -97,6 +97,10 @@ print(person.get("amount"))
 
 ## Lambda
 
+```text
+syntax > lambda arguments : expression 
+```
+
 ```python
 ##passing argument in lambda
 
@@ -112,7 +116,7 @@ multiple(numbers)
 
 ##passing argument in lambda using map
  
-doubled_map = list(map(lambda x: x*2,nums))
+doubled_map = list(map(lambda x : x*2,nums))
 print(doubled_map)
 ```
 
@@ -194,12 +198,12 @@ print(dict1)
 
 nums_List=[5,6,7,8]
 
-## listcomprehension for maping
+## list comprehension for maping
 
 mapping = list(x*2 for x in nums_List)
 print(mapping)
  
-## listcomprehension for filtering
+## list comprehension for filtering
 
 filtering = list(x for x in nums_List if x%2==0)
 print(filtering)
@@ -231,7 +235,7 @@ print(f.read())   ##read() to print the txt
 f.close() ##close
 ```
 
-### Logging
+## Logging
 
 ```python
 import logging
@@ -256,7 +260,7 @@ def something():
 
 ## Class
 
-### basic class structure
+### Basic class structure
 
 ```python
 
