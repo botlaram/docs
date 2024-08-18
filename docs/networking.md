@@ -47,6 +47,41 @@ MongoDB = 27017
 
 Dynamic/Private Ports (49152-65535): Port numbers from 49152 to 65535 are considered dynamic or private ports. They are used for temporary or private purposes, and they are less likely to be officially registered with IANA.
 
+### How to check open ports in linux and window
+
+Linux
+
+```shell
+sudo netstat -tuln
+or
+sudo netstat -tulnp | grep :<port_number>
+
+sudo kill -9 <PID>  ## Delete local host running backend using netstat
+```
+
+Explanation:
+
+-t: Show TCP ports.
+-u: Show UDP ports.
+-l: Show only listening ports.
+-n: Show numerical addresses instead of resolving host names.
+
+Windows
+
+```command
+netstat -ano | findstr <port-number>
+or
+netstat -a -o | find "9090"
+
+taskkill /F /PID 12345 ## Delete local host running backend using netstat
+```
+
+Explanation:
+
+-a: Displays all connections and listening ports.
+-n: Displays addresses and port numbers in numerical form.
+-o: Displays the process ID associated with each connection.
+
 ## Internet speed
 
 ![Port Number](./png/Internetspeed.png)
@@ -135,18 +170,13 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 
 ![SMTP](./png/smtp.png)
 
+## DNS Architecture
+
+![DNS](./png/dns-architecture.png)
+
 ## Load balancer Algorithm
 
 ![load-balancer](./gif/load_balancer_methods.gif)
-
-## Delete local host running backend using netstat
-
-```shell
-netstat -ano | findstr 9090
-netstat -a -o | find "9090"
-taskkill /F /PID 12345
-
-```
 
 ## Some of the Important Port Number
 

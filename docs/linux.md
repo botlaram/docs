@@ -4,27 +4,67 @@
 
 ![Linux-fhs](./png/linux-fhs.png)
 
-## Chmod
+## File Permissions
 
-- Chmod is use for Modify permission of file/directory
+### Umask
 
-    ```shell
-    chmod 777 "file-name/folder-name"
+The umask (short for "user file creation mode mask") is a Linux/Unix system setting that determines the default permissions for newly created files and directories. It effectively "masks out" certain permission bits, preventing them from being set when new files or directories are created.
 
-    drwxrwxrwx > rwx abbreviates as Read, Write , Delete/Execute
-    ```
+Understanding File and Directory Permissions  
+In Linux, file and directory permissions are represented by three sets of bits, each corresponding to the user (owner), group, and others. These are usually represented as three digits in octal (base-8), where each digit can be a combination of:
 
-- Chown is use for providing permissions or changing the ownership to other User
+4: Read (r)  
+2: Write (w)  
+1: Execute (x)
 
-    ```shell
-    change Owner/User >  `chown "user-name" "file/folder-name"`
+For example:
 
-    change Owner and Group > `chown "user-name":"group-name" "file/folder-name"`
-    ```
+7 (4 + 2 + 1) means read, write, and execute permissions.  
+6 (4 + 2) means read and write permissions.  
+5 (4 + 1) means read and execute permissions.  
 
-- Chmod [calculator](https://chmod-calculator.com/)
+666 defined as read and write for everyone.
 
-## Steps to Add New User
+Default Permissions Before umask  
+Files: The default permissions for a newly created file are usually 666 (read and write for everyone). Files do not have execute permissions by default.  
+Directories: The default permissions for a newly created directory are 777 (read, write, and execute for everyone).  
+How umask Works  
+The umask subtracts (or masks out) permissions from these defaults. The umask value is subtracted from the default permissions to determine the actual permissions of a new file or directory.
+
+For example:
+
+A umask of 022 masks out the write permission for the group and others:  
+Files: 666 (default) - 022 = 644 (read and write for the owner, read-only for group and others).  
+Directories: 777 (default) - 022 = 755 (read, write, and execute for the owner, read and execute for group and others).
+
+Common umask Values
+022: Common default value, resulting in 755 for directories and 644 for files.  
+002: Allows group members to have write permissions, resulting in 775 for directories and 664 for files.  
+077: Highly restrictive, giving full access only to the owner, resulting in 700 for directories and 600 for files.  
+
+### chmod
+
+Chmod is use for Modify permission of file/directory
+
+```shell
+#drwxrwxrwx > rwx abbreviates as Read, Write , Delete/Execute
+
+chmod 777 "file-name/folder-name"
+```
+
+Chown is use for providing permissions or changing the ownership to other User
+
+```shell
+#change Owner/User
+chown "user-name" "file/folder-name"
+
+#change Owner and Group
+chown "user-name":"group-name" "file/folder-name"
+```
+
+Chmod [calculator](https://chmod-calculator.com/)
+
+### Steps to Add New User
 
 ```shell
 # To add user in linux
@@ -47,7 +87,7 @@ sudo visudo
 %<username> ALL=(ALL) NOPASSWD:ALL     #add this line
 ```
 
-## Change host name
+### Change host name
 
 ```shell
 sudo hostnamectl set-hostname <enter-hostname>

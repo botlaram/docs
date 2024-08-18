@@ -64,24 +64,79 @@ Docker is a software development tool and a virtualization technology that makes
 
 ### Docker Image Command
 
-```text
-docker build command: It will build Docker images by using the Dockerfile.  
-docker pull command: Docker pull command will pull the Docker image which is available in the docker-hub.  
-docker images command: It will list all the images which are pulled and build in the docker host.  
-docker inspect command: It will helps to debug the docker image if any errors occurred while building an image or pulling the image.  
-docker push command: Docker command will push the docker image into the Docker hub.  
-docker save command: It will save the docker image in the form of dockerfile.  
-docker rmi command: It will remove the docker image.  
+```bash
+docker build  ## It will build Docker images by using the Dockerfile.  
+docker pull  ## Docker pull command will pull the Docker image which is available in the docker-hub.  
+docker images  ## It will list all the images which are pulled and build in the docker host.  
+docker inspect  ## It will helps to debug the docker image if any errors occurred while building an image or pulling the image.  
+docker push  ## Docker command will push the docker image into the Docker hub.  
+docker save  ## It will save the docker image in the form of dockerfile.  
+docker rmi  ## It will remove the docker image.  
 ```
 
 ### Docker Container Command
 
-```text
-docker attach command: Connecting to an Existing Container
-docker ps command: To list the running containers.  
-docker container inspect infinite Command: To Inspect the Docker containers.  
-docker exec command: To execute the commands in the running containers.  
-docker cp command: To copy the file from docker host to the docker containers
+```bash
+docker attach  ## Connecting to an Existing Container
+docker ps  ## To list the running containers.  
+docker container inspect infinite  ## To Inspect the Docker containers.  
+docker exec  ## To execute the commands in the running containers.  
+docker cp  ## To copy the file from docker host to the docker containers
+```
+
+### Docker Multi-Stage Build
+
+A multi-stage build in Docker allows you to use multiple FROM statements in your Dockerfile, each creating a separate stage of the build process. This approach is particularly useful for creating smaller, more efficient Docker images, as it allows you to copy only the necessary artifacts from one stage to another, leaving behind any intermediate or unnecessary files.
+
+Why Use Multi-Stage Builds?
+
+1. Smaller Images: By copying only the necessary files to the final image, you can significantly reduce the size of your Docker image.  
+2. Better Security: You can avoid including build tools and dependencies in the final image, reducing the attack surface.
+3. Cleaner Build Process: Each stage can focus on a specific part of the build process, making the Dockerfile easier to understand and maintain.
+
+#### Example: Building a Go Application Using Multi-Stage Build
+
+Step 1: Create a Simple Go Application
+
+```go
+// main.go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, Docker Multi-Stage Build!")
+}
+```
+
+Step 2: Create the Dockerfile
+
+Now, create a Dockerfile that uses a multi-stage build.
+
+```Docker
+# Stage 1: Build the Go application
+FROM golang:1.20 AS build
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the Go source code into the container
+COPY . .
+
+# Build the Go application
+RUN go mod init example.com/multistage && go build -o app
+
+# Stage 2: Create a minimal image
+FROM alpine:latest
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copies the compiled binary from the first stage (build) to the second stage's /app directory.
+COPY --from=build /app/app . 
+
+# Run the application
+CMD ["./app"]
 ```
 
 ### Demo (use flask application)
@@ -286,3 +341,7 @@ Usage:
 Enables users to perform all Argo CD operations via the terminal.
 Useful for scripting and automation of deployment tasks.
 Offers commands to manage applications, projects, and repositories.
+
+## Ansible
+
+### [Ansible role folder structure](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html)
