@@ -31,6 +31,100 @@ That's how Kubernetes comes to the rescue! Kubernetes provides you with a framew
 
 ![Architecture](./png/k8_architecture.jpg)
 
+#### Master Components
+
+The master components provide the cluster's control plane, making global decisions about the cluster (e.g., scheduling) and detecting/responding to cluster events.
+
+1. API Server (kube-apiserver)
+
+Acts as the front-end for the Kubernetes control plane.
+Exposes the Kubernetes API, which is used by all other components to interact with the cluster.
+Validates and configures data for the API objects, such as pods, services, and replication controllers.
+
+2. etcd
+
+A key-value store used as Kubernetes’ backing store for all cluster data.
+Stores configuration data, state information, and metadata, which can be accessed by any component in the cluster.
+Ensures strong consistency and durability, making it critical for the functioning of the cluster.
+
+3. Controller Manager (kube-controller-manager)
+
+Runs controller processes to regulate the state of the cluster.
+Examples include the Node Controller (handles nodes becoming unavailable), Replication Controller (ensures the correct number of pods), and Endpoint Controller (manages endpoint objects).
+Consolidates several logically separate controllers into a single process to reduce complexity.
+
+4. Scheduler (kube-scheduler)
+
+Assigns newly created pods to nodes based on resource availability, affinity/anti-affinity rules, and other constraints.
+Continuously monitors for unscheduled pods and schedules them onto appropriate nodes in the cluster.
+
+#### Node Components
+
+Node components run on every node in the cluster and manage the containers running on those nodes.
+
+1. kubelet
+
+An agent that runs on each node in the cluster.  
+Ensures that the containers described by pod specs are running and healthy.  
+Communicates with the Kubernetes API server and reports the status of the node and the pods running on it.
+
+2. kube-proxy
+
+A network proxy that runs on each node.  
+Manages the network rules on nodes, allowing network communication to your pods from inside or outside the cluster.  
+Handles the forwarding of requests to the appropriate pod and ensures that services are accessible.
+
+3. Container Runtime
+
+The software responsible for running the containers (e.g., Docker, containerd, CRI-O).  
+Kubernetes supports multiple container runtimes, and the kubelet uses the Container Runtime Interface (CRI) to communicate with them.  
+
+#### Additional Components
+
+1. Pod
+
+The smallest and simplest Kubernetes object, representing a single instance of a running process in the cluster.  
+Typically contains one or more containers that share the same network namespace and storage.
+
+2. Service
+
+An abstraction that defines a logical set of pods and a policy by which to access them.  
+Services allow for load balancing and service discovery within the cluster.  
+
+3. ConfigMaps and Secrets:
+
+ConfigMaps
+
+Used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or configuration files.  
+
+Secrets: Similar to ConfigMaps but specifically designed to store sensitive data like passwords, tokens, and keys.  
+
+Namespaces:
+
+Virtual clusters backed by the same physical cluster.  
+Useful for dividing cluster resources between multiple users, teams, or projects.
+
+4. Persistent Volumes (PVs) and Persistent Volume Claims (PVCs):
+
+PVs: Storage resources in the cluster, such as an external disk, network storage, etc.
+PVCs: Requests for storage by a user, which are then matched to available PVs.
+
+#### Cluster Components (Optional but Commonly Used)
+Ingress Controller:
+
+Manages external access to services within a Kubernetes cluster, typically HTTP/HTTPS.  
+Provides load balancing, SSL termination, and name-based virtual hosting.  
+
+Helm:
+
+A package manager for Kubernetes that helps define, install, and upgrade even the most complex Kubernetes applications.  
+Manages Kubernetes manifests as charts, which are packages of pre-configured Kubernetes resources.
+
+Dashboard:
+
+A web-based Kubernetes user interface.  
+Provides an overview of applications running in the cluster, as well as the ability to manage them.
+
 ### K8 workflow diagram
 
 ![K8 Work flow Architecture](./png/k8_timezone_architect.PNG)
