@@ -457,7 +457,7 @@ Remember, choosing between HPA and KEDA isn't about which is better overall, but
 
 As you venture into your next Kubernetes project, I hope this guide serves as a useful roadmap for your autoscaling decisions. And hey, since you're all about diving deeper, maybe explore setting up these autoscaling strategies in a hands-on way. Trust me, there's no better teacher than experience.
 
-## Publisher's
+## Publisher's [ref](ref.md)
 
 ### [Devopscube](https://devopscube.com/)
 
