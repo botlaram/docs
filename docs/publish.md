@@ -462,3 +462,7 @@ As you venture into your next Kubernetes project, I hope this guide serves as a 
 ### [Devopscube](https://devopscube.com/)
 
 ### [ByteBytego](https://substack.com/@bytebytego399569)
+
+### [Jeff Brown](https://jeffbrown.tech/)
+
+### [Coach DevOps](https://www.coachdevops.com/)

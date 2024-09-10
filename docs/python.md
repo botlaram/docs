@@ -211,6 +211,8 @@ print(filtering)
 
 ## Decorator
 
+Decorators are a powerful and elegant feature in Python that allows you to modify or extend the behavior of functions or methods without changing their actual code.
+
 ```python
 def first(func):    ##passing the func as an argument
     def second():
@@ -262,9 +264,9 @@ def something():
 
 ### Basic class structure
 
+__init__ is a special method, also known as a constructor, that is automatically called when a new instance (object) of a class is created. It is used to initialize the object's attributes (i.e., variables) and set up any necessary state.
+
 ```python
-
-
 class Student:
     ##self hold the value of instant obj
 
@@ -349,9 +351,11 @@ print(book.price)
 
 ### Method-Static
 
+Class method :A class method is a method which is bound to the class and not the object of the class.
+
+Static method : A static method is used when we want to create a function without using self as instance-(just to create a independent function)
+
 ```python
-##class method :A class method is a method which is bound to the class and not the object of the class.
-##static method : A static method is used when we want to create a function without using self as instance-(just to create a independent fucntion)
 
 from datetime import date
 

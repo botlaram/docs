@@ -170,6 +170,17 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 
 ![SMTP](./png/smtp.png)
 
+## HTTP: Hyper Text Transfer Protocol
+
+![HTTP](./gif/HTTP.gif)
+
+## HTTPS
+
+![HTTPS](./gif/HTTPS.gif)
+
+## HTTP vs HTTPS
+
+![HTTPvsHTTPS](./png/HTTPvsHTTPS.PNG)
 ## DNS Architecture
 
 ![DNS](./png/dns-architecture.png)
