@@ -260,6 +260,30 @@ def something():
     logger.info("this is a something function")
 ```
 
+## Access modifier's Public, Private and Protected
+
+A Class in Python has three types of access modifiers:
+
+**Public Access Modifier**: Theoretically, public methods and fields can be accessed directly by any class.
+
+**Protected Access Modifier**: Theoretically, protected methods and fields can be accessed within the same class it is declared and its subclass.
+
+**Private Access Modifier**: Theoretically, private methods and fields can be only accessed within the same class it is declared.
+
+## Deep and Shallow Copy
+
+Deep copy
+
+In the case of deep copy, a copy of the object is copied into another object. It means that any changes made to a copy of the object do not reflect in the original object.
+
+![alt text](deepcopy.png)
+
+Shallow copy
+
+In Shallow copy, a reference of an object is copied into another object. It means that any changes made to a copy of an object do reflect in the original object
+
+![alt text](shallowcopy.png)
+
 ## Class
 
 ### Basic class structure
@@ -439,3 +463,34 @@ print(b1.author)
 
 print(m1.period)
 ```
+
+### Polymorphism using Method-Overiding
+
+Polymorphism in Python refers to the ability of different object types to be used interchangeably because they implement the same methods or behavior. It allows functions or methods to operate on objects of different types, as long as they support the same interface or method names.
+
+```python
+class Animal:
+    def speak(self):
+        raise NotImplementedError("Subclasses must implement this method")
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+# Creating objects of the child classes
+dog = Dog()
+cat = Cat()
+
+# Both objects have a speak method, but they behave differently
+print(dog.speak())  # Output: Woof!
+print(cat.speak())  # Output: Meow!
+```
+
+In this example:
+
+Both Dog and Cat are subclasses of Animal, and they override the speak() method to provide their own implementation.
+The same method name (speak()) exhibits different behaviors depending on the object type.
