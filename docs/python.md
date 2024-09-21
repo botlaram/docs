@@ -122,6 +122,11 @@ print(doubled_map)
 
 ### Filter
 
+The filter() function applies a given function (like a lambda function) to each element of an iterable and filters the elements for which the function returns True. It returns a filter object (which can be converted to a list).
+
+Purpose: To select elements that meet a condition (i.e., elements for which the filtering function returns True).
+Use Case: When you want to filter out elements that don't satisfy a condition or predicate.
+
 ```python
 ##filter is similar to mapping
  
@@ -143,6 +148,11 @@ print(even_list)
 ```
 
 ### Mapping
+
+The map() function applies a given function (like a lambda function) to every element of an iterable (e.g., list, tuple) and returns a map object (which can be converted to a list).
+
+Purpose: To transform or modify each element in the iterable.
+Use Case: When you want to apply a function to all elements, such as performing operations, transformations, or conversions on each element.
 
 ```python
 double_num = []
