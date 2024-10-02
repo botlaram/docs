@@ -191,3 +191,24 @@ Imagine you have a hand of playing cards that are in a random order, and you wan
 2. Swap: If the current card is greater than the next card, you would swap their positions.
 
 3. Iteration: You would repeat this process multiple times, traversing the hand of cards, until the entire hand is sorted.
+
+## Selection Sor
+
+Selection Sort is a simple sorting algorithm that works by repeatedly selecting the smallest (or largest) element from an unsorted part of the list and swapping it with the element at the beginning of the unsorted list. This process continues until the entire list is sorted.
+
+How It Works (Algorithm Steps)
+
+1. Start with the first element of the list and assume it's the minimum.
+
+2. Compare this element with the rest of the list to find the actual minimum element.
+
+3. Once the minimum element is found, swap it with the first element.
+
+4. Move to the second position and repeat the process for the remaining unsorted portion of the list.
+
+5. Continue this process until the entire list is sorted.
+
+![selection_sort](./png/selection_sort.png)
+
+Real-Time Example of Selection Sort
+Imagine you have a line of people, each holding a random number, and you want to arrange them in increasing order.

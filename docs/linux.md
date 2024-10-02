@@ -244,3 +244,13 @@ sudo hostnamectl set-hostname <enter-hostname>
 | Locate the binary, source, and manual page files for a command  | whereis
 | Find files by name                             | locate
 | Display the full path to an executable         | which
+
+### Other commands
+
+- rm -rf /var/lib/apt/lists/*
+
+    Is used to clean up the package list cache after installing packages, especially in Docker, to reduce image size.
+
+    Advantages: Reduces image size and keeps environments clean.
+
+    Disadvantages: Deletes package metadata, requiring you to run apt-get update again before installing or upgrading packages. Not suitable for long-running environments where package management might be needed later.

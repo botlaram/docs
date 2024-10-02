@@ -62,6 +62,7 @@
 | Unstage a file but keep its changes in working dir  | `git reset HEAD <file_name>` or `git reset HEAD`
 | Undo the Commit and Discard Changes              | `git reset --hard HEAD~1`
 | Undo the Commit and Keep Changes                 | `git reset HEAD~1`
+| Clean up working dir by removing untracked files and directories | `git clean -fdx`
 | Delete branch                                    | `git branch -d <branch_name>`
 | Delete remote branch                             | `git push origin-delete <branch name>`
 | Git commit history                               | `git log`
@@ -91,29 +92,30 @@
 | Display services                                 | `kubectl get services`
 | Display pods                                     | `kubectl get pods`
 | Display pods with a specific namespace           | `kubectl get pods -n "namespace"`
-| debug pods                                       | `kubectl describe pod "pod-name"`
 | Display deployments                              | `kubectl get deployment`
 | Display ReplicaSets                              | `kubectl get replicaset`
 | Display config maps                              | `kubectl get cm`
 | Display storage class                            | `kubectl get sc`
 | Display Custom Resource Definition               | `kubectl get crd`
 | Display Get Jobs                                 | `kubectl get jobs -n namespace`
+| Display service status                           | `kubectl describe service "service-name"`
 | Display Scaled Jobs                              | `kubectl describe scaledjob <scaledjob-name> -n <namespace>`
 | Display Secret Provider class                    | `kubectl get secretproviderclass`
-| Display service status                           | `kubectl describe service "service-name"`
+| Display Secrets                                  | `kubectl get secret`
+| Debug                                            | Commands
+| debug pods                                       | `kubectl describe pod "pod-name"`
 | Display changes of a config map                  | `kubectl describe cm "release-name"-configmap`
 | Switch to a different namespace                  | `kubectl config set-context --current --namespace="namespace"`
 | Display deployment file snippet in VS Code       | `$env:KUBE_EDITOR="code --wait" > kubectl edit deployment "deployment-name"`
 | Display pod status                               | `kubectl get pods` <br> `kubectl describe pod "pod-name"`
-| Display Secrets                                  | `kubectl get secret`
 | Display describe secrets                         | `kubectl describe secret "secret-name"`
 | Debug pod status with a specific namespace       | `kubectl describe pod "pod-name" -n development`
 | Debug init container                             | `kubectl logs 'pod-name' -c init-cont-name`
 | Debug pods with external IP addresses            | `kubectl get pod -o wide`
 | Display pod logs                                 | `kubectl logs "pod-name" -n development`
 | Interact with pods                               | `kubectl exec -it "pod-name" -- /bin/bash`
-| Copy pods data to local system | `kubectl cp "pod-name":/etc/data/test.txt ./data/test.txt` <br> [pod_path local_path]
-| Delete all pods                                  | `kubectl delete pods --all -n development`
+| Copy pods data to local env | `kubectl cp "pod-name":/etc/data/test.txt ./data/test.txt` <br> [pod_path local_path]
+| Delete all pods                                  | `kubectl delete pods --all -n <namespace>`
 | Delete deployments                               | `kubectl delete deployment "deployment-name"`
 
 ## Helm commands
