@@ -1,9 +1,6 @@
----
-hide:
-  - tags
----
-
 # Computer Networking
+
+<!-- ![basic-networking](./png/basic-networking.png) -->
 
 ## Protocol
 
@@ -43,6 +40,7 @@ Well-Known Ports (0-1023): Port numbers from 0 to 1023 are reserved for well-kno
 
 Registered Ports (1024-49151): Port numbers from 1024 to 49151 are assigned to registered services. These ports are used for various applications and services, and some have been officially registered with the Internet Assigned Numbers Authority (IANA).
 for eg: SQL = 1433
+
 MongoDB = 27017
 
 Dynamic/Private Ports (49152-65535): Port numbers from 49152 to 65535 are considered dynamic or private ports. They are used for temporary or private purposes, and they are less likely to be officially registered with IANA.
@@ -53,7 +51,9 @@ Linux
 
 ```shell
 sudo netstat -tuln
+
 or
+
 sudo netstat -tulnp | grep :<port_number>
 
 sudo kill -9 <PID>  ## Delete local host running backend using netstat
@@ -62,15 +62,20 @@ sudo kill -9 <PID>  ## Delete local host running backend using netstat
 Explanation:
 
 -t: Show TCP ports.
+
 -u: Show UDP ports.
+
 -l: Show only listening ports.
+
 -n: Show numerical addresses instead of resolving host names.
 
 Windows
 
-```command
+```shell
 netstat -ano | findstr <port-number>
+
 or
+
 netstat -a -o | find "9090"
 
 taskkill /F /PID 12345 ## Delete local host running backend using netstat
@@ -79,7 +84,9 @@ taskkill /F /PID 12345 ## Delete local host running backend using netstat
 Explanation:
 
 -a: Displays all connections and listening ports.
+
 -n: Displays addresses and port numbers in numerical form.
+
 -o: Displays the process ID associated with each connection.
 
 ## Internet speed
@@ -88,7 +95,9 @@ Explanation:
 
 ## OSI Model
 
-![Port Number](./gif/OSI_Model_workflow.gif)
+![alt text](./gif/osi-model.gif)
+
+![OSI Layer](./png/osi-layer.png)
 
 The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes the functions of a telecommunication or computing system into seven distinct layers. The model was developed by the International Organization for Standardization (ISO) to promote interoperability and facilitate communication between different systems and devices. Each layer in the OSI model represents a specific set of functions and services, and it helps in understanding and troubleshooting network communication.
 
@@ -180,7 +189,8 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 
 ## HTTP vs HTTPS
 
-![HTTPvsHTTPS](./png/HTTPvsHTTPS.PNG)
+![HTTPvsHTTPS](./png/HTTPvsHTTPS.png)
+
 ## DNS Architecture
 
 ![DNS](./png/dns-architecture.png)
@@ -211,7 +221,42 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 18. 𝐆𝐫𝐚𝐟𝐚𝐧𝐚: - Default HTTP Port: 3000
 19. 𝐆𝐢𝐭: - SSH Port: 22 - Git Protocol Port: 9418
 
-## Forward and Reverse Proxy
+## Proxy
+
+A proxy server acts as an intermediary between a client and the internet.
+
+### How it works
+
+1. Client Request: When a client (like a web browser) wants to access a resource (like a webpage), it sends a request to the proxy server instead of directly contacting the target server.
+
+2. Forwarding the Request: The proxy server receives the request and forwards it to the target server on behalf of the client.
+
+3. Response Handling: The target server processes the request and sends the response back to the proxy server.
+
+4. Returning the Response: The proxy server receives the response and then sends it back to the client.
+
+Benefits of Using a Proxy
+
+Anonymity: Hides the client's IP address from the target server.
+
+Caching: Stores copies of frequently accessed resources to speed up future requests.
+
+Access Control: Filters and controls user access to certain websites or content.
+
+Security: Can provide additional security measures, such as encryption or threat detection.
+
+Types of Proxies
+
+Forward Proxies: Handle requests from clients to external servers.
+
+Reverse Proxies: Handle requests from clients to a server, often used for load balancing and caching.
+
+Transparent Proxies: Intercept communication without modifying requests or responses.
+Anonymous Proxies: Hide the client's IP address but may identify themselves as a proxy.
+
+By acting as a go-between, proxies enhance security, performance, and control over internet traffic.
+
+### Forward and Reverse Proxy
 
 Forward Proxy vs Reverse Proxy 🚀
 
