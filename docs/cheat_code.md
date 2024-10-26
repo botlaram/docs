@@ -63,6 +63,8 @@
 | Undo the Commit and Discard Changes              | `git reset --hard HEAD~1`
 | Undo the Commit and Keep Changes                 | `git reset HEAD~1`
 | Clean up working dir by removing untracked files and directories | `git clean -fdx`
+| Pull latest changes from remote repo | `git pull`
+| git pull rebase (When you run git pull --rebase, Git fetches the remote changes and then rebases your local commits on top of the latest commits from the remote branch.) | `git pull --rebase`
 | Delete branch                                    | `git branch -d <branch_name>`
 | Delete remote branch                             | `git push origin-delete <branch name>`
 | Git commit history                               | `git log`
@@ -76,7 +78,7 @@
 | Track the changes after committing a file        | `git diff HEAD`
 | Track the changes between two commits            | `git diff <commit1-sha> <commit2-sha>`
 | Git Diff Branches                                | `git diff <branch 1> < branch 2>`
-| clone other's code and push to your repo  | `git clone` <br> `git remote -v` <br> `git remote set-url origin <add-your-url>` <br> `git remote -v` <br> `git push origin`
+| Clone other's code and push to your repo  | `git clone` <br> `git remote -v` <br> `git remote set-url origin <add-your-url>` <br> `git remote -v` <br> `git push origin`
 
 ## Kubernetes commands
 

@@ -33,19 +33,19 @@ Istio is a powerful open-source service mesh platform used to connect, secure, c
 
 Advantages of using Istio:
 
-mTLS: Istio provides mutual TLS connection between applications to communicate.
+- mTLS: Istio provides mutual TLS connection between applications to communicate.
 
-Traffic Management: Fine-grained control over service traffic with intelligent routing, load balancing, and failure recovery.
+- Traffic Management: Fine-grained control over service traffic with intelligent routing, load balancing, and failure recovery.
 
-Security: Built-in security features, like mutual TLS, encryption, and authentication, for securing communication between services.
+- Security: Built-in security features, like mutual TLS, encryption, and authentication, for securing communication between services.
 
-Observability: Provides deep visibility with tracing, monitoring, and logging of service-to-service traffic.
+- Observability: Provides deep visibility with tracing, monitoring, and logging of service-to-service traffic.
 
-Policy Enforcement: Enforce policies like rate-limiting, quotas, and access control for services.
+- Policy Enforcement: Enforce policies like rate-limiting, quotas, and access control for services.
 
-Resilience: Built-in fault tolerance features like retries, timeouts, and circuit breaking.
+- Resilience: Built-in fault tolerance features like retries, timeouts, and circuit breaking.
 
-Service Mesh: Simplifies management of microservices by decoupling networking logic from application code, enhancing scalability.
+- Service Mesh: Simplifies management of microservices by decoupling networking logic from application code, enhancing scalability.
 
 ## Workflow
 
