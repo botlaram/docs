@@ -6,10 +6,22 @@
 
 - Git shallow allows to clone large size repositories with lesser time.  
 - A "shallow clone" refers to a clone of a repository that only contains a limited history of the repository's commits. When you perform a shallow clone, Git retrieves only a subset of the commits from the remote repository, truncating the history beyond a certain depth. This can be useful when you are only interested in the recent history of a project and don't need the entire commit history.
+- Benefits of Using Shallow Clones
+
+  1. Reduced Cloning Time: Shallow clones significantly decrease the time it takes to clone large repositories by limiting the data transferred.
+  2. Lower Storage Requirements: By fetching only a subset of the commit history, shallow clones consume less disk space.
+
 - The --depth option is used to specify the depth of the clone, i.e., the number of most recent commits to fetch. For example:  
-```git clone --depth 1 <repository-url>```
+
+```bash
+git clone --depth 1 <repository-url>
+```
+
 - To convert a shallow clone to a full clone with the entire commit history, you can use command:  
-```git fetch --unshallow```
+
+```bash
+git fetch --unshallow
+```
 
 ### [Git lfs](https://www.atlassian.com/git/tutorials/git-lfs)
 
@@ -61,6 +73,106 @@ On a platform like GitHub, you click the "Fork" button, which creates a personal
     git fetch upstream
     git merge upstream/main
     ```
+
+### Streamlining Git Authentication with Global and System Configurations
+
+Managing credentials securely and conveniently is essential for developers working with Git, especially in collaborative environments. Manually entering credentials every time you clone or interact with repositories can be frustrating and disrupt workflow and think if you want to automate git clone/fetch in runtime. Fortunately, Git provides configurations that allow you to set up credentials once so that they’re automatically used for subsequent interactions. This guide will show you how to set up Git credentials using the `git config` command, making your development process smoother and more efficient.
+
+#### The Challenge: Repeated Authentication Requests
+
+Without configured Git credentials, every time you attempt to clone, pull, or push to a repository, Git will prompt you to enter your username and password. This repetitive process can be:
+
+- **Time-consuming**: Typing credentials every time you work with Git repositories can take up valuable time.
+- **Disruptive**: Stopping to enter credentials disrupts flow, especially in high-iteration development cycles.
+- **Error-prone**: Frequent manual entries increase the chance of typos and authentication errors, leading to potential lockouts or delays.
+
+For developers, automating this process can boost productivity and reduce friction in daily work.
+
+#### Solution: Configuring Git with Persistent Credentials
+
+Git offers two configuration levels that can store credentials, so you don’t need to re-enter them each time:
+
+1. **Global Configuration**: Applies settings for the current user across all repositories.
+2. **System Configuration**: Applies settings globally across all users on the system.
+
+Using these configuration options with credential storage enables you to securely store Git credentials in a file, which Git will reference for every operation requiring authentication.
+
+#### Steps to Set Up Persistent Git Credentials
+
+Create a credentials file that will securely store your Git username and password.
+
+1. Open your terminal.
+2. Enter the following command to create a credentials file in your home directory:
+
+    ```bash
+    echo "https://<your-username>:<your-password>@<git-server-url>" > ~/.git-credentials
+    ```
+
+    Replace <your-username>, <your-password>, and <git-server-url> with your actual Git server details.
+    Ensure the file path (~/.git-credentials) is correct; this will be used in later steps.
+    You can set Custom path eg: /tmp/.git-credentials
+
+3. Configure Git to Use the Credentials File
+
+    Next, use the git config command to tell Git where to find this credentials file.
+
+    Using Global Configuration
+    To set this up for the current user on all repositories:
+
+    ```bash
+    git config --global credential.helper "store --file ~/.git-credentials"
+    ```
+
+    This command saves the location of the credentials file in the Git configuration, so Git uses these credentials whenever it needs authentication.
+
+    Using System Configuration
+    To make this setting apply to all users on the system:
+
+    ```bash
+    sudo git config --system credential.helper "store --file /path/to/.git-credentials"
+    ```
+
+    Be sure to replace /path/to/.git-credentials with the path to your credentials file.
+
+4. Verifying the Setup and try to clone a repository that requires authentication:
+
+    Use `git config --list` to verify git config.
+
+    which should output based on level you set.
+
+    ```logs
+    credential.helper=store --file=/path/to/.git-credentials
+    ```
+
+    Now try to clone repository, this should clone without prompts for credentials.
+
+    ```bash
+    git clone https://<git-server-url>/<repository>
+    ```
+
+    If configured correctly, Git should not prompt for a username or password, as it will automatically pull these from the credentials file.
+
+Benefits of Using Persistent Git Credentials
+
+1. Improved Productivity
+
+    With credentials saved, you can focus entirely on development without repetitive prompts for authentication. This is especially beneficial when working across multiple repositories or making frequent pushes and pulls.
+
+2. Enhanced Workflow Efficiency
+
+    By reducing the need for authentication interruptions, you streamline the coding and testing workflow, ultimately leading to faster development cycles.
+
+3. Reduced Risk of Credential Errors
+
+    Centralized credential storage minimizes the likelihood of authentication errors, lockouts, or typos during login attempts.
+
+4. Better Security Control
+
+    Storing credentials in a designated file enables easier control over security, as you know where your credentials are stored and can manage their permissions effectively.
+
+    Security Considerations.
+    Protect the Credentials File: Ensure your credentials file has restricted permissions (e.g., chmod 600 ~/.git-credentials) to prevent unauthorized access.
+    Consider Credential Manager Options: For additional security, consider using Git credential managers like git-credential-manager or native OS keychain integrations for encrypted storage.
 
 ## Docker
 
