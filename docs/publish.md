@@ -195,7 +195,9 @@ CMD ["echo", "Hello, World!"]
 
 In this example, if no command is specified when running the container, it will execute the default echo "Hello, World!". However, a user can override the CMD instruction by specifying a different command when running the container:
 
-```docker run my-image echo Goodbye, World!```
+```bash
+docker run my-image echo Goodbye, World!
+```
 
 #### ENTRYPOINT Instruction
 
@@ -579,39 +581,39 @@ To share these hard-earned lessons with you. In this article, we're going to dis
 
 1. Event-Driven ML Inference
 
-   Scenario: You have a machine learning application for real-time fraud detection. Transactions are events funneled into an AWS SQS queue.
+    Scenario: You have a machine learning application for real-time fraud detection. Transactions are events funneled into an AWS SQS queue.
 
-   Why KEDA Over HPA: With KEDA, you can dynamically adjust the number of inference pods based on the SQS queue length, ensuring timely fraud detection. HPA's system metrics like CPU or memory wouldn't be as effective for this use-case.
+    Why KEDA Over HPA: With KEDA, you can dynamically adjust the number of inference pods based on the SQS queue length, ensuring timely fraud detection. HPA's system metrics like CPU or memory wouldn't be as effective for this use-case.
 
 2. IoT Data Processing
 
-   Scenario: Your IoT application collects sensor data that's sent to an Azure Event Hub for immediate processing.
+    Scenario: Your IoT application collects sensor data that's sent to an Azure Event Hub for immediate processing.
 
-   Why KEDA Over HPA: Here, KEDA's strength lies in its ability to adapt to the number of unprocessed messages in the Azure Event Hub, ensuring real-time data processing. Traditional HPA scaling based on CPU or memory wouldn't be as responsive to these event-driven requirements.
+    Why KEDA Over HPA: Here, KEDA's strength lies in its ability to adapt to the number of unprocessed messages in the Azure Event Hub, ensuring real-time data processing. Traditional HPA scaling based on CPU or memory wouldn't be as responsive to these event-driven requirements.
 
 3. Real-time Chat Application
 
-   Scenario: You manage a chat application where messages are temporarily stored in a RabbitMQ queue before being delivered to users.
+    Scenario: You manage a chat application where messages are temporarily stored in a RabbitMQ queue before being delivered to users.
 
 4. Why KEDA Over HPA?
   
-   KEDA excels in this scenario by dynamically adjusting resources based on the RabbitMQ queue length, ensuring prompt message delivery. This is a level of granularity that HPA, with its focus on system metrics, can't offer.
-  
-   Stream Processing with Kafka
-  
-   Scenario: Your application consumes messages from a Kafka topic, and the rate of incoming messages can fluctuate significantly.
+    KEDA excels in this scenario by dynamically adjusting resources based on the RabbitMQ queue length, ensuring prompt message delivery. This is a level of granularity that HPA, with its focus on system metrics, can't offer.
 
-   Why KEDA Over HPA: In this case, KEDA's ability to scale based on the Kafka topic length allows it to adapt to varying loads effectively. HPA, which isn't designed for such custom metrics, wouldn't be as agile.
+    Stream Processing with Kafka
+
+    Scenario: Your application consumes messages from a Kafka topic, and the rate of incoming messages can fluctuate significantly.
+
+    Why KEDA Over HPA: In this case, KEDA's ability to scale based on the Kafka topic length allows it to adapt to varying loads effectively. HPA, which isn't designed for such custom metrics, wouldn't be as agile.
 
 5. Why Choose KEDA in These Cases?
 
-   Event-Driven Flexibility: KEDA is tailored for scenarios where system metrics aren't the best indicators for scaling, offering a more nuanced approach.
+    Event-Driven Flexibility: KEDA is tailored for scenarios where system metrics aren't the best indicators for scaling, offering a more nuanced approach.
 
-   Custom Metrics Support: Unlike HPA, KEDA can interpret a wide range of custom metrics, making it versatile for complex scaling needs.
+    Custom Metrics Support: Unlike HPA, KEDA can interpret a wide range of custom metrics, making it versatile for complex scaling needs.
 
-   Resource Optimization: KEDA's ability to scale down to zero pods when idle can lead to significant cost savings.
+    Resource Optimization: KEDA's ability to scale down to zero pods when idle can lead to significant cost savings.
 
-   Adaptability: The platform's extensible design allows for custom scalers, making it adaptable to a wide range of use-cases.
+    Adaptability: The platform's extensible design allows for custom scalers, making it adaptable to a wide range of use-cases.
 
 ##### Conclusion
 
@@ -624,4 +626,3 @@ On the flip side, if your application lives in the fast-paced realm of event-dri
 Remember, choosing between HPA and KEDA isn't about which is better overall, but which is better for your specific needs. So take stock of your application's requirements, your team's expertise, and your long-term scaling strategy before making the call.
 
 As you venture into your next Kubernetes project, I hope this guide serves as a useful roadmap for your autoscaling decisions. And hey, since you're all about diving deeper, maybe explore setting up these autoscaling strategies in a hands-on way. Trust me, there's no better teacher than experience.
-

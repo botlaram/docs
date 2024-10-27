@@ -12,10 +12,12 @@
 
 ## Pages
 
-### [Devopscube](https://devopscube.com/)
+[Devopscube](https://devopscube.com/)
 
-### [ByteBytego](https://substack.com/@bytebytego399569)
+[ByteBytego](https://substack.com/@bytebytego399569)
 
-### [Jeff Brown](https://jeffbrown.tech/)
+[Jeff Brown](https://jeffbrown.tech/)
 
-### [Coach DevOps](https://www.coachdevops.com/)
+[Coach DevOps](https://www.coachdevops.com/)
+
+[Jhooq](https://jhooq.com/)
