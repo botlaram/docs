@@ -286,13 +286,13 @@ Deep copy
 
 In the case of deep copy, a copy of the object is copied into another object. It means that any changes made to a copy of the object do not reflect in the original object.
 
-![alt text](deepcopy.png)
+![alt text](./png/deepcopy.png)
 
 Shallow copy
 
 In Shallow copy, a reference of an object is copied into another object. It means that any changes made to a copy of an object do reflect in the original object
 
-![alt text](shallowcopy.png)
+![alt text](./png/shallowcopy.png)
 
 ## Class
 

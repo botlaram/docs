@@ -146,7 +146,7 @@ Provides an overview of applications running in the cluster, as well as the abil
 
 - [service](https://kubernetes.io/docs/concepts/services-networking/service/)
 
-#### service types
+#### Service Types
 
 1. Cluster IP
 
@@ -297,18 +297,18 @@ Provides an overview of applications running in the cluster, as well as the abil
   volumeBindingMode: WaitForFirstConsumer
   ```
 
-- Field/Parameters details:
+Field/Parameters details:
   
-  - **volumeBindingMode**:
-    This field specifies when volume binding should occur. In this case, Immediate means that a volume should be provisioned and bound as soon as a PersistentVolumeClaim (PVC) is created. This is in contrast to WaitForFirstConsumer, where the binding is delayed until a pod using the PVC is scheduled onto a node.
+- **volumeBindingMode**:
+  This field specifies when volume binding should occur. In this case, Immediate means that a volume should be provisioned and bound as soon as a PersistentVolumeClaim (PVC) is created. This is in contrast to WaitForFirstConsumer, where the binding is delayed until a pod using the PVC is scheduled onto a node.
 
-  - **reclaimPolicy** : in Persistent Volumes specifies what should happen to the underlying storage when the associated PersistentVolume (PV) is released or the PersistentVolumeClaim (PVC) is deleted:
+- **reclaimPolicy** : in Persistent Volumes specifies what should happen to the underlying storage when the associated PersistentVolume (PV) is released or the PersistentVolumeClaim (PVC) is deleted:
 
-  - **Retain**: When the reclaimPolicy is set to Retain, the PV is not automatically deleted when the associated PVC is deleted.
-  The PV is marked as released, and it's up to the cluster administrator to decide what to do with the data on the storage.
-  
-  - **Delete**: When the reclaimPolicy is set to Delete, the PV is automatically deleted when the associated PVC is deleted.
-  The storage resources associated with the PV are also deleted.
+- **Retain**: When the reclaimPolicy is set to Retain, the PV is not automatically deleted when the associated PVC is deleted.
+The PV is marked as released, and it's up to the cluster administrator to decide what to do with the data on the storage.
+
+- **Delete**: When the reclaimPolicy is set to Delete, the PV is automatically deleted when the associated PVC is deleted.
+The storage resources associated with the PV are also deleted.
 
 #### Architecture of Persistent Volume
 
@@ -320,7 +320,7 @@ service account: user groups
 role: define permissions to user
 role binding: connect role with service account
 
-## Scenario based questions
+## Scenario
 
 1. How to fix K8 deployment
   ![fix-deployment](./png/how_to_fix_k8_deployement.png)
@@ -330,7 +330,3 @@ whole cluster/namespace Quota
   ![k8-scenario1](./png/k8-scenario1.png)
 
 3. How to upgrade [k8 version](https://devopscube.com/setup-kubernetes-cluster-kubeadm/)
-
-4. How to fix StatefulSet with Persistent Volume not working after [Cloud Migration](https://www.youtube.com/watch?v=uBhjymTV0ro&t=1220)
-
-5. [Kubernetes RBAC](https://www.youtube.com/watch?v=rMVHtNNEzmE)

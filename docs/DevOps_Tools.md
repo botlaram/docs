@@ -287,7 +287,7 @@ Ecosystem: Works well with other tools in the Kubernetes ecosystem, such as Helm
 
 ### Components of Argo-cd
 
-![argo-cdcompoenent](./png/argocd-component.png)
+![argo-cd component](./png/argocd-component.png)
 
 1. API Server
 Function: Serves as the central control plane for Argo CD.

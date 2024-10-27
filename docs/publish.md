@@ -4,20 +4,21 @@
 
 ### [Git Shallow](https://www.atlassian.com/git/tutorials/big-repositories)
 
-- Git shallow allows to clone large size repositories with lesser time.  
-- A "shallow clone" refers to a clone of a repository that only contains a limited history of the repository's commits. When you perform a shallow clone, Git retrieves only a subset of the commits from the remote repository, truncating the history beyond a certain depth. This can be useful when you are only interested in the recent history of a project and don't need the entire commit history.
-- Benefits of Using Shallow Clones
+Git shallow allows to clone large size repositories with lesser time.
+
+A "shallow clone" refers to a clone of a repository that only contains a limited history of the repository's commits. When you perform a shallow clone, Git retrieves only a subset of the commits from the remote repository, truncating the history beyond a certain depth. This can be useful when you are only interested in the recent history of a project and don't need the entire commit history.
+
+Benefits of Using Shallow Clones
 
   1. Reduced Cloning Time: Shallow clones significantly decrease the time it takes to clone large repositories by limiting the data transferred.
   2. Lower Storage Requirements: By fetching only a subset of the commit history, shallow clones consume less disk space.
 
-- The --depth option is used to specify the depth of the clone, i.e., the number of most recent commits to fetch. For example:  
-
 ```bash
 git clone --depth 1 <repository-url>
+# The --depth option is used to specify the depth of the clone, i.e., the number of most recent commits to fetch.
 ```
 
-- To convert a shallow clone to a full clone with the entire commit history, you can use command:  
+To convert a shallow clone to a full clone with the entire commit history, you can use command:  
 
 ```bash
 git fetch --unshallow
@@ -25,7 +26,8 @@ git fetch --unshallow
 
 ### [Git lfs](https://www.atlassian.com/git/tutorials/git-lfs)
 
-- Git LFS (Large File Storage) is an extension to Git that deals with large files by replacing them with text pointers inside the Git repository, while storing the actual file content in an external storage system. This allows you to version control large binary files, such as audio, video, datasets, and other large assets, without causing significant bloat in your Git repository.
+Git LFS (Large File Storage) is an extension to Git that deals with large files by replacing them with text pointers inside the Git repository, while storing the actual file content in an external storage system.  
+This allows you to version control large binary files, such as audio, video, datasets, and other large assets, without causing significant bloat in your Git repository.
 
 ### Git Fork
 
@@ -74,7 +76,9 @@ On a platform like GitHub, you click the "Fork" button, which creates a personal
     git merge upstream/main
     ```
 
-### Streamlining Git Authentication with Global and System Configurations
+### Git config to set git credentials
+
+Streamlining Git Authentication with Global and System Configurations
 
 Managing credentials securely and conveniently is essential for developers working with Git, especially in collaborative environments. Manually entering credentials every time you clone or interact with repositories can be frustrating and disrupt workflow and think if you want to automate git clone/fetch in runtime. Fortunately, Git provides configurations that allow you to set up credentials once so that they’re automatically used for subsequent interactions. This guide will show you how to set up Git credentials using the `git config` command, making your development process smoother and more efficient.
 
@@ -108,8 +112,8 @@ Create a credentials file that will securely store your Git username and passwor
     echo "https://<your-username>:<your-password>@<git-server-url>" > ~/.git-credentials
     ```
 
-    Replace <your-username>, <your-password>, and <git-server-url> with your actual Git server details.
-    Ensure the file path (~/.git-credentials) is correct; this will be used in later steps.
+    Replace `<your-username>, <your-password>, and <git-server-url>` with your actual Git server details.  
+    Ensure the file path (~/.git-credentials) is correct; this will be used in later steps.  
     You can set Custom path eg: /tmp/.git-credentials
 
 3. Configure Git to Use the Credentials File
@@ -178,9 +182,9 @@ Benefits of Using Persistent Git Credentials
 
 ### [CMD Vs ENTRYPOINT](https://medium.com/container-talks/understand-cmd-and-entrypoint-differences-in-docker-d11105cc5454#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjdkMzM0NDk3NTA2YWNiNzRjZGVlZGFhNjYxODRkMTU1NDdmODM2OTMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQ1Mzc2NzM5NjYzNjY4NTAyNjIiLCJlbWFpbCI6ImRvbnRhc2tlbWFpbGFkZHJlc3NAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTY5Nzk3ODI3MiwibmFtZSI6IkJvdGxhIFJhbSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMNGMyWXZLXzFlSllMX3ZLX3drSWFiREx0c3dYeWFadzU0MF91UjBTT1E9czk2LWMiLCJnaXZlbl9uYW1lIjoiQm90bGEiLCJmYW1pbHlfbmFtZSI6IlJhbSIsImxvY2FsZSI6ImVuLUdCIiwiaWF0IjoxNjk3OTc4NTcyLCJleHAiOjE2OTc5ODIxNzIsImp0aSI6IjAwZWMxMjA1MDYwOTNiYzcwZDk3N2RmMzM2M2IxNjlmYWRjOGZhNTYifQ.hYAhN7EWsZTI6H-Fscm1-5ykfRTcCBpYr2KBKZjyY75PJr_y1IcmTgA3F3KIJhFiSBOjXP3xuUpBkuKLBuyMIPP_DLJYwobjVlyX3Cftalqw-R9lAZvTkBpplboLL0G4zKl4mC1Rk1-WgI0tI1Bc7NSHSTKYIEFuCQcBskuvUspNdZyQBvgpHJznTsAcZKtvhM5TP4ya1JLmjwJcqtjEroyqlxNtoLFuBf5LRlmp0Dxtn6niImG84yCt4v7yzNS93OCuqT6rEczF_ZqkD8zNG9WaH7Fsgz6KwIuUH0bGYcVtGt9GbFrSSyAqXfii0a2ZMM39bv9ywsfc-2lZqJXMVQ)
 
-- CMD and ENTRYPOINT are instructions used in Dockerfiles to define the command that will be run when a container is started. However, they serve different purposes and have distinct behaviors.
+CMD and ENTRYPOINT are instructions used in Dockerfiles to define the command that will be run when a container is started. However, they serve different purposes and have distinct behaviors.
 
-- CMD Instruction:
+#### CMD Instruction
 
 The CMD instruction in a Dockerfile sets the default command and/or parameters for the container. It provides defaults for an executing container, but these defaults can be overridden by specifying the command and parameters at runtime when the container is started.
 
@@ -193,7 +197,7 @@ In this example, if no command is specified when running the container, it will 
 
 ```docker run my-image echo Goodbye, World!```
 
-- ENTRYPOINT Instruction:
+#### ENTRYPOINT Instruction
 
 The ENTRYPOINT instruction in a Dockerfile sets the main command to be run when the container starts. Unlike CMD, the ENTRYPOINT instruction does not allow for default parameters that can be overridden. Instead, any parameters specified at runtime are passed as arguments to the command defined in ENTRYPOINT.
 
@@ -202,23 +206,24 @@ FROM ubuntu:latest
 ENTRYPOINT ["echo", "Hello, World!"]  
 ```
 
-In this example, if no command is specified when running the container, it will execute the default echo "Hello, World!". However, if a user provides a command, it will be treated as arguments to the ENTRYPOINT:  
+In this example, if no command is specified when running the container, it will execute the default echo "Hello, World!". However, if a user provides a command, it will be treated as arguments to the ENTRYPOINT:
+
 ```docker run my-image "Goodbye, World!"```
 
 ### [Docker-Squash](http://jasonwilder.com/blog/2014/08/19/squashing-docker-images/)
 
-- In this article, detailed explain about Image Layering and how to use docker-squash command to reduce the size of Image.
+In this article, detailed explain about Image Layering and how to use docker-squash command to reduce the size of Image.
 
 ### [Automated Nginx Reverse Proxy for Docker](http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/)
 
 ### [Dockerizer](https://alex.dzyoba.com/blog/packer-for-docker/)
 
-- Dockerizer is the concept to use Docker in more efficient way, so that developer and reuse the code and additional install packages as per dependency.  
+Dockerizer is the concept to use Docker in more efficient way, so that developer and reuse the code and additional install packages as per dependency.  
 
-- Reason for using Dockerizer:
+Reason for using Dockerizer:
 
-  - In Dockerfile each RUN command create new layer (which can create huge Image size while pushing to Registry).
-  - Dockerizer contains Ansible & Packer concept which then help to create Image more efficient way,  installing required dependency/packages and making code reusability.
+1. In Dockerfile each RUN command create new layer (which can create huge Image size while pushing to Registry).
+2. Dockerizer contains Ansible & Packer concept which then help to create Image more efficient way,  installing required dependency/packages and making code reusability.
 
 ### [Reduce Docker Image Size](https://devopscube.com/reduce-docker-image-size/)
 
@@ -228,19 +233,19 @@ In this example, if no command is specified when running the container, it will 
 
 ### [Goodbye etcd, Hello PostgreSQL: Running Kubernetes with an SQL Database](https://martinheinz.dev/blog/100)
 
-- etcd is the brain of every Kubernetes cluster, the key-value storage keeping track of all the objects in a cluster. It's intertwined and tightly coupled with Kubernetes, and it might seem like an inseparable part of a cluster, or is it?
+Etcd is the brain of every Kubernetes cluster, the key-value storage keeping track of all the objects in a cluster. It's intertwined and tightly coupled with Kubernetes, and it might seem like an inseparable part of a cluster, or is it?
 
 In this article it is explained how we could replace etcd with PostgreSQL database, as well as why and when it might make sense to do so.
 
 ### Migrate data from one PVC to other (this can done within same Namespace)
 
-- well, for hostin any web applications or storing output files we need some kind of dataStorage. At some point our local storage wont be efficient approach when it comes to Prod Version & for multiple user.
+Well, for hosting any web applications or storing output files we need some kind of dataStorage. At some point our local storage wont be efficient approach when it comes to Prod Version & for multiple user.
 
-- Thanks to Cloud Service Companies, that provides the data-storage here there are many Storageclass available from where we can store and retrieve our data. Some of the StorageClass as AzureFile, AzureBlob, net-trident-nfs.
+Thanks to Cloud Service Companies, that provides the data-storage here there are many Storageclass available from where we can store and retrieve our data. Some of the StorageClass as AzureFile, AzureBlob, net-trident-nfs.
 
-- Infact, backup and mounting data from one storage to Storage, has became a easy job todo.
+Infact, backup and mounting data from one storage to Storage, has became a easy job todo.
 
-- here is the simple code snippet to create a StorageClass, PVC
+Here is the simple code snippet to create a StorageClass, PVC
 
 1. Create StorageClass yaml
 
@@ -257,7 +262,7 @@ In this article it is explained how we could replace etcd with PostgreSQL databa
     volumeBindingMode: Immediate
     ```
 
-2. create PVC pointing to storage class
+2. Create PVC pointing to storage class
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -321,119 +326,122 @@ In this article it is explained how we could replace etcd with PostgreSQL databa
 
 ### [Fetch secrets from Az-KeyVault to use secrets in Pods](https://azure.github.io/secrets-store-csi-driver-provider-azure/docs/getting-started/)
 
-- Secrets key plays a vital role when its comes to use credentials for authentication purpose and various implement.
+Secrets key plays a vital role when its comes to use credentials for authentication purpose and various implement.
 
-- Here [Azure-KeyVault](https://learn.microsoft.com/en-us/azure/key-vault/general/overview) is one of the best service for (Iaas,Saas,Paas) , using Az we can also store secret values.
+Here [Azure-KeyVault](https://learn.microsoft.com/en-us/azure/key-vault/general/overview) is one of the best service for (Iaas,Saas,Paas) , using Az we can also store secret values.
 
-- Azure Key Vault provider for Secrets Store CSI Driver allows you to get secret contents stored in an Azure Key Vault instance and use the Secrets Store CSI driver interface to mount them into Kubernetes pods.
+Azure Key Vault provider for Secrets Store CSI Driver allows you to get secret contents stored in an Azure Key Vault instance and use the Secrets Store CSI driver interface to mount them into Kubernetes pods.
 
-- Following steps mentioned about fetching KV from Azure
+Following steps mentioned about fetching KV from Azure
 
-    ```yaml
-    ##add helm repo for Secrets Store CSI Driver and the Azure Keyvault Provider
-    helm repo add csi-secrets-store-provider-azure https://azure.github.io/secrets-store-csi-driver-provider-azure/charts
+```yaml
+##add helm repo for Secrets Store CSI Driver and the Azure Keyvault Provider
+helm repo add csi-secrets-store-provider-azure https://azure.github.io/secrets-store-csi-driver-provider-azure/charts
 
-    # deploy the secret-store-csi-driver and Azure KV Provider
-    helm install csi csi-secrets-store-provider-azure/csi-secrets-store-provider-azure
+# deploy the secret-store-csi-driver and Azure KV Provider
+helm install csi csi-secrets-store-provider-azure/csi-secrets-store-provider-azure
 
-    Note: The helm charts hosted in Azure/secrets-store-csi-driver-provider-azure repo include the 
-    Secrets Store CSI Driver helm charts as a dependency. Running the above helm install command
-    will install both the Secrets Store CSI Driver and Azure Key Vault provider
+Note: The helm charts hosted in Azure/secrets-store-csi-driver-provider-azure repo include the 
+Secrets Store CSI Driver helm charts as a dependency. Running the above helm install command
+will install both the Secrets Store CSI Driver and Azure Key Vault provider
 
-    # ensure driver and provider pods are running
-    kubectl get pods
+# ensure driver and provider pods are running
+kubectl get pods
 
-    #if using service principal connection (Configure Service Principal to access Keyvault)
-    Add your service principal credentials as a Kubernetes secrets
+#if using service principal connection (Configure Service Principal to access Keyvault)
+Add your service principal credentials as a Kubernetes secrets
 
-    oc create secret generic secrets-store-creds --from-literal clientid=<service_principal_client_id>
+oc create secret generic secrets-store-creds --from-literal clientid=<service_principal_client_id>
 
-    or deploy by using yaml
+or deploy by using yaml
 
-    kind: Secret
-    apiVersion: v1
-    metadata:
-        name: service-principal
-        lables:
-            #update labels
-    data:
-        clientid:
-        clientsecret:
-    type: Opaque
+kind: Secret
+apiVersion: v1
+metadata:
+    name: service-principal
+    lables:
+        #update labels
+data:
+    clientid:
+    clientsecret:
+type: Opaque
 
-    # secret class provider yaml
-    apiVersion: secrets-store.csi.x-k8s.io/v1
-    kind: SecretProviderClass
-    metadata:
-        name: azure-kv
-    spec:
-    provider: azure
-    parameters:
-        usePodIdentity: "false"               # [OPTIONAL] if not provided, will default to "false"
-        useVMManagedIdentity: "false"         # [OPTIONAL available for version > 0.0.4] if not provided, will default to "false"
-        userAssignedIdentityID: "client_id"   # [OPTIONAL available for version > 0.0.4] use the client id to specify which user assigned managed identity to use. If using a user assigned identity as the VM's managed identity, then specify the identity's client id. If empty, then defaults to use the system assigned identity on the VM
-        clientID: "client_id"                 # [OPTIONAL available for version > 1.1.0] client id of the Azure AD Application or managed identity to use for workload identity
-        keyvaultName: "kvname"                # the name of the KeyVault
-        cloudName: ""                         # [OPTIONAL available for version > 0.0.4] if not provided, azure environment will default to AzurePublicCloud
-        cloudEnvFileName: ""                  # [OPTIONAL available for version > 0.0.7] use to define path to file for populating azure environment
-        objects:  |
-        array:
-            - |
-            objectName: secret1
-            objectAlias: SECRET_1           # [OPTIONAL available for version > 0.0.4] object alias
-            objectType: secret              # object types: secret, key or cert. For Key Vault certificates, refer to https://azure.github.io/secrets-store-csi-driver-provider-azure/configurations/getting-certs-and-keys/ for the object type to use
-            objectVersion: ""               # [OPTIONAL] object versions, default to latest if empty
-            objectVersionHistory: 5         # [OPTIONAL] if greater than 1, the number of versions to sync starting at the specified version.
-            filePermission: 0755                # [OPTIONAL] permission for secret file being mounted into the pod, default is 0644 if not specified.
-            - |
-            objectName: key1
-            objectAlias: ""                 # If provided then it has to be referenced in [secretObjects].[objectName] to sync with Kubernetes secrets 
-            objectType: key
-            objectVersion: ""
-        tenantID: "tid"                       # the tenant ID of the KeyVault
+# secret class provider yaml
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+    name: azure-kv
+spec:
+provider: azure
+parameters:
+    usePodIdentity: "false"               # [OPTIONAL] if not provided, will default to "false"
+    useVMManagedIdentity: "false"         # [OPTIONAL available for version > 0.0.4] if not provided, will default to "false"
+    userAssignedIdentityID: "client_id"   # [OPTIONAL available for version > 0.0.4] use the client id to specify which user assigned managed identity to use. If using a user assigned identity as the VM's managed identity, then specify the identity's client id. If empty, then defaults to use the system assigned identity on the VM
+    clientID: "client_id"                 # [OPTIONAL available for version > 1.1.0] client id of the Azure AD Application or managed identity to use for workload identity
+    keyvaultName: "kvname"                # the name of the KeyVault
+    cloudName: ""                         # [OPTIONAL available for version > 0.0.4] if not provided, azure environment will default to AzurePublicCloud
+    cloudEnvFileName: ""                  # [OPTIONAL available for version > 0.0.7] use to define path to file for populating azure environment
+    objects:  |
+    array:
+        - |
+        objectName: secret1
+        objectAlias: SECRET_1           # [OPTIONAL available for version > 0.0.4] object alias
+        objectType: secret              # object types: secret, key or cert. For Key Vault certificates, refer to https://azure.github.io/secrets-store-csi-driver-provider-azure/configurations/getting-certs-and-keys/ for the object type to use
+        objectVersion: ""               # [OPTIONAL] object versions, default to latest if empty
+        objectVersionHistory: 5         # [OPTIONAL] if greater than 1, the number of versions to sync starting at the specified version.
+        filePermission: 0755                # [OPTIONAL] permission for secret file being mounted into the pod, default is 0644 if not specified.
+        - |
+        objectName: key1
+        objectAlias: ""                 # If provided then it has to be referenced in [secretObjects].[objectName] to sync with Kubernetes secrets 
+        objectType: key
+        objectVersion: ""
+    tenantID: "tid"                       # the tenant ID of the KeyVault
 
-    # deploy pod
-    kind: Pod
-    apiVersion: v1
-    metadata:
-        name: demo-pod
-    spec:
-        containers:
-        - image: nginx
-            name: nginx
-        volumeMounts:
-        - name: secrets-store-inline
-        mountPath: "/mnt/secrets-store"
-        readOnly: true
-        volumes:
-            - name; secrets-store-inline
-            csi:
-                driver: secrets-store.csi.k8s.io
-                readOnly: true
-                volumeAttributes:
-                    secretProvider: "azure-kv"
-                nodePublishSecretRef:              #only required if using service principal          
-                    name: "secret-yaml-metadata-name" #only required if using service principal 
-    (note: didnt specified commands for pod, pod will completed as soon as hosted)
-    
-    # deploy pod
-    kubectl apply -f pod.yaml
+# deploy pod
+kind: Pod
+apiVersion: v1
+metadata:
+    name: demo-pod
+spec:
+    containers:
+    - image: nginx
+        name: nginx
+    volumeMounts:
+    - name: secrets-store-inline
+    mountPath: "/mnt/secrets-store"
+    readOnly: true
+    volumes:
+        - name; secrets-store-inline
+        csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+                secretProvider: "azure-kv"
+            nodePublishSecretRef:              #only required if using service principal          
+                name: "secret-yaml-metadata-name" #only required if using service principal 
+(note: didnt specified commands for pod, pod will completed as soon as hosted)
+```
 
-    # check pod status
-    kubectl get pods
+Deploy pod
 
-    # show secrets held in secrets-store
-    kubectl exec "pod-name" -- ls /mnt/secrets-store/
+```bash
+kubectl apply -f pod.yaml
 
-    # print a test secret held in secrets-store
-    kubectl exec "pod-name" -- cat /mnt/secrets-store/secret1
-    ```
+# check pod status
+kubectl get pods
+
+# show secrets held in secrets-store
+kubectl exec "pod-name" -- ls /mnt/secrets-store/
+
+# print a test secret held in secrets-store
+kubectl exec "pod-name" -- cat /mnt/secrets-store/secret1
+```
 
 ### Volume Snapshot
 
-- Volume snapshot using Openshift, this feature assist to create a snap of volume in given time, so that those volume can utilised for test/prod by specifying the volumesnapshot name
+Volume snapshot using Openshift, this feature assist to create a snap of volume in given time, so that those volume can utilised for test/prod by specifying the volumesnapshot name
 
-- Following are steps to create Snapshot using Openshift
+Following are steps to create Snapshot using Openshift
   
 1. select PVC for which you want to take snapshot, click on the options and select "create Snapshot"
 
@@ -535,41 +543,42 @@ To share these hard-earned lessons with you. In this article, we're going to dis
 
 1. Basic Web Application
 
-   Scenario: You're running a simple web application that serves static content and has predictable spikes in traffic, like during a marketing campaign.
+    Scenario: You're running a simple web application that serves static content and has predictable spikes in traffic, like during a marketing campaign.
 
-   In this case, the scaling needs are straightforward and based on CPU or memory usage. HPA is easier to set up and manage for this kind of scenario. You don't need the event-driven capabilities that KEDA offers.
+    In this case, the scaling needs are straightforward and based on CPU or memory usage. HPA is easier to set up and manage for this kind of scenario. You don't need the event-driven capabilities that KEDA offers.
 
 2. Internal Business Application
 
-   Scenario: You have an internal application used by employees for tasks like data entry, which sees higher usage during business hours and lower usage otherwise.
+    Scenario: You have an internal application used by employees for tasks like data entry, which sees higher usage during business hours and lower usage otherwise.
 
-   Again, the load pattern is predictable and can be managed easily with simple metrics like CPU and memory. HPA's native integration with Kubernetes makes it a straightforward choice, without the need for the more complex setup that KEDA might require.
+    Again, the load pattern is predictable and can be managed easily with simple metrics like CPU and memory. HPA's native integration with Kubernetes makes it a straightforward choice, without the need for the more complex setup that KEDA might require.
 
 3. Stateless Microservices
 
-   Scenario: You're running a set of stateless microservices that handle tasks like authentication, logging, or caching. These services have a consistent load and don't rely on external events.
+    Scenario: You're running a set of stateless microservices that handle tasks like authentication, logging, or caching. These services have a consistent load and don't rely on external events.
 
-   These types of services often scale well based on system metrics, making HPA a good fit. Since they're stateless, scaling in and out is less complex, and HPA can handle it easily.
+    These types of services often scale well based on system metrics, making HPA a good fit. Since they're stateless, scaling in and out is less complex, and HPA can handle it easily.
 
 4. Traditional RESTful API
 
-   Scenario: You have a RESTful API that serves mobile or web clients. The API has a steady rate of requests but might experience occasional spikes.
+    Scenario: You have a RESTful API that serves mobile or web clients. The API has a steady rate of requests but might experience occasional spikes.
 
-   In this case, you can set up HPA to scale based on request rates or CPU usage, which are good indicators of load for this type of application. KEDA's event-driven scaling would be overkill for this scenario.
+    In this case, you can set up HPA to scale based on request rates or CPU usage, which are good indicators of load for this type of application. KEDA's event-driven scaling would be overkill for this scenario.
 
 5. Why Choose HPA in These Cases?
 
-   Simplicity: HPA is easier to set up and manage for straightforward scaling needs. If you don't need to scale based on complex or custom metrics, HPA is the way to go.
+    Simplicity: HPA is easier to set up and manage for straightforward scaling needs. If you don't need to scale based on complex or custom metrics, HPA is the way to go.
 
-   Native Support: Being a built-in Kubernetes feature, HPA has native support and a broad community, making it easier to find help or resources.
+    Native Support: Being a built-in Kubernetes feature, HPA has native support and a broad community, making it easier to find help or resources.
 
-   Resource Efficiency: For applications with predictable workloads, HPA allows you to efficiently use your cluster resources without the need for more complex scaling logic.
+    Resource Efficiency: For applications with predictable workloads, HPA allows you to efficiently use your cluster resources without the need for more complex scaling logic.
 
-   Operational Ease: HPA requires less ongoing maintenance and has fewer components to manage compared to KEDA, making it a good choice for smaller teams or simpler applications.
+    Operational Ease: HPA requires less ongoing maintenance and has fewer components to manage compared to KEDA, making it a good choice for smaller teams or simpler applications.
 
 ##### Real Cases for Using KEDA Over HPA
 
 1. Event-Driven ML Inference
+
    Scenario: You have a machine learning application for real-time fraud detection. Transactions are events funneled into an AWS SQS queue.
 
    Why KEDA Over HPA: With KEDA, you can dynamically adjust the number of inference pods based on the SQS queue length, ensuring timely fraud detection. HPA's system metrics like CPU or memory wouldn't be as effective for this use-case.
@@ -616,12 +625,3 @@ Remember, choosing between HPA and KEDA isn't about which is better overall, but
 
 As you venture into your next Kubernetes project, I hope this guide serves as a useful roadmap for your autoscaling decisions. And hey, since you're all about diving deeper, maybe explore setting up these autoscaling strategies in a hands-on way. Trust me, there's no better teacher than experience.
 
-## Publisher's [ref](ref.md)
-
-### [Devopscube](https://devopscube.com/)
-
-### [ByteBytego](https://substack.com/@bytebytego399569)
-
-### [Jeff Brown](https://jeffbrown.tech/)
-
-### [Coach DevOps](https://www.coachdevops.com/)
