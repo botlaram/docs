@@ -1,4 +1,4 @@
-# This page contains some blog and documentation with Repository link from DevOps_Project
+# DevOps Project
 
 ## Jenkins-Sonarqube
 

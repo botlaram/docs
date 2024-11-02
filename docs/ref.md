@@ -10,6 +10,10 @@
 
 5. [Kubernetes RBAC](https://www.youtube.com/watch?v=rMVHtNNEzmE)
 
+6. [Top 6 Most Popular API Architecture Styles](https://www.youtube.com/watch?v=4vLxWqE94l4)
+
+7. [Tasks.md - Self-Hosted Markdown Based Task Manager](https://noted.lol/tasks-md/?ref=dailydev)
+
 ## Pages
 
 [Devopscube](https://devopscube.com/)

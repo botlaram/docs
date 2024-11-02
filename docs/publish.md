@@ -1,4 +1,4 @@
-# welcome to best side of Documentation, this page contains some of the IMP things to know as a Developer
+# To be known
 
 ## GIT
 

@@ -221,6 +221,14 @@ Various technologies and protocols, such as Ethernet, Wi-Fi (IEEE 802.11), and P
 18. 𝐆𝐫𝐚𝐟𝐚𝐧𝐚: - Default HTTP Port: 3000
 19. 𝐆𝐢𝐭: - SSH Port: 22 - Git Protocol Port: 9418
 
+## API
+
+Api Architecture Styles
+
+![Api-architecture-gif](./gif/api_architectural_styles_bytebytego.gif)
+
+![api-architecture-styles.png](./png/api-architecture-styles.png)
+
 ## Proxy
 
 A proxy server acts as an intermediary between a client and the internet.

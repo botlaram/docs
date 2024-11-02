@@ -2,6 +2,37 @@
 
 All about python modules, syntax and function
 
+## Virtual Environment
+
+```bash
+# Create a virtual environment
+python -m venv myenv
+
+# Activate the virtual environment
+source myenv/bin/activate  # On Unix or MacOS
+
+myenv\Scripts\activate  # On Windows
+
+# Deactivate the virtual environment
+deactivate
+```
+
+## Package Management
+
+```bash
+# Install a package
+pip install package_name
+
+# List installed packages
+pip list
+
+# Create requirements.txt
+pip freeze > requirements.txt
+
+# Install packages from requirements.txt
+pip install -r requirements.txt
+```
+
 ## For-loop
 
 ```python
