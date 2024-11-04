@@ -9,8 +9,8 @@ nav:
 - Python: python.md
 - Linux: linux.md
 - Computer Networking: networking.md
-- DSA: dsa.md
-- Devops Tools: devops_tools.md
+- DSA: DSA.md
+- Devops Tools: devopsTools.md
 - Azure: azure.md
 - K8: kubernetes.md
 - Publish: publish.md

@@ -14,6 +14,8 @@
 
 7. [Tasks.md - Self-Hosted Markdown Based Task Manager](https://noted.lol/tasks-md/?ref=dailydev)
 
+8. [Ansible Jinja Template](https://www.youtube.com/watch?v=MkWS9oFxRh4)
+
 ## Pages
 
 [Devopscube](https://devopscube.com/)
