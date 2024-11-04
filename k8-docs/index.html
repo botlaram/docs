@@ -1,0 +1,2857 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="this Mkdocs contains Python Modules, about Devops and Cheat Code">
+      
+      
+        <meta name="author" content="botlaram">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>K8 docs - UseMe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marmelad:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Marmelad";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubectl-api-resources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UseMe" class="md-header__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UseMe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              K8 docs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cheat_code/" class="md-tabs__link">
+        
+  
+    
+  
+  Cheat Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../linux/" class="md-tabs__link">
+        
+  
+    
+  
+  Linux
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        
+  
+    
+  
+  Computer Networking
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DSA/" class="md-tabs__link">
+        
+  
+    
+  
+  DSA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devopsTools/" class="md-tabs__link">
+        
+  
+    
+  
+  Devops Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../azure/" class="md-tabs__link">
+        
+  
+    
+  
+  Azure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kubernetes/" class="md-tabs__link">
+        
+  
+    
+  
+  K8
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publish/" class="md-tabs__link">
+        
+  
+    
+  
+  Publish
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devops_projects/" class="md-tabs__link">
+        
+  
+    
+  
+  Devops Project
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UseMe" class="md-nav__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UseMe
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheat Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computer Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DSA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devopsTools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devops Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops_projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devops Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>Kubernetes From Scratch</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.002.png" /></p>
+<p><strong>Kubernetes</strong></p>
+<p><strong>What is Kubernetes?</strong></p>
+<p>Kubernetes is an open source orchestration tool developed by Google for managing micro- services or containerized applications across a distributed cluster of nodes.  </p>
+<p>Kubernetes provides highly resilient infrastructure with zero downtime deployment capabilities, automatic rollback, scaling, and self-healing of containers (which consists of auto-placement, auto-restart, auto-replication, and scaling of containers on the basis of CPU usage).</p>
+<p>Kubernetes created from Borg &amp; Omega projects by google as they use it to orchestrate they data center since 2003.</p>
+<p>Google open-sourced kubernetes at 2014.</p>
+<p><strong>What is Orchestration Do?</strong></p>
+<ul>
+<li>Configuring and scheduling of containers.</li>
+<li>Provisioning and deployments of containers.</li>
+<li>High Availability of containers.</li>
+<li>Configuration of the applications that run in containers.</li>
+<li>Scaling of containers to equally balance the application workloads across infrastructure.</li>
+<li>Allocation of HW resources between containers.</li>
+<li>Load balancing, traffic routing and service discovery of containers.</li>
+<li>Health monitoring of containers.</li>
+<li>Securing the interactions between containers.</li>
+</ul>
+<p><strong>Famous Container Orchestrator</strong></p>
+<ul>
+<li>Docker Swarm</li>
+<li>Mesos (Mesos Sphere)</li>
+<li>Normand</li>
+<li>Cloud Foundry</li>
+<li>Cattel</li>
+<li>Cloud (Azure, Amazon, Google, Alibaba, IBM)</li>
+</ul>
+<p><strong>Kubernetes Components and Architecture</strong></p>
+<ul>
+<li><strong>K8s Master Node:</strong> the master server that will create the cluster and it has all the components and service that manage, plan, schedule and monitor all the worker nodes.</li>
+<li><strong>Worker Node:</strong> the server that has host the applications as Pods and containers.</li>
+<li><strong>Can make more than master server to make HA for the K8s components</strong>  </li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.005.jpeg" /></p>
+<p><strong>Kubernetes Master Node Components</strong></p>
+<p>Below are the main components on the master node:</p>
+<ul>
+<li><strong>API server</strong> – is the primary management components of kubernetes and is responsible for orchestrating all operations (scaling, updates, and so on) in the cluster. It also acts as the gateway to the cluster, so the API server must be accessible by clients from outside the cluster integration with CLI and GUI.  </li>
+<li><strong>Controller-manager</strong> - The Controller Manager is the engine that runs the core control loops, create Pods, watches the state of the cluster, and makes changes to drive status toward the desired state.</li>
+<li><strong>Replication-Controller</strong> - A ReplicationController ensures that a specified number of pod replicas are running at any one time. It makes sure that a pod is always up and available.</li>
+<li><strong>Node Controller</strong> - The node controller is a Kubernetes master component which manages various aspects of nodes.</li>
+<li><strong>Scheduler</strong> - is identify the right node to place a container on based resource limitations or guarantees, taints, tolerations and affinity/anti-affinity roles.</li>
+<li><strong>etcd cluster</strong> - etcd is a critical part of the Kubernetes. etcd database that stores the state of the cluster, including node and workload information in a key/value format.</li>
+</ul>
+<p><strong>Add-ons:</strong></p>
+<ul>
+<li><strong>DNS:</strong> all Kubernetes clusters should have cluster DNS to resolve name of the containers inside master node as all the above components is containers inside master node</li>
+<li><strong>Web UI:</strong> web-based UI for Kubernetes clusters. It allows users to manage and troubleshoot applications running in the cluster, as well as the cluster itself.</li>
+<li><strong>Container runtime:</strong> The container runtime is the software that is responsible for running containers. Kubernetes supports several container runtimes: Docker , containerd , CRI-O</li>
+</ul>
+<p><strong>Node (worker) components</strong></p>
+<p>Below are the main components on a (worker) node:</p>
+<ul>
+<li><strong>kubelet</strong> - the main service on a node, connect between Master and Node and ensuring that pods and their containers are healthy and running in the desired state. This component also reports to the master on the health of the host where it is running.</li>
+<li><strong>kube-proxy</strong> - a proxy service that runs on each worker node to deal with individual host subnetting and expose services to the external world. It performs request forwarding to the correct pods/containers across the various isolated networks in a cluster.</li>
+</ul>
+<p><strong>Kubectl</strong></p>
+<p>kubectl command is a line tool that interacts with kube-apiserver and send commands to the master node. Each command is converted into an API call.</p>
+<p><strong>Architecture Big Picture:  Master Node responsible for the k8s and 4 workers have the Pods and containers)</strong></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.007.jpeg" /></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.008.jpeg" /></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.009.png" /></p>
+<p><strong>Kubernetes Concepts</strong></p>
+<p>Making use of Kubernetes requires understanding the different abstractions it uses to represent the state of the system, such as services, pods, volumes, namespaces, and deployments.</p>
+<ul>
+<li><strong>Pod</strong> - generally refers to one or more containers that should be controlled as a single application.  </li>
+<li><strong>Pods that run a single container.</strong> The "one-container-per-Pod" model is the most common Kubernetes use case; in this case, you can think of a Pod as a wrapper around a single container; Kubernetes manages Pods rather than managing the containers directly.  </li>
+<li><strong>Pods that run multiple containers that need to work together</strong>. A Pod can encapsulate an application composed of multiple co-located containers that are tightly coupled and need to share resources. These co-located containers form a single cohesive unit of service—for example, one container serving data stored in a shared volume to the public, while a separate <em>sidecar</em> container refreshes or updates those files. The Pod wraps these containers, storage resources, and an ephemeral network identity together as a single unit.  </li>
+<li><strong>Note:</strong> Grouping multiple co-located and co-managed containers in a single Pod is a relatively advanced use case. You should use this pattern only in specific instances in which your containers are tightly coupled.</li>
+<li><strong>Every Pod has 1 IP address and it has MAC address and we can allocate resource for it (CPUs, RAM, Network …etc,).</strong></li>
+<li><strong>Communication between containers in different Pods via Pods IPs not container IP.</strong></li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.011.png" /></p>
+<ul>
+<li><strong>Deployment</strong> – it provides declarative updates to applications, a deployment allows you to describe an application’s life cycle, such as which images to use for the app, the number of pods there should be, and the way in which they should be updated.</li>
+<li>Deploy a replica set or pod</li>
+<li>Update pods and replica sets</li>
+<li>Rollback to previous deployment versions</li>
+<li>Scale a deployment</li>
+<li>Pause or continue a deployment</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.012.png" /></p>
+<ul>
+<li><strong>Service</strong> – Allows you to dynamically access a group of replica Pods via IP and Port from your network and define name for the service.</li>
+<li>Pods are volatile, that is Kubernetes does not guarantee a given physical pod will be kept alive (for instance, the replication controller might kill and start a new set of pods). Instead, a service represents a logical set of pods and acts as a gateway, allowing (client) pods to send requests to the service without needing to keep track of which physical pods actually make up the service.</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.014.jpeg" /></p>
+<ul>
+<li><strong>Namespace</strong> – it’s like resource pool in VMware or tenant in azure, it’s a virtual cluster (a single physical cluster can run multiple virtual ones)  </li>
+<li>Intended for environments with many users spread across multiple teams or projects, for isolation of concerns.  </li>
+<li>Resources inside a namespace must be unique and cannot access resources in a different namespace.  </li>
+<li>Also, a namespace can be allocated a resource quota to avoid consuming more than its share of the physical cluster’s overall resources (CPU, RAM, and Security).</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.015.png" /></p>
+<ul>
+<li><strong>Desired State</strong> - describes the desired state of a pod or a replica set, in a yaml file. The deployment controller then gradually updates the environment (for example, creating or deleting replicas or replicas image version upgrading or rollback via replication controller) until the current state matches the desired state specified in the deployment file. For example, if the yaml file defines 3 replicas for a pod but only two is currently running (current state), an extra one will get created. Note that replicas managed via a deployment should not be manipulated directly, only via new deployments.</li>
+<li><strong>Secret</strong> - At the application level, Kubernetes secrets can store sensitive information (such as passwords, SSH keys, API keys or tokens) per cluster (a virtual cluster if using namespaces, physical otherwise).  </li>
+<li>Kubernetes Secret can be injected into a Pod container either as an environment variable or mounted as a file.  </li>
+<li>Using Kubernetes Secrets allows us to abstract sensitive data and configuration from application deployment.</li>
+<li>Note that secrets are accessible from any pod in the same cluster. Network policies for access to pods can be defined in a deployment. A network policy specifies how pods are allowed to communicate with each other and with other network endpoints.</li>
+<li>Note that storing sensitive data in a Kubernetes Secret does not make it secure. By default, all data in Kubernetes Secrets is stored as a plaintext encoded with base64.</li>
+<li><strong>CoreDNS</strong> - CoreDNS is a flexible, extensible DNS server that can serve as the Kubernetes cluster DNS. Like Kubernetes, the CoreDNS project is hosted by the CNCF.</li>
+<li>You can use CoreDNS instead of kube-dns in your cluster by replacing kube-dns in an existing deployment, or by using tools like kubeadm that will deploy and upgrade the cluster for you</li>
+<li><strong>Node-Proxy</strong> - a proxy service that runs on each worker node to deal with individual host subnetting and expose services to the external world. It performs request forwarding to the correct pods/containers across the various isolated networks in a cluster.</li>
+<li><strong>Replica Set &amp; Deployment</strong> - A ReplicaSet is a set of Pod templates that describes a set of Pod replicas. It uses a template that describes what each Pod must contain.  </li>
+<li>The ReplicaSet ensures that a specified number of Pod replicas are running at any time.</li>
+<li>You can define a deployment to create a ReplicaSet or to remove deployments and adopt all their resources with new deployments. When you revise a deployment, a ReplicaSet is created that describes the state that you want. During a rollout, the deployment controller changes the actual state to the state that you want at a controlled rate. Each deployment revision can also be rolled back. Deployments can also be scaled.</li>
+<li>ReplicaSet is a part of Deployment.</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.017.jpeg" /></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.018.jpeg" /></p>
+<ul>
+<li><strong>Daemon Set</strong> - Aggregating service logs, collecting node metrics, or running a networked storage cluster all require a container to be replicated across all nodes. In Kubernetes, this is done with a DaemonSet.  </li>
+<li>A DaemonSet ensures that an instance of a specific pod is running on all (or a selection of) nodes in a cluster. This page gathers resources on how to use and deploying a daemon to all nodes.</li>
+<li>DaemonSet are used to ensure that some or all of your K8S nodes run a copy of a pod, which allows you to run a daemon on every node.</li>
+<li><strong>Why use DaemonSets?</strong></li>
+<li>To run a daemon for cluster storage on each node , such as: <strong>glusterd</strong></li>
+<li>To run a daemon for logs collection on each node, such as: <strong>logstash</strong></li>
+<li>To run a daemon for node monitoring on ever note, such as: <strong>collectd</strong></li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.020.jpeg" /></p>
+<ul>
+<li><strong>Label</strong> - Labels are key/value pairs that are attached to Kubernetes objects, such as pods (this is usually done indirectly via deployments).  </li>
+<li>Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users.  </li>
+<li>Labels can be used to organize and to select subsets of objects.</li>
+<li>Some labels are required for every deployment resource: (application, version, release, stage) can add Owner</li>
+<li>Contain <strong>identifying</strong> information and are a used by selector queries or within selector sections in object definitions.</li>
+<li>Example deployment metadata:  </li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.021.png" /></p>
+<ul>
+<li>Let’s create a pod that initially has one label (stage=production):</li>
+<li>kubectl apply -f <a href="https://raw.githubusercontent.com/openshift-">https://raw.githubusercontent.com/openshift-</a> evangelists/kbe/main/specs/labels/pod.yaml</li>
+<li>kubectl get pods --show-labels</li>
+</ul>
+<p>NAME       READY     STATUS    RESTARTS   AGE    LABELS</p>
+<p>labelex    1/1       Running   0          10m    stage=production</p>
+<ul>
+<li>In above get pods command note the --show-labels option that output the labels of an object in an additional column.</li>
+<li>You can add a label to the pod as:</li>
+<li>kubectl label pods labelex owner= Ahmed</li>
+<li>kubectl get pods --show-labels</li>
+</ul>
+<p>NAME        READY    STATUS   RESTARTS  AGE    LABELS</p>
+<p>labelex     1/1      Running  0         16m    stage=production,owner= Ahmed</p>
+<ul>
+<li><strong>Selector</strong> - let me apply policy on labels</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.023.jpeg" /></p>
+<ul>
+<li>To use a label for filtering and apply policy, for example to list only pods that have an owner that equals Ahmed, use the --selector option:</li>
+<li>kubectl get pods --selector owner=Ahmed</li>
+</ul>
+<p>NAME      READY     STATUS    RESTARTS   AGE</p>
+<p>labelex   1/1       Running   0          27m</p>
+<ul>
+<li>The --selector option can be abbreviated to -l, so to select pods that are labelled with stage= production, do:</li>
+<li>kubectl get pods -l stage=production</li>
+</ul>
+<p>NAME      READY     STATUS    RESTARTS   AGE</p>
+<p>labelex   1/1       Running   0          27m</p>
+<ul>
+<li>Now, let’s list all pods that are either labelled with stage=development or with stage =production:</li>
+</ul>
+<p>$ kubectl get pods -l stage in (production, development)' NAME           READY     STATUS    RESTARTS   AGE labelex        1/1       Running   0          43m labelexother   1/1       Running   0          3m</p>
+<ul>
+<li><strong>Annotations</strong> - Are used for <strong>non-identifying</strong> information. Stuff <strong>not used internally by k8s</strong>. You can’t specify selectors over them within Kubernetes, but they can be used by external tools and libraries. As the internal performance of Kubernetes is not negatively impacted by huge annotations, the keys and values are <strong>not constrained</strong> like labels.</li>
+<li><strong>Affinity, Anti Affinity</strong> - <strong>nodeSelector</strong> provides a very simple way to constrain pods to nodes with particular labels. The affinity/anti-affinity feature, greatly expands the types of constraints you can express. The key enhancements are</li>
+<li>The affinity/anti-affinity language is more expressive. The language offers more matching rules besides exact matches created with a logical AND operation;</li>
+<li>You can indicate that the rule is "soft"/"preference" rather than a hard requirement, so if the scheduler can't satisfy it, the pod will still be scheduled;</li>
+<li>You can constrain against labels on other pods running on the node (or other topological domain), rather than against labels on the node itself, which allows rules about which pods can and cannot be co-located.</li>
+<li>The affinity feature consists of two types of affinity, "<strong>node affinity</strong>" and "<strong>inter- pod affinity/anti-affinity</strong>". Node affinity is like the existing <strong>nodeSelector</strong> (but with the first two benefits listed above), while inter-pod affinity/anti-affinity constrains against pod labels rather than node labels, as described in the third item listed above, in addition to having the first and second properties listed above.</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.025.jpeg" /></p>
+<ul>
+<li><strong>Taints, Tolerations</strong> - Taints are used to repel Pods from specific nodes. This is quite similar to the node anti-affinity, however, taints and tolerations take a slightly different approach. Instead of applying the label to a node, we apply a taint that tells a scheduler to repel Pods from this node if it does not match the taint. Only those Pods that have a toleration for the taint can be let into the node with that taint.</li>
+<li>Tolerations are applied to pods, and allow (but do not require) the pods to schedule onto nodes with matching taints.</li>
+<li>Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes.  </li>
+<li>One or more taints are applied to a node; this marks that the node should not accept any pods that do not tolerate the taints.</li>
+<li>You add a taint to a node using kubectl taint. For example,</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th># kubectl taint nodes node1 key=value:NoSchedule</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="ref3" src="Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.026.png" /> Above example places a taint on node node</td>
+<td style="text-align: left;">1. The taint has key key, value value,</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>and taint effect NoSchedule. This means that no pod will be able to schedule onto node1 unless it has a matching toleration.</p>
+<ul>
+<li>To remove the taint added by the command above, you can run:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th># kubectl taint nodes node1 key:NoSchedule-</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="ref3" src="Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.026.png" /> <strong>Use Cases for Taints and Toleration</strong> hardware</td>
+<td style="text-align: left;"><strong>s:</strong> Dedicated node, Nodes with special</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Config-map</strong> - ConfigMaps bind configuration files, command-line arguments, environment variables, port numbers, and other configuration artifacts to your Pods' containers and system components at runtime.  </li>
+<li>ConfigMaps enable you to separate your configurations from your Pods and components, which helps keep your workloads portable.</li>
+<li>Instead of repeat Pods configurations in yaml file for each Pod, We can let the yaml file read the configuration from ConfigMap file.</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.027.jpeg" /></p>
+<ul>
+<li><strong>Volume</strong> - similar to a container volume in Docker, but a Kubernetes volume applies to a whole pod and is mounted on all containers in the pod. Kubernetes guarantees data is preserved across container restarts. The volume will be removed only when the pod gets destroyed. Also, a pod can have multiple volumes (possibly of different types) associated.</li>
+</ul>
+<p><strong>Kubernetes commands</strong></p>
+<p><strong>Overview of kubectl</strong></p>
+<p>The kubectl command line tool lets you control Kubernetes clusters. For configuration, kubectl looks for a file named config in the $HOME/.kube directory. You can specify other kubeconfig files by setting the KUBECONFIG environment variable or by setting the --kubeconfig flag.</p>
+<p><strong>Syntax</strong></p>
+<p><strong>kubectl</strong> [command] [TYPE] [NAME] [flags] Where command, TYPE, NAME, and flags are:</p>
+<ul>
+<li>Command: Specifies the operation that you want to perform on one or more resources, for example create, get, describe, and delete.</li>
+<li>TYPE: Specifies the resource type. Resource types are case-insensitive and you can specify the singular, plural, or abbreviated forms. For example, the following commands produce the same output:</li>
+<li>kubectl get pod pod1</li>
+<li>kubectl get pods pod1</li>
+<li>kubectl get po pod1</li>
+<li>NAME: Specifies the name of the resource. Names are case-sensitive. If the name is omitted, details for all resources are displayed, for example kubectl get pods.</li>
+</ul>
+<p>When performing an operation on multiple resources, you can specify each resource by type and name or specify one or more files:</p>
+<ul>
+<li>To specify resources by type and name:</li>
+<li>To group resources if they are all the same type: TYPE1 name1 name2 name&lt;#&gt;. Example: kubectl get pod example-pod1 example-pod2</li>
+<li>To specify multiple resource types individually: TYPE1/name1 TYPE1/name2 TYPE2/name3 TYPE&lt;#&gt;/name&lt;#&gt;.</li>
+</ul>
+<p>Example: kubectl get pod/example-pod1 replicationcontroller/example- rc1</p>
+<ul>
+<li>To specify resources with one or more files: -f file1 -f file2 -f file&lt;#&gt;</li>
+<li>Use YAML rather than JSON since YAML tends to be more user-friendly, especially for configuration files.</li>
+</ul>
+<p>Example: kubectl get pod -f ./pod.yaml</p>
+<ul>
+<li>flags: Specifies optional flags. For example, you can use the -s or --server flags to specify the address and port of the Kubernetes API server.</li>
+</ul>
+<p><strong>Caution:</strong> Flags that you specify from the command line override default values and any corresponding environment variables.</p>
+<p>If you need help, just run kubectl help from the terminal window.</p>
+<p><strong>Top Commands</strong></p>
+<p><strong>#Kubernetes Commands</strong></p>
+<p>Helper setup to edit .yaml files with Vim:</p>
+<ul>
+<li>VIM Setup for Yaml files</li>
+</ul>
+<p>List of general purpose commands for Kubernetes management:</p>
+<ul>
+<li>PODS</li>
+<li>Create Deployments</li>
+<li>Scaling PODs</li>
+<li>POD Upgrade / History</li>
+<li>Services</li>
+<li>Volumes</li>
+<li>Secrets</li>
+<li>ConfigMaps</li>
+<li>Ingress</li>
+<li>Horizontal Pod Autoscalers</li>
+<li>Scheduler</li>
+<li>Taints and Tolerations</li>
+<li>Troubleshooting</li>
+<li>Role Based Access Control (RBAC)</li>
+<li>Security Contexts</li>
+<li>Pod Security Policies</li>
+<li>Network Policies</li>
+</ul>
+<p><strong>VIM Setup for Yaml files</strong></p>
+<p>Put the following lines in ~/.vimrc:</p>
+<ul>
+<li>Yaml file handling</li>
+</ul>
+<p>autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab filetype plugin indent on</p>
+<p>autocmd FileType yaml setl indentkeys-=&lt;:&gt;</p>
+<ul>
+<li>Copy paste with ctr+c, ctr+v, etc :behave mswin</li>
+</ul>
+<p>:set clipboard=unnamedplus :smap <Del> <C-g>"_d</p>
+<p>:smap <C-c> <C-g>y</p>
+<p>:smap <C-x> <C-g>x</p>
+<p>:imap <C-v> <Esc>pi</p>
+<p>:smap <C-v> <C-g>p</p>
+<p>:smap <Tab> <C-g>1&gt;  </p>
+<p>:smap <S-Tab> <C-g>1&lt;</p>
+<p>Keyboard hints:</p>
+<ul>
+<li>ctrl + f: auto indent line (requires INSERT mode)</li>
+</ul>
+<p><strong>PODS</strong></p>
+<p>$ kubectl get pods</p>
+<p>$ kubectl get pods --all-namespaces</p>
+<p>$ kubectl get pod monkey -o wide</p>
+<p>$ kubectl get pod monkey -o yaml</p>
+<p>$ kubectl describe pod monkey</p>
+<p><strong>Create Deployments</strong></p>
+<p>Create single deployment:</p>
+<p>$ kubectl run nginx --image=nginx –record</p>
+<p><strong>Scaling PODs</strong></p>
+<p>$ kubectl scale deployment/POD_NAME --replicas=N</p>
+<p><strong>POD Upgrade and history</strong></p>
+<p><strong>List history of deployments</strong></p>
+<p>$ kubectl rollout history deployment/DEPLOYMENT_NAME</p>
+<p><strong>Jump to specific revision</strong></p>
+<p>$ kubectl rollout undo deployment/DEPLOYMENT_NAME --to-revision=N <strong>Services</strong></p>
+<p>List services</p>
+<p>$ kubectl get services</p>
+<p>Expose PODs as services (creates endpoints)</p>
+<p>$ kubectl expose deployment nginx --port=80 --type=NodePort <strong>Volumes</strong></p>
+<p>Lits Persistent Volumes and Persistent Volumes Claims:</p>
+<p>$ kubectl get pv</p>
+<p>$ kubectl get pvc</p>
+<p><strong>Secrets</strong></p>
+<p>$ kubectl get secrets</p>
+<p>$ kubectl create secret generic --help</p>
+<p>$ kubectl create secret generic mysql --from-literal=password=root</p>
+<p>$ kubectl get secrets mysql -o yaml</p>
+<p><strong>ConfigMaps</strong></p>
+<p>$ kubectl create configmap foobar --from-file=config.js</p>
+<p>$ kubectl get configmap foobar -o yaml</p>
+<p><strong>DNS</strong></p>
+<p>List DNS-PODs:</p>
+<p>$ kubectl get pods --all-namespaces |grep dns</p>
+<p>Check DNS for pod nginx (assuming a busybox POD/container is running) $ kubectl exec -ti busybox -- nslookup nginx</p>
+<p>Note: kube-proxy running in the worker nodes manage services and set iptables rules to direct traffic.</p>
+<p><strong>Ingress</strong></p>
+<p>Commands to manage Ingress for ClusterIP service type: $ kubectl get ingress</p>
+<p>$ kubectl expose deployment ghost --port=2368</p>
+<p>Spec for ingress:</p>
+<ul>
+<li>backend</li>
+</ul>
+<p><strong>Horizontal Pod Autoscaler</strong></p>
+<p>When heapster runs:</p>
+<p>$ kubectl get hpa</p>
+<p>$ kubectl autoscale --help <strong>DaemonSets</strong></p>
+<p>$ kubectl get daemonsets</p>
+<p>$ kubectl get ds</p>
+<p><strong>Scheduler</strong></p>
+<p>NodeSelector based policy:</p>
+<p>$ kubectl label node minikube foo=bar Node Binding through API Server:</p>
+<p>$ kubectl proxy  </p>
+<p>$ curl -H "Content-Type: application/json" -X POST --data @binding.json <a href="http://localhost:8001/api/v1/namespaces/default/pods/foobar-sched/binding">http://localhost:8001/api/v1/namespaces/default/pods/foobar-sched/binding</a></p>
+<p><strong>Tains and Tolerations</strong></p>
+<p>$ kubectl taint node master foo=bar:NoSchedule</p>
+<p><strong>Troubleshooting</strong></p>
+<p>$ kubectl describe</p>
+<p>$ kubectl logs</p>
+<p>$ kubectl exec</p>
+<p>$ kubectl get nodes --show-labels</p>
+<p>$ kubectl get events</p>
+<p>Docs Cluster:</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/">https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/</a></li>
+<li><a href="https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ">https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ</a></li>
+</ul>
+<p><strong>Role Based Access Control</strong></p>
+<ul>
+<li>Role</li>
+<li>ClusterRule</li>
+<li>Binding</li>
+<li>ClusterRoleBinding</li>
+</ul>
+<p>$ kubectl create role fluent-reader --verb=get --verb=list --verb=watch --resource=pods $ kubectl create rolebinding foo --role=fluent-reader --user=minikube</p>
+<p>$ kubectl get rolebinding foo -o yaml</p>
+<p><strong>Security Contexts</strong></p>
+<p>Docs: <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">https://kubernetes.io/docs/tasks/configure-pod-container/security-context/</a></p>
+<ul>
+<li>spec</li>
+<li>securityCOntext  </li>
+<li>runAsNonRoot: true</li>
+</ul>
+<p><strong>Pod Security Policies</strong></p>
+<p>Docs: <a href="https://github.com/kubernetes/kubernetes/blob/master/examples/podsecuritypolicy/rbac/READ">https://github.com/kubernetes/kubernetes/blob/master/examples/podsecuritypolicy/rbac/READ</a> ME.md</p>
+<p><strong>Network Policies</strong></p>
+<p>Network isolation at Pod level by using annotations</p>
+<p>$ kubectl annotate ns <namespace> "net.beta.kubernetes.io/network-policy={\"ingress\": {\"isolation\": \"DefaultDeny\"}}"</p>
+<p>More about Network Policies as a resource: <a href="https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/">https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/</a></p>
+<p><strong>Kubeadm</strong></p>
+<p>Kubeadm is a tool built to provide kubeadm init and kubeadm join as best-practice “fast paths” for creating Kubernetes clusters.</p>
+<p>Kubeadm performs the actions necessary to get a minimum viable cluster up and running. By design, it cares only about bootstrapping, not about provisioning machines. Likewise, installing various nice-to-have addons, like the Kubernetes Dashboard, monitoring solutions, and cloud- specific addons, is not in scope.</p>
+<p>Instead, we expect higher-level and more tailored tooling to be built on top of kubeadm, and ideally, using kubeadm as the basis of all deployments will make it easier to create conformant clusters.</p>
+<p><strong>Kubernetes YAML</strong></p>
+<p>As stated on the Wikipedia page for JSON, YAML (Yet Another Markup Language) is a superset of JSON, which means that it has all the functionality of JSON, but it also extends this functionality to some degree.</p>
+<ul>
+<li>YAML is basically a wrapper around JSON, doing everything that JSON can do and then some.</li>
+</ul>
+<p><strong>YAML VS JSON</strong></p>
+<ul>
+<li>The YAML file takes less space than the JSON file.</li>
+<li>YAML requires less characters than JSON does.</li>
+<li>YAML allows for comments, while JSON doesn’t.</li>
+</ul>
+<p><strong>YAML Syntax</strong></p>
+<p>YAML files consist of maps (or dictionaries) of key-value pairs. A YAML map is simply an object, containing keys and values.</p>
+<p>Here’s a map of three key-value pairs:</p>
+<p>key1: value1</p>
+<p>key2: value2</p>
+<p>key3: value3</p>
+<p>A single key can itself contain a map:</p>
+<p>key1:</p>
+<p>``subkey1: subvalue1</p>
+<p>``subkey2: subvalue2</p>
+<p>``subkey3: subvalue3</p>
+<p>YAML also has lists (are just an array of values for a particular key):</p>
+<p>list:</p>
+<ul>
+<li>item1</li>
+<li>item2</li>
+<li>item3</li>
+</ul>
+<p>Lists can also contain maps:</p>
+<p>list:</p>
+<ul>
+<li>item1</li>
+</ul>
+<p>``mapItem1: value     mapItem2: value</p>
+<p><strong>Kubernetes YAML Basics</strong></p>
+<p>There are a few required fields in every Kubernetes YAML file to work:</p>
+<ul>
+<li><strong>apiVersion</strong> - Which version of the Kubernetes API you're using to create this object</li>
+<li><strong>Kind</strong> - What kind of object you want to create</li>
+<li><strong>metadata</strong> - Data that helps uniquely identify the object, including a name string, UID, and optional namespace</li>
+<li><strong>spec</strong> - What state you desire for the object</li>
+</ul>
+<p>Let’s take another look at our deployment.yaml</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>apiVersion: v1 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>kind: pod 
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>metadata: 
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  name: website 
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  labels: 
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    name: web 
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>spec: 
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  containers: 
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>- name: web-server 
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    image: nginx 
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    resources: 
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>      limits: 
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        memory: &quot;128Mi&quot;         cpu: &quot;500m&quot; 
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    ports: 
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>- containerPort: 80 
+</code></pre></div>
+<p><strong>apiVersions</strong></p>
+<p><strong>Which apiVersion should I use?</strong></p>
+<p><strong>Kind  apiVersion</strong>             CertificateSigningRequest  certificates.k8s.io/v1beta1</p>
+<table>
+<thead>
+<tr>
+<th>ClusterRoleBinding</th>
+<th>rbac.authorization.k8s.io/v1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ClusterRole</td>
+<td>rbac.authorization.k8s.io/v1</td>
+</tr>
+<tr>
+<td>ComponentStatus</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>ConfigMap</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>ControllerRevision</td>
+<td>apps/v1</td>
+</tr>
+<tr>
+<td>CronJob</td>
+<td>batch/v1beta1</td>
+</tr>
+<tr>
+<td>DaemonSet</td>
+<td>extensions/v1beta1</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>extensions/v1beta1</td>
+</tr>
+<tr>
+<td>Endpoints</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>Event</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>HorizontalPodAutoscaler</td>
+<td>autoscaling/v1</td>
+</tr>
+<tr>
+<td>Ingress</td>
+<td>extensions/v1beta1</td>
+</tr>
+<tr>
+<td>Job</td>
+<td>batch/v1</td>
+</tr>
+<tr>
+<td>LimitRange</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>Namespace</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>NetworkPolicy</td>
+<td>extensions/v1beta1</td>
+</tr>
+<tr>
+<td>Node</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>PersistentVolumeClaim</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>PersistentVolume</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>PodDisruptionBudget</td>
+<td>policy/v1beta1</td>
+</tr>
+<tr>
+<td>Pod</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>PodSecurityPolicy</td>
+<td>extensions/v1beta1</td>
+</tr>
+<tr>
+<td>PodTemplate</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>ReplicaSet</td>
+<td>extensions/v1beta1</td>
+</tr>
+<tr>
+<td>ReplicationController</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>ResourceQuota</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>RoleBinding</td>
+<td>rbac.authorization.k8s.io/v1</td>
+</tr>
+<tr>
+<td>Role</td>
+<td>rbac.authorization.k8s.io/v1</td>
+</tr>
+<tr>
+<td>Secret</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>ServiceAccount</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>Service</td>
+<td>v1</td>
+</tr>
+<tr>
+<td>StatefulSet</td>
+<td>apps/v1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>v1</strong></li>
+</ul>
+<p>This was the first stable release of the Kubernetes API. It contains many core objects.  </p>
+<ul>
+<li><strong>apps/v1</strong></li>
+</ul>
+<p>apps is the most common API group in Kubernetes, with many core objects being drawn from it and v1. It includes functionality related to running applications on Kubernetes, like Deployments, RollingUpdates, and ReplicaSets.  </p>
+<ul>
+<li><strong>autoscaling/v1</strong></li>
+</ul>
+<p>This API version allows pods to be autoscaled based on different resource usage metrics.</p>
+<p>This stable version includes support for only CPU scaling, but future alpha and beta versions will allow you to scale based on memory usage and custom metrics.  </p>
+<ul>
+<li><strong>batch/v1</strong></li>
+</ul>
+<p>The batch API group contains objects related to batch processing and job-like tasks (rather than application-like tasks like running a webserver indefinitely). This apiVersion is the first stable release of these API objects.  </p>
+<ul>
+<li><strong>batch/v1beta1</strong></li>
+</ul>
+<p>A beta release of new functionality for batch objects in Kubernetes, notably including CronJobs that let you run Jobs at a specific time or periodicity.  </p>
+<p>apiVersion: v1 kind: Pod <strong>metadata:</strong></p>
+<p>``<strong>name: rss-site</strong>   <strong>labels:</strong></p>
+<p>``<strong>app: web</strong></p>
+<ul>
+<li>When I write that apiversion in YAML file : group/v</li>
+</ul>
+<p>APIVersions Reference link <a href="https://kubernetes.io/docs/reference/generated/kubernetes-">https://kubernetes.io/docs/reference/generated/kubernetes-</a> api/v1.18/#-strong-api-overview-strong-</p>
+<p><strong>Kind</strong></p>
+<p>What kindly of object you want to create: To check all kinds available to create:  </p>
+<ul>
+<li>
+<h1 id="kubectl-api-resources">kubectl api-resources</h1>
+</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.029.jpeg" /></p>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>vsCode is an excellent tool to make the YAML file.</li>
+<li>You can use Helm or Bitnami as chart and ready apps</li>
+<li>You can use container platform and service catalog.</li>
+</ul>
+<p><strong>Kubectl Autocomplete</strong></p>
+<ul>
+<li>
+<h1 id="source-kubectl-completion-bash-setup-autocomplete-in-bash-into-the-current-shell-bash-completion-package-should-be-installed-first">source &lt;(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first</h1>
+</li>
+<li>
+<h1 id="echo-source-kubectl-completion-bash-bashrc-add-autocomplete-permanently-to-your-bash-shell">echo "source &lt;(kubectl completion bash)" &gt;&gt; ~/.bashrc # add autocomplete permanently to your bash shell</h1>
+</li>
+</ul>
+<p><strong>Install kubernetes</strong></p>
+<p><strong>Step 1 - Kubernetes Installation</strong></p>
+<p>The three-node cluster that we will be forming in this example will consist of a Master node and a Two Slave nodes, therefore, follow the steps described below to install Kubernetes on the CentOS nodes.</p>
+<ul>
+<li>Kubernetes will be installed as a container so we must install Docker engine  </li>
+<li>All nodes need to have Kubernetes installed on them.</li>
+</ul>
+<p>We will prepare all servers for Kubernetes installation by changing the existing configuration on servers, and also installing some packages, including docker-ce and kubernetes itself.</p>
+<ul>
+<li>
+<p><strong>Configure Hosts File</strong></p>
+</li>
+<li>
+<h1 id="vim-etchosts">vim /etc/hosts</h1>
+</li>
+</ul>
+<p>Add all servers IPs master and workers to the hosts file below.</p>
+<ul>
+<li>192.168.179.133      k8s-master</li>
+<li>192.168.179.131      node01</li>
+<li>192.168.179.132      node02</li>
+</ul>
+<p>Save and exit. <strong>-Configure Firewall</strong></p>
+<p>The nodes, containers, and pods need to be able to communicate across the cluster to perform their functions. Firewalld is enabled in CentOS by default on the front-end. Add the following ports by entering the listed commands.</p>
+<p>On the Master Node enter:</p>
+<ul>
+<li>
+<h1 id="firewall-cmd-permanent-add-port6443tcp">firewall-cmd --permanent --add-port=6443/tcp</h1>
+</li>
+<li>
+<p>firewall-cmd --permanent --add-port=2379-2380/tcp</p>
+</li>
+<li>firewall-cmd --permanent --add-port=10250/tcp</li>
+<li>firewall-cmd --permanent --add-port=10251/tcp</li>
+<li>firewall-cmd --permanent --add-port=10252/tcp</li>
+<li>firewall-cmd --permanent --add-port=10255/tcp</li>
+<li>firewall-cmd --reload</li>
+</ul>
+<p>Enter the following commands on each worker node:</p>
+<ul>
+<li>
+<h1 id="firewall-cmd-permanent-add-port10251tcp">firewall-cmd --permanent --add-port=10251/tcp</h1>
+</li>
+<li>
+<p>firewall-cmd --permanent --add-port=10252/tcp</p>
+</li>
+<li>firewall-cmd –reload</li>
+</ul>
+<p>To list all firewall rules</p>
+<ul>
+<li>
+<h1 id="firewall-cmd-list-all">firewall-cmd --list-all</h1>
+</li>
+</ul>
+<p><strong>Update Iptables Settings</strong></p>
+<p>Set the net.bridge.bridge-nf-call-iptables to ‘1’ in your sysctl config file. This ensures that packets are properly processed by IP tables during filtering and port forwarding.</p>
+<ul>
+<li>
+<h1 id="cat-etcsysctldk8sconf-netbridgebridge-nf-call-ip6tables-1-netbridgebridge-nf-call-iptables-1-eof">cat &lt;<EOF > /etc/sysctl.d/k8s.conf net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 EOF</h1>
+</li>
+</ul>
+<p>sysctl --system</p>
+<ul>
+<li><strong>Enable br_netfilter Kernel Module</strong></li>
+</ul>
+<p>The br_netfilter module is required for kubernetes installation. Enable this kernel module so that the packets traversing the bridge are processed by iptables for filtering and for port forwarding, and the kubernetes pods across the cluster can communicate with each other.</p>
+<p>Run the command below to enable the br_netfilter kernel module.</p>
+<ul>
+<li>
+<h1 id="modprobe-br_netfilter">modprobe br_netfilter</h1>
+</li>
+<li>
+<h1 id="echo-1-procsysnetbridgebridge-nf-call-iptables">echo '1' &gt; /proc/sys/net/bridge/bridge-nf-call-iptables</h1>
+</li>
+</ul>
+<p><strong>-Disable SELinux</strong></p>
+<ul>
+<li>
+<h1 id="sudo-setenforce-0">sudo setenforce 0</h1>
+</li>
+<li>
+<h1 id="sudo-sed-i-sselinuxenforcingselinuxpermissive-etcselinuxconfig">sudo sed -i ‘s/^SELINUX=enforcing$/SELINUX=permissive/’ /etc/selinux/config</h1>
+</li>
+<li>
+<p><strong>Disable SWAP</strong></p>
+</li>
+</ul>
+<p>If swap is not disabled, kubelet service will not start on the masters and nodes, for Platform9 Managed Kubernetes version 3.3 and above.</p>
+<ul>
+<li>
+<h1 id="swapoff-a">swapoff –a</h1>
+</li>
+</ul>
+<p>And then edit the '/etc/fstab' file. Comment the swap line UUID as below.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.031.png" /></p>
+<ul>
+<li><strong>Install Docker on the nodes</strong></li>
+</ul>
+<p>Install the package dependencies for docker-ce.</p>
+<ul>
+<li>
+<h1 id="yum-install-y-yum-utils-device-mapper-persistent-data">yum install -y yum-utils device-mapper-persistent-data</h1>
+</li>
+</ul>
+<p>Add the docker repository to the system and install docker-ce using the yum command.</p>
+<ul>
+<li>
+<h1 id="yum-config-manager-add-repo-httpsdownloaddockercomlinuxcentosdocker-cerepo">yum-config-manager --add-repo <a href="https://download.docker.com/linux/centos/docker-">https://download.docker.com/linux/centos/docker-</a> ce.repo</h1>
+</li>
+<li>
+<h1 id="yum-install-y-docker-ce">yum install -y docker-ce</h1>
+</li>
+<li>
+<p><strong>Enable Docker on the nodes</strong></p>
+</li>
+</ul>
+<p>Enable and start the Docker utility on both the nodes by running the following command on each:</p>
+<ul>
+<li>
+<h1 id="systemctl-enable-docker">systemctl enable docker</h1>
+</li>
+<li>
+<h1 id="systemctl-start-docker">systemctl start docker</h1>
+</li>
+<li>
+<p><strong>Add the Kubernetes signing key on the nodes</strong></p>
+</li>
+</ul>
+<p>Add the kubernetes repository and key to the centos 7 system by running the following command.  </p>
+<ul>
+<li>
+<h1 id="cat-etcyumreposdkubernetesrepo">cat &lt;<EOF > /etc/yum.repos.d/kubernetes.repo</h1>
+</li>
+</ul>
+<p>[kubernetes]</p>
+<p>name=Kubernetes baseurl=<a href="https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64">https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64</a> enabled=1</p>
+<p>gpgcheck=1</p>
+<p>repo_gpgcheck=1</p>
+<p>gpgkey=<a href="https://packages.cloud.google.com/yum/doc/yum-key.gpg">https://packages.cloud.google.com/yum/doc/yum-key.gpg</a></p>
+<p>``<a href="https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg">https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</a> EOF</p>
+<ul>
+<li><strong>Install Kubeadm</strong></li>
+</ul>
+<p>Now install the kubernetes packages kubeadm, kubelet, and kubectl using the yum command below.  </p>
+<ul>
+<li>
+<h1 id="yum-install-y-kubelet-kubeadm-kubectl">yum install -y kubelet kubeadm kubectl</h1>
+</li>
+</ul>
+<p>You can check the version number of Kubeadm and also verify the installation through the following command:</p>
+<ul>
+<li>
+<h1 id="kubeadm-version">kubeadm version</h1>
+</li>
+</ul>
+<p>After the installation is complete, restart all those servers.</p>
+<p>Log in again to the server and start the services, docker and kubelet.</p>
+<ul>
+<li>
+<h1 id="systemctl-start-docker-systemctl-enable-docker">systemctl start docker &amp;&amp; systemctl enable docker</h1>
+</li>
+<li>
+<h1 id="systemctl-start-kubelet-systemctl-enable-kubelet">systemctl start kubelet &amp;&amp; systemctl enable kubelet</h1>
+</li>
+<li>
+<p><strong>Change the cgroup-driver</strong></p>
+</li>
+</ul>
+<p>We need to make sure the docker-ce and kubernetes are using same 'cgroup'. Check docker cgroup using the docker info command.</p>
+<ul>
+<li>
+<h1 id="docker-info-grep-i-cgroup">docker info | grep -i cgroup</h1>
+</li>
+</ul>
+<p>And you see the docker is using 'cgroupfs' as a cgroup-driver.</p>
+<p>Now run the command below to change the kuberetes cgroup-driver to 'cgroupfs'.</p>
+<ul>
+<li>
+<h1 id="sed-i-scgroup-driversystemdcgroup-drivercgroupfsg-etcsystemdsystemkubeletserviced10-kubeadmconf">sed -i 's/cgroup-driver=systemd/cgroup-driver=cgroupfs/g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf</h1>
+</li>
+</ul>
+<p><strong>Step 2 - Kubernetes Cluster Initialization</strong></p>
+<p>In this step, we will initialize the kubernetes master cluster configuration.</p>
+<p>Move the shell to the master server 'master' and run the command below to set up the kubernetes master.</p>
+<ul>
+<li>
+<h1 id="kubeadm-init-apiserver-advertise-address1001510-pod-network-cidr102440016">kubeadm init --apiserver-advertise-address=10.0.15.10 --pod-network- cidr=10.244.0.0/16</h1>
+</li>
+</ul>
+<p>--apiserver-advertise-address = determines which IP address Kubernetes should advertise its API server on.</p>
+<p>--pod-network-cidr = specify the range of IP addresses for the pod network. We're using the 'flannel' virtual network. If you want to use another pod network such as weave-net or calico, change the range IP address.</p>
+<ul>
+<li>When the Kubernetes initialization is complete, you will get the result as below.</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.033.jpeg" /></p>
+<p>Copy the '<strong>kubeadm join ... ... ...</strong>' command to your text editor. The command will be used to register new nodes to the kubernetes cluster.</p>
+<p>Now in order to use Kubernetes, we need to run some commands as on the result. Create new '.kube' configuration directory and copy the configuration 'admin.conf'.</p>
+<ul>
+<li>
+<h1 id="mkdir-p-homekube">mkdir -p $HOME/.kube</h1>
+</li>
+</ul>
+<p>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config sudo chown <span class="arithmatex">\((id -u):\)</span>(id -g) $HOME/.kube/config</p>
+<p>Next, deploy the flannel network to the kubernetes cluster using the kubectl command.</p>
+<ul>
+<li>
+<h1 id="kubectl-apply-f-httpsrawgithubusercontentcomcoreosflannelmasterdocumentationkube-flannelyml">kubectl apply -f <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-</a> flannel.yml</h1>
+</li>
+</ul>
+<p>The flannel network has been deployed to the Kubernetes cluster.</p>
+<p>Wait for a minute and then check kubernetes node and pods using commands below.</p>
+<ul>
+<li>
+<h1 id="kubectl-get-nodes">kubectl get nodes</h1>
+</li>
+<li>
+<h1 id="kubectl-get-pods-all-namespaces">kubectl get pods --all-namespaces</h1>
+</li>
+</ul>
+<p>And you will get the ‘master' node is running as a 'master' cluster with status 'ready', and you will get all pods that are needed for the cluster, including the 'kube-flannel-ds' for network pod configuration.</p>
+<p>Make sure all kube-system pods status is 'running'.</p>
+<p>Kubernetes cluster master initialization and configuration has been completed.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.035.png" /></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.036.png" /></p>
+<p><strong>Step 3 - Adding node1 and node2 to the Cluster</strong></p>
+<p>In this step, we will add node1 and node2 to join the 'master' cluster.</p>
+<p>Connect to the node1 server and run the kubeadm join command as we copied on the top.</p>
+<ul>
+<li>
+<h1 id="kubeadm-join-1921681791336443-token-l12jxw3c960ner9320dpg8-discovery-token-ca-cert-hash-sha256af54557ca10c0702f6e29bf4d7d96a76eea38e8c85a1bc5cfd6d56ee9d9a1dd7">kubeadm join 192.168.179.133:6443 --token l12jxw.3c960ner9320dpg8     --discovery- token-ca-cert-hash sha256:af54557ca10c0702f6e29bf4d7d96a76eea38e8c85a1bc5cfd6d56ee9d9a1dd7</h1>
+</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.037.jpeg" /></p>
+<p>Connect to the node2 server and run the kubeadm join command as we copied on the top.</p>
+<p>Wait for some minutes and back to the ‘master' master cluster server check the nodes and pods using the following command.</p>
+<ul>
+<li>
+<h1 id="kubectl-get-nodes_1">kubectl get nodes</h1>
+</li>
+<li>
+<h1 id="kubectl-get-pods-all-namespaces_1">kubectl get pods --all-namespaces</h1>
+</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.039.png" /></p>
+<p>Node1 and Node2 have been added to the kubernetes cluster.</p>
+<p><strong>Step 4 - Create First Pod</strong></p>
+<p>In this step, we will do a test by deploying the Nginx pod to the kubernetes cluster.  </p>
+<p>Configure the yaml file of deployment and if want to publish it from external network must to configure service yaml file</p>
+<p><strong>Pod yaml</strong> apiVersion: v1</p>
+<p>kind: Pod</p>
+<p>metadata:</p>
+<p>``name: website</p>
+<p>``labels:</p>
+<p>``name: web</p>
+<p>spec:</p>
+<p>``containers:</p>
+<ul>
+<li>name: web-server</li>
+</ul>
+<p>``image: nginx</p>
+<p>``resources:</p>
+<p>``limits:</p>
+<p>``memory: "128Mi"         cpu: "500m"</p>
+<p>``ports:</p>
+<ul>
+<li>containerPort: 80</li>
+</ul>
+<p><strong>Service yaml</strong></p>
+<p>apiVersion: v1</p>
+<p>kind: Service</p>
+<p>metadata:</p>
+<p>``name:  Publish-website spec:</p>
+<p>``selector:</p>
+<p>``name:  web</p>
+<p>``type:  NodePort</p>
+<p>``ports:</p>
+<ul>
+<li>name:  http</li>
+</ul>
+<p>``port:  80</p>
+<p>``targetPort:  80</p>
+<p>``nodePort: 30003</p>
+<p>``protocol: TCP</p>
+<ul>
+<li><strong>Above example selector name is the label name on the pod deployment yaml file</strong></li>
+<li><strong>Publish containers from nodeport type use ports from 30000 to 32000.</strong></li>
+</ul>
+<p>Create new deployment named 'nginx' using the kubectl command.</p>
+<ul>
+<li>
+<h1 id="kubectl-create-f-websiteyaml">kubectl create -f website.yaml</h1>
+</li>
+</ul>
+<p>To see details of the 'nginx' deployment sepcification, run the following command.</p>
+<ul>
+<li>
+<h1 id="kubectl-describe-deployment-nginx">kubectl describe deployment nginx</h1>
+</li>
+</ul>
+<p>Next, we will expose the nginx pod accessible via the internet. And we need to create new service NodePort for this.</p>
+<ul>
+<li>
+<h1 id="kubectl-create-f-serviceyaml">kubectl create -f service.yaml</h1>
+</li>
+</ul>
+<p>If I want to change anything in yaml configuration and reapply it use command.</p>
+<ul>
+<li>
+<h1 id="kubectl-apply-f-serviceyaml">kubectl apply -f service.yaml</h1>
+</li>
+</ul>
+<p>Make sure there is no error. Now check the nginx service nodeport and IP using the kubectl command below.</p>
+<ul>
+<li>
+<h1 id="kubectl-get-pods">kubectl get pods</h1>
+</li>
+<li>
+<h1 id="kubectl-get-svc">kubectl get svc</h1>
+</li>
+<li>
+<h1 id="kubectl-describe-svc">kubectl describe svc</h1>
+</li>
+</ul>
+<p>Now you will get the nginx pod is now running under cluster IP address ‘10.109.154.222’ port 80, and the node main IP address '192.168.179.131' on port '30003'.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.042.png" /></p>
+<p>The Nginx Pod has now been deployed under the Kubernetes cluster and it's accessible via the internet, now access from the web browser. <a href="http://192.168.179.131:30003/">http://192.168.179.131:30003/</a></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.043.jpeg" /></p>
+<p><strong>Kubernetes Namespace</strong></p>
+<p><strong>What is a Namespace?</strong></p>
+<p>You can think of a Namespace as a virtual cluster inside your Kubernetes cluster. You can have multiple namespaces inside a single Kubernetes cluster, and they are all logically isolated from each other. They can help you and your teams with organization, security, and even performance!**  </p>
+<p>In most Kubernetes distributions, the cluster comes out of the box with a Namespace called “default.” In fact, there are actually three namespaces that Kubernetes ships with: default, kube- system (used for Kubernetes components), and kube-public (used for public resources). Kube- public isn’t really used for much right now, and it’s usually a good idea to leave kube-system alone</p>
+<p><strong>Functionality of Namespace</strong></p>
+<p>Following are some of the important functionalities of a Namespace in Kubernetes −</p>
+<ul>
+<li>Namespaces help pod-to-pod communication using the same namespace.</li>
+<li>Namespaces are virtual clusters that can sit on top of the same physical cluster.</li>
+<li>They provide logical separation between the teams and their environments.</li>
+</ul>
+<p><strong>Create a Namespace</strong></p>
+<p>The following command is used to create a namespace.</p>
+<p>apiVersion: v1</p>
+<p>kind: Namespace metadata</p>
+<p>``name: MicroFinance</p>
+<p><strong>Control the Namespace</strong></p>
+<p>The following command is used to control the namespace.</p>
+<ul>
+<li>kubectl create –f namespace.yml ---------&gt; 1</li>
+<li>kubectl get namespace -----------------&gt; 2</li>
+<li>kubectl get namespace <Namespace name> -------&gt;3</li>
+<li>kubectl describe namespace <Namespace name> ----&gt;4</li>
+<li>kubectl delete namespace <Namespace name></li>
+</ul>
+<p>In the above code,</p>
+<ul>
+<li>We are using the command to create a namespace.</li>
+<li>This will list all the available namespace.</li>
+<li>This will get a particular namespace whose name is specified in the command.</li>
+<li>This will describe the complete details about the service.</li>
+<li>This will delete a particular namespace present in the cluster.</li>
+</ul>
+<p><strong>This is a sample resource quota limit for namespace</strong></p>
+<p>apiVersion: v1</p>
+<p>kind: ResourceQouta  metadata:</p>
+<p>``name: compute-qouta   namespace: prod</p>
+<p>spec:</p>
+<p>``hard:</p>
+<p>``pods: "10"</p>
+<p>``requests.cpu: "4"</p>
+<p>``requests.memory: 5Gi     limits.cpu: "10"</p>
+<p>``limits.memory: 10Gi</p>
+<p><strong>This is the output after apply limits on namespace</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-describe-namespace-prod">kubectl describe namespace prod</h1>
+</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.045.png" /></p>
+<p><strong>Using Namespace in Service - Example</strong></p>
+<p>Following is an example of a sample file for using namespace in service.</p>
+<p>apiVersion: v1</p>
+<p>kind: Service</p>
+<p>metadata:</p>
+<p>``name: Micro  </p>
+<p>``namespace: MicroFinance    labels:</p>
+<p>``component: Micro spec:</p>
+<p>``type: LoadBalancer</p>
+<p>``selector:</p>
+<p>``component: Micro</p>
+<p>``ports:</p>
+<ul>
+<li>name: http</li>
+</ul>
+<p>``port: 9200</p>
+<p>``protocol: TCP</p>
+<ul>
+<li>name: transport</li>
+</ul>
+<p>``port: 9300</p>
+<p>``protocol: TCP</p>
+<p>In the above code, we are using the same namespace under service metadata with the name of MicroFinance.</p>
+<p><strong>Kubernetes Deployments</strong></p>
+<p>Deployments are upgraded and higher version of replication controller. They manage the deployment of replica sets which is also an upgraded version of the replication controller. They have the capability to update the replica set and are also capable of rolling back to the previous version.</p>
+<p>They provide many updated features of <strong>matchLabels</strong> and <strong>selectors</strong>. We have got a new controller in the Kubernetes master called the deployment controller which makes it happen. It has the capability to change the deployment midway.</p>
+<p><strong>Changing the Deployment</strong></p>
+<ul>
+<li><strong>Updating</strong> − The user can update the ongoing deployment before it is completed. In this, the existing deployment will be settled and new deployment will be created.</li>
+<li><strong>Deleting</strong> − The user can pause/cancel the deployment by deleting it before it is completed. Recreating the same deployment will resume it.</li>
+<li><strong>Rollback</strong> − We can roll back the deployment or the deployment in progress. The user can create or update the deployment by using <strong>DeploymentSpec.PodTemplateSpec = oldRC.PodTemplateSpec.</strong></li>
+</ul>
+<p><strong>Deployment Strategies</strong></p>
+<p>Deployment strategies help in defining how the new RC should replace the existing RC.</p>
+<p><strong>Recreate</strong> − This feature will kill all the existing RC and then bring up the new ones. This results in quick deployment however it will result in downtime when the old pods are down and the new pods have not come up.</p>
+<p><strong>Rolling Update</strong> − This feature gradually brings down the old RC and brings up the new one. This results in slow deployment, however there is no deployment. At all times, few old pods and few new pods are available in this process.</p>
+<p>The configuration file of Deployment looks like this.</p>
+<p>apiVersion: extensions/v1beta1 ---------------------&gt;1</p>
+<p>kind: Deployment --------------------------&gt; 2</p>
+<p>metadata:</p>
+<p>``name: Tomcat-ReplicaSet</p>
+<p>spec:</p>
+<p>``replicas: 3</p>
+<p>``template:</p>
+<p>``metadata:</p>
+<p>``lables:</p>
+<p>``app: Tomcat-ReplicaSet</p>
+<p>``tier: Backend</p>
+<p>``spec:</p>
+<p>``containers:</p>
+<ul>
+<li>name: Tomcatimage:</li>
+</ul>
+<p>``tomcat: 8.0</p>
+<p>``ports:</p>
+<ul>
+<li>containerPort: 7474</li>
+</ul>
+<p>In the above code, the only thing which is different from the replica set is we have defined the</p>
+<p>kind as deployment.</p>
+<p><strong>Create Deployment</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-create-f-deploymentyaml-record">kubectl create –f Deployment.yaml –record</h1>
+</li>
+</ul>
+<p>-–record to see the deployments by command # kubectl rollout status deployment/Deployment</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.047.png" /></p>
+<p>Deployment "Deployment" created successfully. <strong>Fetch the Deployment</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-get-deployments">kubectl get deployments</h1>
+</li>
+<li>
+<h1 id="kubectl-get-deploy-o-wide">kubectl get deploy -o wide</h1>
+</li>
+</ul>
+<p>NAME           DESIRED     CURRENT     UP-TO-DATE     AVILABLE    AGE Deployment        3           3           3              3        20s</p>
+<p><strong>Check the Status of Deployment</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-rollout-status-deploymentdeployment">kubectl rollout status deployment/Deployment</h1>
+</li>
+</ul>
+<p><strong>Updating the Deployment</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-apply-f-deploymentyaml-after-update-the-new-version-inside-the-yaml-file">kubectl apply –f Deployment.yaml (after update the new version inside the yaml file)</h1>
+</li>
+<li>
+<h1 id="kubectl-set-image-deploymentdeployment-tomcattomcat60">kubectl set image deployment/Deployment tomcat=tomcat:6.0</h1>
+</li>
+</ul>
+<p><strong>Rolling Back to Previous Deployment</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-rollout-undo-deploymentdeployment-to-revision2">kubectl rollout undo deployment/Deployment –to-revision=2</h1>
+</li>
+</ul>
+<p><strong>Check rollout history</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-rollout-history-deploymentdeployment">kubectl rollout history deployment/Deployment</h1>
+</li>
+</ul>
+<p><strong>Get ReplicaSet</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-get-replicaset">kubectl get replicaset</h1>
+</li>
+</ul>
+<p>[root@master ~]# kubectl get replicaset</p>
+<p>NAME                          DESIRED   CURRENT   READY   AGE Tomcat-ReplicaSet 3         3         3       2d14h</p>
+<p><strong>Delete ReplicaSet (it will also delete all underlying Pods)</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-delete-replicaset-replicaset-name">kubectl delete ReplicaSet &lt; ReplicaSet name&gt;</h1>
+</li>
+</ul>
+<p>[root@master ~]# delete replicaset Tomcat-ReplicaSet</p>
+<p><strong>Scaling the Deployment</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-scale-replicas6-f-deploymentyaml">kubectl scale --replicas=6  –f Deployment.yaml</h1>
+</li>
+</ul>
+<p><strong>To deploy from local image include imagePullPolicy: Never in the deployment yaml file</strong></p>
+<p>spec:</p>
+<p>``containers:</p>
+<ul>
+<li>name: nginx-web</li>
+</ul>
+<p>``image: nginx</p>
+<p>``resources:</p>
+<p>``limits:</p>
+<p>``memory: "100Mi"</p>
+<p>``cpu: "100m"</p>
+<p>``imagePullPolicy: Never</p>
+<p><strong>Assign Pods to Nodes</strong></p>
+<p><strong>1-  Assign label to your nodes</strong></p>
+<p>List the nodes in your cluster, along with their labels:</p>
+<ul>
+<li>
+<h1 id="kubectl-get-nodes-show-labels">kubectl get nodes --show-labels</h1>
+</li>
+</ul>
+<p>Chose one of your nodes, and add a label to it:</p>
+<ul>
+<li>
+<h1 id="kubectl-label-nodes-centos-typemaster">kubectl label nodes centos type=Master</h1>
+</li>
+</ul>
+<p>Verify that your chosen node has a type=Master label:</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.049.png" /></p>
+<p><strong>2-  In the YAML file add selector of nodeSelector with the label</strong>  </p>
+<p>spec:</p>
+<p>``containers:</p>
+<ul>
+<li>name: nginx</li>
+</ul>
+<p>``image: nginx</p>
+<p>``nodeSelector:</p>
+<p>``type: Master</p>
+<p>Apply your deployment</p>
+<ul>
+<li>
+<h1 id="kubectl-apply-f-deploymentyaml">kubectl apply -f Deployment.yaml</h1>
+</li>
+</ul>
+<p><strong>To get into Pod Shell</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-exec-stdin-tty-binbash">kubectl exec --stdin --tty <Pod Name> -- /bin/bash</h1>
+</li>
+</ul>
+<p>[root@master ~]# kubectl exec --stdin --tty pod/nginx-deployment-597fbc7d6f- jhwf2  -- /bin/bash</p>
+<p>root@nginx-deployment-597fbc7d6f-jhwf2:/# ls</p>
+<p><strong>Kubernetes Networking</strong></p>
+<p>Networking in any architecture or technology is very essential to understand if you want to deploy the applications over the network and also understanding how the network works that will help you to troubleshoot if you have any network issue. So we must know exactly what is happening in the network and how all the connections are establishing for the communication over the network.</p>
+<p>This is a basic kubernetes architecture where you have some worker nodes, and few pods are running on it with couple of containers.  When you have these many components, how all these components are establishing its connection to make the application accessible over the network? The answer is that happens only through kubernetes networking.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.051.png" /></p>
+<p><strong>Types of Kubernetes Networking</strong></p>
+<ol>
+<li><strong>Container to Container Communication:</strong>  </li>
+</ol>
+<p>When you have one or more containers within a pod that shares the same host networking. So pods will get its own IP address, all container shares same ip address but it works on different port. Communication between containers happens within the pod itself on different port. So all containers will be able to communicate each other by default.</p>
+<ol>
+<li><strong>Pod to Pod communication:</strong>  </li>
+</ol>
+<p>As said earlier, each pods will get its own ip address. There are sub types within Pod to Pod communication, that is.</p>
+<p>Intra-node Pod Network - Communication of pods running on a single node. Inter-node Pod Network - Communication of pods running in different nodes.</p>
+<p>On the first case, each pod running on single worker node will have the communication by default, because all ip address of pods will be different and assigned from your local network. Since it shares the same host.</p>
+<p>On the second case, when you have pod running on multiple worker nodes, communication between these pods happens through network plugin that will create some route tables. It forwards the traffic from any pod to any destination pods.</p>
+<ol>
+<li><strong>Pod to Service Communication:</strong>  </li>
+</ol>
+<p>Service is kubernetes resource type that expose our application to outside the cluster. Through which pod can send the traffic to services.</p>
+<p><strong>4 External to Service Communication:</strong>  </p>
+<p>In order to access our application from outside the cluster, external traffic should be allowed to reach the server within the cluster... This can be achieved using these different types.</p>
+<ol>
+<li><strong>ClusterIP</strong></li>
+<li><strong>NodePort</strong></li>
+<li><strong>LoadBalancer</strong></li>
+<li><strong>Extername</strong></li>
+</ol>
+<p>Each types has its own function and purpose.</p>
+<p><strong>Cluster IP</strong> - It is the default kubernetes service used for internal communication within the</p>
+<p>cluster.</p>
+<p><strong>NodePort</strong> - It will open a ports on each nodes and traffic will be forwarded to the service through random port. And I can access the service (Pod) with the node IP + Defined port. <strong>LoadBalancer</strong> - It is a type that forwards all external traffic to a service through this type. And I can access the service (Pod) with the node name only.</p>
+<p><strong>External Name</strong> - it is a type used to access a service internally that is hosted outside cluster through DNS CName or A record...</p>
+<ul>
+<li><strong>LoadBalancer</strong> service is not in kubernetes by default, to use it we must create ingress network.</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.052.png" /></p>
+<p><strong>Ingress Policy</strong></p>
+<p>Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.</p>
+<p>``internet</p>
+<p>``|</p>
+<p>``[ Ingress ]    --|-----|--    [ Services ]</p>
+<p>An Ingress may be configured to give Services externally-reachable URLs, load balance traffic, terminate SSL / TLS, and offer name based virtual hosting.</p>
+<ul>
+<li>An <strong>Ingress controller</strong> is responsible for fulfilling the Ingress, usually with a load balancer, though it may also configure your edge router or additional frontends to help handle the traffic.</li>
+<li>An Ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type <strong>Service.Type=NodePort</strong> or <strong>Service.Type=LoadBalancer</strong>.</li>
+</ul>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>You must have an ingress controller to satisfy an Ingress. Only creating an Ingress resource has no effect.</li>
+<li><strong>You may need to deploy an Ingress controller such as ingress-nginx.</strong></li>
+</ul>
+<p><strong>The Ingress Resource</strong></p>
+<p>A minimal Ingress resource example:</p>
+<p>apiVersion: extensions/v1beta1</p>
+<p>kind: Ingress</p>
+<p>metadata:</p>
+<p>``name: test-ingress</p>
+<p>``namespace: critical-space</p>
+<p>``annotations:</p>
+<p>``nginx.ingress.kubernetes.io/rewrite-target: / spec:</p>
+<p>``rules:</p>
+<ul>
+<li>http:</li>
+</ul>
+<p>``paths:</p>
+<ul>
+<li>path: /website</li>
+</ul>
+<p>``backend:</p>
+<p>``serviceName: website-service</p>
+<p>``servicePort: 80</p>
+<p>Then I make deployment with type LoadBalancer</p>
+<p>apiVersion: v1</p>
+<p>kind: Service</p>
+<p>metadata:  </p>
+<p>``name: mywebsite</p>
+<p>spec:  </p>
+<p>``ports:  </p>
+<p>``name: http</p>
+<p>``port: 80</p>
+<p>``protocol: TCP</p>
+<p>``targetPort: 80</p>
+<p>``type: LoadBalancer   selector:  </p>
+<p><strong>Ingress and egress</strong></p>
+<p>The bulk of securing network traffic typically revolves around defining egress and ingress rules. From the point of view of a Kubernetes pod, ingress is incoming traffic to the pod, and egress is outgoing traffic from the pod. In Kubernetes network policy, you create ingress and egress “allow” rules independently (egress, ingress, or both).</p>
+<p><strong>Kubernetes NodePort vs LoadBalancer vs Ingress? When should I use what?</strong></p>
+<p>They are all different ways to get external traffic into your cluster <strong>ClusterIP</strong></p>
+<p>A ClusterIP service is the default Kubernetes service. It gives you a service inside your cluster that other apps inside your cluster can access. There is no external access.</p>
+<p>The YAML for a ClusterIP service looks like this:</p>
+<p>apiVersion: v1</p>
+<p>kind: Service</p>
+<p>metadata:</p>
+<p>``name: my-internal-service spec:</p>
+<p>``selector:</p>
+<p>``app: my-app</p>
+<p>``type: ClusterIP</p>
+<p>``ports:</p>
+<ul>
+<li>name: http</li>
+</ul>
+<p>``port: 80</p>
+<p>``targetPort: 80</p>
+<p>``protocol: TCP</p>
+<p>If you can’t access a ClusterIP service from the internet, Turns out you can access it using the Kubernetes proxy!</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.055.png" /></p>
+<p>Start the Kubernetes Proxy:</p>
+<p>kubectl proxy --port=8080</p>
+<p>Now, you can navigate through the Kubernetes API to access this service using this scheme:</p>
+<p><a href="http://localhost:8080/api/v1/proxy/namespaces/">http://localhost:8080/api/v1/proxy/namespaces/</a><NAMESPACE>/services/<SERVICE- NAME>:<PORT-NAME>/</p>
+<p>So to access the service we defined above, you could use the following address: <a href="http://localhost:8080/api/v1/proxy/namespaces/default/services/my-internal-service:http/">http://localhost:8080/api/v1/proxy/namespaces/default/services/my-internal-service:http/</a> <strong>When would you use this?</strong></p>
+<p>There are a few scenarios where you would use the Kubernetes proxy to access your services.</p>
+<ul>
+<li>Debugging your services, or connecting to them directly from your laptop for some reason</li>
+<li>Allowing internal traffic, displaying internal dashboards, etc.</li>
+</ul>
+<p>Because this method requires you to run kubectl as an authenticated user, you should NOT use this to expose your service to the internet or use it for production services.</p>
+<p><strong>NodePort</strong></p>
+<p>A NodePort service is the most primitive way to get external traffic directly to your service. NodePort, as the name implies, opens a specific port on all the Nodes (the VMs), and any traffic that is sent to this port is forwarded to the service.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.056.png" /></p>
+<p>The YAML for a NodePort service looks like this:</p>
+<p>apiVersion: v1</p>
+<p>kind: Service</p>
+<p>metadata:</p>
+<p>``name: my-nodeport-service spec:</p>
+<p>``selector:</p>
+<p>``app: my-app</p>
+<p>``type: NodePort</p>
+<p>``ports:</p>
+<ul>
+<li>name: http</li>
+</ul>
+<p>``port: 80</p>
+<p>``targetPort: 80</p>
+<p>``nodePort: 30036</p>
+<p>``protocol: TCP</p>
+<p>NodePort service has two differences from a normal “ClusterIP” service.  </p>
+<p>First, the type is “NodePort.” There is also an additional port called the NodePort that specifies which port to open on the nodes. If you don’t specify this port, it will pick a random port. Most of the time you should let Kubernetes choose the port; there are many caveats to what ports are available for you to use.</p>
+<p><strong>When would you use this?</strong></p>
+<p>There are many downsides to this method:</p>
+<ul>
+<li>You can only have one service per port</li>
+<li>You can only use ports 30000–32767</li>
+<li>If your Node/VM IP address change, you need to deal with that</li>
+</ul>
+<p>For these reasons, I don’t recommend using this method in production to directly expose your service. If you are running a service that doesn’t have to be always available, or you are very cost sensitive, this method will work for you. A good example of such an application is a demo app or something temporary.</p>
+<p><strong>LoadBalancer</strong></p>
+<p>A LoadBalancer service is the standard way to expose a service to the internet. This will spin up a Network Load Balancer that will give you a single IP address that will forward all traffic to your service.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.057.jpeg" /></p>
+<p><strong>When would you use this?</strong></p>
+<p>If you want to directly expose a service, this is the default method. All traffic on the port you specify will be forwarded to the service. There is no filtering, no routing, etc. This means you can send almost any kind of traffic to it, like HTTP, TCP, UDP, Websockets, gRPC, or whatever.  </p>
+<p>The big downside is that each service you expose with a LoadBalancer will get its own IP address, and you have to pay for a LoadBalancer per exposed service, which can get expensive!</p>
+<p><strong>Ingress</strong></p>
+<p>Unlike all the above examples, Ingress is actually NOT a type of service. Instead, it sits in front of multiple services and act as a “smart router” or entry point into your cluster.</p>
+<p>You can do a lot of different things with an Ingress, and there are many types of Ingress controllers that have different capabilities.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.058.jpeg" /></p>
+<p>The YAML for an Ingress object with a L7 HTTP Load Balancer might look like this:</p>
+<p>apiVersion: extensions/v1beta1 kind: Ingress</p>
+<p>metadata:</p>
+<p>``name: my-ingress</p>
+<p>spec:</p>
+<p>``backend:</p>
+<p>``serviceName: other</p>
+<p>``servicePort: 8080</p>
+<p>``rules:</p>
+<ul>
+<li>host: foo.mydomain.com</li>
+</ul>
+<p>``http:</p>
+<p>``paths:</p>
+<ul>
+<li>backend:</li>
+</ul>
+<p>``serviceName: foo</p>
+<p>``servicePort: 8080</p>
+<ul>
+<li>host: mydomain.com</li>
+</ul>
+<p>``http:</p>
+<p>``paths:</p>
+<ul>
+<li>path: /bar/*</li>
+</ul>
+<p>``backend:</p>
+<p>``serviceName: bar</p>
+<p>``servicePort: 8080</p>
+<p><strong>When would you use this?</strong></p>
+<p>Ingress is probably the most powerful way to expose your services, but can also be the most complicated. There are many types of Ingress controllers, from the Google Cloud Load Balancer, Nginx, Contour, Istio, and more. There are also plugins for Ingress controllers, like the cert- manager, that can automatically provision SSL certificates for your services.</p>
+<p>Ingress is the most useful if you want to expose multiple services under the same IP address, and these services all use the same L7 protocol (typically HTTP). You only pay for one load balancer if you are using the native GCP integration, and because Ingress is “smart” you can get a lot of features out of the box (like SSL, Auth, Routing, etc).</p>
+<p><strong>Kubernetes Storage</strong></p>
+<ul>
+<li><strong>Persistent volume claim (PVC)</strong>  </li>
+</ul>
+<p>A Persistent Volume Claim (PVC) is a claim request for some storage space by users.</p>
+<ul>
+<li><strong>Persistent volume (PV)</strong>  </li>
+</ul>
+<p>A Persistent Volume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes.</p>
+<p>In simple words, Persistent Volume is a solution to store data of our containers permanently even after the pods got deleted.</p>
+<p><strong>How it is different from other kubernetes volume types?</strong></p>
+<p>Let’s say you have multiple pod running on different nodes and you used hostpath volume type. Your data written by pod 1 running on worker node 1 will be resides only on worker node 1 and that cannot be access by pod 2 running on worker node 2. Similarly pod 1 cannot access data written by pod 2 on worker node 2. Right? Since hostpath is a type that writes data only on your local node directory. It’s not kind of a shared volume.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.060.png" /></p>
+<p>Other example is, let’s say you have one pod running on worker node1 and your pod written some data now on local worker node1.</p>
+<p>But Due to some reasons your pod is rescheduled to run on worker node 2, how about your data written on worker node1? Your pod will be running on worker node 2 now, but your data won’t be available here on worker node 2 since your data written by pod1 exists only on worker node1.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.063.png" /></p>
+<p>So we must have shared volume that should be accessible across all worker nodes only when pods need it. In this case, persistent volume and persistent volume claim can be used at the kubernetes cluster level.</p>
+<p>But there is a traditional method to have shared volume across worker nodes at operating system level by mounting some volume through nfs, fc, iscsi on all worker nodes that can share the same volume. This example is discussed in the previous article.</p>
+<p>Before I explain you how to create persistent volume and persistent volume claim, Let me explain you what is actually happening in persistent volume and how it works?</p>
+<p>In a legacy infrastructure environment, when you need additional storage space to your server, you will reach out to the storage administrator for the space. So there would be a storage administrator who allocates some storage space from storage device to your server as you requested. Similarly, in kubernetes. Persistent volume is a resource type through which you can</p>
+<p>get your storage space allocated to your kubernetes cluster. Let's say you got some 10G persistent volume allocated to your kubernetes cluster. Obviously that should be through any one of the kubernetes volume types. Might be through ISCSI, FC, NFS, or any other cloud providers. From which you can claim some space you want for your pod using persistent volume claim. Let's say you want <strong>5 GB</strong> for your pod. You can use persistent volume claim to request <strong>5 GB</strong> space from your persistent volume. Now you persistent volume will allocates the space you requested using persistent volume when it is find suitable, now you can use that volume claim in your deployment.</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.064.png" /></p>
+<p><strong>Let’s see how to create Persistent Volume.</strong></p>
+<ul>
+<li>Create a yaml file for persistent volume to get the storage space for our kubernetes cluster.</li>
+<li>Create a yaml file to claim the space using peristent volume claim as per our requirement.</li>
+<li>Define the persistent volume claim in your pod deployment file.</li>
+</ul>
+<p>Already I have a single pod running on worker node 1 with two containers. Sample deployment file is given below. It doesn’t have any volume specification. Let's see how to use persistent volume and claim.</p>
+<p>kind: Deployment apiVersion: apps/v1 metadata:</p>
+<p>``name: ebay-app</p>
+<p>spec:</p>
+<p>``selector:</p>
+<p>``matchLabels:</p>
+<p>``environment: dev         app: ebay</p>
+<p>``replicas: 1</p>
+<p>``template:</p>
+<p>``metadata:</p>
+<p>``labels:</p>
+<p>``environment: dev</p>
+<p>``app: ebay</p>
+<p>``spec:</p>
+<p>``containers:</p>
+<ul>
+<li>name: container1-nginx</li>
+</ul>
+<p>``image: nginx</p>
+<ul>
+<li>name: container2-tomcat</li>
+</ul>
+<p>``image: tomcat</p>
+<p>I have an nfs server that acts as a storage and exported a volume named /nfsdata from 192.168.1.7. Traditional way is to mount the share in all worker nodes, instead we will be using this share through persistent volume. Right. So create a persistent volume yaml file.</p>
+<h1 id="cat-nfs_pvyaml">cat nfs_pv.yaml</h1>
+<p>apiVersion: v1</p>
+<p>kind: PersistentVolume</p>
+<p>metadata:</p>
+<p>``name: ebay-pv</p>
+<p>spec:</p>
+<p>``capacity:</p>
+<p>``storage: 20Gi</p>
+<p>``volumeMode: Filesystem</p>
+<p>``accessModes:</p>
+<ul>
+<li>ReadWriteOnce</li>
+</ul>
+<p>``persistentVolumeReclaimPolicy: Recycle   storageClassName: ebaystorage</p>
+<p>``mountOptions:</p>
+<ul>
+<li>nfsvers=4.1</li>
+</ul>
+<p>``nfs:</p>
+<p>``path: /nfsdata</p>
+<p>``server: 192.168.1.7</p>
+<p><strong>Persistent Volume supports three types of Reclaim Policy</strong>  </p>
+<ul>
+<li>Retain</li>
+<li>Delete  </li>
+<li>Recycle  </li>
+</ul>
+<p><strong>Persistent Volume supports three types of access modes</strong>  </p>
+<ul>
+<li>ReadWriteOnce</li>
+<li>ReadOnlyMany</li>
+<li>ReadWriteMany</li>
+</ul>
+<p><strong>Let’s apply the changes and verify it.</strong></p>
+<p>user1@kubernetes-master:~/codes/pv$ kubectl apply -f nfs_pv.yaml persistentvolume/ebay-pv created user1@kubernetes-master:~/codes/pv$ kubectl get pv</p>
+<p>NAME      CAPACITY   ACCESS MODES   RECLAIM</p>
+<p>POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE</p>
+<p>ebay-</p>
+<p>pv   20Gi       RWO            Recycle          Available           ebaystora ge             24s</p>
+<p>Above output shows that pv "ebay-pv" is created as expected and it is available for claim. <strong>Let’s create persistent volume claim:</strong></p>
+<p>user1@kubernetes-master:~/codes/ebay$ cat pvc.yaml apiVersion: v1</p>
+<p>kind: PersistentVolumeClaim</p>
+<p>metadata:</p>
+<p>``name: myclaim</p>
+<p>spec:</p>
+<p>``storageClassName: ebaystorage</p>
+<p>``accessModes:</p>
+<ul>
+<li>ReadWriteOnce</li>
+</ul>
+<p>``resources:</p>
+<p>``requests:</p>
+<p>``storage: 20G</p>
+<p>Claim can be given from kubernetes cluster only when it finds suitable any Storageclassname and accessmode are same as specified in this claim file, if any persistent volume doesn’t have these storageclassname or accessmode, then persistent volume claim will not be processed.</p>
+<p><strong>Let’s apply this and verify it.</strong></p>
+<p>user1@kubernetes-master:~/codes/ebay$ kubectl apply -f pvc.yaml persistentvolumeclaim/myclaim created</p>
+<p>user1@kubernetes-master:~/codes/ebay$ kubectl get pvc</p>
+<p>NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE myclaim   Bound    ebay-pv   20Gi       RWO            ebaystorage    15s</p>
+<p>So our claim is validated and allocated for us.</p>
+<p>Now we can use this claim to our pods. Edit your deployment file as below to define the volume specification. I will be using this volume only for my first container.</p>
+<p>user1@kubernetes-master:~/codes/ebay$ cat httpd-basic-deployment.yaml kind: Deployment</p>
+<p>apiVersion: apps/v1</p>
+<p>metadata:</p>
+<p>``name: ebay-app</p>
+<p>spec:</p>
+<p>``selector:</p>
+<p>``matchLabels:</p>
+<p>``environment: dev</p>
+<p>``app: ebay</p>
+<p>``replicas: 1</p>
+<p>``template:</p>
+<p>``metadata:</p>
+<p>``labels:</p>
+<p>``environment: dev</p>
+<p>``app: ebay</p>
+<p>``spec:</p>
+<p>``volumes:</p>
+<ul>
+<li>name: myvolume</li>
+</ul>
+<p>``persistentVolumeClaim:</p>
+<p>``claimName: myclaim</p>
+<p>``containers:</p>
+<ul>
+<li>name: container1-nginx</li>
+</ul>
+<p>``image: nginx</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>name: myvolume</li>
+</ul>
+<p>``mountPath: "/tmp/persistent"</p>
+<ul>
+<li>name: container2-tomcat</li>
+</ul>
+<p>``image: tomcat</p>
+<p>Just apply the changes.</p>
+<p>user1@kubernetes-master:~/codes/ebay$ kubectl apply -f httpd-basic- deployment.yaml</p>
+<p>deployment.apps/ebay-app configured</p>
+<p>Use "describe" option to find the volume parameters and confirm the claim is successful. it should looks like this.</p>
+<p>user1@kubernetes-master:~/codes/ebay$ kubectl describe pods ebay-app ........trimmed some content......</p>
+<p>Volumes:</p>
+<p>``myvolume:</p>
+<p>``Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)</p>
+<p>``ClaimName:  myclaim</p>
+<p>``ReadOnly:   false</p>
+<p>``default-token-2tqkb:</p>
+<p>``Type:        Secret (a volume populated by a Secret)</p>
+<p>``SecretName:  default-token-2tqkb</p>
+<p>``Optional:    false</p>
+<p>........trimmed some content......</p>
+<p>That’s it, we have successfully created persistent volume persistent volume claim. Now when your pod is rescheduled to other worker node, your data will be still available.</p>
+<p><strong>Kubernetes Volumes</strong></p>
+<p><strong>What is Kubernetes Volumes?</strong></p>
+<p>Kubernetes Volumes are used to store data that should be accessible across all your containers running in a pod based on the requirement.</p>
+<p><strong>What are the types of Kubernetes Volumes?</strong></p>
+<p>Kubernetes supports many kind of storage types, these are determined by how it is created and assigned to pods.</p>
+<p><em>Local Node Types - emptyDIR, hostpath, local</em></p>
+<p><em>File Sharing types - nfs</em></p>
+<p><em>Storage types - fc, iscsi</em></p>
+<p><em>Special Purpose Types - Secret, Git repo</em></p>
+<p><em>Cloud Provider types - Vsphere, Cinder, awsElasticBlockStore, azureDisk, gcepersistentDisk</em> <em>Distributed filesystem types - glusterfs, cephfs</em></p>
+<p><em>Special type - persistent volume, persistent volume claim</em></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li><strong>emptyDIR</strong> - It’s a type of storage types that writes data only in memory till the pods running. So you data will be erased when the pod is deleted. So it’s not a persistent kind of types.</li>
+<li><strong>hostpath, local, fc</strong> and other types are persistent kind only, but volume won’t be available across the nodes. It will be available only on local nodes. So we may need to setup something shared volume using traditional storage mount across all the nodes.</li>
+<li><strong>Persistent volume</strong> type volumes can be accessible across all the nodes.</li>
+</ul>
+<p><strong>How to use kubernetes volumes to pod and containers?</strong></p>
+<p>Use an option "Volumes" along with name and types as below in a deployment file for the entire PODS and use the "volumeMounts" along with mountPath where the volume to be mounted for the container. We must use the volume name unique and exactly as specified in specification for the containers. If not you will end up with error.</p>
+<p>Example:</p>
+<p>``spec:</p>
+<p>``volumes:</p>
+<ul>
+<li>name: volume</li>
+</ul>
+<p>``hostPath:</p>
+<p>``path: /mnt/data</p>
+<p>``containers:</p>
+<ul>
+<li>name: container1-nginx</li>
+</ul>
+<p>``image: nginx</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>name: volume</li>
+</ul>
+<p>``mountPath: "/var/nginx-data"</p>
+<ul>
+<li>name: container2-tomcat</li>
+</ul>
+<p>``image: tomcat</p>
+<p>Above example tells that, volume name "volume" specified in "spec" section with Path "/mnt/data" will be used as a volume for this entire pod. It will be mounted only on container "container1-nginx" since it is claimed to be mounted on path "/var/nginx-data" using "volumeMounts" option.</p>
+<p><strong>How to assign a single volume to specific container in a pod?</strong></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.065.jpeg" /></p>
+<p>In order to use a volume only to specific container running in a pod, we must use volume mounts option. So that particular container will use the volume specified in spec.</p>
+<p>kind: Deployment</p>
+<p>apiVersion: apps/v1</p>
+<p>metadata:</p>
+<p>``name: ebay-app</p>
+<p>spec:</p>
+<p>``selector:</p>
+<p>``matchLabels:</p>
+<p>``environment: dev</p>
+<p>``app: ebay</p>
+<p>``replicas: 1</p>
+<p>``template:</p>
+<p>``metadata:</p>
+<p>``labels:</p>
+<p>``environment: dev</p>
+<p>``app: ebay</p>
+<p>``spec:</p>
+<p>``volumes:</p>
+<ul>
+<li>name: volume</li>
+</ul>
+<p>``hostPath:</p>
+<p>``path: /mnt/data</p>
+<p>``containers:</p>
+<ul>
+<li>name: container1-nginx</li>
+</ul>
+<p>``image: nginx</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>name: volume</li>
+</ul>
+<p>``mountPath: "/var/nginx-data"</p>
+<ul>
+<li>name: container2-tomcat</li>
+</ul>
+<p>``image: tomcat</p>
+<p>So we have claimed the volume name "volume" from specification and mapped to the container "container1-nginx" that would mount the volume under "/var/nginx-data", this volume will be only available to the first container "container1-nginx" not to the second container "container2- tomcat". This is how we can assign a single volume to specific container in a pod.</p>
+<p><strong>How to share a same volume to all containers within a pod?</strong></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.066.jpeg" /></p>
+<p>In order to share a same volume to all containers running in a pod, we must use volume mounts option in all containers.</p>
+<p>kind: Deployment</p>
+<p>apiVersion: apps/v1</p>
+<p>metadata:</p>
+<p>``name: ebay-app</p>
+<p>spec:</p>
+<p>``selector:</p>
+<p>``matchLabels:</p>
+<p>``environment: dev</p>
+<p>``app: ebay</p>
+<p>``replicas: 1</p>
+<p>``template:</p>
+<p>``metadata:</p>
+<p>``labels:</p>
+<p>``environment: dev</p>
+<p>``app: ebay</p>
+<p>``spec:</p>
+<p>``volumes:</p>
+<ul>
+<li>name: volume</li>
+</ul>
+<p>``hostPath:</p>
+<p>``path: /mnt/data</p>
+<p>``containers:</p>
+<ul>
+<li>name: container1-nginx</li>
+</ul>
+<p>``image: nginx</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>name: volume</li>
+</ul>
+<p>``mountPath: "/var/nginx-data"</p>
+<ul>
+<li>name: container2-tomcat</li>
+</ul>
+<p>``image: tomcat</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>name: volume</li>
+</ul>
+<p>``mountPath: "/var/tomcat-data"</p>
+<p>This time, we have used volumeMount option for both containers with different path, as per the code definition, same volume "volume" will be mount on both containers in path "/var/nginx- data" on container1-nginx and "/var/tomcat-data" on container2-tomcat respectively.</p>
+<p><strong>How to assign a dedicated volumes to each container in a pod?</strong></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.067.jpeg" /></p>
+<p>In order to assign a dedicated volumes to each containers running in a pod, we must use volumes and volumemounts option in all containers accordingly as per the example given below.</p>
+<p>kind: Deployment apiVersion: apps/v1 metadata:</p>
+<p>``name: ebay-app</p>
+<p>spec:</p>
+<p>``selector:</p>
+<p>``matchLabels:</p>
+<p>``environment: dev         app: ebay</p>
+<p>``replicas: 1</p>
+<p>``template:</p>
+<p>``metadata:</p>
+<p>``labels:</p>
+<p>``environment: dev         app: ebay</p>
+<p>``spec:</p>
+<p>``volumes:</p>
+<ul>
+<li>name: volume1</li>
+</ul>
+<p>``hostPath:</p>
+<p>``path: /mnt/data1</p>
+<ul>
+<li>name: volume2</li>
+</ul>
+<p>``hostPath:</p>
+<p>``path: /mnt/data2</p>
+<p>``containers:</p>
+<ul>
+<li>name: container1-nginx</li>
+</ul>
+<p>``image: nginx</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>name: volume1</li>
+</ul>
+<p>``mountPath: "/var/nginx-data"</p>
+<ul>
+<li>name: container2-tomcat</li>
+</ul>
+<p>``image: tomcat</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>name: volume2</li>
+</ul>
+<p>``mountPath: "/var/tomcat-data"</p>
+<p>As per the above example, volume1 will be used by the first container "container1-nginx" and volume2 will be used by the second container "container2-tomcat". This is how we can assign dedicated volumes to each containers running in a pod.</p>
+<p><strong>How to assign a shared volume across all pods running on different worker nodes?</strong></p>
+<p>Why do we actually need this setup is, so far we have seen volumes that is used only on single pod running on one worker node. So your data won’t be available when pod is rescheduled to other node since your hostpath you have used is local directory. If you want your data to be available for all worker nodes, we must have shared volumes concepts to overcome such situation. We can use a special type ie PersistentVolume and PersistentVolumeClaim or our traditional approach that mount a shared volume from storage and use that mounted path in the deployment file. You can checkout this video for the traditional approach and will explain you about persistentvolume and persistentvolume claim in the next article.</p>
+<p><strong>To get all persistent volumes</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-get-persistentvolume">kubectl get persistentvolume</h1>
+</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.068.png" /></p>
+<p><strong>To get all persistent volumes Claims</strong></p>
+<ul>
+<li>
+<h1 id="kubectl-get-persistentvolumeclaims-o-wide">kubectl get persistentvolumeclaims -o wide</h1>
+</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.069.png" /></p>
+<p><strong>Kubernetes Security</strong></p>
+<p><strong>Role-Based Access Control (RBAC)</strong></p>
+<p>In order to fully grasp the idea of RBAC, we must understand that three elements are involved:</p>
+<ul>
+<li><strong>Subjects:</strong> The set of users and processes that want to access the Kubernetes API.</li>
+<li><strong>Resources:</strong> The set of Kubernetes API Objects available in the cluster. Examples include Pods, Deployments, Services, Nodes, and PersistentVolumes, among others.</li>
+<li><strong>Verbs:</strong> The set of operations that can be executed to the resources above. Different verbs are available (examples: get, watch, create, delete, etc.), but ultimately all of them are Create, Read, Update or Delete (CRUD) operations.</li>
+</ul>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.071.png" /></p>
+<p>With these three elements in mind, the key idea of RBAC is the following:  </p>
+<p>We want to connect subjects, API resources, and operations. In other words, we want to specify, given a <strong>user</strong>, which <strong>operations</strong> can be executed over a set of <strong>resources</strong>.</p>
+<p>So, if we think about connecting these three types of entities, we can understand the different RBAC API Objects available in Kubernetes.</p>
+<ul>
+<li><strong>Roles:</strong> Will connect API Resources and Verbs. These can be reused for different subjects. These are binded to one namespace (we cannot use wildcards to represent more than one, but we can deploy the same role object in different namespaces). If we want the role to be applied cluster-wide, the equivalent object is called ClusterRoles.</li>
+<li><strong>RoleBinding:</strong> Will connect the remaining entity-subjects. Given a role, which already binds API Objects and verbs, we will establish which subjects can use it. For the cluster- level, non-namespaced equivalent, there are ClusterRoleBindings.</li>
+</ul>
+<p>In the example below, we are granting the user <em>jsalmeron</em> the ability to read, list and create pods inside the namespace test. This means that <em>jsalmeron</em> will be able to execute these commands:</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.073.png" /></p>
+<p>But not these:</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.074.png" /></p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.075.png" /></p>
+<p>Example <em>yaml</em> files:</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.076.jpeg" />Another interesting point would be the following: now that the user can create pods, can we limit how many? In order to do so, other objects, not directly related to the RBAC specification, allow configuring the amount of resources: <strong>ResourceQuota</strong> and <strong>LimitRanges</strong>. It is worth checking them out for configuring such a vital aspect of the cluster.</p>
+<p><strong>Users and… ServiceAccounts?</strong></p>
+<p>One topic that many Kubernetes users struggle with is the concept of subjects, but more specifically the difference between regular users and ServiceAccounts. In theory it looks simple:</p>
+<ul>
+<li>Users: These are global, and meant for humans or processes living outside the cluster.</li>
+<li>ServiceAccounts: These are namespaced and meant for intra-cluster processes running inside pods.</li>
+</ul>
+<p>Both have in common that they want to authenticate against the API in order to perform a set of operations over a set of resources (remember the previous section), and their domains seem to be clearly defined. They can also belong to what is known as groups, so a RoleBinding can bind more than one subject (but ServiceAccounts can only belong to the “system:serviceaccounts” group). However, the key difference is a cause of several headaches: users do not have an associated Kubernetes API Object. That means that while this operation exists:</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.077.png" /></p>
+<p>This one doesn’t:</p>
+<p><img alt="" src="./pdftoreadme/Aspose.Words.d008220c-38f0-4f8d-8aee-52b391ccac48.078.png" /></p>
+<p>This has a vital consequence: if the cluster will not store any information about users, then, the administrator will need to manage identities outside the cluster. There are different ways to do so: TLS certificates, tokens, and OAuth2, among others.  </p>
+<p>In addition, we would need to create <em>kubectl</em> contexts so we could access the cluster with these new credentials. In order to create the credential files, we could use the <em>kubectl config</em> commands (which do not require any access to the Kubernetes API, so they could be executed by any user). Watch the video above to see a complete example of user creation with TLS certificates.</p>
+<p><strong>Possible operations over these resources are:</strong></p>
+<ul>
+<li>create</li>
+<li>get</li>
+<li>delete</li>
+<li>list</li>
+<li>update</li>
+<li>edit</li>
+<li>watch</li>
+<li>exec</li>
+</ul>
+<p><strong>Use case: Create user with limited namespace access</strong> In this example, we will create the following User Account:</p>
+<ul>
+<li>Username: employee</li>
+<li>Group: bitnami</li>
+</ul>
+<p>We will add the necessary RBAC policies so this user can fully manage deployments (i.e. use <em>kubectl run</em> command) only inside the <em>office</em> namespace. At the end, we will test the policies to make sure they work as expected.</p>
+<p><strong>Step 1: Create the office namespace</strong></p>
+<ul>
+<li>Execute the <em>kubectl create</em> command to create the namespace (as the admin user):</li>
+</ul>
+<p>kubectl create namespace office</p>
+<p><strong>Step 2: Create the user credentials</strong></p>
+<p>As previously mentioned, Kubernetes does not have API Objects for User Accounts. Of the available ways to manage authentication (see Kubernetes official documentation for a complete list), we will use OpenSSL certificates for their simplicity. The necessary steps are:</p>
+<ul>
+<li>Create a private key for your user. In this example, we will name the file <em>employee.key</em>: openssl genrsa -out employee.key 2048</li>
+<li>Create a certificate sign request employee.csr using the private key you just created (<em>employee.key</em> in this example). Make sure you specify your username and group in the <em>- subj</em> section (CN is for the username and O for the group). As previously mentioned, we will use <em>employee</em> as the name and <em>bitnami</em> as the group:</li>
+</ul>
+<p>openssl req -new -key employee.key -out employee.csr -subj "/CN=employee/O=bitnami"</p>
+<ul>
+<li>Locate your Kubernetes cluster certificate authority (CA). This will be responsible for approving the request and generating the necessary certificate to access the cluster API. Its location is normally <em>/etc/kubernetes/pki/</em>. In the case of Minikube, it would be <em>~/.minikube/</em>. Check that the files <em>ca.crt</em> and <em>ca.key</em> exist in the location.</li>
+<li>Generate the final certificate <em>employee.crt</em> by approving the certificate sign request, <em>employee.csr</em>, you made earlier. Make sure you substitute the CA_LOCATION placeholder with the location of your cluster CA. In this example, the certificate will be valid for 500 days:</li>
+</ul>
+<p>openssl x509 -req -in employee.csr -CA CA_LOCATION/ca.crt -CAkey CA_LOCATION/ca.key -CAcreateserial -out employee.crt -days 500</p>
+<ul>
+<li>Save both <em>employee.crt</em> and <em>employee.key</em> in a safe location (in this example we will use <em>/home/employee/.certs/</em>).</li>
+<li>Add a new context with the new credentials for your Kubernetes cluster. This example is for a Minikube cluster but it should be similar for others:</li>
+</ul>
+<p>kubectl config set-credentials employee --client- certificate=/home/employee/.certs/employee.crt  --client- key=/home/employee/.certs/employee.key</p>
+<p>kubectl config set-context employee-context --cluster=minikube -- namespace=office --user=employee</p>
+<ul>
+<li>Now you should get an access denied error when using the <em>kubectl</em> CLI with this configuration file. This is expected as we have not defined any permitted operations for this user.</li>
+</ul>
+<p>kubectl --context=employee-context get pods</p>
+<p><strong>Step 3: Create the role for managing deployments</strong></p>
+<ul>
+<li>Create a <em>role-deployment-manager.yaml</em> file with the content below. In this <em>yaml</em> file we are creating the rule that allows a user to execute several operations on Deployments, Pods and ReplicaSets (necessary for creating a Deployment), which belong to the <em>core</em> (expressed by "" in the <em>yaml</em> file), <em>apps</em>, and <em>extensions</em> API Groups:</li>
+</ul>
+<p>kind: Role</p>
+<p>apiVersion: rbac.authorization.k8s.io/v1beta1 metadata:</p>
+<p>``namespace: office</p>
+<p>``name: deployment-manager</p>
+<p>rules:</p>
+<ul>
+<li>apiGroups: ["", "extensions", "apps"]</li>
+</ul>
+<p>``resources: ["deployments", "replicasets", "pods"]</p>
+<p>``verbs: ["get", "list", "watch", "create", "update", "patch", "delete"] # You can also use ["*"]</p>
+<ul>
+<li>Create the Role in the cluster using the <em>kubectl create role</em> command:</li>
+</ul>
+<p>kubectl create -f role-deployment-manager.yaml</p>
+<p><strong>Step 4: Bind the role to the employee user</strong></p>
+<ul>
+<li>Create a <em>rolebinding-deployment-manager.yaml</em> file with the content below. In this file, we are binding the <em>deployment-manager</em> Role to the User Account <em>employee</em> inside the <em>office</em> namespace:</li>
+</ul>
+<p>kind: RoleBinding</p>
+<p>apiVersion: rbac.authorization.k8s.io/v1beta1 metadata:</p>
+<p>``name: deployment-manager-binding</p>
+<p>``namespace: office</p>
+<p>subjects:</p>
+<ul>
+<li>kind: User</li>
+</ul>
+<p>``name: employee</p>
+<p>``apiGroup: ""</p>
+<p>roleRef:</p>
+<p>``kind: Role</p>
+<p>``name: deployment-manager</p>
+<p>``apiGroup: ""</p>
+<ul>
+<li>Deploy the RoleBinding by running the <em>kubectl create</em> command:</li>
+</ul>
+<p>kubectl create -f rolebinding-deployment-manager.yaml</p>
+<p><strong>Step 5: Test the RBAC rule</strong></p>
+<p>Now you should be able to execute the following commands without any issues:</p>
+<p>kubectl --context=employee-context run --image bitnami/dokuwiki mydokuwiki</p>
+<p>kubectl --context=employee-context get pods</p>
+<p>If you run the same command with the <em>--namespace=default</em> argument, it will fail, as the <em>employee</em> user does not have access to this namespace.</p>
+<p>kubectl --context=employee-context get pods --namespace=default</p>
+<p>Now you have created a user with limited permissions in your cluster.</p>
+<p><strong>Secrets</strong></p>
+<ul>
+<li><strong>Secret</strong> - At the application level, Kubernetes secrets can store sensitive information (such as passwords, SSH keys, API keys or tokens) per cluster (a virtual cluster if using namespaces, physical otherwise).  </li>
+<li>Kubernetes Secret can be injected into a Pod container either as an environment variable or mounted as a file.  </li>
+<li>Using Kubernetes Secrets allows us to abstract sensitive data and configuration from application deployment.</li>
+<li>Note that secrets are accessible from any pod in the same cluster. Network policies for access to pods can be defined in a deployment. A network policy specifies how pods are allowed to communicate with each other and with other network endpoints.</li>
+<li>Note that storing sensitive data in a Kubernetes Secret does not make it secure. By default, all data in Kubernetes Secrets is stored as a plaintext encoded with base64.</li>
+</ul>
+<p>There are multiple ways of creating secrets in Kubernetes.</p>
+<ul>
+<li>Creating from txt files.</li>
+<li>Creating from yaml file.</li>
+</ul>
+<p><strong>Creating From Text File</strong></p>
+<p>In order to create secrets from a text file such as user name and password, we first need to store them in a txt file and use the following command.</p>
+<p>$ kubectl create secret generic tomcat-passwd –-from-file = ./username.txt – fromfile = ./.password.txt</p>
+<p><strong>Creating From Yaml File</strong></p>
+<p>apiVersion: v1</p>
+<p>kind: Secret</p>
+<p>metadata:</p>
+<p>name: tomcat-pass</p>
+<p>type: Opaque</p>
+<p>data:</p>
+<p>``password: <User Password>    username: <User Name></p>
+<p><strong>Creating the Secret</strong></p>
+<p>$ kubectl create –f Secret.yaml secrets/tomcat-pass</p>
+<p><strong>Using Secrets</strong></p>
+<p>Once we have created the secrets, it can be consumed in a pod or the replication controller as −</p>
+<ul>
+<li>Environment Variable</li>
+<li>Volume</li>
+</ul>
+<p><strong>As Environment Variable</strong></p>
+<p>In order to use the secret as environment variable, we will use env under the spec section of pod yaml file.</p>
+<p>env:</p>
+<ul>
+<li>name: SECRET_USERNAME    valueFrom:</li>
+</ul>
+<p>``secretKeyRef:</p>
+<p>``name: mysecret          key: tomcat-pass</p>
+<p><strong>As Volume</strong></p>
+<p>spec:</p>
+<p>``volumes:</p>
+<ul>
+<li>name: "secretstest"</li>
+</ul>
+<p>``secret:</p>
+<p>``secretName: tomcat-pass    containers:</p>
+<ul>
+<li>image: tomcat:7.0</li>
+</ul>
+<p>``name: awebserver</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>mountPath: "/tmp/mysec"</li>
+</ul>
+<p>``name: "secretstest"</p>
+<p><strong>Secret Configuration as Environment Variable</strong></p>
+<p>apiVersion: v1</p>
+<p>kind: ReplicationController</p>
+<p>metadata:</p>
+<p>``name: appname</p>
+<p>spec:</p>
+<p>replicas: replica_count</p>
+<p>template:</p>
+<p>``metadata:</p>
+<p>``name: appname</p>
+<p>``spec:</p>
+<p>``nodeSelector:</p>
+<p>``resource-group:</p>
+<p>``containers:</p>
+<ul>
+<li>name: appname</li>
+</ul>
+<p>``image:</p>
+<p>``imagePullPolicy: Always</p>
+<p>``ports:</p>
+<ul>
+<li>containerPort: 3000</li>
+</ul>
+<p>``env: -----------------------------&gt; 1</p>
+<ul>
+<li>name: ENV</li>
+</ul>
+<p>``valueFrom:</p>
+<p>``configMapKeyRef:</p>
+<p>``name: appname</p>
+<p>``key: tomcat-secrets</p>
+<p>In the above code, under the <strong>env</strong> definition, we are using secrets as environment variable in the replication controller.</p>
+<p><strong>Secrets as Volume Mount</strong></p>
+<p>apiVersion: v1</p>
+<p>kind: pod</p>
+<p>metadata:</p>
+<p>``name: appname</p>
+<p>spec:</p>
+<p>``metadata:</p>
+<p>``name: appname</p>
+<p>``spec:</p>
+<p>``volumes:</p>
+<ul>
+<li>name: "secretstest"</li>
+</ul>
+<p>``secret:</p>
+<p>``secretName: tomcat-pass    containers:</p>
+<ul>
+<li>image: tomcat: 8.0</li>
+</ul>
+<p>``name: awebserver</p>
+<p>``volumeMounts:</p>
+<ul>
+<li>mountPath: "/tmp/mysec"</li>
+</ul>
+<p>``name: "secretstest"</p>
+<p><strong>Kubernetes Logging &amp; Monitoring</strong></p>
+<p>Monitoring is one of the key component for managing large clusters. For this, we have a number of tools.</p>
+<p><strong>Monitoring with Prometheus</strong></p>
+<p>It is a monitoring and alerting system. It was built at SoundCloud and was open sourced in 2012. It handles the multi-dimensional data very well.</p>
+<p><strong>Sematext Docker Agent</strong></p>
+<p>It is a modern Docker-aware metrics, events, and log collection agent. It runs as a tiny container on every Docker host and collects logs, metrics, and events for all cluster node and containers. It discovers all containers (one pod might contain multiple containers) including containers for Kubernetes core services, if the core services are deployed in Docker containers. After its deployment, all logs and metrics are immediately available out of the box.</p>
+<p><strong>Kubernetes Log</strong></p>
+<p>Kubernetes containers’ logs are not much different from Docker container logs. However, Kubernetes users need to view logs for the deployed pods. Hence, it is very useful to have Kubernetes-specific information available for log search, such as −</p>
+<ul>
+<li>Kubernetes namespace</li>
+<li>Kubernetes pod name</li>
+<li>Kubernetes container name</li>
+<li>Docker image name</li>
+<li>Kubernetes UID</li>
+</ul>
+<p><strong>Resources</strong></p>
+<p><a href="https://kubernetes.io/docs/">https://kubernetes.io/docs/</a> <a href="https://wiki.aquasec.com/display/containers/Kubernetes+101">https://wiki.aquasec.com/display/containers/Kubernetes+101</a> <a href="https://www.ibm.com/cloud/architecture/content/course/kubernetes-101">https://www.ibm.com/cloud/architecture/content/course/kubernetes-101</a> <a href="https://kubernetesbyexample.com/">https://kubernetesbyexample.com/</a> <a href="https://www.tutorialspoint.com/kubernetes/index.htm">https://www.tutorialspoint.com/kubernetes/index.htm</a> <a href="https://unofficial-kubernetes.readthedocs.io/en/latest/">https://unofficial-kubernetes.readthedocs.io/en/latest/</a> <a href="https://www.katacoda.com/courses/kubernetes">https://www.katacoda.com/courses/kubernetes</a></p>
+<p><a href="https://access.redhat.com/documentation/en-">https://access.redhat.com/documentation/en-</a> us/red_hat_enterprise_linux_atomic_host/7/html/getting_started_with_kubernetes/index
+71*</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; <a href="https://github.com/botlaram"  target="_blank" rel="noopener">botlar4</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/botlaram" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ramakrishna-botla-772a8918b/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.path", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
