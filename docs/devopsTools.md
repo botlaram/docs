@@ -198,7 +198,7 @@ In Immutable using One Packer we can spin up multiple server
 
 ![imMutable](./png/immutable3.png)
 
-## Argo-cd
+## ArgoCD
 
 ### What is ArgoCD?
 

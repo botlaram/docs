@@ -129,6 +129,7 @@ Node components run on every node in the cluster and manage the containers runni
     An Ingress is a more advanced resource that manages external HTTP(S) traffic into the cluster. It provides rules to control how external clients access services within the cluster.
 
     Key Features:
+
     - Path-Based Routing: Routes incoming traffic based on the URL path (e.g., /api or /static).
     - Host-Based Routing: Routes traffic based on the host name `(e.g., api.example.com vs www.example.com)`.
     - TLS Support: Manages HTTPS traffic with SSL/TLS certificates.
@@ -276,6 +277,10 @@ Node components run on every node in the cluster and manage the containers runni
 
 ### Volumes
 
+#### Architecture of Persistent Volume
+
+![pvc](./png/pvc-architecture.png)
+
 #### Backup Volumes
 
 - [Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
@@ -284,24 +289,24 @@ Node components run on every node in the cluster and manage the containers runni
 
 #### StorageClass
 
-- follow the docs for further info of [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+Follow the docs for further info of [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/)
 
-- template for storage class
+Template for storage class
 
-  ```yaml
-  apiVersion: storage.k8s.io/v1
-  kind: StorageClass
-  metadata:
-    name: azurefile-sc
-  provisioner: kubernetes.io/azure-file
-  reclaimPolicy: Retain
-  mountOptions:
-    - dir_mode=0777
-    - file_mode=0777
-  volumeBindingMode: WaitForFirstConsumer
-  ```
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: azurefile-sc
+provisioner: kubernetes.io/azure-file
+reclaimPolicy: Retain
+mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+volumeBindingMode: WaitForFirstConsumer
+```
 
-Field/Parameters details:
+Key definition:
   
 - **volumeBindingMode**:
   This field specifies when volume binding should occur. In this case, Immediate means that a volume should be provisioned and bound as soon as a PersistentVolumeClaim (PVC) is created. This is in contrast to WaitForFirstConsumer, where the binding is delayed until a pod using the PVC is scheduled onto a node.
@@ -314,9 +319,6 @@ The PV is marked as released, and it's up to the cluster administrator to decide
 - **Delete**: When the reclaimPolicy is set to Delete, the PV is automatically deleted when the associated PVC is deleted.
 The storage resources associated with the PV are also deleted.
 
-#### Architecture of Persistent Volume
-
-![pvc](./png/pvc-architecture.png)
 
 ### [RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
