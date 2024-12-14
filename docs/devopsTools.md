@@ -200,9 +200,9 @@ In Immutable using One Packer we can spin up multiple server
 
 ## Argo-cd
 
-### What is Argo-cd?
+### What is ArgoCD?
 
-Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. It automates the deployment of the desired application states from Git repositories directly to Kubernetes clusters. Argo CD monitors these repositories for changes, ensuring that the deployed application states match the declared states in the repository.
+ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It automates the deployment of the desired application states from Git repositories directly to Kubernetes clusters. Argo CD monitors these repositories for changes, ensuring that the deployed application states match the declared states in the repository.
 
 Key Features:
 
@@ -216,7 +216,7 @@ Key Features:
 
 5. Multi-Cluster Management: Can manage applications across multiple clusters.
 
-### Challenges without Argo-cd
+### Challenges without ArgoCD
 
 Without Argo CD or a similar GitOps tool, managing Kubernetes deployments can present several challenges:
 
@@ -243,7 +243,9 @@ Focus Diversion: Teams might be diverted from more strategic tasks to handle ope
 Summary
 Implementing a tool like Argo CD helps mitigate these challenges by providing automated, consistent, and reliable deployment processes, ensuring a single source of truth, improving visibility and auditing, and enabling efficient resource management and scalability. This leads to faster, safer, and more efficient software delivery.
 
-### Benefits of using Argo-cd
+### Benefits
+
+Benefits of using ArgoCD
 
 1. Automated Deployments
 Continuous Deployment: Argo CD automates the deployment process, ensuring that changes in the Git repository are automatically applied to the Kubernetes cluster.
@@ -285,7 +287,9 @@ Integration: Integrates with other CI/CD tools and workflows, enhancing the over
 Active Community: Argo CD is part of the CNCF and has an active open-source community, ensuring ongoing improvements and support.
 Ecosystem: Works well with other tools in the Kubernetes ecosystem, such as Helm, Kustomize, and more.
 
-### Components of Argo-cd
+### Components
+
+Component of ArgoCD
 
 ![argo-cd component](./png/argocd-component.png)
 

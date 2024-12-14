@@ -16,6 +16,10 @@
 
 8. [Ansible Jinja Template](https://www.youtube.com/watch?v=MkWS9oFxRh4)
 
+9. [Terraform lock file](https://spacelift.io/blog/terraform-lock-hcl-file)
+
+10. [How to Setup 2FA on an SSH Server](https://systemweakness.com/how-to-setup-2fa-on-an-ssh-server-55e9e8680261)
+
 ## Pages
 
 [Devopscube](https://devopscube.com/)
