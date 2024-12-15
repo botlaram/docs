@@ -126,7 +126,10 @@ print(person)
 print(person.get("amount"))
 ```
 
-## Lambda
+## Functional Programming
+
+### Lambda
+
 
 ```text
 syntax > lambda arguments : expression 

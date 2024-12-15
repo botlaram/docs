@@ -337,9 +337,7 @@ Key features include:
 
 ### Virtual Network Peering and VNet Gateway
 
-#### Virtual Network Peering
-
-Virtual Network Peering allows connecting Azure Virtual Networks directly, enabling resources in one VNet to communicate with resources in another.
+**Virtual Network Peering** : Virtual Network Peering allows connecting Azure Virtual Networks directly, enabling resources in one VNet to communicate with resources in another.
 
 Key features include:
 
@@ -347,9 +345,7 @@ Key features include:
 
 - **Transitive Routing**: Traffic between peered VNets flows directly, improving performance.
 
-#### VNet Gateway
-
-VNet Gateway enables secure communication between on-premises networks and Azure Virtual Networks. Key features include:
+**VNet Gateway** : VNet Gateway enables secure communication between on-premises networks and Azure Virtual Networks. Key features include:
 
 - **Site-to-Site VPN**: Connects on-premises networks to Azure over an encrypted VPN tunnel.
 
