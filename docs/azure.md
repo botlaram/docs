@@ -345,7 +345,9 @@ Key features include:
 
 - **Transitive Routing**: Traffic between peered VNets flows directly, improving performance.
 
-**VNet Gateway** : VNet Gateway enables secure communication between on-premises networks and Azure Virtual Networks. Key features include:
+**VNet Gateway** : VNet Gateway enables secure communication between on-premises networks and Azure Virtual Networks. 
+
+Key features include:
 
 - **Site-to-Site VPN**: Connects on-premises networks to Azure over an encrypted VPN tunnel.
 

@@ -121,8 +121,8 @@ Node components run on every node in the cluster and manage the containers runni
 
 5. Persistent Volumes (PVs) and Persistent Volume Claims (PVCs):
 
-    PVs: Storage resources in the cluster, such as an external disk, network storage, etc.
-    PVCs: Requests for storage by a user, which are then matched to available PVs.
+    PV: Storage resources in the cluster, such as an external disk, network storage, etc.  
+    PVC: Requests for storage by a user, which are then matched to available PVs.
 
 6. Ingress
 
@@ -319,6 +319,12 @@ The PV is marked as released, and it's up to the cluster administrator to decide
 - **Delete**: When the reclaimPolicy is set to Delete, the PV is automatically deleted when the associated PVC is deleted.
 The storage resources associated with the PV are also deleted.
 
+#### PV and PVC
+
+**PersistentVolume (PV)**: A piece of storage in the cluster that has been provisioned by an administrator or dynamically through Storage Classes. PVs are used to store data persistently.
+
+**PersistentVolumeClaim (PVC)**: A request for storage by a user. PVCs abstract the details of how storage is provided and consumed, making it easy to request and use persistent storage in pods.
+
 ### [RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
 service account: user groups  
@@ -328,6 +334,110 @@ role binding: connect role with service account
 ## Deployment Strategy
 
 ![deployment_strategy](./gif/k8_deployment_strategy_bytebytego.gif)
+
+Kubernetes provides several deployment strategies to manage application updates, ensuring minimal downtime, stability, and user experience during the deployment process.  
+Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Update strategies, along with real-world scenarios for when and why they are used.
+
+1. **Canary Deployment**
+
+    **Description:**  
+    In a canary deployment, a new version of the application is gradually rolled out to a small subset of users or traffic. If it performs well, the rollout continues until the new version fully replaces the old version.
+
+    **Steps:**
+
+    - Deploy the new version to a small percentage of users (e.g., 5-10% of traffic).  
+    - Monitor metrics like performance, error rates, or user feedback.  
+    - Gradually increase the traffic directed to the new version until it fully replaces the old one.
+
+    **Use Case:**  
+    Scenario: A retail website launching a new search feature. The search functionality is critical, and any errors could impact customer satisfaction.  
+    Why Use: Canary deployment ensures that only a small fraction of users experience issues, allowing rollback with minimal impact if the new feature causes errors.
+
+    Pros:  
+    - Minimizes risk by exposing new changes to a small subset of users initially.
+    - Real-world testing under production conditions.
+    - Easier to detect issues early in the rollout process.
+
+    Cons:
+    - Requires advanced traffic management tools (e.g., Istio or NGINX for traffic splitting).
+    - Monitoring and rollback processes need to be well-defined.
+
+2. **Blue-Green Deployment**
+
+    **Description**: Two environments, "Blue" (current version) and "Green" (new version), are maintained simultaneously. Once the new version is verified in the Green environment, traffic is switched from Blue to Green.
+
+    **Steps**:
+
+    - Deploy the new version to the Green environment.
+    - Test the Green environment for functionality, performance, and stability.
+    - Redirect all traffic from the Blue to the Green environment (via a load balancer or DNS change).
+    - The Blue environment serves as a backup in case of rollback.
+
+    **Use Case**:
+
+    Scenario: A banking application rolling out a new version of its transaction processing service. Downtime is unacceptable, and rollback must be quick.  
+    Why Use: Blue-Green ensures zero downtime during deployment and allows for an instant rollback by switching back to the Blue environment.
+
+    Pros:
+    - Zero downtime during deployment.
+    - Instant rollback by switching traffic back to the old environment.
+    - Both environments are fully isolated, reducing the risk of deployment errors.
+
+    Cons:
+    - Requires double the infrastructure (temporary) for both environments.
+    - Higher cost during deployment phases due to resource duplication.
+
+3. **Recreate Deployment**
+
+    **Description**: The current version of the application is terminated completely, and the new version is deployed in its place. This is a "replace all" strategy.
+
+    **Steps**:
+    - Terminate all pods running the old version of the application.
+    - Deploy the new version.
+
+    **Use Case**:
+    Scenario: A batch processing job where downtime is acceptable and maintaining multiple versions concurrently is unnecessary.  
+    Why Use: Recreate is simple, cost-effective, and appropriate when the application doesn't need to handle live user traffic during deployment.
+
+    Pros:
+    - Simple to implement with minimal complexity.
+    - No need to manage traffic splitting or multiple versions.
+    - Suitable for stateless or low-traffic applications.
+
+    Cons:
+    - Causes downtime as the old version is terminated before the new version becomes available.
+    - No gradual transition, so any errors immediately impact all users.
+
+4. **Rolling Update Deployment**
+
+    **Description**: A gradual replacement of old pods with new pods, ensuring some pods of the old version remain available while new pods are deployed.
+
+    **Steps**:
+    - Deploy the new version pod-by-pod, gradually replacing old pods.
+    - Maintain a specified number of pods running at all times during the update.
+    - Continue until all old pods are replaced.
+
+    **Use Case**:
+    Scenario: A video streaming platform updating its content delivery service. Continuous service is critical, and downtime is unacceptable.  
+    Why Use: Rolling updates ensure zero downtime by maintaining the availability of old pods while the new version is rolled out.
+
+    Pros:
+    - Zero downtime during deployment.
+    - Gradual replacement reduces the risk of introducing issues.
+    - Supports controlled rollout by limiting the number of simultaneous updates.
+
+    Cons:
+    - Rollback is slower compared to Canary or Blue-Green.
+    - Not suitable for breaking changes that require all pods to be updated simultaneously.
+
+**Comparison Table**:
+
+| **Strategy**       | **Downtime**      | **Risk**               | **Rollback Complexity**   | **Resource Requirements** | **Best For**                                  |
+|---------------------|-------------------|------------------------|---------------------------|---------------------------|-----------------------------------------------|
+| **Canary**          | No               | Low                    | Easy (stop traffic to new pods) | Moderate                   | Gradual rollouts for feature testing.         |
+| **Blue-Green**      | No               | Very Low               | Very Easy (switch traffic back) | High (requires two environments) | Critical applications needing zero downtime. |
+| **Recreate**        | Yes              | High                   | Moderate                  | Low                       | Simple updates where downtime is acceptable. |
+| **Rolling Update**  | No               | Moderate               | Moderate                  | Low                       | Applications requiring zero downtime with gradual updates. |
 
 ## Scenario
 
