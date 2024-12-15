@@ -62,7 +62,9 @@ Docker is a software development tool and a virtualization technology that makes
 7. Resource Efficient - Only what you need.
 8. Portability - You can run it anywhere.
 
-### Docker Image Command
+### Docker Command
+
+Docker image command
 
 ```bash
 docker build  ## It will build Docker images by using the Dockerfile.  
@@ -74,7 +76,7 @@ docker save  ## It will save the docker image in the form of dockerfile.
 docker rmi  ## It will remove the docker image.  
 ```
 
-### Docker Container Command
+Docker Container Command
 
 ```bash
 docker attach  ## Connecting to an Existing Container
@@ -109,11 +111,9 @@ func main() {
 }
 ```
 
-Step 2: Create the Dockerfile
+Step 2: Create the Dockerfile that uses a multi-stage build.
 
-Now, create a Dockerfile that uses a multi-stage build.
-
-```Docker
+```Dockerfile
 # Stage 1: Build the Go application
 FROM golang:1.20 AS build
 
@@ -139,16 +139,9 @@ COPY --from=build /app/app .
 CMD ["./app"]
 ```
 
-### Demo (use flask application)
+### Docker workflow
 
-![Alt text](./gif/docker-workflow.gif)
-
-1. Run application in local system
-2. Create a Dockerfile mount the application
-3. Create a Docker Image
-4. Push Image to Global Quay
-5. Pull Image
-6. Execute command
+![docker-workflow](./png/docker-workflow.png)
 
 ## Packer
 
@@ -247,45 +240,55 @@ Implementing a tool like Argo CD helps mitigate these challenges by providing au
 
 Benefits of using ArgoCD
 
-1. Automated Deployments
-Continuous Deployment: Argo CD automates the deployment process, ensuring that changes in the Git repository are automatically applied to the Kubernetes cluster.
-Synchronization: Keeps your applications in sync with the desired state defined in Git, reducing the chances of configuration drift.
+1. **Automated Deployments**
 
-2. Declarative Configuration
-Single Source of Truth: The desired state of applications is stored in Git, providing a clear and auditable source of truth.
-Version Control: Every change to the configuration is versioned, enabling easy rollbacks and clear change history.
+    Continuous Deployment: Argo CD automates the deployment process, ensuring that changes in the Git repository are automatically applied to the Kubernetes cluster.  
+    Synchronization: Keeps your applications in sync with the desired state defined in Git, reducing the chances of configuration drift.
 
-3. Improved Security
-Pull-Based Mechanism: Clusters pull configuration changes, reducing the need for direct access to the cluster and thus improving security.
-Access Control: Permissions can be managed via Git repository access controls, reducing the need for direct cluster access permissions.
+2. **Declarative Configuration**
 
-4. Enhanced Visibility and Monitoring
-User Interface: Argo CD provides a web UI and CLI for visualizing the state of applications and monitoring deployment status.
-Notifications and Alerts: Integration with various notification systems to alert users about the state of deployments.
+    Single Source of Truth: The desired state of applications is stored in Git, providing a clear and auditable source of truth.  
+    Version Control: Every change to the configuration is versioned, enabling easy rollbacks and clear change history.
 
-5. Scalability
-Multi-Cluster Management: Manage multiple Kubernetes clusters from a single Argo CD instance.
-Scalable Operations: Easily scale deployments across many clusters and environments.
+3. **Improved Security**
 
-6. Operational Efficiency
-Reduced Manual Effort: Automates repetitive deployment tasks, freeing up developers and DevOps teams to focus on more strategic work.
-Consistent Environments: Ensures that all environments (development, staging, production) are consistent with each other.
+    Pull-Based Mechanism: Clusters pull configuration changes, reducing the need for direct access to the cluster and thus improving security.  
+    Access Control: Permissions can be managed via Git repository access controls, reducing the need for direct cluster access permissions.
 
-7. Improved Reliability and Resilience
-Self-Healing: Automatically detects and corrects drift from the desired state, enhancing the reliability of deployments.
-Easy Rollbacks: Simplified rollback to previous application states in case of issues, improving resilience.
+4. **Enhanced Visibility and Monitoring**
 
-8. Compliance and Auditability
-Audit Trails: Every change is tracked and logged, providing a complete audit trail of who made changes and why.
-Compliance: Helps in meeting compliance requirements by ensuring configurations are consistent and traceable.
+    User Interface: Argo CD provides a web UI and CLI for visualizing the state of applications and monitoring deployment status.  
+    Notifications and Alerts: Integration with various notification systems to alert users about the state of deployments.
 
-9. Flexibility and Extensibility
-Custom Plugins: Supports custom resource definitions and can be extended with custom plugins for specific use cases.
-Integration: Integrates with other CI/CD tools and workflows, enhancing the overall DevOps pipeline.
+5. **Scalability**
 
-10. Community and Ecosystem
-Active Community: Argo CD is part of the CNCF and has an active open-source community, ensuring ongoing improvements and support.
-Ecosystem: Works well with other tools in the Kubernetes ecosystem, such as Helm, Kustomize, and more.
+    Multi-Cluster Management: Manage multiple Kubernetes clusters from a single Argo CD instance.  
+    Scalable Operations: Easily scale deployments across many clusters and environments.
+
+6. **Operational Efficiency**
+
+    Reduced Manual Effort: Automates repetitive deployment tasks, freeing up developers and DevOps teams to focus on more strategic work.  
+    Consistent Environments: Ensures that all environments (development, staging, production) are consistent with each other.
+
+7. **Improved Reliability and Resilience**
+
+    Self-Healing: Automatically detects and corrects drift from the desired state, enhancing the reliability of deployments.  
+    Easy Rollbacks: Simplified rollback to previous application states in case of issues, improving resilience.
+
+8. **Compliance and Auditability**
+
+    Audit Trails: Every change is tracked and logged, providing a complete audit trail of who made changes and why.  
+    Compliance: Helps in meeting compliance requirements by ensuring configurations are consistent and traceable.
+
+9. **Flexibility and Extensibility**
+
+    Custom Plugins: Supports custom resource definitions and can be extended with custom plugins for specific use cases.  
+    Integration: Integrates with other CI/CD tools and workflows, enhancing the overall DevOps pipeline.
+
+10. **Community and Ecosystem**
+
+    Active Community: Argo CD is part of the CNCF and has an active open-source community, ensuring ongoing improvements and support.  
+    Ecosystem: Works well with other tools in the Kubernetes ecosystem, such as Helm, Kustomize, and more.
 
 ### Components
 
@@ -293,58 +296,66 @@ Component of ArgoCD
 
 ![argo-cd component](./png/argocd-component.png)
 
-1. API Server
-Function: Serves as the central control plane for Argo CD.
-Usage:
-Exposes the Argo CD API, which can be accessed via CLI, Web UI, or other tools.
-Handles all CRUD operations for Argo CD resources such as Applications, Projects, and Repositories.
-Manages authentication and authorization.
+1. **API Server**
 
-2. Repository Server
-Function: Manages interactions with Git repositories.
-Usage:
-Fetches and caches Git repository contents.
-Serves Git repository information to other Argo CD components, ensuring they have the necessary data to deploy applications.
+    Function: Serves as the central control plane for Argo CD.  
+    Usage:  
+    Exposes the Argo CD API, which can be accessed via CLI, Web UI, or other tools.
+    Handles all CRUD operations for Argo CD resources such as Applications, Projects, and Repositories.
+    Manages authentication and authorization.
 
-3. Controller
-Function: Watches the state of applications and ensures they are in sync with the desired state defined in Git.
-Usage:
-Continuously monitors the state of applications in the Kubernetes cluster.
-Compares the current state of applications with the desired state from Git.
-Executes synchronization operations to reconcile any differences.
+2. **Repository Server**
 
-4. Application Controller
-Function: Manages the lifecycle of Argo CD applications.
-Usage:
-Tracks application resources and manages their state.
-Handles application creation, updates, and deletion.
-Manages synchronization and health status reporting.
+    Function: Manages interactions with Git repositories.  
+    Usage:  
+    Fetches and caches Git repository contents.
+    Serves Git repository information to other Argo CD components, ensuring they have the necessary data to deploy applications.
 
-5. Dex (Optional)
-Function: Provides OpenID Connect (OIDC) authentication.
-Usage:
-Integrates with external identity providers like GitHub, Google, LDAP, etc.
-Manages user authentication and provides SSO capabilities.
+3. **Controller**
 
-6. Redis (Optional)
-Function: Acts as an in-memory data store.
-Usage:
-Enhances performance by caching application state and other data.
-Optional but recommended for large-scale deployments.
+    Function: Watches the state of applications and ensures they are in sync with the desired state defined in Git.  
+    Usage:  
+    Continuously monitors the state of applications in the Kubernetes cluster.
+    Compares the current state of applications with the desired state from Git.
+    Executes synchronization operations to reconcile any differences.
 
-7. Web UI
-Function: Provides a graphical interface for interacting with Argo CD.
-Usage:
-Visualizes the state of applications and their synchronization status.
-Allows users to manage applications, view logs, and perform manual synchronization.
-Provides a user-friendly way to interact with Argo CD without needing to use the CLI.
+4. **Application Controller**
 
-8. CLI
-Function: Command-line interface for interacting with Argo CD.
-Usage:
-Enables users to perform all Argo CD operations via the terminal.
-Useful for scripting and automation of deployment tasks.
-Offers commands to manage applications, projects, and repositories.
+    Function: Manages the lifecycle of Argo CD applications.  
+    Usage:  
+    Tracks application resources and manages their state.
+    Handles application creation, updates, and deletion.
+    Manages synchronization and health status reporting.
+
+5. **Dex**
+
+    Function: Provides OpenID Connect (OIDC) authentication.  
+    Usage:
+    Integrates with external identity providers like GitHub, Google, LDAP, etc.
+    Manages user authentication and provides SSO capabilities.
+
+6. **Redis**
+
+    Function: Acts as an in-memory data store.  
+    Usage:
+    Enhances performance by caching application state and other data.
+    Optional but recommended for large-scale deployments.
+
+7. **Web UI**
+
+    Function: Provides a graphical interface for interacting with Argo CD.  
+    Usage:  
+    Visualizes the state of applications and their synchronization status.
+    Allows users to manage applications, view logs, and perform manual synchronization.
+    Provides a user-friendly way to interact with Argo CD without needing to use the CLI.
+
+8. **CLI**
+
+    Function: Command-line interface for interacting with Argo CD.
+    Usage:  
+    Enables users to perform all Argo CD operations via the terminal.
+    Useful for scripting and automation of deployment tasks.
+    Offers commands to manage applications, projects, and repositories.
 
 ## Ansible
 

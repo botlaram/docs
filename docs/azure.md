@@ -1,6 +1,6 @@
 # All about Azure Cloud
 
-## Basics of Cloud Computing
+## Cloud Computing
 
 ### What is Cloud
 
@@ -38,15 +38,7 @@ In essence, cloud computing can involve both third-party providers (public cloud
 
 **Example:** A business storing sensitive data in its private space but using the public cloud for hosting web-application or using virtual machines from other cloud providers.
 
-### In a Nutshell
-
-**Public Cloud:** Shared digital space for everyone.
-
-**Private Cloud:** Your own exclusive digital space.
-
-**Hybrid Cloud:** Using both your private space and the shared online space when needed.
-
-## IaaS vs PaaS vs SaaS models in Azure
+## Cloud Service Models
 
 ### Infrastructure as a Service
 
@@ -247,7 +239,9 @@ Example: **B1s**
 
 ### Virtual Network
 
-A Virtual Network (VNet) in Azure is a logically isolated network that securely connects Azure resources and extends on-premises networks. Key features include:
+A Virtual Network (VNet) in Azure is a logically isolated network that securely connects Azure resources and extends on-premises networks. 
+
+Key features include:
 
 - **Isolation**: VNets provide isolation at the network level for segmenting resources and controlling traffic.
 
@@ -255,29 +249,23 @@ A Virtual Network (VNet) in Azure is a logically isolated network that securely 
 
 - **Address Space**: VNets have an address space defined using CIDR notation, determining the IP address range.
 
-### Subnets, CIDR
+### Subnets and CIDR
 
-#### Subnets
+**Subnets** : Subnets are subdivisions of a Virtual Network, allowing for better organization and traffic management.
 
-Subnets are subdivisions of a Virtual Network, allowing for better organization and traffic management.
-
-#### CIDR (Classless Inter-Domain Routing)
-
-CIDR notation represents IP addresses and their routing prefix, specifying the range of IP addresses for a network.
+**CIDR (Classless Inter-Domain Routing)** : CIDR notation represents IP addresses and their routing prefix, specifying the range of IP addresses for a network.
 
 ### Routes and Route Tables
 
-#### Routes
+**Routes** : Routes dictate how network traffic is directed, specifying the destination and next hop.
 
-Routes dictate how network traffic is directed, specifying the destination and next hop.
-
-#### Route Tables
-
-Route Tables are collections of routes associated with subnets, enabling custom routing rules.
+**Route Tables** : Route Tables are collections of routes associated with subnets, enabling custom routing rules.
 
 ### Network Security Groups (NSGs)
 
-NSGs are fundamental for Azure's network security, allowing filtering of inbound and outbound traffic. Key aspects include:
+NSGs are fundamental for Azure's network security, allow filtering of inbound and outbound traffic.
+
+Key aspects include:
 
 - **Rules**: NSGs define allowed or denied traffic based on source, destination, port, and protocol.
 
@@ -301,7 +289,9 @@ ASGs group Azure virtual machines based on application requirements, simplifying
 
 ### Azure App Gateway & WAF
 
-Azure Application Gateway is a web traffic load balancer that enables you to manage and route traffic to your web applications. Web Application Firewall (WAF) provides protection against web vulnerabilities. Key features include:
+Azure Application Gateway is a web traffic load balancer that enables you to manage and route traffic to your web applications. Web Application Firewall (WAF) provides protection against web vulnerabilities.
+
+Key features include:
 
 - **Load Balancing**: Distributes incoming traffic across multiple servers to ensure no single server is overwhelmed.
 
@@ -311,7 +301,9 @@ Azure Application Gateway is a web traffic load balancer that enables you to man
 
 ### Azure Load Balancer
 
-Azure Load Balancer distributes incoming network traffic across multiple servers to ensure no single server is overwhelmed. Key features include:
+Azure Load Balancer distributes incoming network traffic across multiple servers to ensure no single server is overwhelmed.
+
+Key features include:
 
 - **Load Balancing Algorithms**: Supports different algorithms for distributing traffic, such as round-robin and least connections.
 
@@ -321,7 +313,9 @@ Azure Load Balancer distributes incoming network traffic across multiple servers
 
 ### Azure DNS
 
-Azure DNS is a scalable and secure domain hosting service. It provides name resolution using the Microsoft Azure infrastructure. Key features include:
+Azure DNS is a scalable and secure domain hosting service. It provides name resolution using the Microsoft Azure infrastructure.
+
+Key features include:
 
 - **Domain Hosting**: Hosts domain names and provides name resolution within Azure.
 
@@ -331,7 +325,9 @@ Azure DNS is a scalable and secure domain hosting service. It provides name reso
 
 ### Azure Firewall
 
-Azure Firewall is a managed, cloud-based network security service that protects your Azure Virtual Network resources. Key features include:
+Azure Firewall is a managed, cloud-based network security service that protects your Azure Virtual Network resources.
+
+Key features include:
 
 - **Stateful Firewall**: Allows or denies traffic based on rules and supports stateful inspection.
 
@@ -343,7 +339,9 @@ Azure Firewall is a managed, cloud-based network security service that protects 
 
 #### Virtual Network Peering
 
-Virtual Network Peering allows connecting Azure Virtual Networks directly, enabling resources in one VNet to communicate with resources in another. Key features include:
+Virtual Network Peering allows connecting Azure Virtual Networks directly, enabling resources in one VNet to communicate with resources in another.
+
+Key features include:
 
 - **Global VNet Peering**: Peering can be established across regions.
 
@@ -359,7 +357,9 @@ VNet Gateway enables secure communication between on-premises networks and Azure
 
 ### VPN Gateway
 
-Azure VPN Gateway provides secure, site-to-site connectivity between your on-premises network and Azure. Key features include:
+Azure VPN Gateway provides secure, site-to-site connectivity between your on-premises network and Azure.
+
+Key features include:
 
 - **IPsec/IKE VPN Protocols**: Ensures secure communication over the Internet.
 
@@ -465,8 +465,6 @@ Azure VPN Gateway provides secure, site-to-site connectivity between your on-pre
 ![app-service](./png/app-service.png)
 
 ## Cheat Sheet
-
-[This](az_learnings.md) section helps to compare Could Services.
 
 ### Cloud Comparison
 

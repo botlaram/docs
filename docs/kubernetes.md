@@ -319,12 +319,15 @@ The PV is marked as released, and it's up to the cluster administrator to decide
 - **Delete**: When the reclaimPolicy is set to Delete, the PV is automatically deleted when the associated PVC is deleted.
 The storage resources associated with the PV are also deleted.
 
-
 ### [RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
-service account: user groups
-role: define permissions to user
-role binding: connect role with service account
+service account: user groups  
+role: define permissions to user  
+role binding: connect role with service account  
+
+## Deployment Strategy
+
+![deployment_strategy](./gif/k8_deployment_strategy_bytebytego.gif)
 
 ## Scenario
 
