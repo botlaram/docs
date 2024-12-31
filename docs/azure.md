@@ -92,6 +92,14 @@ When deciding between IaaS, PaaS, and SaaS in Azure, consider factors such as:
 
 ![iaaspaassaas](./png/iaaspaassaas.png)
 
+## Azure CLI
+
+1. azure cli to get list of secret
+
+```bash
+az keyvault secret list --vault-name <key_vault_name> --query "[].id" -o tsv
+```
+
 ## Azure Resources
 
 Azure resources are the building blocks of your cloud infrastructure in Microsoft Azure. These resources can be virtual machines, databases, storage accounts, or any other service offered by Azure. Each resource is a manageable item in Azure, and they are provisioned and managed individually.

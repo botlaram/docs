@@ -354,13 +354,13 @@ Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Upd
     Why Use: Canary deployment ensures that only a small fraction of users experience issues, allowing rollback with minimal impact if the new feature causes errors.
 
     Pros:  
-    - Minimizes risk by exposing new changes to a small subset of users initially.
-    - Real-world testing under production conditions.
-    - Easier to detect issues early in the rollout process.
+      - Minimizes risk by exposing new changes to a small subset of users initially.
+      - Real-world testing under production conditions.
+      - Easier to detect issues early in the rollout process.
 
     Cons:
-    - Requires advanced traffic management tools (e.g., Istio or NGINX for traffic splitting).
-    - Monitoring and rollback processes need to be well-defined.
+      - Requires advanced traffic management tools (e.g., Istio or NGINX for traffic splitting).
+      - Monitoring and rollback processes need to be well-defined.
 
 2. **Blue-Green Deployment**
 
