@@ -462,6 +462,79 @@ In this example:
 - prevent_destroy = true: Prevents the instance from being destroyed accidentally, even if it is removed from the configuration.
 - ignore_changes: Instructs Terraform to ignore changes to the ami attribute, so if the AMI changes, it won't trigger a replacement of the instance
 
+### depends_on
+
+depends_on meta-argument explicitly defines dependencies between resources.
+
+```terraform
+resource "aws_instance" "example" {
+ami           = "ami-12345678"
+instance_type = "t2.micro"
+}
+
+resource "aws_security_group" "example" {
+name        = "example-sg"
+description = "Example security group"
+
+depends_on = [aws_instance.example]
+}
+```
+
+### count
+
+The count meta-argument allows the creation of multiple instances of a resource.
+
+```terraform
+resource "aws_instance" "example" {
+count         = 3
+ami           = "ami-12345678"
+instance_type = "t2.micro"
+}
+```
+
+### for_each
+
+The for_each meta-argument allows iteration over a set of values (like a map or list) to create multiple resources.
+
+```terraform
+resource "aws_instance" "example" {
+for_each      = var.instance_configs
+ami           = each.value["ami"]
+instance_type = each.value["instance_type"]
+}
+```
+
+### create_before_destroy
+
+The create_before_destroy argument in the lifecycle block ensures that the new resource is created before the old one is destroyed. This is useful when a resource's replacement might disrupt service or functionality.
+
+```terraform
+resource "aws_instance" "example" {
+ami           = "ami-12345678"
+instance_type = "t2.micro"
+
+lifecycle {
+    create_before_destroy = true
+}
+}
+```
+
+### prevent_destroy
+
+Prevents the destruction of the resource even if the configuration changes. Useful for protecting critical resources (e.g., databases, production servers).  
+This prevents the resource from being destroyed, even if you run terraform destroy.
+
+```terraform
+resource "aws_instance" "example" {
+ami           = "ami-12345678"
+instance_type = "t2.micro"
+
+lifecycle {
+    prevent_destroy = true
+}
+}
+```
+
 ## Output files
 
 Output.tf is a file (or a section in any Terraform configuration file) where you define outputs.  
@@ -688,75 +761,6 @@ Structural types describe complex data structures using objects, tuples, or nest
     ```
 
     Here, the tuple holds a database name (string), port (number), and active status (boolean)
-
-## Meta arguments
-
-Meta-arguments in Terraform are special arguments that are used in the resource blocks to control the behavior of Terraform's resource creation and management process. These arguments are not directly related to the specific properties of a resource but instead help manage how Terraform applies changes to infrastructure.
-
-The most commonly used meta-arguments include:
-
-- depends_on: depends_on meta-argument explicitly defines dependencies between resources.
-
-    ```terraform
-    resource "aws_instance" "example" {
-    ami           = "ami-12345678"
-    instance_type = "t2.micro"
-    }
-
-    resource "aws_security_group" "example" {
-    name        = "example-sg"
-    description = "Example security group"
-
-    depends_on = [aws_instance.example]
-    }
-    ```
-
-- count : The count meta-argument allows the creation of multiple instances of a resource.
-
-    ```terraform
-    resource "aws_instance" "example" {
-    count         = 3
-    ami           = "ami-12345678"
-    instance_type = "t2.micro"
-    }
-    ```
-
-- for_each : The for_each meta-argument allows iteration over a set of values (like a map or list) to create multiple resources.
-
-    ```terraform
-    resource "aws_instance" "example" {
-    for_each      = var.instance_configs
-    ami           = each.value["ami"]
-    instance_type = each.value["instance_type"]
-    }
-    ```
-
-- create_before_destroy: The create_before_destroy argument in the lifecycle block ensures that the new resource is created before the old one is destroyed. This is useful when a resource's replacement might disrupt service or functionality.
-
-    ```terraform
-    resource "aws_instance" "example" {
-    ami           = "ami-12345678"
-    instance_type = "t2.micro"
-    
-    lifecycle {
-        create_before_destroy = true
-    }
-    }
-    ```
-
-- prevent_destroy: Prevents the destruction of the resource even if the configuration changes. Useful for protecting critical resources (e.g., databases, production servers).  
-This prevents the resource from being destroyed, even if you run terraform destroy.
-
-    ```terraform
-    resource "aws_instance" "example" {
-    ami           = "ami-12345678"
-    instance_type = "t2.micro"
-
-    lifecycle {
-        prevent_destroy = true
-    }
-    }
-    ```
 
 ## [built-in functions](https://developer.hashicorp.com/terraform/language/functions)
 

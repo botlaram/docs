@@ -1,4 +1,4 @@
-# Kubernetes
+# Kubernetes ☸️
 
 All about k8.
 
@@ -331,6 +331,106 @@ service account: user groups
 role: define permissions to user  
 role binding: connect role with service account  
 
+### Daemonset
+
+A DaemonSet in Kubernetes ensures that a specific Pod runs on all (or selected) nodes in a cluster. It is primarily used for running background processes or system-level tasks that are required on every node.
+
+By understanding and leveraging DaemonSets, administrators can efficiently handle logging, monitoring, networking, and other system-wide tasks.
+
+Key Features of DaemonSet
+
+- Node-Wide Coverage: Ensures a Pod is scheduled on every eligible node in the cluster.
+- Automatic Updates: When a new node is added to the cluster, the DaemonSet automatically schedules its Pods on the new node.
+- Selective Node Targeting: By using node selectors, taints, and tolerations, DaemonSets can restrict Pods to specific nodes.
+- Resiliency: If a node is deleted or fails, the DaemonSet recreates the Pod on a healthy node.
+
+Use Cases of DaemonSet
+
+1. Log Collection: Running log collection agents (e.g., Fluentd or Logstash) on every node.
+2. Monitoring: Deploying monitoring agents (e.g., Prometheus Node Exporter) to collect node-level metrics.
+3. Networking: Running network-related applications like CNI plugins or proxy daemons (e.g., Calico or Istio).
+4. Storage: Deploying storage daemons for distributed storage solutions (e.g., Ceph, GlusterFS).
+
+How DaemonSet Works : A DaemonSet controller ensures that a single copy of the specified Pod is running on every eligible node:
+
+1. When the DaemonSet is created, the controller schedules a Pod on each matching node.
+2. If a new node is added, the controller automatically schedules the Pod on that node.
+3. If a node is removed, the associated Pod is deleted.
+
+### HPA and VPA
+
+**Horizontal Pod Autoscaler (HPA)** : The Horizontal Pod Autoscaler (HPA) automatically adjusts the number of Pods in a Deployment, ReplicaSet, or StatefulSet based on observed CPU, memory usage, or custom metrics. It ensures that the application can handle workload variations without over-provisioning or under-provisioning.
+
+How It Works
+
+- HPA monitors the target resource's metrics (e.g., CPU utilization).
+- Based on the observed metrics and the scaling configuration, HPA increases or decreases the number of Pods in the resource.
+
+Use Case - HPA is ideal for scaling stateless applications or services that need to handle fluctuating workloads, such as web servers or APIs.
+
+Key Features
+
+- Scales Pods horizontally by increasing or decreasing their count.
+- Supports both resource metrics (CPU/memory) and custom/external metrics.
+
+Example YAML
+
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx-hpa
+spec:
+  scaleTargetRef: # Specifies the target resource (Deployment, ReplicaSet, or StatefulSet).
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-deployment
+  minReplicas: 1
+  maxReplicas: 10 # Define the minimum and maximum number of Pods.
+  metrics: # Sets the metric type and target utilization (e.g., CPU utilization at 50%).
+Commands to Deploy HPA
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+```
+
+**Vertical Pod Autoscaler (VPA)** : The Vertical Pod Autoscaler (VPA) adjusts the resource requests and limits (CPU and memory) of Pods automatically based on actual usage. It ensures that Pods have sufficient resources to run efficiently without wasting resources.
+
+How It Works
+
+- VPA monitors the resource usage of Pods.
+- Based on the observed usage, VPA recommends or directly updates the resource requests and limits for the Pods.
+- In update mode, Pods are restarted to apply the new resource requests and limits.
+
+Use Case - VPA is ideal for workloads with predictable scaling patterns or that need fine-tuned resource management, such as batch jobs or databases.
+
+Key Features
+
+- Adjusts resource requests and limits (CPU/memory) for Pods.
+- Operates in three modes:  
+  Off: Only provides recommendations.  
+  Auto: Updates resource requests/limits and restarts Pods.  
+  Initial: Sets resource requests/limits only for new Pods.
+
+Example YAML
+
+```yaml
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: nginx-vpa
+spec:
+  targetRef: # Specifies the target resource for VPA (e.g., Deployment).
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-deployment
+  updatePolicy:
+    updateMode: "Auto" # Updates resource requests/limits and restarts Pods.
+```
+
 ## Deployment Strategy
 
 ![deployment_strategy](./gif/k8_deployment_strategy_bytebytego.gif)
@@ -354,13 +454,13 @@ Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Upd
     Why Use: Canary deployment ensures that only a small fraction of users experience issues, allowing rollback with minimal impact if the new feature causes errors.
 
     Pros:  
-      - Minimizes risk by exposing new changes to a small subset of users initially.
-      - Real-world testing under production conditions.
-      - Easier to detect issues early in the rollout process.
+      - Minimizes risk by exposing new changes to a small subset of users initially.  
+      - Real-world testing under production conditions.  
+      - Easier to detect issues early in the rollout process.  
 
     Cons:
-      - Requires advanced traffic management tools (e.g., Istio or NGINX for traffic splitting).
-      - Monitoring and rollback processes need to be well-defined.
+      - Requires advanced traffic management tools (e.g., Istio or NGINX for traffic splitting).  
+      - Monitoring and rollback processes need to be well-defined.    
 
 2. **Blue-Green Deployment**
 
@@ -368,9 +468,9 @@ Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Upd
 
     **Steps**:
 
-    - Deploy the new version to the Green environment.
-    - Test the Green environment for functionality, performance, and stability.
-    - Redirect all traffic from the Blue to the Green environment (via a load balancer or DNS change).
+    - Deploy the new version to the Green environment.  
+    - Test the Green environment for functionality, performance, and stability.  
+    - Redirect all traffic from the Blue to the Green environment (via a load balancer or DNS change).  
     - The Blue environment serves as a backup in case of rollback.
 
     **Use Case**:
@@ -379,20 +479,20 @@ Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Upd
     Why Use: Blue-Green ensures zero downtime during deployment and allows for an instant rollback by switching back to the Blue environment.
 
     Pros:
-    - Zero downtime during deployment.
-    - Instant rollback by switching traffic back to the old environment.
+    - Zero downtime during deployment.  
+    - Instant rollback by switching traffic back to the old environment.  
     - Both environments are fully isolated, reducing the risk of deployment errors.
 
     Cons:
-    - Requires double the infrastructure (temporary) for both environments.
-    - Higher cost during deployment phases due to resource duplication.
+    - Requires double the infrastructure (temporary) for both environments.  
+    - Higher cost during deployment phases due to resource duplication.  
 
 3. **Recreate Deployment**
 
     **Description**: The current version of the application is terminated completely, and the new version is deployed in its place. This is a "replace all" strategy.
 
     **Steps**:
-    - Terminate all pods running the old version of the application.
+    - Terminate all pods running the old version of the application.  
     - Deploy the new version.
 
     **Use Case**:
@@ -400,12 +500,12 @@ Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Upd
     Why Use: Recreate is simple, cost-effective, and appropriate when the application doesn't need to handle live user traffic during deployment.
 
     Pros:
-    - Simple to implement with minimal complexity.
-    - No need to manage traffic splitting or multiple versions.
+    - Simple to implement with minimal complexity.  
+    - No need to manage traffic splitting or multiple versions.  
     - Suitable for stateless or low-traffic applications.
 
     Cons:
-    - Causes downtime as the old version is terminated before the new version becomes available.
+    - Causes downtime as the old version is terminated before the new version becomes available.  
     - No gradual transition, so any errors immediately impact all users.
 
 4. **Rolling Update Deployment**
@@ -422,12 +522,12 @@ Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Upd
     Why Use: Rolling updates ensure zero downtime by maintaining the availability of old pods while the new version is rolled out.
 
     Pros:
-    - Zero downtime during deployment.
-    - Gradual replacement reduces the risk of introducing issues.
+    - Zero downtime during deployment.  
+    - Gradual replacement reduces the risk of introducing issues.  
     - Supports controlled rollout by limiting the number of simultaneous updates.
 
     Cons:
-    - Rollback is slower compared to Canary or Blue-Green.
+    - Rollback is slower compared to Canary or Blue-Green.  
     - Not suitable for breaking changes that require all pods to be updated simultaneously.
 
 **Comparison Table**:
