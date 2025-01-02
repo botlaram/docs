@@ -375,6 +375,92 @@ Key features include:
 
 ![Azure vnet](./png/azure-vnet.png)
 
+### DDoS
+
+Azure Distributed Denial of Service (DDoS) Protection safeguards your applications and resources in Azure against DDoS attacks. These attacks aim to overwhelm your application by flooding it with fake traffic, causing slowdowns or making it unavailable to legitimate users.
+
+Azure provides two tiers of DDoS protection:
+
+**Basic** (Default): Enabled automatically for all Azure services, offering protection at the network level.  
+**Standard** (Enhanced): Offers advanced mitigation capabilities and is ideal for applications that require higher protection.
+
+Key Features of Azure DDoS Protection
+
+1. Automatic Protection
+
+    Basic Protection: Built into Azure and available for all customers without extra cost.
+    Standard Protection: Automatically detects and mitigates threats when a resource (like a virtual network) is under attack.
+
+2. Advanced Threat Detection
+
+    Analyzes traffic patterns to differentiate between legitimate traffic and malicious attacks.
+    Protects against various DDoS attack types, such as:  
+    Volumetric Attacks: Flood the network with high traffic (e.g., UDP floods).  
+    Protocol Attacks: Exploit weaknesses in network protocols (e.g., SYN floods).  
+    Resource Layer Attacks: Target the application directly (e.g., HTTP/S floods).
+
+3. Integration with Azure Resources
+
+    Works seamlessly with Azure services like Virtual Networks, Load Balancers, and Application Gateways.  
+    Protects applications hosted on Azure without requiring changes to the infrastructure.
+
+4. Cost Protection
+
+    Offers cost protection for scaled resources during an attack.  
+    For example, if an attack causes your application to scale up, Azure provides credits for additional resource costs incurred during the attack.
+
+5. Attack Analytics
+
+    Detailed reports and insights are available via Azure Monitor and Log Analytics.  
+    You can analyze attack metrics such as:  
+    Attack type  
+    Attack duration  
+    Traffic volume
+
+6. Alerting and Monitoring
+
+    Azure Monitor can trigger alerts when an attack is detected or mitigated.  
+    Alerts allow you to stay informed and take additional actions if required.  
+
+7. Easy Configuration
+
+    DDoS Standard protection is enabled by associating it with a Virtual Network (VNet) in your Azure subscription.  
+    No complex setup or deployment is required.
+
+**How Azure DDoS Protection Works**
+
+- Traffic Monitoring:
+
+    Azure continuously monitors traffic for anomalies.  
+    It uses machine learning and global threat intelligence to detect unusual patterns.
+
+- Attack Detection:
+
+    When abnormal traffic is detected, Azure automatically triggers mitigation.
+
+- Traffic Scrubbing:
+
+    Malicious traffic is filtered out while legitimate traffic continues to flow to your application without disruption.
+
+**Pricing**
+
+DDoS Basic: Free and included with all Azure resources.  
+DDoS Standard: Paid, with a flat monthly fee and additional data charges. It is more
+cost-effective for mission-critical applications requiring higher protection.
+
+When to Use DDoS Standard?
+
+1. Applications that handle sensitive data or critical workloads.  
+2. Public-facing web applications, APIs, or online services.  
+3. Resources that require compliance with strict security regulations.  
+
+Benefits of Azure DDoS Protection  
+
+1. Reduced Downtime: Ensures application availability during attacks.  
+2. Cost Savings: Provides cost protection during attack-related scaling.  
+3. Ease of Use: Seamlessly integrates with Azure resources.  
+4. Global Reach: Uses Microsoft's global infrastructure for high availability.
+
 ## Storage
 
 ### Azure Blob Storage
