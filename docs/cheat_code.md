@@ -4,11 +4,16 @@
 
 | Execute                                          | Command
 | ------------------------------------------------ | --------------------------------------
-| Create virtual env                  | `python -m venv venv`
-| Activate virtual environment        | Windows`./venv/bin/activate` <br> Linux`source venv/bin/activate`
-| Deactivate virtual environment      | `deactivate`
-| Install requirements.txt            | `pip install -r requirements.txt`
+| Create virtual env                               | `python -m venv venv`
+| Activate virtual environment        | Windows   `./venv/bin/activate` <br> Linux   `source venv/bin/activate`
+| Deactivate virtual environment                   | `deactivate`
+| Install requirements.txt                         | `pip install -r requirements.txt`
 | Create requirements.txt | `pip freeze > requirements.txt`
+| Upgrade a Package                                 | `pip install --upgrade <package-name>`
+| List Installed Packages                           | `pip list`
+| Show Package Details                              | `pip show <package-name>`
+| Install package from git repository      | `pip install git+https://github.com/psf/requests.git`
+| Configure Pip Settings                |`pip config set global.index-url https://pypi.org/simple`
 
 ## Docker commands
 
@@ -17,14 +22,14 @@
 | Build an Image from a Dockerfile                 | `docker build -t <image_name>`
 | List all images                                  | `docker images / docker images ls`
 | Run the container (--rm remove filesystem and associated resources (such as networking resources) when the container stops)      | `docker run --rm -p 80:5001 <image name>`
-| Build an Image from a Dockerfile without the cache | docker build -t <image_name> . –no-cache
+| Build an Image from a Dockerfile without the cache | `docker build -t <image_name> . –no-cache`
 | Delete an Image                                   | `docker rmi <image_name>`
 | Remove all unused images                          | `docker image prune`
 | Create and run a container from an image, with custom name: | `docker run --name <container_name> <image_name>`
 | Run a container with and publish a container’s port(s) to the host. | `docker run -p <host_port>:<container_port> <image_name>`
 | Run a container in the background                  | `docker run -d <image_name>`
 | Run a container in container with copy/volume | `docker run -it -v <src>:<container-dst> <image-id>`
-| Start or stop an existing container:  | `docker start | stop <container_name> or <container-id>`
+| Start or stop an existing container  | `docker start | stop <container_name> or <container-id>`
 | Kill running container                             | `docker kill $ID`
 | Remove a stopped container:                        | `docker rm <container_name>`
 | Open a shell inside a running container:           | `docker exec -it <container_name> sh`

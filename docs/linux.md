@@ -325,7 +325,7 @@ Common Uses of /dev/null:
 
     In this example, ls checks if the file exists. If it does, the script echoes "File exists." If not, it says "File does not exist." The command's output is sent to /dev/null, so you don’t see anything unless there is a specific message in the if or else statement.
 
-    Summary
+    Summary  
     Suppress command output: command > /dev/null  
     Suppress error messages: command 2> /dev/null  
     Suppress both output and error: command > /dev/null 2>&1  

@@ -200,17 +200,13 @@ Prerequisites:
 ```bash
 terraform {
   backend "azurerm" {
-    resource_group_name  = "myResourceGroup"
-    storage_account_name = "mystorageaccount"
-    container_name       = "terraformstate"
-    key                  = "terraform.tfstate"
+    resource_group_name  = "myResourceGroup" # The Azure resource group containing the storage account.
+    storage_account_name = "mystorageaccount" # The name of the storage account.
+    container_name       = "terraformstate" # The container name in Blob Storage to store the state file.
+    key                  = "terraform.tfstate" # The file name for the Terraform state file.
   }
 }
 
-#resource_group_name: The Azure resource group containing the storage account.
-#storage_account_name: The name of the storage account.
-#container_name: The container name in Blob Storage to store the state file.
-#key: The file name for the Terraform state file.
 ```
 
 Enable State Locking: By default, when you use Azure Blob Storage as a backend, Terraform automatically uses blob leases to lock the state file during operations. No additional configuration is needed.

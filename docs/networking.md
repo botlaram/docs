@@ -245,42 +245,41 @@ A proxy server acts as an intermediary between a client and the internet.
 
 Benefits of Using a Proxy
 
-Anonymity: Hides the client's IP address from the target server.
-
-Caching: Stores copies of frequently accessed resources to speed up future requests.
-
-Access Control: Filters and controls user access to certain websites or content.
-
-Security: Can provide additional security measures, such as encryption or threat detection.
+- Anonymity: Hides the client's IP address from the target server.
+- Caching: Stores copies of frequently accessed resources to speed up future requests.
+- Access Control: Filters and controls user access to certain websites or content.
+- Security: Can provide additional security measures, such as encryption or threat detection.
 
 Types of Proxies
 
-Forward Proxies: Handle requests from clients to external servers.
+- Forward Proxies: Handle requests from clients to external servers.
 
-Reverse Proxies: Handle requests from clients to a server, often used for load balancing and caching.
+- Reverse Proxies: Handle requests from clients to a server, often used for load balancing and caching.
 
-Transparent Proxies: Intercept communication without modifying requests or responses.
-Anonymous Proxies: Hide the client's IP address but may identify themselves as a proxy.
+- Transparent Proxies: Intercept communication without modifying requests or responses.
+
+- Anonymous Proxies: Hide the client's IP address but may identify themselves as a proxy.
 
 By acting as a go-between, proxies enhance security, performance, and control over internet traffic.
 
-### Forward and Reverse Proxy
+In the realm of networking, proxies play a crucial role in enhancing security, performance, and content delivery. Let’s understand the key distinctions between the two types of proxies:  
+forward and reverse.
 
-Forward Proxy vs Reverse Proxy 🚀
+### Forward proxy
 
-In the realm of networking, proxies play a crucial role in enhancing security, performance, and content delivery. Let’s understand the key distinctions between the two types of proxies: forward and reverse
+Forward proxy is a client-side proxy that acts on behalf of clients. In this proxy, the
+client makes a request to the forward proxy to connect with the servers. After that, the forward proxy makes a request to the servers to get the response and send it back to the client.
 
-- A **Forward proxy** is a client-side proxy that acts on behalf of clients. In this proxy, the
-  client makes a request to the forward proxy to connect with the servers. After that, the forward proxy makes a request to the servers to get the response and send it back to the client.
+Forward proxy protects the client's identity by not letting the servers know about clients. In simple words, servers think that the forward proxy makes all the requests, while it can be coming from multiple clients.
 
-  Forward proxy protects the client's identity by not letting the servers know about clients. In simple words, servers think that the forward proxy makes all the requests, while it can be coming from multiple clients.
+It is used for client anonymity, traffic control, encryption, caching, etc.
 
-  It is used for client anonymity, traffic control, encryption, caching, etc.
+### Reverse proxy
 
-- A **Reverse proxy** is a server-side proxy that sits in front of servers. In this, the client
-  makes a request to the reverse proxy. Then the reverse proxy makes a request to the servers and returns the response to the client.
+REverse proxy is a server-side proxy that sits in front of servers. In this, the client
+makes a request to the reverse proxy. Then the reverse proxy makes a request to the servers and returns the response to the client.
 
-  Reverse proxy protects the server’s identity by not letting the clients know about servers. In simple words, clients think that the reverse proxy serves all the requests, while behind there can be multiple servers.
+Reverse proxy protects the server’s identity by not letting the clients know about servers. In simple words, clients think that the reverse proxy serves all the requests, while behind there can be multiple servers.
 
 ![PROXY](./gif/forward-reverse-proxy.gif)
 

@@ -20,6 +20,8 @@
 
 10. [How to Setup 2FA on an SSH Server](https://systemweakness.com/how-to-setup-2fa-on-an-ssh-server-55e9e8680261)
 
+11. [Argocd deployment challenges](https://devtron.ai/blog/operational-challenges-with-argocd/)
+
 ## Pages
 
 [Devopscube](https://devopscube.com/)

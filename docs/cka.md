@@ -384,41 +384,40 @@ Below is an overview of the key node networking requirements and concepts.
     Choose a CNI plugin compatible with your cluster.  
     Apply the CNI plugin’s YAML manifest after initializing the cluster.
 
-    Example for Flannel:
+Example for Flannel:
 
-    ```bash
-    kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-    ```
+```bash
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+```
 
-    Verify that Pods receive IPs and can communicate across nodes.
+Verify that Pods receive IPs and can communicate across nodes.
 
 5. Additional Considerations
 
-    Firewall Rules : Ensure firewall rules allow traffic on the required ports for Kubernetes components and networking.
-    Allow traffic between the Pod CIDR range, Service CIDR range, and nodes.
+Firewall Rules : Ensure firewall rules allow traffic on the required ports for Kubernetes components and networking.
+Allow traffic between the Pod CIDR range, Service CIDR range, and nodes.
 
-    Cloud-Specific Networking : If running Kubernetes in a cloud environment, configure networking based on the cloud provider’s requirements.  
-    Most managed Kubernetes services (like AWS EKS, Azure AKS, or GKE) have native integrations.
+Cloud-Specific Networking : If running Kubernetes in a cloud environment, configure networking based on the cloud provider’s requirements.  
+Most managed Kubernetes services (like AWS EKS, Azure AKS, or GKE) have native integrations.
 
-    Network Policies : Network policies define rules for traffic flow between Pods and services.  
-    Use tools like Calico or Cilium to enforce these policies.
+Network Policies : Network policies define rules for traffic flow between Pods and services.  
+Use tools like Calico or Cilium to enforce these policies.
 
 6. Verifying Network Connectivity
 
-    Ping Test Between Pods : Deploy Pods on different nodes and verify they can communicate:
+Ping Test Between Pods : Deploy Pods on different nodes and verify they can communicate:
 
-    ```bash
+```bash
+kubectl exec -it pod-a -- ping <pod-b-ip>
+```
 
-    kubectl exec -it pod-a -- ping <pod-b-ip>
-    ```
+Create a test service and ensure it is reachable via its ClusterIP or NodePort.
 
-    Create a test service and ensure it is reachable via its ClusterIP or NodePort.
+DNS Test : Check if DNS resolution is working:
 
-    DNS Test : Check if DNS resolution is working:
-
-    ```bash
-    kubectl exec -it pod-a -- nslookup <service-name>
-    ```
+```bash
+kubectl exec -it pod-a -- nslookup <service-name>
+```
 
 ## What different phases k8 execute while running kubeadm init
 

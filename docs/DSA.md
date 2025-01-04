@@ -192,7 +192,7 @@ Imagine you have a hand of playing cards that are in a random order, and you wan
 
 3. Iteration: You would repeat this process multiple times, traversing the hand of cards, until the entire hand is sorted.
 
-## Selection Sor
+## Selection Sort
 
 Selection Sort is a simple sorting algorithm that works by repeatedly selecting the smallest (or largest) element from an unsorted part of the list and swapping it with the element at the beginning of the unsorted list. This process continues until the entire list is sorted.
 
