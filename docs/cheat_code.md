@@ -17,113 +17,217 @@
 
 ## Docker commands
 
-| Execute                                          | Command
-| ------------------------------------------------ | ----------------------------------------------
-| Build an Image from a Dockerfile                 | `docker build -t <image_name>`
-| List all images                                  | `docker images / docker images ls`
-| Run the container (--rm remove filesystem and associated resources (such as networking resources) when the container stops)      | `docker run --rm -p 80:5001 <image name>`
-| Build an Image from a Dockerfile without the cache | `docker build -t <image_name> . –no-cache`
-| Delete an Image                                   | `docker rmi <image_name>`
-| Remove all unused images                          | `docker image prune`
-| Create and run a container from an image, with custom name: | `docker run --name <container_name> <image_name>`
-| Run a container with and publish a container’s port(s) to the host. | `docker run -p <host_port>:<container_port> <image_name>`
-| Run a container in the background                  | `docker run -d <image_name>`
-| Run a container in container with copy/volume | `docker run -it -v <src>:<container-dst> <image-id>`
-| Start or stop an existing container  | `docker start | stop <container_name> or <container-id>`
-| Kill running container                             | `docker kill $ID`
-| Remove a stopped container:                        | `docker rm <container_name>`
-| Open a shell inside a running container:           | `docker exec -it <container_name> sh`
-| Fetch and follow the logs of a container:          | `docker logs -f <container_name>`
-| To inspect a running container:               | `docker inspect <container_name> (or <container_id>)`
-| To list currently running containers:              | `docker ps`
-| List all docker containers (running and stopped)   | `docker ps --all`
-| View resource usage stats                          | `docker container stats`
-| Delete all docker images                           | `docker rmi $(docker images -q)`
-| prune your entire system                           |  `docker system prune`
-| change docker tag                                  | `docker tag <image_id> <new_image_name:tag>`
+| **Category**                    | **Command**                                     |
+|----------------------------------|------------------------------------------------|
+| **Image Management**              |                                                |
+| Build an image from a Dockerfile           | `docker build -t <image_name> .`               |
+| Build an image without cache              | `docker build -t <image_name> . --no-cache`    |
+| List all images                           | `docker images`                                |
+| Delete an image                             | `docker rmi <image_name>`                      |
+| Remove all unused images                    | `docker image prune`                           |
+| Delete all images                           | `docker rmi $(docker images -q)`               |
+| Tag an image                                | `docker tag <image_id> <new_image_name:tag>`   |
+| Pull an image from Docker Hub               | `docker pull <image_name>`                     |
+| Push an image to Docker Hub      | `docker push <image_name>`                     |
+| **Container Management**        |                                                |
+| Run a container                  | `docker run <image_name>`                      |
+| Run and remove container on stop | `docker run --rm -p 80:5001 <image_name>`      |
+| Create and name a container      | `docker run --name <container_name> <image_name>` |
+| Run in the background (detached) | `docker run -d <image_name>`                   |
+| Run with port mapping            | `docker run -p <host_port>:<container_port> <image_name>` |
+| Run with volume mapping          | `docker run -v <host_path>:<container_path> <image_name>` |
+| Start a container                | `docker start <container_name>`                |
+| Stop a container                 | `docker stop <container_name>`                 |
+| Restart a container              | `docker restart <container_name>`              |
+| Kill a running container         | `docker kill <container_name>`                 |
+| Remove a stopped container       | `docker rm <container_name>`                   |
+| Remove all stopped containers               | `docker container prune`                       |
+| **Container Inspection**                   |                                                |
+| List running containers                     | `docker ps`                                    |
+| List all containers                         | `docker ps --all`                              |
+| Fetch logs                                  | `docker logs <container_name>`                 |
+| Follow logs in real-time                    | `docker logs -f <container_name>`              |
+| Inspect container details                   | `docker inspect <container_name>`              |
+| Check resource usage stats                  | `docker container stats`                       |
+| Open a shell inside a container             | `docker exec -it <container_name> sh`          |
+| Execute a command in container              | `docker exec -it <container_name> <command>`   |
+| **Network Management**          |                                                |
+| List networks                    | `docker network ls`                            |
+| Create a network                 | `docker network create <network_name>`         |
+| Inspect a network                | `docker network inspect <network_name>`        |
+| Connect a container to a network | `docker network connect <network_name> <container_name>` |
+| Disconnect a container from a network | `docker network disconnect <network_name> <container_name>` |
+| Remove a network                 | `docker network rm <network_name>`             |
+| **Volumes Management**          |                                                |
+| List volumes                     | `docker volume ls`                             |
+| Create a volume                  | `docker volume create <volume_name>`           |
+| Inspect a volume                 | `docker volume inspect <volume_name>`          |
+| Remove a volume                  | `docker volume rm <volume_name>`               |
+| Remove unused volumes            | `docker volume prune`                          |
+| Use a volume in a container      | `docker run -v <volume_name>:<path> <image_name>` |
+| **System Cleanup**              |                                                |
+| Remove unused objects            | `docker system prune`                          |
+| Clean unused volumes             | `docker volume prune`                          |
+| Clean unused images              | `docker image prune`                           |
+| Clean unused networks            | `docker network prune`                         |
+| **Miscellaneous**               |                                                |
+| Display Docker version           | `docker --version`                             |
+| Display system-wide information  | `docker info`                                  |
+| Login to Docker Hub              | `docker login`                                 |
+| Logout from Docker Hub           | `docker logout`                                |
+| Save an image to a tar file      | `docker save -o <filename.tar> <image_name>`   |
+| Load an image from a tar file    | `docker load -i <filename.tar>`                |
+| Export a container to a tar file | `docker export <container_name> > <file.tar>`  |
+| Import a tar file as an image    | `docker import <file.tar> <image_name>`        |
+| Pause a container                | `docker pause <container_name>`                |
+| Unpause a container              | `docker unpause <container_name>`              |
+| Rename a container               | `docker rename <old_name> <new_name>`          |
+| View Docker events               | `docker events`                                |
 
 ## Git commands
 
-| Execute                                          | Command
-| ------------------------------------------------ | -------------------------
-| Git configuration/set username                   | `git config--global user.name "<User name>"`
-| Git configuration/set email                    | `git config --global user.email "xyz123@gmail.com"`
-| Git configuration list                           | `git config-list`
-| Git init                                         | `git init <Repo Name>`
-| Git clone                                        | `git clone <remote Url>`
-| git clone particular branch                      | `git clone -b <branch-name> <git-url>`
-| Create branch                                    | `git branch <branch name>`
-| List all branch names                            | `git branch -a` <br> `git branch --list`
-| Checkout branch                                  | `git checkout <branch name>`
-| Checkout and switch to new branch                | `git checkout -b <branchname>`
-| Git add single file                              | `git add <Filename> <Filename>`
-| Git add all files                                | `git add .`
-| Git status                                       | `git status`
-| Git commit                                       | `git commit -m " Commit Message"`
-| Git add+commit                                   | `git commit -am " Commit Message"`
-| Git push                                         | `git push`
-| Undo git add / Unstage All Files                 | `git reset`
-| Undo git file / Unstage a Specific File:         | `git reset <file_name>`
-| Unstage a file but keep its changes in working dir  | `git reset HEAD <file_name>` or `git reset HEAD`
-| Undo the Commit and Discard Changes              | `git reset --hard HEAD~1`
-| Undo the Commit and Keep Changes                 | `git reset HEAD~1`
-| Clean up working dir by removing untracked files and directories | `git clean -fdx`
-| Pull latest changes from remote repo | `git pull`
-| git pull rebase (When you run git pull --rebase, Git fetches the remote changes and then rebases your local commits on top of the latest commits from the remote branch.) | `git pull --rebase`
-| Delete branch                                    | `git branch -d <branch_name>`
-| Delete remote branch                             | `git push origin-delete <branch name>`
-| Git commit history                               | `git log`
-| Rename branch                                    | `git branch -m <old branch name> <new branch name>`
-| Merge branch  | `vscode >` <br> `git clone url` <br> `git checkout main branch` <br> `git pull` <br> `git checkout feature branch` <br> `git merge main_branch` <br> ## if you want to update feature branch with main <br> ## you will get merge conflicts in vscode <br> ## resolve merge conflicts <br> `git commit` <br> ##check branch name and commit to your feature branch <br> `git push feature branch`
-| Git revert | `git log` <br> `git revert commit_hash`  #copy the commit_hash from git logs <br> `git push` #to push the changes
-| Display the modified files                       | `git log --stat`
-| Display the modification on each line of a file  | `git blame <filename>`
-| Track changes that have not been staged          | `git diff`
-| Track changes that have staged but not committed | `git diff --staged`
-| Track the changes after committing a file        | `git diff HEAD`
-| Track the changes between two commits            | `git diff <commit1-sha> <commit2-sha>`
-| Git Diff Branches                                | `git diff <branch 1> < branch 2>`
-| Clone other's code and push to your repo  | `git clone` <br> `git remote -v` <br> `git remote set-url origin <add-your-url>` <br> `git remote -v` <br> `git push origin`
+| **Category**                      | **Command**                                      |
+|-----------------------------------|--------------------------------------------------|
+| **Configuration**                 |                                                  |
+| Set username                      | `git config --global user.name "<User name>"`    |
+| Set email                         | `git config --global user.email "xyz123@gmail.com"` |
+| List configuration                | `git config --list`                              |
+| Set default editor                | `git config --global core.editor "<editor>"`     |
+| **Repository Initialization**     |                                                  |
+| Initialize repository             | `git init <Repo Name>`                           |
+| Clone repository                  | `git clone <remote URL>`                         |
+| Clone specific branch             | `git clone -b <branch-name> <git-url>`           |
+| **Branch Management**             |                                                  |
+| Create branch                     | `git branch <branch name>`                       |
+| List branches                     | `git branch -a`                                  |
+| Checkout branch                   | `git checkout <branch name>`                     |
+| Create and switch to branch       | `git checkout -b <branch name>`                  |
+| Delete branch                     | `git branch -d <branch name>`                    |
+| Force delete branch               | `git branch -D <branch name>`                    |
+| Rename branch                     | `git branch -m <old branch name> <new branch name>` |
+| Delete remote branch              | `git push origin --delete <branch name>`         |
+| **Staging and Commit**            |                                                  |
+| Add specific files to stage       | `git add <filename> <filename>`                  |
+| Add all changes to stage          | `git add .`                                      |
+| View status of changes            | `git status`                                     |
+| Commit staged changes             | `git commit -m "Commit message"`                 |
+| Add and commit simultaneously     | `git commit -am "Commit message"`                |
+| Amend last commit                 | `git commit --amend`                             |
+| Undo staged changes               | `git reset`                                      |
+| Unstage specific file             | `git reset <file_name>`                          |
+| Unstage file but keep changes     | `git reset HEAD <file_name>`                     |
+| Undo commit and keep changes      | `git reset HEAD~1`                               |
+| Undo commit and discard changes   | `git reset --hard HEAD~1`                        |
+| **Pull and Push**                 |                                                  |
+| Pull latest changes               | `git pull`                                       |
+| Pull with rebase                  | `git pull --rebase`                              |
+| Push changes                      | `git push`                                       |
+| Push specific branch              | `git push origin <branch name>`                  |
+| Set upstream branch               | `git push --set-upstream origin <branch name>`   |
+| **Merge and Revert**              |                                                  |
+| Merge branches                    | `git merge <branch name>`                        |
+| Revert a commit                   | `git revert <commit_hash>`                       |
+| **Logs and History**              |                                                  |
+| View commit history               | `git log`                                        |
+| View history with stats           | `git log --stat`                                 |
+| View changes line by line         | `git blame <filename>`                           |
+| View changes between commits      | `git diff <commit1-sha> <commit2-sha>`           |
+| View changes in branch comparison | `git diff <branch1> <branch2>`                   |
+| **Remote Management**             |                                                  |
+| View remotes                      | `git remote -v`                                  |
+| Add new remote                    | `git remote add <name> <url>`                    |
+| Change remote URL                 | `git remote set-url <name> <new-url>`            |
+| Remove remote                     | `git remote remove <name>`                       |
+| Fetch changes                     | `git fetch`                                      |
+| **Cleaning and Optimization**     |                                                  |
+| Remove untracked files            | `git clean -fd`                                  |
+| Remove untracked files and dirs   | `git clean -fdx`                                 |
+| Prune remote-tracking branches    | `git remote prune origin`                        |
+| Optimize repository               | `git gc`                                         |
+| **Rebase and Cherry-Pick**        |                                                  |
+| Start rebase                      | `git rebase <branch>`                            |
+| Abort rebase                      | `git rebase --abort`                             |
+| Continue rebase after conflict    | `git rebase --continue`                          |
+| Cherry-pick a commit              | `git cherry-pick <commit-hash>`                  |
+| **Tags**                          |                                                  |
+| Create a tag                      | `git tag <tag-name>`                             |
+| Create annotated tag              | `git tag -a <tag-name> -m "Tag message"`         |
+| Push tags to remote               | `git push origin <tag-name>`                     |
+| List tags                         | `git tag`                                        |
+| Delete local tag                  | `git tag -d <tag-name>`                          |
+| Delete remote tag                 | `git push origin --delete <tag-name>`            |
+| **Miscellaneous**                 |                                                  |
+| Stash changes                     | `git stash`                                      |
+| View stashes                      | `git stash list`                                 |
+| Apply last stash                  | `git stash apply`                                |
+| Delete a stash                    | `git stash drop <stash@{index}>`                 |
+| Create patch                      | `git format-patch <commit-range>`                |
+| Apply patch                       | `git apply <patch-file>`                         |
+| Merge branch  | `vscode >` <br> `git clone url` <br> `git checkout main branch` <br> `git pull` <br> `git checkout feature branch` <br> `git merge main_branch` <br> ## if you want to update feature branch with main <br> ## you will get merge conflicts in vscode <br> ## resolve merge conflicts <br> `git commit` <br> ##check branch name and commit to your feature branch <br> `git push feature branch` |
+| Clone other's code and push to your repo  | `git clone` <br> `git remote -v` <br> `git remote set-url origin <add-your-url>` <br> `git remote -v` <br> `git push origin` |
 
 ## Kubernetes commands
 
-| Execute                                          | Command
-| ------------------------------------------------ | -----------------------------------
-| To start Minikube                                | `minikube start`
-| host minikube dashboard                          | `minikube dashboard`
-| host minikube dashboard url                      | `minikube dashboard --url`
-| Create a namespace                               | `kubectl create namespace development`
-| Create a deployment using kubectl command        | `kubectl create deployment "nameofdeployment" --image="imagename"`<br> Example: `kubectl create deployment nginx-deploy --image=nginx`
-| Deploy using a YAML file                         | `kubectl apply -f deployment.yaml`
-| Display nodes                                    | `kubectl get nodes`
-| Display services                                 | `kubectl get services`
-| Display pods                                     | `kubectl get pods`
-| Display pods with a specific namespace           | `kubectl get pods -n "namespace"`
-| Display deployments                              | `kubectl get deployment`
-| Display ReplicaSets                              | `kubectl get replicaset`
-| Display config maps                              | `kubectl get cm`
-| Display storage class                            | `kubectl get sc`
-| Display Custom Resource Definition               | `kubectl get crd`
-| Display Get Jobs                                 | `kubectl get jobs -n namespace`
-| Display service status                           | `kubectl describe service "service-name"`
-| Display Scaled Jobs                              | `kubectl describe scaledjob <scaledjob-name> -n <namespace>`
-| Display Secret Provider class                    | `kubectl get secretproviderclass`
-| Display Secrets                                  | `kubectl get secret`
-| Debug                                            | Commands
-| debug pods                                       | `kubectl describe pod "pod-name"`
-| Display changes of a config map                  | `kubectl describe cm "release-name"-configmap`
-| Switch to a different namespace                  | `kubectl config set-context --current --namespace="namespace"`
-| Display deployment file snippet in VS Code       | `$env:KUBE_EDITOR="code --wait" > kubectl edit deployment "deployment-name"`
-| Display pod status                               | `kubectl get pods` <br> `kubectl describe pod "pod-name"`
-| Display describe secrets                         | `kubectl describe secret "secret-name"`
-| Debug pod status with a specific namespace       | `kubectl describe pod "pod-name" -n development`
-| Debug init container                             | `kubectl logs 'pod-name' -c init-cont-name`
-| Debug pods with external IP addresses            | `kubectl get pod -o wide`
-| Display pod logs                                 | `kubectl logs "pod-name" -n development`
-| Interact with pods                               | `kubectl exec -it "pod-name" -- /bin/bash`
-| Copy pods data to local env | `kubectl cp "pod-name":/etc/data/test.txt ./data/test.txt` <br> [pod_path local_path]
-| Delete all pods                                  | `kubectl delete pods --all -n <namespace>`
-| Delete deployments                               | `kubectl delete deployment "deployment-name"`
+| **Category**                   | **Command**                      |
+|--------------------------------|-----------------------------------------------------------|
+| **Minikube Operations**        |                                                          |
+| Start Minikube                 | `minikube start` |
+| Host Minikube dashboard        | `minikube dashboard` |
+| Get Minikube dashboard URL     | `minikube dashboard --url` |
+| **Namespace Commands**         |                                                    |
+| Create a namespace             | `kubectl create namespace <namespace>` |
+| List all namespaces            | `kubectl get namespaces` |
+| Switch to a namespace         | `kubectl config set-context --current --namespace=<namespace>` |
+| Display pods in a namespace    | `kubectl get pods -n <namespace>` |
+| Delete all pods in a namespace | `kubectl delete pods --all -n <namespace>` |
+| **Deployment and Apply Commands** |                                                  |
+| Create a deployment      | `kubectl create deployment <deployment-name> --image=<image-name>` |
+| Example                        | `kubectl create deployment nginx-deploy --image=nginx` |
+| Deploy using a YAML file       | `kubectl apply -f <file.yaml>` |
+| Edit a deployment in VS Code   | `$env:KUBE_EDITOR="code --wait" > kubectl edit deployment <deployment-name>` |
+| Delete a deployment            | `kubectl delete deployment <deployment-name>` |
+| Scale a deployment       | `kubectl scale deployment <deployment-name> --replicas=<number>` |
+| Restart a deployment           | `kubectl rollout restart deployment <deployment-name>` |
+| **Display Resource Information** |                                                    |
+| Display nodes                  | `kubectl get nodes` |
+| Display services               | `kubectl get services` |
+| Display pods                   | `kubectl get pods` |
+| Display deployments            | `kubectl get deployments` |
+| Display ReplicaSets            | `kubectl get replicasets` |
+| Display config maps            | `kubectl get configmaps` |
+| Display storage classes        | `kubectl get storageclasses` |
+| Display CRDs                   | `kubectl get crds` |
+| Display secrets                | `kubectl get secrets` |
+| Display Secret Provider class  | `kubectl get secretproviderclass` |
+| Display events                 | `kubectl get events`|
+| **Debug Commands**             |                                                     |
+| Describe a pod                 | `kubectl describe pod <pod-name>` |
+| Describe a service             | `kubectl describe service <service-name>` |
+| Describe a config map          | `kubectl describe configmap <configmap-name>` |
+| Debug pod logs                 | `kubectl logs <pod-name>` |
+| Debug pod logs with namespace  | `kubectl logs <pod-name> -n <namespace>` |
+| Debug init container logs      | `kubectl logs <pod-name> -c <init-container-name>` |
+| Debug pod status with wide view| `kubectl get pods -o wide` |
+| Interact with a pod            | `kubectl exec -it <pod-name> -- /bin/bash` |
+| Copy files from a pod          | `kubectl cp <pod-name>:<path-in-pod> <local-path>` |
+| Port-forward to access a pod   | `kubectl port-forward <pod-name> <local-port>:<pod-port>` |
+| **Apply and Manage Configurations** |                                                    |
+| Apply a configuration file     | `kubectl apply -f <file.yaml>` |
+| Delete resources from a file   | `kubectl delete -f <file.yaml>` |
+| Check rollout status           | `kubectl rollout status deployment/<deployment-name>` |
+| Undo a rollout                 | `kubectl rollout undo deployment/<deployment-name>` |
+| **Clean-up Commands**          |                                                      |
+| Delete all pods                | `kubectl delete pods --all` |
+| Delete all resources in namespace | `kubectl delete all --all -n <namespace>` |
+| Delete a resource              | `kubectl delete <resource-type> <resource-name>` |
+| Force delete a pod             | `kubectl delete pod <pod-name> --grace-period=0 --force` |
+| **Miscellaneous Commands**     |                                                  |
+| Check cluster info             | `kubectl cluster-info` |
+| Check current context          | `kubectl config current-context` |
+| List all contexts              | `kubectl config get-contexts` |
+| Set a default namespace for a context | `kubectl config set-context --current --namespace=<namespace>` |
+| View resource usage            | `kubectl top nodes` |
+| Monitor pod resource usage     | `kubectl top pods -n <namespace>` |
 
 ## Helm commands
 
@@ -174,3 +278,80 @@
 | Edit a deployment configuration                  | `oc edit dc <deployment-config>`
 | Scale a deployment configuration              | `oc scale dc <deployment-config> --replicas=<number>`
 | Rollout to latest version of deployment configuration | `oc rollout latest <deployment-config>`
+
+## Terraform
+
+| **Category**                   | **Command**                                      |
+|--------------------------------|--------------------------------------------------|
+| **General Commands**           |                                                  |
+| Terraform version              | `terraform --version`                            |
+| Terraform help                 | `terraform --help`                               |
+| **Formatting Commands**        |                                                  |
+| Format files                   | `terraform fmt`                                  |
+| Format files recursively       | `terraform fmt --recursive`                      |
+| Show format changes            | `terraform fmt --diff`                           |
+| Check formatting               | `terraform fmt --check`                          |
+| **Initialization Commands**    |                                                  |
+| Initialize project             | `terraform init`                                 |
+| Initialize without plugins     | `terraform init -get-plugins=false`              |
+| Initialize without state lock  | `terraform init -lock=false`                     |
+| Migrate state to backend       | `terraform init -migrate-state`                  |
+| Reconfigure backend            | `terraform init -reconfigure`                    |
+| Upgrade modules and providers  | `terraform init -upgrade`                        |
+| **Module Commands**            |                                                  |
+| Download modules               | `terraform get`                                  |
+| Update modules                 | `terraform get -update`                          |
+| **Validation Commands**        |                                                  |
+| Validate configuration         | `terraform validate`                             |
+| Validate in JSON format        | `terraform validate -json`                       |
+| **Planning Commands**          |                                                  |
+| Generate execution plan        | `terraform plan`                                 |
+| Save execution plan to file    | `terraform plan -out=<path>`                     |
+| Plan for destruction           | `terraform plan -destroy`                        |
+| Plan with variables            | `terraform plan -var="key=value"`                |
+| Plan with variable file        | `terraform plan -var-file="filename.tfvars"`     |
+| Plan with refresh disabled     | `terraform plan -refresh=false`                  |
+| **Apply Commands**             |                                                  |
+| Apply changes                  | `terraform apply`                                |
+| Auto-approve apply             | `terraform apply --auto-approve`                 |
+| Apply with variables           | `terraform apply -var="key=value"`               |
+| Apply with variable file       | `terraform apply -var-file="filename.tfvars"`    |
+| Apply a saved plan             | `terraform apply <plan file>`                    |
+| **Destruction Commands**       |                                                  |
+| Destroy resources              | `terraform destroy`                              |
+| Auto-approve destroy           | `terraform destroy --auto-approve`               |
+| Destroy with variables         | `terraform destroy -var="key=value"`             |
+| Destroy with variable file     | `terraform destroy -var-file="filename.tfvars"`  |
+| **State Management Commands**  |                                                  |
+| Display state                  | `terraform show`                                 |
+| Display state file             | `terraform show <statefile>`                     |
+| Refresh state                  | `terraform refresh`                              |
+| List resources in state        | `terraform state list`                           |
+| Push state to backend          | `terraform state push`                           |
+| Remove resource from state     | `terraform state rm <resource>`                  |
+| Move resource in state         | `terraform state mv <src> <dest>`                |
+| Lock state                     | `terraform force-unlock <lock ID>`               |
+| Import resource to state       | `terraform import <address> <resource ID>`       |
+| Show resource state details    | `terraform state show <resource>`                |
+| **Resource Lifecycle Commands**|                                                  |
+| Force resource recreation      | `terraform taint <resource>`                     |
+| Remove taint from resource     | `terraform untaint <resource>`                   |
+| **Provider Commands**          |                                                  |
+| List providers                 | `terraform providers`                            |
+| **Workspace Commands**         |                                                  |
+| List workspaces                | `terraform workspace list`                       |
+| Show current workspace         | `terraform workspace show`                       |
+| Create a new workspace         | `terraform workspace new <workspace>`            |
+| Delete a workspace             | `terraform workspace delete <workspace>`         |
+| Select a workspace             | `terraform workspace select <workspace>`         |
+| **Debugging Commands**         |                                                  |
+| Debug a command                | `terraform -debug <command>`                     |
+| Show logs                      | `TF_LOG=<level> terraform <command>`             |
+| Enable detailed logs           | `TF_LOG=TRACE terraform <command>`               |
+| **Miscellaneous Commands**     |                                                  |
+| Create graph of resources      | `terraform graph`                                |
+| Generate graph to file         | `terraform graph \ dot -Tpng > graph.png`        |
+| Output resource values         | `terraform output`                               |
+| Output specific value          | `terraform output <output name>`                 |
+| Suppress colored output        | `terraform <command> -no-color`                  |
+| Show available providers       | `terraform providers schema`                     |

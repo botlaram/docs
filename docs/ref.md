@@ -21,6 +21,7 @@
 10. [How to Setup 2FA on an SSH Server](https://systemweakness.com/how-to-setup-2fa-on-an-ssh-server-55e9e8680261)
 
 11. [Argocd deployment challenges](https://devtron.ai/blog/operational-challenges-with-argocd/)
+12. [hpa-vs-vpa-vs-keda](https://www.techopsexamples.com/p/kubernetes-autoscaling-hpa-vs-vpa-vs-keda)
 
 ## Pages
 

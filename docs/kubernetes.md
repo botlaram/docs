@@ -427,6 +427,64 @@ spec:
     updateMode: "Auto" # Updates resource requests/limits and restarts Pods.
 ```
 
+### Stateful vs Stateless in Kubernetes
+
+In Kubernetes, workloads can be classified as either stateful or stateless, depending on how they handle and persist data. Understanding the difference is critical for designing applications that run effectively in a Kubernetes environment.
+
+**Stateless Applications**: Stateless applications do not store any data or state between sessions or transactions. Each request is independent and does not rely on previous interactions.
+
+Characteristics
+
+- No dependency on underlying storage.
+- Can be scaled easily as there is no need to synchronize state.
+- Requests can be processed by any instance of the application.
+- Commonly used for APIs, web servers, and microservices.
+
+Examples
+
+- Web servers (e.g., Nginx, Apache).
+- RESTful APIs.
+- Batch job workers.
+
+Kubernetes Implementation:
+
+Deploy using Deployments or ReplicaSets.  
+Stateless pods can be scaled horizontally using kubectl scale or Horizontal Pod Autoscaler (HPA).  
+Use ephemeral storage like /tmp or environment variables for temporary data.
+
+**Stateful Applications**: Stateful applications maintain a state or rely on persisted data across sessions or interactions. This state might be specific to a user, session, or process.
+
+Characteristics:
+
+- Depend on persistent storage (e.g., databases, file systems).
+- Require a unique identity for each instance (pod) to preserve state.
+- Often need order or consistency in the deployment and scaling process.
+- More complex to scale compared to stateless applications.
+
+Examples:
+
+- Databases (e.g., MySQL, PostgreSQL, MongoDB).
+- Message queues (e.g., RabbitMQ, Kafka).
+- Stateful systems like Elasticsearch.
+
+Kubernetes Implementation:
+Deploy using StatefulSets to ensure each pod gets a unique identity (e.g., mypod-0, mypod-1).  
+Use PersistentVolume (PV) and PersistentVolumeClaim (PVC) for storage.  
+Data is preserved even if pods are deleted or rescheduled.
+
+**Use Cases**.
+
+**Stateless Applications**:
+
+Use cloud-native storage solutions for external state (e.g., S3, RDS).  
+Leverage Kubernetes' scalability features for performance optimization.
+
+**Stateful Applications**:
+
+Use StatefulSets to ensure unique pod identities and persistent data.  
+Employ proper backup strategies for PersistentVolumes.  
+Configure pod anti-affinity to distribute pods across nodes for high availability.
+
 ## Deployment Strategy
 
 ![deployment_strategy](./gif/k8_deployment_strategy_bytebytego.gif)
@@ -534,6 +592,10 @@ Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Upd
 | **Blue-Green**      | No               | Very Low               | Very Easy (switch traffic back) | High (requires two environments) | Critical applications needing zero downtime. |
 | **Recreate**        | Yes              | High                   | Moderate                  | Low                       | Simple updates where downtime is acceptable. |
 | **Rolling Update**  | No               | Moderate               | Moderate                  | Low                       | Applications requiring zero downtime with gradual updates. |
+
+## k8-pipeline architecture
+
+![k8-pipeline](./png/k8-pipeline.png)
 
 ## Scenario
 
