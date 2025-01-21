@@ -304,16 +304,6 @@ def something():
     logger.info("this is a something function")
 ```
 
-## Access modifier's Public, Private and Protected
-
-A Class in Python has three types of access modifiers:
-
-**Public Access Modifier**: Theoretically, public methods and fields can be accessed directly by any class.
-
-**Protected Access Modifier**: Theoretically, protected methods and fields can be accessed within the same class it is declared and its subclass.
-
-**Private Access Modifier**: Theoretically, private methods and fields can be only accessed within the same class it is declared.
-
 ## Deep and Shallow Copy
 
 Deep copy
