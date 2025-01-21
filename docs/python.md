@@ -328,6 +328,75 @@ In Shallow copy, a reference of an object is copied into another object. It mean
 
 ![alt text](./png/shallowcopy.png)
 
+## Public, Protected and Private Methods
+
+Public, Private, and Protected are access modifiers that define how variables and methods of a class can be accessed.
+
+- **Public**
+Access Level: No restrictions. Public members can be accessed from anywhere—inside or outside the class.
+
+Convention: Any attribute or method without an underscore prefix is considered public.  
+
+```python
+class MyClass:
+    def __init__(self):
+        self.public_var = "I am public"
+
+obj = MyClass()
+print(obj.public_var)  # Accessible
+```
+
+- **Protected**
+
+Access Level: Meant to be accessible only within the class and its subclasses. However, it can still be accessed outside the class (Python doesn’t enforce strict access control).
+
+Convention: Single underscore `_` prefix is used to indicate a protected member. This is just a convention and not strictly enforced.
+
+```python
+class MyClass:
+    def __init__(self):
+        self._protected_var = "I am protected"
+
+class SubClass(MyClass):
+    def access_protected(self):
+        return self._protected_var
+
+obj = MyClass()
+print(obj._protected_var)  # Accessible (but not recommended)
+
+sub_obj = SubClass()
+print(sub_obj.access_protected())  # Proper way to access protected members
+```
+
+- **Private**
+
+Access Level: Accessible only within the class. Private members are not directly accessible outside the class.  
+Convention: Double underscore `__` prefix is used to make an attribute private.
+
+Name Mangling: Python "mangles" the name of private members to make them harder to access. This is done by renaming the member to _ClassName__attributeName.
+
+```python
+class Example:
+    def __init__(self):
+        self.__private_attribute = "I am private!"
+
+    def __private_method(self):
+        return "This is a private method!"
+
+    def access_private(self):
+        # Accessing private members within the class
+        return self.__private_method()
+
+obj = Example()
+
+# Accessing private members directly will raise an AttributeError
+# print(obj.__private_attribute)  # Uncommenting this will raise an error
+# print(obj.__private_method())   # Uncommenting this will raise an error
+
+# Accessing private members indirectly via a public method
+print(obj.access_private())  # Allowed
+```
+
 ## Class
 
 ### Basic class structure

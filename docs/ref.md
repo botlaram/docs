@@ -22,6 +22,8 @@
 
 11. [Argocd deployment challenges](https://devtron.ai/blog/operational-challenges-with-argocd/)
 12. [hpa-vs-vpa-vs-keda](https://www.techopsexamples.com/p/kubernetes-autoscaling-hpa-vs-vpa-vs-keda)
+13. [Why Are k8s Secrets Base64 Encoded](https://www.linkedin.com/posts/bibinwilson_kubernetes-devops-activity-7269940083703607296-l1bX?utm_source=share&utm_medium=member_desktop)
+14. [Python script for log file monitoring and alerting](https://www.linkedin.com/posts/praveen-singampalli_interviewer-build-a-python-script-for-log-activity-7272448355148951552-dxx7?utm_source=share&utm_medium=member_desktop)
 
 ## Pages
 
