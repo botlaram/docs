@@ -289,3 +289,70 @@ It is used for server anonymity, load balancing, DDoS protection, etc.
 
 - [GeeksForGeeks](https://www.geeksforgeeks.org/computer-network-tutorials/)  
 - [AWS-Networking](https://aws.amazon.com/what-is/?faq-hub-cards.sort-by=item.additionalFields.sortDate&faq-hub-cards.sort-order=desc&awsf.tech-category=tech-category%23networking-content-dev&awsm.page-faq-hub-cards=1)
+
+## Troubleshoot Networking
+
+This guide provides common network troubleshooting commands to help diagnose and resolve network issues.
+
+1. ipconfig
+
+    The `ipconfig` command is used to display the IP configuration of your network interfaces. To get detailed information about all interfaces, use the following:
+
+    ```bash
+    ipconfig /all   #for windows
+    ifconfig        #for linux
+    ```
+
+    This command will display the IP address, subnet mask, default gateway, DNS servers, and other important network-related information for all network adapters on your system.
+
+2. NSLOOKUP (Forward DNS Lookup)
+
+    NSLOOKUP is used to query the DNS (Domain Name System) to resolve a domain name to an IP address. For a forward DNS lookup, you can use the following command:
+
+    ```bash
+    NSLOOKUP google.com
+    ```
+
+    This command will resolve google.com to its corresponding IP address.
+
+3. NSLOOKUP (Reverse DNS Lookup)
+
+    To perform a reverse DNS lookup, you can use an IP address and query the DNS to get the associated domain name. Here’s the command for a reverse DNS lookup:
+
+    ```bash
+    NSLOOKUP 142.152.162.172
+    ```
+
+    This will resolve the given IP address to its associated domain name.
+
+4. ping
+
+    The ping command is used to check if a network device (such as a router or server) is reachable. It sends a small data packet to the target device and waits for a response. Use the following syntax to ping a device:
+
+    ```bash
+    ping google.com
+    ```
+
+    This will test the connection to Google’s servers.
+
+5. tracert (Traceroute)
+
+    tracert (on Windows) or traceroute (on Linux/Mac) is used to trace the path packets take to reach a destination. It shows each hop along the route from your computer to the target address.
+
+    Example command:
+
+    ```bash
+    tracert google.com
+    ```
+
+    This command shows the route taken by packets from your computer to Google's servers, including the time it takes to reach each hop.
+
+6. netstat
+
+    The netstat command is used to display network statistics, including active connections, listening ports, and protocol usage. To view all network connections and statistics, run:
+
+    ```bash
+    netstat -a
+    ```
+
+    You can use various options with netstat to filter and display specific network information.
