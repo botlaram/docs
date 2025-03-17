@@ -151,10 +151,11 @@ sudo hostnamectl set-hostname <enter-hostname>
 
 | **Description**                                | **Command**                                |
 |------------------------------------------------|--------------------------------------------|
-| Display disk usage                             | `df`                                       |
-| Show directory/file disk usage                 | `du`                                       |
+| Display disk usage                             | `df -h`                                    |
+| Show directory/file disk usage                 | `du -sh`                                   |
+| Display CPU usage                              | `top`                                     |
 | Display CPU, RAM usage                         | `htop`                                     |
-| Display memory usage                           | `free`                                     |
+| Display RAM memory usage                       | `free -h`                                     |
 | Display uptime and load averages               | `uptime`                                   |
 | Display running processes                      | `ps aux`                                   |
 | Display real-time system processes             | `top`                                      |
@@ -216,84 +217,84 @@ sudo hostnamectl set-hostname <enter-hostname>
 
 - Clean up the packages:
   
-`rm -rf /var/lib/apt/lists/*` - This command used to clean up the package list cache after installing packages, especially in Docker, to reduce image size.
+    `rm -rf /var/lib/apt/lists/*` - This command used to clean up the package list cache after installing packages, especially in Docker, to reduce image size.
 
-Advantages: Reduces image size and keeps environments clean.
+    Advantages: Reduces image size and keeps environments clean.
 
-Disadvantages: Deletes package metadata, requiring you to run apt-get update again before installing or upgrading packages. Not suitable for long-running environments where package management might be needed later.
+    Disadvantages: Deletes package metadata, requiring you to run apt-get update again before installing or upgrading packages. Not suitable for long-running environments where package management might be needed later.
 
 - dev/null
 
-In Linux, /dev/null is a special device file known as the "null device" or "null file." It discards anything written to it and immediately returns an end-of-file (EOF) to any process that reads from it. You can think of /dev/null as a "black hole" for data—it simply deletes anything sent to it. This can be useful in several scenarios, especially when you want to suppress output/error or ignore specific data streams.
+    In Linux, /dev/null is a special device file known as the "null device" or "null file." It discards anything written to it and immediately returns an end-of-file (EOF) to any process that reads from it. You can think of /dev/null as a "black hole" for data—it simply deletes anything sent to it. This can be useful in several scenarios, especially when you want to suppress output/error or ignore specific data streams.
 
-Common Uses of /dev/null:
+    Common Uses of /dev/null:
 
-1. Suppress Command Output.  
-    You may want to run a command without displaying any output. By redirecting the output to /dev/null, you effectively ignore it.
+    1. Suppress Command Output.  
+        You may want to run a command without displaying any output. By redirecting the output to /dev/null, you effectively ignore it.
 
-    Example: Suppresses standard output
+        Example: Suppresses standard output
 
-    ```bash
-    ls > /dev/null
-    ```
+        ```bash
+        ls > /dev/null
+        ```
 
-    In this example, ls would normally list directory contents, but by redirecting > it to /dev/null, the output is discarded and not shown in the terminal.
+        In this example, ls would normally list directory contents, but by redirecting > it to /dev/null, the output is discarded and not shown in the terminal.
 
-2. Suppress Error Messages.  
+    2. Suppress Error Messages.  
 
-    Sometimes, you only want to discard error messages, which are typically directed to the standard error (stderr) stream (file descriptor 2).
+        Sometimes, you only want to discard error messages, which are typically directed to the standard error (stderr) stream (file descriptor 2).
 
-    Example: Suppresses only the error output  
+        Example: Suppresses only the error output  
 
-    ```bash
-    ls nonexistentfile 2> /dev/null
-    ```
+        ```bash
+        ls nonexistentfile 2> /dev/null
+        ```
 
-    This command tries to list a file that doesn’t exist. Normally, it would produce an error message, but by redirecting 2> to /dev/null, you discard only the error output and keep the standard output unaffected.
+        This command tries to list a file that doesn’t exist. Normally, it would produce an error message, but by redirecting 2> to /dev/null, you discard only the error output and keep the standard output unaffected.
 
-3. Suppress All Output (Standard and Error)
+    3. Suppress All Output (Standard and Error)
 
-    In some cases, you may want to suppress both standard output and error messages from a command.
+        In some cases, you may want to suppress both standard output and error messages from a command.
 
-    Example: Suppresses both standard output and error output  
+        Example: Suppresses both standard output and error output  
 
-    ```bash
-    ls nonexistentfile > /dev/null 2>&1
-    ```
+        ```bash
+        ls nonexistentfile > /dev/null 2>&1
+        ```
 
-    Here, > redirects standard output, and 2>&1 redirects standard error to the same place as standard output, which is now /dev/null. This effectively hides all output from ls, including any error messages.
+        Here, > redirects standard output, and 2>&1 redirects standard error to the same place as standard output, which is now /dev/null. This effectively hides all output from ls, including any error messages.
 
-4. Run Command in Background Without Output
+    4. Run Command in Background Without Output
 
-    When running a command in the background, the output can clutter the terminal. Sending output to /dev/null avoids this.
+        When running a command in the background, the output can clutter the terminal. Sending output to /dev/null avoids this.
 
-    Example: Runs `ping` in the background without showing output
+        Example: Runs `ping` in the background without showing output
 
-    ```bash
-    ping -c 4 google.com > /dev/null 2>&1 &
-    ```
+        ```bash
+        ping -c 4 google.com > /dev/null 2>&1 &
+        ```
 
-    This runs ping in the background for 4 packets, discarding all output, so you won’t see any results or messages in the terminal.
+        This runs ping in the background for 4 packets, discarding all output, so you won’t see any results or messages in the terminal.
 
-5. Check if a File or Directory Exists Without Output
+    5. Check if a File or Directory Exists Without Output
 
-    Sometimes, you only need to check if a file or directory exists without producing any output. /dev/null helps here by discarding the output of the command.
+        Sometimes, you only need to check if a file or directory exists without producing any output. /dev/null helps here by discarding the output of the command.
 
-    Example:
+        Example:
 
-    ```bash
-    # Checks if a file exists without output
-    if ls /path/to/file > /dev/null 2>&1; then
-        echo "File exists."
-    else
-        echo "File does not exist."
-    fi
-    ```
+        ```bash
+        # Checks if a file exists without output
+        if ls /path/to/file > /dev/null 2>&1; then
+            echo "File exists."
+        else
+            echo "File does not exist."
+        fi
+        ```
 
-    In this example, ls checks if the file exists. If it does, the script echoes "File exists." If not, it says "File does not exist." The command's output is sent to /dev/null, so you don’t see anything unless there is a specific message in the if or else statement.
+        In this example, ls checks if the file exists. If it does, the script echoes "File exists." If not, it says "File does not exist." The command's output is sent to /dev/null, so you don’t see anything unless there is a specific message in the if or else statement.
 
-    Summary  
-    Suppress command output: command > /dev/null  
-    Suppress error messages: command 2> /dev/null  
-    Suppress both output and error: command > /dev/null 2>&1  
-    Run in background without output: command > /dev/null 2>&1 &
+        Summary  
+        Suppress command output: command > /dev/null  
+        Suppress error messages: command 2> /dev/null  
+        Suppress both output and error: command > /dev/null 2>&1  
+        Run in background without output: command > /dev/null 2>&1 &
