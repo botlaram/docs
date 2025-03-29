@@ -294,7 +294,7 @@ It is used for server anonymity, load balancing, DDoS protection, etc.
 
 This guide provides common network troubleshooting commands to help diagnose and resolve network issues.
 
-1. ipconfig
+1. Ipconfig
 
     The `ipconfig` command is used to display the IP configuration of your network interfaces. To get detailed information about all interfaces, use the following:
 
@@ -325,7 +325,7 @@ This guide provides common network troubleshooting commands to help diagnose and
 
     This will resolve the given IP address to its associated domain name.
 
-4. ping
+4. Ping
 
     The ping command is used to check if a network device (such as a router or server) is reachable. It sends a small data packet to the target device and waits for a response. Use the following syntax to ping a device:
 
@@ -335,7 +335,7 @@ This guide provides common network troubleshooting commands to help diagnose and
 
     This will test the connection to Google’s servers.
 
-5. tracert (Traceroute)
+5. Tracert (Traceroute)
 
     tracert (on Windows) or traceroute (on Linux/Mac) is used to trace the path packets take to reach a destination. It shows each hop along the route from your computer to the target address.
 
@@ -347,7 +347,7 @@ This guide provides common network troubleshooting commands to help diagnose and
 
     This command shows the route taken by packets from your computer to Google's servers, including the time it takes to reach each hop.
 
-6. netstat
+6. Netstat
 
     The netstat command is used to display network statistics, including active connections, listening ports, and protocol usage. To view all network connections and statistics, run:
 

@@ -21,11 +21,16 @@
 10. [How to Setup 2FA on an SSH Server](https://systemweakness.com/how-to-setup-2fa-on-an-ssh-server-55e9e8680261)
 
 11. [Argocd deployment challenges](https://devtron.ai/blog/operational-challenges-with-argocd/)
+
 12. [hpa-vs-vpa-vs-keda](https://www.techopsexamples.com/p/kubernetes-autoscaling-hpa-vs-vpa-vs-keda)
+
 13. [Why Are k8s Secrets Base64 Encoded](https://www.linkedin.com/posts/bibinwilson_kubernetes-devops-activity-7269940083703607296-l1bX?utm_source=share&utm_medium=member_desktop)
+
 14. [Python script for log file monitoring and alerting](https://www.linkedin.com/posts/praveen-singampalli_interviewer-build-a-python-script-for-log-activity-7272448355148951552-dxx7?utm_source=share&utm_medium=member_desktop)
 
 15. [Docker logs](https://last9.io/blog/docker-logs/?ref=dailydev)
+
+16. [Neon DB Pipeline](https://youtu.be/aAOV8WpBnes?si=3cSYPRTIz5OqShFi)
 
 ## Pages
 
@@ -38,3 +43,5 @@
 [Coach DevOps](https://www.coachdevops.com/)
 
 [Jhooq](https://jhooq.com/)
+
+[Bibin Wilson LinkedIn](https://www.linkedin.com/in/bibinwilson/recent-activity/all/)

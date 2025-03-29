@@ -556,6 +556,118 @@ Benefits of Azure DDoS Protection
 
 ![app-service](./png/app-service.png)
 
+## Azure Managed Identity vs. Service Principal
+
+### Overview
+
+When dealing with authentication and authorization in **Azure**, two key mechanisms are commonly used for securing access to resources: **Managed Identity** and **Service Principal**. Both serve the purpose of enabling secure access to Azure services, but they have different use cases and advantages.
+
+---
+
+### What is a Service Principal?
+
+A **Service Principal** is an identity used by applications, services, or automation scripts to authenticate and access Azure resources. It is created within **Microsoft Entra ID (formerly Azure AD)** and functions similarly to a user account, but for applications.
+
+#### Key Characteristics of SP
+
+- It has **credentials** (client ID & secret or certificate).
+- It must be **manually managed** (rotation of secrets, permissions, etc.).
+- It can be assigned **RBAC roles** (Role-Based Access Control).
+- It can be used in **multi-tenant** scenarios (i.e., across different Azure Active Directory tenants).
+
+#### Use Cases
+
+| Use Case | Description |
+|----------|-------------|
+| **CI/CD Pipelines** | Used in **Azure DevOps, GitHub Actions, or Jenkins** for deploying applications to Azure resources (e.g., VMs, AKS, App Services). |
+| **Third-party applications** | When an **external system** needs to authenticate with Azure, Service Principals provide authentication. |
+| **Custom applications** | Applications running **outside Azure** (e.g., on-premises or other cloud providers) can use a Service Principal to authenticate. |
+| **Automation scripts** | PowerShell or Python scripts that need to access Azure resources can use a Service Principal for authentication. |
+
+#### How It Works
+
+1. Register an **Application** in **Microsoft Entra ID**.
+2. Create a **Service Principal** for this application.
+3. Assign it necessary **permissions/RBAC roles**.
+4. Use the **Client ID** and **Client Secret/Certificate** for authentication.
+
+#### Challenges
+
+- **Secret Management**: The **client secret** expires and needs rotation.
+- **Security Risk**: If credentials are leaked, it can lead to unauthorized access.
+- **Manual Setup**: Requires additional configuration and maintenance.
+
+---
+
+### What is Managed Identity
+
+**Azure Managed Identity** is an **automated identity service** provided by Azure that allows Azure resources to authenticate to services securely without needing explicit credential management.
+
+#### Key Characteristics of Manage Identity
+
+- It is **tied to an Azure resource** (like VM, Function App, or Logic App).
+- It does not require **explicit credentials** (Azure handles authentication).
+- It can only be used **within Azure** (not for external systems).
+- It supports **RBAC-based access** to Azure resources.
+
+#### Types of Managed Identities
+
+| Type | Description |
+|------|-------------|
+| **System-assigned Managed Identity** | Created and tied to a specific **Azure resource** (e.g., VM, App Service). **Automatically deleted** when the resource is deleted. |
+| **User-assigned Managed Identity** | Created independently and can be **shared across multiple Azure resources**. Managed separately from any single resource. |
+
+#### Use Cases Of MI
+
+| Use Case | Description |
+|----------|-------------|
+| **Virtual Machines (VMs) Accessing Azure Services** | VMs need to access **Azure Key Vault**, **Blob Storage**, or **SQL Database** without storing credentials. |
+| **Function Apps Authenticating to Other Azure Services** | Azure Functions need to access **Event Hubs, Cosmos DB, or Storage Accounts** securely. |
+| **App Services (Web Apps) Interacting with Azure Resources** | An Azure Web App requires access to **Azure Key Vault** to fetch secrets or certificates. |
+| **AKS Pods Needing Secure Access** | Kubernetes workloads running on **Azure Kubernetes Service (AKS)** need secure access to Azure services. |
+
+#### How Does It Works
+
+1. Enable **Managed Identity** for an Azure resource.
+2. Assign necessary **RBAC roles** (e.g., Reader, Contributor).
+3. The resource can request an **OAuth token** from Azure AD.
+4. Use the token to authenticate to other Azure services.
+
+#### Advantages
+
+✅ **No Credential Management**: Azure automatically handles authentication.  
+✅ **More Secure**: No client secrets or certificates that can be leaked.  
+✅ **Automatic Identity Lifecycle**: System-assigned identity gets deleted with the resource.  
+✅ **Easy Integration**: Works natively with Azure services like Key Vault, Storage, etc.  
+
+---
+
+### Managed Identity vs. Service Principal: Key Differences
+
+| Feature | Managed Identity | Service Principal |
+|---------|----------------|------------------|
+| **Credential Management** | No credentials required | Requires client ID & secret/certificate |
+| **Security** | More secure (no secrets stored) | Potential risk (secrets can be exposed) |
+| **Lifespan** | Auto-created and managed by Azure | Needs manual creation and rotation |
+| **Scope** | Works only within Azure | Works within and outside Azure |
+| **RBAC Integration** | Directly integrates with Azure resources | Needs explicit RBAC assignment |
+| **Multi-tenant Support** | No | Yes |
+| **Use Case** | Best for Azure-native applications | Best for external apps, automation scripts |
+
+---
+
+### When to Use Which?
+
+| Scenario | Use **Managed Identity**? | Use **Service Principal**? |
+|----------|-----------------|-------------------|
+| **Azure VM accessing Key Vault** | ✅ Yes | ❌ No |
+| **External app (outside Azure) accessing Azure APIs** | ❌ No | ✅ Yes |
+| **CI/CD pipeline deploying to Azure** | ❌ No | ✅ Yes |
+| **Azure Function calling Azure SQL Database** | ✅ Yes | ❌ No |
+| **On-premises script running against Azure API** | ❌ No | ✅ Yes |
+| **Multi-tenant applications needing authentication** | ❌ No | ✅ Yes |
+| **Long-lived access for automation tools** | ❌ No | ✅ Yes |
+
 ## Cheat Sheet
 
 ### Cloud Comparison

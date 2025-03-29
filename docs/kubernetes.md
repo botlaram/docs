@@ -607,3 +607,7 @@ whole cluster/namespace Quota
   ![k8-scenario1](./png/k8-scenario1.png)
 
 3. How to upgrade [k8 version](https://devopscube.com/setup-kubernetes-cluster-kubeadm/)
+
+## K8 yaml generator
+
+Link [here](https://k8syaml.com/)
