@@ -668,6 +668,54 @@ A **Service Principal** is an identity used by applications, services, or automa
 | **Multi-tenant applications needing authentication** | ❌ No | ✅ Yes |
 | **Long-lived access for automation tools** | ❌ No | ✅ Yes |
 
+## Log Analytics Workspace
+
+![alt text](./png/loganalyticswkspace.png)
+
+Azure Log Analytics Workspace is like a central storage and analysis hub for logs and data from different Azure services, applications, and resources. It helps you collect, store, and analyze logs in one place, making it easier to monitor and troubleshoot your systems.
+
+![alt text](./png/loganalyticsusage.png)
+
+### Key Features
+
+✅ Collect Logs – Gathers logs from Azure services, on-premises servers, and applications.  
+✅ Store Data – Keeps logs securely for a defined period.  
+✅ Analyze with Queries – Uses Kusto Query Language (KQL) to search and analyze logs.  
+✅ Alerts & Monitoring – Helps detect issues and trigger alerts for unusual activity.  
+✅ Integrates with Azure Services – Works with Azure Monitor, Security Center, Sentinel, and more.
+
+### Azure Monitor
+
+#### Azure monitor agent
+
+The purpose of azure monitor agent is to collect logs from guest operating system and inject to log analytics workspace. The OS can be windows/linux, machines can be client/server. They can exist anywhere in azure or on-premise resources.
+
+![alt text](./png/loganalyticsarchitecture.png)
+
+1. Azure monitoring agent use manage identity for monitoring agent
+2. Data collection rule need to create to define what type of data need to collect
+![alt text](./png/workflowdatacollection.png)
+![alt text](./png/datacollectionusage.png)
+3. Azure monitor used ETL (extract, transform and load) data ingestion pipeline
+
+#### Data Collection Rule
+
+Data collection is basically a configuration, which lets azure monitor agents know what type of data must be collected and forward to data ingestion pipeline, which then data ingested to workspace.  
+Data collection rule must be applied to Azure VM or Azure Arc-enabled servers (Azure Arc-enabled servers lets you manage Windows and Linux physical servers and virtual machines hosted outside of Azure, on your corporate network, or other cloud provide).
+
+Workflow of DCR
+
+![alt text](./png/dcrworkflow.png)
+
+Once you create DCR and select resources (VM, VMSS), it will install Azure Monitor Agent in that particular resources. Example in below figure.
+
+![alt text](./png/amainstall.png)
+
+![alt text](./png/amaworkflow.png)
+
+Whenever the AMA is installed on machine, it create a folder as WindowsAzure > Resources in which it stores log and the machine sends heartbeat which is recorded in HeartBeat table of logs analytics workspace.  
+When a DCR is created to capture performance and windows event logs, the data ingested in perf and Event table of workspace.
+
 ## Cheat Sheet
 
 ### Cloud Comparison

@@ -32,6 +32,8 @@
 
 16. [Neon DB Pipeline](https://youtu.be/aAOV8WpBnes?si=3cSYPRTIz5OqShFi)
 
+17. [Log analytics workspace](https://www.youtube.com/watch?v=2tSLfd02VLc&list=PL8wOlV8Hv3o9OwWe0QWji1KjVQtEyk_dL)
+
 ## Pages
 
 [Devopscube](https://devopscube.com/)
