@@ -34,6 +34,8 @@
 
 17. [Log analytics workspace](https://www.youtube.com/watch?v=2tSLfd02VLc&list=PL8wOlV8Hv3o9OwWe0QWji1KjVQtEyk_dL)
 
+18. [How to Improve Performance Your Database](https://newsletter.scalablethread.com/p/how-to-improve-performance-of-your?ref=dailydev)
+
 ## Pages
 
 [Devopscube](https://devopscube.com/)
@@ -47,3 +49,5 @@
 [Jhooq](https://jhooq.com/)
 
 [Bibin Wilson LinkedIn](https://www.linkedin.com/in/bibinwilson/recent-activity/all/)
+
+All About Database [ScalableThread](https://newsletter.scalablethread.com/)
