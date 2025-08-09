@@ -51,3 +51,6 @@
 [Bibin Wilson LinkedIn](https://www.linkedin.com/in/bibinwilson/recent-activity/all/)
 
 All About Database [ScalableThread](https://newsletter.scalablethread.com/)
+
+[DataBase CaseStudy](https://newsletter.scalablethread.com/t/case-studies?sort=top)
+
