@@ -388,6 +388,59 @@ This ensures zero downtime — old pods are terminated only after new pods are h
 
 If a failure occurs, Jenkins can automatically trigger a kubectl rollout undo rollback.”
 
+## A user reports slow response time and intermittent failures when accessing Jenkins pipelines.
+
+How would you investigate and improve Jenkins performance?
+
+1. Investigation – Identify the Problem Area
+
+a. Check Jenkins Master (Controller) Health
+
+Inspect CPU, Memory, Disk I/O, and Network usage.
+
+```bash
+top
+free -h
+iostat
+df -h
+```
+If CPU or memory usage is near 90–100%, Jenkins master is overloaded.
+
+b. Analyze Jenkins Logs
+
+Check Jenkins logs for slow requests, GC issues, or plugin errors:
+
+Log locations:
+
+Linux: `/var/log/jenkins/jenkins.log`
+
+Windows: `C:\Program Files (x86)\Jenkins\jenkins.out.log`
+
+Look for:
+
+```bash
+SEVERE: hudson.remoting.Channel closed
+WARNING: Slow HTTP response
+java.lang.OutOfMemoryError
+```
+If you see frequent GC pauses or heap exhaustion, increase the JVM heap.
+
+c. Database & Logs Maintenance
+
+Periodically clean old build data:
+
+Manage Jenkins → Manage Old Data → Discard Old Builds
+
+d. Network and Plugin Issues
+
+Validate network latency between Jenkins master and agents.
+
+Disable or update outdated plugins — some plugins (like Pipeline Graph View, Git, or Slack) can cause memory leaks.
+
+Check plugin performance via:
+
+Manage Jenkins → Manage Plugins → Installed
+
 
 ## How do you ensure faster builds?
 
