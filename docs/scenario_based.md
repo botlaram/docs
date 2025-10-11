@@ -177,6 +177,23 @@ aws s3 cp s3://bucket/path/terraform.tfstate <restore-location>
 4. If partial corruption → try manual fix by editing JSON carefully.
 5. If full recovery not possible → use terraform import to rebuild the state from real infrastructure.
 
+### Someone manually changed a resource in the cloud outside Terraform. How do you detect and fix it?
+
+```bash
+## run
+terraform plan
+```
+
+Terraform will detect the drift and show differences.
+
+Revert the manual change by re-applying:
+
+```bash
+terraform apply
+```
+
+Or, if the manual change is correct, update the Terraform configuration and re-run plan.
+
 ### Two team members applied Terraform changes to the same module at the same time. One of the applies failed. How can you prevent this?
 
 Use state locking in your backend.
