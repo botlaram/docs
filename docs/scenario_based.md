@@ -292,3 +292,99 @@ Never hardcode secrets or commit .tfvars files with credentials. Use environment
 ```bash
 export TF_VAR_db_password="supersecret"
 ```
+
+## Kubernetes
+
+### Whats difference between loadbalancer and ingress in kubernetes?
+
+LoadBalancer: It exposes your application externally (outside the cluster) by provisioning a cloud load balancer (like AWS ELB, Azure Load Balancer, GCP Load Balancer).
+
+When you create a Service of type LoadBalancer, Kubernetes asks your cloud provider to create an external load balancer.
+
+The load balancer forwards traffic to the Service, which then routes it to the right Pods.
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-lb
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-app
+  ports:
+    - port: 80
+      targetPort: 8080
+```
+
+Result:
+→ Cloud provider creates a load balancer (e.g., with an external IP)
+→ Traffic to that IP goes to your app pods.
+
+✅ Pros
+
+Simple to set up.
+
+Directly exposes your app to the internet.
+
+⚠️ Cons
+
+Each service of type LoadBalancer creates a separate cloud load balancer — expensive and not scalable if you have many services.
+
+Limited control over routing (just ports).
+
+Ingress: It’s an HTTP/HTTPS reverse proxy that manages external access to multiple services — typically at Layer 7 (application layer).
+
+You deploy an Ingress Controller (like NGINX, HAProxy, Traefik, or the cloud provider’s ingress).
+
+You define Ingress rules that tell it how to route incoming requests based on:
+
+Hostnames (e.g., api.example.com)
+
+Paths (e.g., /api, /web)
+
+The Ingress Controller usually runs behind a single LoadBalancer.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+  - host: myapp.example.com
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: api-service
+            port:
+              number: 80
+      - path: /web
+        pathType: Prefix
+        backend:
+          service:
+            name: web-service
+            port:
+              number: 80
+```
+
+Result:
+→ One LoadBalancer (via the ingress controller) handles requests for many services.
+→ Routes based on domain name and path.
+
+✅ Pros
+
+Single entry point for all services.
+
+Advanced routing (paths, hostnames, SSL termination, etc.).
+
+Cost-effective (only one LoadBalancer needed).
+
+⚠️ Cons
+
+Requires setting up an Ingress Controller.
+
+More complex configuration.
