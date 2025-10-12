@@ -15,6 +15,7 @@ nav:
 - K8: kubernetes.md
 - Publish: publish.md
 - Devops Project: devops_projects.md
+- Q & A: scenario_based.md
 
 theme:
   name: material
