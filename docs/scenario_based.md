@@ -293,6 +293,223 @@ Never hardcode secrets or commit .tfvars files with credentials. Use environment
 export TF_VAR_db_password="supersecret"
 ```
 
+### Create a terraform workspace with dev and prod and configure backend file for dev and prod
+
+Project structure
+
+```bash
+terraform-project/
+│
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── backend.tf
+│
+├── modules/
+│   └── ec2_instance/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+│
+└── environments/
+    ├── dev.tfvars
+    └── prod.tfvars
+```
+
+
+🧩 Step 1: Define a Module (Example: EC2 Instance)
+
+modules/ec2_instance/main.tf
+
+```bash
+resource "aws_instance" "example" {
+  ami           = var.ami
+  instance_type = var.instance_type
+  tags = {
+    Name = "${var.env}-instance"
+  }
+}
+```
+
+modules/ec2_instance/variables.tf
+
+```bash
+variable "ami" {
+  type        = string
+  description = "AMI ID for the instance"
+}
+
+variable "instance_type" {
+  type        = string
+  description = "EC2 instance type"
+}
+
+variable "env" {
+  type        = string
+  description = "Environment name"
+}
+```
+
+modules/ec2_instance/outputs.tf
+
+```bash
+output "instance_id" {
+  value = aws_instance.example.id
+}
+```
+
+⚙️ Step 2: Root Configuration
+
+backend.tf
+
+```bash
+terraform {
+  backend "s3" {
+    bucket = "your-terraform-state-bucket"
+    key    = "workspace-example/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+```
+
+main.tf
+
+```bash
+provider "aws" {
+  region = "us-east-1"
+}
+
+module "ec2" {
+  source         = "./modules/ec2_instance"
+  ami            = var.ami
+  instance_type  = var.instance_type
+  env            = terraform.workspace
+}
+```
+
+variables.tf
+
+```bash
+variable "ami" {
+  type        = string
+  description = "AMI ID"
+}
+
+variable "instance_type" {
+  type        = string
+  description = "EC2 instance type"
+}
+```
+
+outputs.tf
+
+```bash
+output "instance_id" {
+  value = module.ec2.instance_id
+}
+```
+
+🌍 Step 3: Environment Variable Files
+
+environments/dev.tfvars
+
+```bash
+ami            = "ami-0c55b159cbfafe1f0"
+instance_type  = "t2.micro"
+```
+
+environments/prod.tfvars
+
+```bash
+ami            = "ami-0d527b8c289b4af7f"
+instance_type  = "t3.medium"
+```
+
+🚀 Step 4: Create and Use Workspaces
+
+```bash
+# Initialize Terraform
+terraform init
+
+# Create workspaces
+terraform workspace new dev
+terraform workspace new prod
+
+# Switch to dev
+terraform workspace select dev
+terraform apply -var-file=environments/dev.tfvars
+
+# Switch to prod
+terraform workspace select prod
+terraform apply -var-file=environments/prod.tfvars
+```
+
+✅ Result:
+
+You now have a single Terraform configuration that:
+
+Uses modules for reusable infrastructure logic.
+
+Uses workspaces (dev, prod) to isolate state.
+
+Uses environment variable files to customize settings
+
+⚙️ Step 5: Configure Terraform Backend for Azure Blob
+
+backend.tf
+
+```bash
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "tfstate-rg"
+    storage_account_name = "tfstateacct12345"
+    container_name       = "tfstate"
+    key                  = "terraform.${terraform.workspace}.tfstate"
+  }
+}
+```
+
+🔍 What happens here:
+
+terraform.workspace dynamically names the state file.
+
+When you use the dev workspace → state file = terraform.dev.tfstate
+
+When you use the prod workspace → state file = terraform.prod.tfstate
+
+🧩 Step 6: Initialize the Backend
+
+After setting up the backend:
+
+```bash
+terraform init \
+  -backend-config="resource_group_name=tfstate-rg" \
+  -backend-config="storage_account_name=tfstateacct12345" \
+  -backend-config="container_name=tfstate" \
+  -backend-config="key=terraform.tfstate"
+```
+
+Then create workspaces:
+
+```bash
+terraform workspace new dev
+terraform workspace new prod
+```
+
+🌍 Step 7: Apply per Environment
+
+Use workspace + var files:
+
+```bash
+# Switch to dev
+terraform workspace select dev
+terraform apply -var-file=environments/dev.tfvars
+
+# Switch to prod
+terraform workspace select prod
+terraform apply -var-file=environments/prod.tfvars
+```
+
 ## Kubernetes
 
 ### Whats difference between loadbalancer and ingress in kubernetes?
