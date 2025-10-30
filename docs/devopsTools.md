@@ -86,6 +86,74 @@ docker exec  ## To execute the commands in the running containers.
 docker cp  ## To copy the file from docker host to the docker containers
 ```
 
+### CMD VS ENTRYPOINT
+
+CMD
+
+Specifies the default command to run when the container starts.
+
+Can be overridden at runtime by passing arguments to docker run.
+
+Often used for providing defaults (like parameters to ENTRYPOINT).
+
+Example:
+
+```Dockerfile
+FROM ubuntu:20.04
+CMD ["echo", "Hello from CMD!"]
+```
+
+Run:
+
+```bash
+docker build -t cmd-example .
+docker run cmd-example
+```
+
+👉 Output: Hello from CMD!
+
+Now override it:
+
+```bash
+docker run cmd-example echo "Overridden!"
+```
+
+👉 Output: Overridden!
+
+So CMD is flexible — it’s like a default that the user can change.
+
+🔹 ENTRYPOINT
+
+Defines the main command that will always run.
+
+Arguments passed to docker run are appended to ENTRYPOINT (not overriding it, unless you use --entrypoint).
+
+Best for containers that behave like executables.
+
+Example:
+
+```Dockerfile
+FROM ubuntu:20.04
+ENTRYPOINT ["echo", "Hello from ENTRYPOINT!"]
+```
+
+Run:
+
+```bash
+docker build -t entry-example .
+docker run entry-example
+```
+
+👉 Output: Hello from ENTRYPOINT!
+
+Now pass extra args:
+
+```bash
+docker run entry-example world
+```
+
+👉 Output: Hello from ENTRYPOINT! world
+
 ### Docker Multi-Stage Build
 
 A multi-stage build in Docker allows you to use multiple FROM statements in your Dockerfile, each creating a separate stage of the build process. This approach is particularly useful for creating smaller, more efficient Docker images, as it allows you to copy only the necessary artifacts from one stage to another, leaving behind any intermediate or unnecessary files.
