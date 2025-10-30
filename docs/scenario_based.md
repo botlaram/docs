@@ -689,3 +689,74 @@ Dedicated nodes for specific workloads (e.g., GPU, high-memory, compliance-sensi
 Isolating workloads (e.g., separate dev/test from prod).
 
 Evicting pods during maintenance (NoExecute).
+
+## Azure
+
+### Difference between application gateway and load balancer 
+
+🔹 High-Level Difference
+
+| Feature	 | Azure Load Balancer	| Azure Application Gateway |
+|---------|-----------------------|-----------------------------| 
+| OSI Layer	 | Layer 4 (Transport Layer: TCP/UDP)		|Layer 7 (Application Layer: HTTP/HTTPS) 	|
+Routing Type	| Based on IP address and port		|Based on HTTP(S) content (URL, headers, cookies, etc.)	|
+Primary Use Case |	Distributes network traffic across backend servers	|	Provides web traffic routing, SSL termination, WAF (security), and URL-based routing	|
+Protocol Support	| TCP, UDP	|	HTTP, HTTPS, WebSocket	|
+SSL/TLS Termination	| ❌ Not supported	| ✅ Supported	|
+Web Application Firewall (WAF)		| ❌ Not available	|	✅ Integrated WAF option	|
+Health Probes	|	Checks TCP/port connectivity	|	Checks application-level health (HTTP response codes, paths)	|
+Session Affinity	|	✅ Supported (by source IP)		|✅ Supported (by cookies)	|
+URL Path-Based Routing	|	❌ Not possible		|✅ Possible	|
+Redirection (HTTP to HTTPS, etc.)	|	❌ Not supported	|	✅ Supported	|
+Typical Scenario	|	Internal or external non-HTTP traffic load balancing (e.g., databases, custom TCP apps)	|	Web application routing and protection for websites, APIs, or web apps	|
+
+🔸 Example Use Cases
+
+🔹 Azure Load Balancer
+
+Balancing traffic between VMs running non-HTTP workloads — e.g.:
+
+- SQL servers
+
+- FTP servers
+
+- Gaming servers
+
+- Custom TCP/UDP-based apps
+
+Backend VM access in an internal network (internal load balancer)
+
+Simple, high-performance layer-4 traffic distribution
+
+🔹 Azure Application Gateway
+
+- Fronting web applications (HTTP/HTTPS)
+
+- Terminating SSL to reduce load on backend servers
+
+- URL path-based routing (e.g., /api → API backend, /images → static server)
+
+- Protecting against web attacks using Web Application Firewall (WAF)
+
+- Redirecting HTTP → HTTPS
+
+- Hosting multiple websites using one gateway (multi-site routing)
+
+🔹 Can they work together?
+
+You can use both in combination:
+
+- Application Gateway (Layer 7) → routes and secures web traffic
+
+- Azure Load Balancer (Layer 4) → distributes that traffic to backend VMs or containers
+
+This layered approach improves both performance and security.
+
+🧠 Quick Summary
+
+| Question	     | Answer |
+-----------------|-----------------|
+| What layer does it work on?	| Load Balancer = Layer 4, Application Gateway = Layer 7 |
+| What does it understand? |	Load Balancer = IP/Port, Application Gateway = HTTP(S) requests |
+| Can it inspect or modify requests? |	Only Application Gateway |
+| Can it protect web apps (WAF)? |	Only Application Gateway |
