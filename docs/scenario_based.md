@@ -605,3 +605,87 @@ Cost-effective (only one LoadBalancer needed).
 Requires setting up an Ingress Controller.
 
 More complex configuration.
+
+### Explain taints and tolerence
+
+In Kubernetes (k8s), taints and tolerations are a way to control which pods can be scheduled onto which nodes — they’re essentially the inverse of node selectors and affinity rules.
+
+Think of it like this:
+
+Node labels / affinity = "Please put me on this kind of node" (pod’s request)
+
+Taints / tolerations = "Stay away unless you have permission" (node’s warning)
+
+1. What is a taint?
+
+A taint is a property you put on a node that says:
+
+"I won’t accept pods unless they tolerate this taint."
+
+It’s defined by three parts:
+
+```bash
+key=value:effect
+```
+
+Where:
+
+```bash
+key → Identifier (e.g., dedicated)
+
+value → Description of the taint (e.g., gpu-workload)
+
+effect → One of:
+
+NoSchedule → Don’t schedule pods unless they tolerate it.
+
+PreferNoSchedule → Avoid scheduling pods unless no better option exists.
+
+NoExecute → Evict existing pods that don’t tolerate it and stop new ones from being scheduled.
+```
+
+Example command to add a taint:
+
+```bash
+kubectl taint nodes node1 dedicated=gpu-workload:NoSchedule
+```
+
+2. What is a toleration?
+
+A toleration is a property you add to a pod that says:
+
+"I’m okay with being scheduled on nodes that have this taint."
+
+It’s defined in the pod’s YAML spec:
+
+```bash
+tolerations:
+- key: "dedicated"
+  operator: "Equal"
+  value: "gpu-workload"
+  effect: "NoSchedule"
+```
+
+This tells Kubernetes: “If a node has the taint dedicated=gpu-workload:NoSchedule, I can still go there.”
+
+3. How they work together
+
+Without a toleration → Pod cannot be scheduled on a node with a matching taint.
+
+With a matching toleration → Pod can be scheduled on the tainted node, but not forced — Kubernetes still considers other scheduling rules.
+
+Example scenario:
+
+Node is tainted: dedicated=gpu-workload:NoSchedule
+
+Normal pods (no toleration) → won’t land there.
+
+GPU job pods (with toleration) → can land there.
+
+4. Why use taints & tolerations?
+
+Dedicated nodes for specific workloads (e.g., GPU, high-memory, compliance-sensitive).
+
+Isolating workloads (e.g., separate dev/test from prod).
+
+Evicting pods during maintenance (NoExecute).
