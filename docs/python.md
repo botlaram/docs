@@ -331,6 +331,48 @@ Top-level code is running!
 
 👉 Notice that the part under if __name__ == "__main__": did not run!
 
+**__new__**
+
+__new__ is a special method for object creation in Python. It is called before __init__ and is responsible for creating a new instance.  
+Rarely overridden unless you need control over object creation (e.g., implementing singletons, immutable objects, or metaclasses).
+
+Basic example:
+
+```python
+class MyClass:
+    def __new__(cls, *args, **kwargs):
+        print("Creating instance...")
+        instance = super().__new__(cls)  # Actually create the instance
+        return instance
+
+    def __init__(self, value):
+        print("Initializing instance...")
+        self.value = value
+
+obj = MyClass(42)
+```
+
+Output:
+
+```bash
+Creating instance...
+Initializing instance...
+```
+
+✅ Key points:
+
+__new__ returns the new instance.
+
+__init__ initializes the instance.
+
+__new__ is more "low-level" than __init__.
+
+Concept	Role
+
+__name__	Tells whether a module is run directly (__main__) or imported
+__main__	Special name for the top-level script
+__new__	Responsible for creating a new instance of a class
+
 ## Logging
 
 ```python
