@@ -648,7 +648,7 @@ In this example:
 Both Dog and Cat are subclasses of Animal, and they override the speak() method to provide their own implementation.
 The same method name (speak()) exhibits different behaviors depending on the object type.
 
-### Multithreading in Python?
+### Multithreading
 
 Multithreading means running multiple threads (smaller units of a process) at the same time within a single program.  
 Each thread can perform a task — for example, downloading files, processing data, or handling network requests — concurrently.
@@ -740,3 +740,68 @@ When to Use?
 - Downloading multiple files or web pages
 - Handling many network connections
 - Waiting for I/O operations
+
+## Multiprocessing
+
+Multiprocessing allows Python programs to run multiple processes in parallel. This is especially useful for CPU-bound tasks (like complex calculations), where you need to fully utilize multiple CPU cores.
+
+Unlike multithreading, which shares memory, multiprocessing creates separate memory spaces for each process, allowing true parallelism.
+
+Why Use Multiprocessing?
+
+- Parallelism: True parallelism — each process runs on a separate core.
+- CPU-bound tasks: Great for tasks that are heavy on CPU (e.g., image processing, data analysis, etc.), as Python's Global Interpreter Lock (GIL) prevents multiple threads from running in parallel on multiple CPU cores.
+- Better resource utilization: Use multiple cores to speed up your program when it’s limited by CPU.
+
+Example code
+
+```python
+import multiprocessing
+import time
+
+def square_number(n):
+    """Function to calculate square of a number."""
+    print(f"Squaring {n}...")
+    time.sleep(2)  # Simulate a time-consuming task (e.g., heavy calculation)
+    result = n * n
+    print(f"The square of {n} is {result}")
+
+if __name__ == "__main__":
+    # Create a list of numbers to square
+    numbers = [1, 2, 3, 4, 5]
+
+    # Create a list to hold processes
+    processes = []
+
+    # Start multiple processes
+    for number in numbers:
+        p = multiprocessing.Process(target=square_number, args=(number,))
+        p.start()  # Start process
+        processes.append(p)
+
+    # Wait for all processes to finish
+    for p in processes:
+        p.join()
+
+    print("All tasks finished.")
+```
+
+## Difference Between Multithreading and Multiprocessing in Python
+
+| **Concept** | **Multithreading** | **Multiprocessing** |
+|--------------|--------------------|----------------------|
+| **Definition** | Runs multiple threads (small tasks) inside one process. | Runs multiple processes, each with its own Python interpreter and memory. |
+| **Execution model** | Threads share the same memory space. | Each process has its own separate memory space. |
+| **Parallel execution** | Limited by the **GIL** — only one thread runs Python code at a time. | True parallelism — each process runs on a separate CPU core. |
+| **Best for** | I/O-bound tasks (like file or network operations). | CPU-bound tasks (like calculations or data processing). |
+| **Global Interpreter Lock (GIL)** | Only one thread runs Python code at a time. | Not affected by GIL — all processes run independently. |
+| **Memory** | Shared between threads. | Separate memory for each process. |
+| **Data sharing** | Easy (since memory is shared). | Needs special tools like **Queues** or **Pipes** to share data. |
+| **Performance** | Great for I/O tasks. | Great for CPU-heavy tasks. |
+| **Overhead** | Low. | Higher (creates separate processes). |
+
+✅ When to Use
+
+- **Use Multithreading** → for I/O-bound work (e.g., downloading files, reading APIs).  
+- **Use Multiprocessing** → for CPU-bound work (e.g., heavy computation, image processing).
+
