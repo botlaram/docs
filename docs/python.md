@@ -690,7 +690,7 @@ In this example:
 Both Dog and Cat are subclasses of Animal, and they override the speak() method to provide their own implementation.
 The same method name (speak()) exhibits different behaviors depending on the object type.
 
-### Async
+## Async
 
 In Python, async is used for asynchronous programming. It allows you to write code that can run tasks concurrently without blocking the execution of other code.
 
@@ -756,7 +756,7 @@ What happens here:
 
 Async is not parallelism (no multiple CPU cores), it's concurrency (efficient waiting for I/O).
 
-### Multithreading
+## Multithreading
 
 Multithreading means running multiple threads (smaller units of a process) at the same time within a single program.  
 Each thread can perform a task — for example, downloading files, processing data, or handling network requests — concurrently.
@@ -896,7 +896,7 @@ if __name__ == "__main__":
 
 ## Difference Between Multithreading and Multiprocessing in Python
 
-# Comparison of Multithreading, Multiprocessing, and Asynchronous Programming in Python
+Comparison of Multithreading, Multiprocessing, and Asynchronous Programming in Python
 
 This document compares three common approaches to concurrency and parallelism in Python: **Multithreading**, **Multiprocessing**, and **Asynchronous Programming (async/await)**.
 
