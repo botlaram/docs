@@ -597,3 +597,96 @@ In this example:
 
 Both Dog and Cat are subclasses of Animal, and they override the speak() method to provide their own implementation.
 The same method name (speak()) exhibits different behaviors depending on the object type.
+
+### Multithreading in Python?
+
+Multithreading means running multiple threads (smaller units of a process) at the same time within a single program.  
+Each thread can perform a task — for example, downloading files, processing data, or handling network requests — concurrently.
+
+Why Use Multithreading?
+
+1. Multithreading helps when your program spends a lot of time waiting — such as:
+2. Downloading data from the internet
+3. Reading/writing files
+4. Waiting for user input
+5. Talking to a database or API
+
+Python threads share the same memory, so they can communicate easily.
+
+Important:
+Due to Python’s GIL (Global Interpreter Lock), true parallel CPU computation is limited.
+But for I/O-bound tasks (like network or disk operations), multithreading gives a big speed boost.
+
+🧩 How to Use Multithreading (Simple Example)
+
+```python
+### example 1
+
+import threading
+import time
+
+def func(seconds):
+    print(f"executing function {seconds}")
+    time.sleep(seconds)
+
+t1 = threading.Thread(target=func,args=[4])
+
+t2 = threading.Thread(target=func,args=[6])
+
+time1=time.perf_counter()
+
+## start multithreading
+t1.start()
+t2.start()
+
+## wait until background process complete
+t1.join()
+t2.join()
+
+time2=time.perf_counter()
+print(time2-time1)
+
+### example2
+import threading
+import time
+
+def worker(task_id):
+    print(f"Thread {task_id} starting...")
+    time.sleep(2)  # Simulate some work
+    print(f"Thread {task_id} finished!")
+
+# Create a list to hold our threads
+threads = []
+
+# Create and start 3 threads
+for i in range(3):
+    t = threading.Thread(target=worker, args=(i,))
+    t.start()
+    threads.append(t)
+
+# Wait for all threads to finish
+for t in threads:
+    t.join()
+
+print("All threads are done!")
+```
+
+Output:
+
+```bash
+Thread 0 starting...
+Thread 1 starting...
+Thread 2 starting...
+Thread 0 finished!
+Thread 1 finished!
+Thread 2 finished!
+All threads are done!
+```
+
+⏱ You’ll notice that all threads start together, and the program only waits for all of them to complete at the end — instead of doing them one by one.
+
+When to Use?
+
+- Downloading multiple files or web pages
+- Handling many network connections
+- Waiting for I/O operations
