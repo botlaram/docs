@@ -273,13 +273,63 @@ def middle():
 middle()
 ```
 
-## Read Write File
+## Manage Files
+
+Using open function (in this function you need to explictly close the function with close())
 
 ```python
 f = open("./read_write_demo.txt","r")  ##r=read
 print(f.read())   ##read() to print the txt 
 f.close() ##close
 ```
+
+Using with open function
+
+```python
+def download(url,name):
+    print(f"downloading {name} from {url}")
+    response=requests.get(url)
+    with open(f"{name}.jpg","wb") as f:
+        f.write(response.content)
+    print(f"download {name} finished")
+```
+
+## Specail Variables
+
+if __name__ == "__main__":
+
+File: example.py
+
+```python
+def greet():
+    print("Hello from greet()!")
+
+print("Top-level code is running!")
+
+if __name__ == "__main__":
+    print("This runs only when example.py is executed directly.")
+    greet()
+```
+
+If you run directly: python example.py
+
+Output:
+
+```bash
+Top-level code is running!
+This runs only when example.py is executed directly.
+Hello from greet()!
+```
+
+If you import it in another file as > import example
+
+Output:
+
+```bash
+Top-level code is running!
+```
+
+👉 Notice that the part under if __name__ == "__main__": did not run!
 
 ## Logging
 
