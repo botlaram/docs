@@ -690,6 +690,50 @@ Isolating workloads (e.g., separate dev/test from prod).
 
 Evicting pods during maintenance (NoExecute).
 
+### Network Flow 
+
+You’ve deployed your web app (say, a website running on Nginx or Node.js) into Kubernetes.  
+Your goal: people on the internet should be able to open https://myapp.com and see your site.
+
+🚀 Step-by-step flow
+
+1️⃣ User makes a request
+
+1. A user types https://myapp.com in their browser.  
+2. The browser asks the DNS to find where myapp.com lives.
+3. DNS points it to a public IP — that’s your Kubernetes LoadBalancer or Ingress Controller.
+
+2️⃣ Request reaches Kubernetes
+
+1. The request enters your Kubernetes cluster through one of these:
+2. A LoadBalancer (provided by your cloud provider like AWS, Azure, or GCP)
+3. Or an Ingress Controller (like Nginx or Traefik)
+
+3️⃣ Ingress / LoadBalancer sends it to a Service
+
+1. Inside Kubernetes, you have a Service that knows which app (Pods) should get this request.
+2. The Service acts like a traffic director.
+3. It decides which Pod (copy of your app) will handle the request.
+
+4️⃣ Service forwards the request to a Pod
+
+1. The Pod is where your web app actually runs — it’s like a small computer running your app container.
+2. Each Pod has its own internal IP address.
+3. The Service forwards the request to one of the Pods using that IP.
+4. Kubernetes automatically load-balances between Pods (if you have multiple replicas).
+
+5️⃣ Pod handles the request
+
+1. Inside the Pod, your web server or app container (like Nginx or Flask or Node.js) receives the HTTP request on a port — for example, port 8080.
+2. It processes the request (maybe fetches some data, renders HTML) and sends back a response.
+
+6️⃣ Response goes back the same way
+
+The response travels backward:
+
+Pod → Service → Ingress/LoadBalancer → Internet → User's Browser
+
+
 ## Azure
 
 ### Difference between application gateway and load balancer 
