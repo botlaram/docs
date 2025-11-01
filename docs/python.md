@@ -690,6 +690,72 @@ In this example:
 Both Dog and Cat are subclasses of Animal, and they override the speak() method to provide their own implementation.
 The same method name (speak()) exhibits different behaviors depending on the object type.
 
+### Async
+
+In Python, async is used for asynchronous programming. It allows you to write code that can run tasks concurrently without blocking the execution of other code.
+
+Normally, Python executes code line by line, which can be slow if some operations take time (like downloading a file or waiting for a database).
+
+With async, you can start a task, let other tasks run while waiting, and come back to the first task when it’s done.
+
+This is particularly useful for I/O-bound operations (network calls, file reading, API calls) but not for CPU-bound operations.
+
+Core concepts
+
+- async def: Defines an asynchronous function (also called a coroutine).
+- await: Waits for a coroutine to finish without blocking the event loop.
+- asyncio: Python’s built-in library to run async tasks concurrently.
+
+Example
+
+```python
+import asyncio
+
+# Define an async function
+async def say_hello():
+    print("Hello")
+    await asyncio.sleep(2)  # Simulate a 2-second I/O operation
+    print("World!")
+
+# Another async function
+async def say_numbers():
+    for i in range(5):
+        print(i)
+        await asyncio.sleep(1)
+
+# Main coroutine
+async def main():
+    # Run tasks concurrently
+    task1 = asyncio.create_task(say_hello())
+    task2 = asyncio.create_task(say_numbers())
+
+    # Wait for both tasks to finish
+    await task1
+    await task2
+
+# Run the main coroutine
+asyncio.run(main())
+```
+
+Output
+
+```bash
+Hello
+0
+1
+2
+World!
+3
+4
+```
+
+What happens here:
+
+1. say_hello() waits for 2 seconds without blocking other tasks.
+2. say_numbers() continues printing numbers every second.
+
+Async is not parallelism (no multiple CPU cores), it's concurrency (efficient waiting for I/O).
+
 ### Multithreading
 
 Multithreading means running multiple threads (smaller units of a process) at the same time within a single program.  
@@ -830,17 +896,21 @@ if __name__ == "__main__":
 
 ## Difference Between Multithreading and Multiprocessing in Python
 
-| **Concept** | **Multithreading** | **Multiprocessing** |
-|--------------|--------------------|----------------------|
-| **Definition** | Runs multiple threads (small tasks) inside one process. | Runs multiple processes, each with its own Python interpreter and memory. |
-| **Execution model** | Threads share the same memory space. | Each process has its own separate memory space. |
-| **Parallel execution** | Limited by the **GIL** — only one thread runs Python code at a time. | True parallelism — each process runs on a separate CPU core. |
-| **Best for** | I/O-bound tasks (like file or network operations). | CPU-bound tasks (like calculations or data processing). |
-| **Global Interpreter Lock (GIL)** | Only one thread runs Python code at a time. | Not affected by GIL — all processes run independently. |
-| **Memory** | Shared between threads. | Separate memory for each process. |
-| **Data sharing** | Easy (since memory is shared). | Needs special tools like **Queues** or **Pipes** to share data. |
-| **Performance** | Great for I/O tasks. | Great for CPU-heavy tasks. |
-| **Overhead** | Low. | Higher (creates separate processes). |
+# Comparison of Multithreading, Multiprocessing, and Asynchronous Programming in Python
+
+This document compares three common approaches to concurrency and parallelism in Python: **Multithreading**, **Multiprocessing**, and **Asynchronous Programming (async/await)**.
+
+| **Concept** | **Multithreading** | **Multiprocessing** | **Asynchronous (async/await)** |
+|--------------|--------------------|----------------------|-------------------------------|
+| **Definition** | Runs multiple threads (small tasks) inside one process. | Runs multiple processes, each with its own Python interpreter and memory. | Runs tasks concurrently using a single thread and event loop without blocking. |
+| **Execution model** | Threads share the same memory space. | Each process has its own separate memory space. | Single-threaded by default; uses an **event loop** to switch between tasks. |
+| **Parallel execution** | Limited by the **GIL** — only one thread runs Python code at a time. | True parallelism — each process runs on a separate CPU core. | Concurrent execution for I/O-bound tasks, but **not parallel on CPU**. |
+| **Best for** | I/O-bound tasks (like file or network operations). | CPU-bound tasks (like calculations or data processing). | I/O-bound tasks (like network requests, file operations, database queries). |
+| **Global Interpreter Lock (GIL)** | Only one thread runs Python code at a time. | Not affected by GIL — all processes run independently. | Not affected by GIL since only one thread is used; tasks yield control with `await`. |
+| **Memory** | Shared between threads. | Separate memory for each process. | Shared memory of a single thread; uses coroutines instead of separate threads. |
+| **Data sharing** | Easy (since memory is shared). | Needs special tools like **Queues** or **Pipes** to share data. | Easy — tasks can share data within the same thread. |
+| **Performance** | Great for I/O tasks. | Great for CPU-heavy tasks. | Great for high-latency I/O tasks; not for CPU-heavy tasks. |
+| **Overhead** | Low. | Higher (creates separate processes). | Very low — lightweight coroutines managed by event loop. |
 
 ✅ When to Use
 
