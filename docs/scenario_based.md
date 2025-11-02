@@ -872,12 +872,14 @@ This layered approach improves both performance and security.
 ### Ways External Users Can Access a Web Application Hosted in Azure
 
 Direct Public Internet Access
+
 | **Access Method** | **Description** | **When to Use** | **Example / Use Case** | **Security Options** |
 |--------------------|-----------------|-----------------|------------------------|----------------------|
 | **Public Endpoint (Default)** | Azure Web Apps (App Service), VMs, or APIs can be accessed directly via a public URL (e.g., `https://myapp.azurewebsites.net`). | For public-facing apps (portals, marketing sites). | A company website accessible globally. | Use HTTPS, Azure Front Door WAF, and custom domains. |
 | **Custom Domain + SSL** | Map your custom domain (e.g., `www.contoso.com`) to Azure Web App or Front Door endpoint. | When you need branded domain for end users. | Public e-commerce website. | Enable HTTPS with Azure-managed certificate. |
 
 Secured Public Access (via Edge Services)
+
 | **Access Method** | **Description** | **When to Use** | **Example / Use Case** | **Security Options** |
 |--------------------|-----------------|-----------------|------------------------|----------------------|
 | **Azure Front Door** | Global entry point that provides SSL offload, CDN caching, WAF, and DDoS protection. | For global, high-performance web applications. | Multi-region web app serving customers worldwide. | Built-in WAF, HTTPS enforcement, geo-filtering. |
@@ -886,6 +888,7 @@ Secured Public Access (via Edge Services)
 | **Azure API Management (APIM)** | Acts as a secure gateway for APIs exposed to external developers/partners. | For exposing APIs publicly with rate limits, authentication, and analytics. | Public developer API platform. | OAuth2, JWT validation, subscription keys, IP filtering. |
 
 Controlled Private Access (with Secure Tunnel or Private Link)
+
 | **Access Method** | **Description** | **When to Use** | **Example / Use Case** | **Security Options** |
 |--------------------|-----------------|-----------------|------------------------|----------------------|
 | **Azure Application Gateway + Private Endpoint** | Use private endpoint for backend app service, but expose only via secure gateway/WAF. | When you want internet access but hide internal app endpoints. | Internal web app accessed securely through gateway. | WAF, private link, NSGs. |
@@ -894,6 +897,7 @@ Controlled Private Access (with Secure Tunnel or Private Link)
 | **Azure Bastion + RDP/SSH over Browser** | Provides secure browser-based access to VMs without public IPs. | For admins or developers needing internal VM access. | DevOps team managing app servers securely. | Azure AD + MFA + NSG + Bastion. |
 
 Authentication-Based Access
+
 | **Access Method** | **Description** | **When to Use** | **Example / Use Case** | **Security Options** |
 |--------------------|-----------------|-----------------|------------------------|----------------------|
 | **Azure AD Authentication (App Service Auth)** | Secure your web app using Azure AD or external IdPs (Google, Facebook, etc.). | For user-facing apps needing login. | Employee or customer portal. | Azure AD, OAuth2, OpenID Connect, MFA. |
@@ -901,6 +905,7 @@ Authentication-Based Access
 | **Conditional Access (Azure AD)** | Enforce conditions (device, location, MFA) before access. | For sensitive internal web apps. | Finance or HR portal. | Azure AD Conditional Access policies. |
 
 Hybrid or Enterprise Access
+
 | **Access Method** | **Description** | **When to Use** | **Example / Use Case** | **Security Options** |
 |--------------------|-----------------|-----------------|------------------------|----------------------|
 | **Azure ExpressRoute (Private Fiber)** | Dedicated private network connection between on-prem data center and Azure. | For mission-critical enterprise or government workloads. | Financial institution accessing Azure apps privately. | Private circuits, network-level encryption. |
@@ -976,7 +981,7 @@ App Service has **Access Restrictions** that allow only specific IPs or CIDR ran
 
 Option 3: **Private Endpoint + VPN or ExpressRoute (Private Connectivity)**
 
-### 🧩 Concept
+🧩 Concept
 Make the app **private** — accessible only inside a **VNet**.  
 Then create a **VPN connection** between your VNet and the CA company’s on-prem network.
 
