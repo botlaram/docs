@@ -804,3 +804,212 @@ This layered approach improves both performance and security.
 | What does it understand? |	Load Balancer = IP/Port, Application Gateway = HTTP(S) requests |
 | Can it inspect or modify requests? |	Only Application Gateway |
 | Can it protect web apps (WAF)? |	Only Application Gateway |
+
+## Python
+
+### reverse the words in a given string
+
+input ="hello ramakrishna how are you"
+```python
+for i in input.split()[::-1]:
+    print(i,end=' ')
+```
+
+### sum of digits of number
+
+```python
+num='123456'
+sum = 0
+for i in num:
+    sum=sum+int(i)
+print(sum)
+```
+
+### Group Words That Are Anagrams” — step by step 👇
+
+```python
+Input=["eat", "tea", "tan", "ate", "nat", "bat","ant"]
+
+from collections import defaultdict
+
+def anagram(Input):
+    groups=defaultdict(list)
+    for word in Input:
+        key = ''.join(sorted(word))
+        groups[key].append(word)
+    return groups
+
+print(anagram(Input))
+```
+
+### Find Duplicates in a List
+
+```python
+Input = [1, 3, 4, 2, 2, 3,3,3]
+
+num_list=[]
+duplicate=[]
+for i in Input:
+    if i not in num_list:
+        num_list.append(i)
+    else:
+        duplicate.append(i)
+print(list(set(duplicate)))
+```
+
+### Merge Two Sorted Lists
+
+```python
+input1= [1, 3, 5] 
+
+input2=[2, 4, 6]
+
+merge =input1+input2
+
+print(sorted(merge))
+```
+
+### Find Common Elements Between Two Lists
+
+```python
+Input= [1, 2, 3, 4]
+Input2=[3, 4, 5, 6]
+
+common_list=[]
+for i in Input:
+    if i in Input2:
+        common_list.append(i)
+print(common_list)
+```
+
+### Move All Zeros to End of List
+
+```python
+Input= [0, 1, 0, 3, 12]
+
+list1=[]
+list2=[]
+for i in Input:
+    if i != 0:
+        list1.append(i)
+    else:
+        list2.append(i)
+print(list1+list2)
+
+# or
+
+def merge(Input):
+    nonzeros = [x for x in Input if x !=0]
+    zeros= [0] * (len(Input) - len(nonzeros))
+    print(nonzeros+zeros)
+
+merge(Input)
+```
+
+### Find Longest Substring Without Repeating Characters
+
+```python
+def longest_unique_substring(s):
+    start = 0
+    longest = 0
+    current = ""
+    seen = {}
+
+    for end in range(len(s)):
+        char = s[end]          # s[0]
+        if char in seen and seen[char] >= start:
+            start = seen[char]+1
+        
+        seen[char] = end
+        current_length= end - start +1
+
+        if current_length > longest:
+            longest = current_length
+            current= s[start:end + 1]
+            
+    return longest, current
+        
+s = "abcabcbbabcdefabc"
+length, substring = longest_unique_substring(s)
+print("Length:", length)
+print("Substring:", substring)
+
+```
+
+### Two Sum Problem (total:22) > [1,3]
+
+```python
+nums = [2,7,11,15]
+s=len(nums)
+
+def find_num(nums):
+
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)):
+            if nums[i]+nums[j]==target:
+                return [i,j]
+    return "no sum match"
+
+target=22
+print(find_num(nums))
+```
+
+### Find Majority Element in a List
+
+```python
+Input= [3, 3, 4, 2, 3, 3, 3]
+
+max=0
+
+for i in Input:
+    if Input.count(i) > max:
+        max = Input.count(i)
+        print(i)
+```
+
+### Read a log file and count how many times each error message appears.
+
+You have a log file (e.g., app.log) containing lines like this:
+
+```text
+INFO User logged in
+ERROR Disk full
+WARNING Memory low
+INFO File saved
+ERROR Disk full
+ERROR Network timeout
+```
+
+You need to read the log file and count how many times each error message appears.
+
+```python
+from collections import Counter
+
+def count_error_messages(log_file_path):
+    error_messages = []
+
+    with open(log_file_path, 'r') as file:
+        for line in file:
+            line = line.strip()
+            if line.startswith("ERROR"):
+                # Extract the message after "ERROR"
+                message = line.split("ERROR", 1)[1].strip()
+                error_messages.append(message)
+
+    # Count occurrences
+    error_counts = Counter(error_messages)
+
+    # Display results
+    for message, count in error_counts.items():
+        print(f"{message}: {count}")
+
+# Example usage
+count_error_messages("app.log")
+```
+
+Output:
+
+```bash
+Disk full: 2
+Network timeout: 1
+```
