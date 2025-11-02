@@ -805,6 +805,23 @@ This layered approach improves both performance and security.
 | Can it inspect or modify requests? |	Only Application Gateway |
 | Can it protect web apps (WAF)? |	Only Application Gateway |
 
+### When to use which database
+
+| **Database Type** | **Azure Service** | **AWS Equivalent** | **Description / Purpose** | **Best Use Cases** | **Key Features** |
+|--------------------|------------------|--------------------|----------------------------|--------------------|------------------|
+| **Relational (SQL Server)** | **Azure SQL Database** | **Amazon RDS for SQL Server** | Fully managed relational DB-as-a-service built on SQL Server. | - OLTP apps<br>- Web & enterprise systems<br>- Structured schema & ACID compliance | - Auto scaling<br>- High availability<br>- Built-in security & backups |
+| **Open Source Relational (MySQL)** | **Azure Database for MySQL** | **Amazon RDS for MySQL / Aurora MySQL** | Managed open-source MySQL DB service. | - Web & CMS apps<br>- LAMP stack<br>- Cross-platform compatibility | - Fully managed<br>- Auto backup & patching<br>- High availability |
+| **Open Source Relational (PostgreSQL)** | **Azure Database for PostgreSQL** | **Amazon RDS for PostgreSQL / Aurora PostgreSQL** | Managed PostgreSQL service. | - Geospatial apps<br>- Data analytics<br>- Django / Flask apps | - Open-source compatible<br>- Built-in HA<br>- Autoscaling |
+| **Open Source Relational (MariaDB)** | **Azure Database for MariaDB** | **Amazon RDS for MariaDB** | Managed MariaDB service. | - Existing MariaDB workloads<br>- Web applications | - Managed MariaDB<br>- Easy migration<br>- Security integrated |
+| **NoSQL (Multi-model)** | **Azure Cosmos DB** | **Amazon DynamoDB** | Globally distributed, multi-model NoSQL database (document, key-value, graph, column). | - IoT & real-time apps<br>- Global scale, low latency<br>- JSON document storage | - Multi-region replication<br>- Guaranteed low latency<br>- Horizontal scaling |
+| **Big Data / Analytics Warehouse** | **Azure Synapse Analytics** | **Amazon Redshift** | Cloud-based enterprise data warehouse for analytics and BI. | - Data warehousing<br>- Business intelligence<br>- ETL workloads | - MPP architecture<br>- Integrates with Power BI<br>- Serverless options |
+| **In-Memory Cache** | **Azure Cache for Redis** | **Amazon ElastiCache for Redis / Memcached** | Managed, in-memory cache for fast data access. | - Caching<br>- Session storage<br>- Real-time analytics | - Sub-millisecond latency<br>- Scalable performance<br>- Pub/Sub messaging |
+| **Time-Series / Log Analytics** | **Azure Data Explorer (ADX)** | **Amazon Timestream** | Optimized for time-series and log data ingestion and querying. | - IoT telemetry<br>- Monitoring & logging<br>- Analytics dashboards | - KQL query language<br>- Fast ingestion<br>- Real-time queries |
+| **Graph Database** | **Azure Cosmos DB (Gremlin API)** | **Amazon Neptune** | Graph database for highly connected data. | - Social networks<br>- Fraud detection<br>- Knowledge graphs | - Gremlin query support<br>- Multi-model flexibility<br>- Global scalability |
+| **Data Lake / Object Storage** | **Azure Data Lake Storage (ADLS)** | **Amazon S3 / AWS Lake Formation** | Data lake for storing unstructured and big data. | - Data science<br>- ML pipelines<br>- Big data processing | - Unlimited storage<br>- Hadoop compatible<br>- Cost effective |
+| **Search Engine / Indexing** | **Azure Cognitive Search** | **Amazon OpenSearch Service (Elasticsearch)** | Full-text search & AI-powered content indexing. | - App & site search<br>- Product catalogs<br>- Knowledge mining | - AI enrichment<br>- Integration with Blob, SQL, Cosmos<br>- Fast indexing |
+| **Ledger / Immutable Records** | **Azure Confidential Ledger** | **Amazon QLDB (Quantum Ledger DB)** | Immutable, tamper-proof ledger for auditable transactions. | - Financial systems<br>- Compliance logs<br>- Auditing | - Cryptographic verification<br>- Managed ledger<br>- High security |
+
 ## Python
 
 ### reverse the words in a given string
