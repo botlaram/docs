@@ -844,6 +844,7 @@ This layered approach improves both performance and security.
 | **Content Delivery Network (CDN)** | **Azure CDN** | Delivers content from edge servers close to users. | For fast delivery of static web content globally. | Serving website images, videos, scripts. | **AWS CloudFront** |
 | **NAT Gateway** | **Azure NAT Gateway** | Provides outbound internet access for private resources without exposing inbound access. | For VMs that need outbound access securely. | VM in private subnet accessing internet APIs. | **AWS NAT Gateway** |
 | **Virtual WAN (Global Network)** | **Azure Virtual WAN** | Simplifies connectivity between multiple branches, VNets, and on-prem sites. | For global enterprise networks with many sites. | Connecting multiple branch offices to Azure. | **AWS Transit Gateway / AWS Cloud WAN** |
+| **Hybrid Storage Gateway** | **Azure File Sync**, **Azure Files**, **Azure Blob Storage**, **Azure NetApp Files**, **Azure Data Box**, **Azure Backup** | Provides hybrid on-prem ↔ cloud storage scenarios: cache and sync on-prem file shares to cloud, archive/tape replacement, bulk data transfer. Azure combines these services to cover AWS Storage Gateway modes (file, volume, tape). | - **File caching / sync**: Azure File Sync + Azure Files (SMB).<br>- **Block/volume storage**: Azure NetApp Files / Managed Disks.<br>- **Archive/tape replacement**: Azure Blob (cool/archive) + Azure Backup.<br>- **Offline bulk transfer**: Azure Data Box. | **AWS Storage Gateway (File / Volume / Tape Gateway)** |
 
 ## Python
 
