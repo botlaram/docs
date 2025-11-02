@@ -809,8 +809,9 @@ This layered approach improves both performance and security.
 
 ### reverse the words in a given string
 
-input ="hello ramakrishna how are you"
 ```python
+input ="hello ramakrishna how are you"
+
 for i in input.split()[::-1]:
     print(i,end=' ')
 ```
@@ -825,7 +826,7 @@ for i in num:
 print(sum)
 ```
 
-### Group Words That Are Anagrams” — step by step 👇
+### Group Words That Are Anagrams
 
 ```python
 Input=["eat", "tea", "tan", "ate", "nat", "bat","ant"]
@@ -936,7 +937,7 @@ print("Substring:", substring)
 
 ```
 
-### Two Sum Problem (total:22) > [1,3]
+### Two Sum Problem
 
 ```python
 nums = [2,7,11,15]
