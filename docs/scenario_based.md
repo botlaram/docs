@@ -822,6 +822,29 @@ This layered approach improves both performance and security.
 | **Search Engine / Indexing** | **Azure Cognitive Search** | **Amazon OpenSearch Service (Elasticsearch)** | Full-text search & AI-powered content indexing. | - App & site search<br>- Product catalogs<br>- Knowledge mining | - AI enrichment<br>- Integration with Blob, SQL, Cosmos<br>- Fast indexing |
 | **Ledger / Immutable Records** | **Azure Confidential Ledger** | **Amazon QLDB (Quantum Ledger DB)** | Immutable, tamper-proof ledger for auditable transactions. | - Financial systems<br>- Compliance logs<br>- Auditing | - Cryptographic verification<br>- Managed ledger<br>- High security |
 
+
+### Azure Networking Services — Types, Use Cases & AWS Equivalents
+
+| **Network Type / Service** | **Azure Service Name** | **Description / Purpose** | **When to Use** | **Common Use Case Example** | **AWS Equivalent** |
+|-----------------------------|------------------------|----------------------------|-----------------|------------------------------|--------------------|
+| **Virtual Network (VNet)** | **Azure Virtual Network (VNet)** | Core private network in Azure that allows Azure resources (VMs, databases, etc.) to securely communicate. | When you need a private, isolated network in Azure. | Hosting web apps, databases, and VMs within the same secure subnet. | **Amazon VPC (Virtual Private Cloud)** |
+| **Subnet** | **Azure Subnet (inside VNet)** | Logical segmentation of a VNet into smaller address spaces. | To organize and isolate workloads (frontend, backend, DB). | Separate subnet for web servers, app servers, and DB. | **AWS Subnet (inside VPC)** |
+| **Network Security Group (NSG)** | **Azure NSG** | Acts as a virtual firewall to control inbound/outbound traffic at subnet or NIC level. | When you need granular control over traffic. | Allow only HTTP/HTTPS to web subnet, block others. | **AWS Security Group / NACL** |
+| **Application Gateway (Layer 7)** | **Azure Application Gateway** | Layer 7 load balancer with Web Application Firewall (WAF). | For web traffic routing, SSL termination, and WAF protection. | Distribute web traffic between multiple app servers. | **AWS Application Load Balancer (ALB)** |
+| **Load Balancer (Layer 4)** | **Azure Load Balancer** | Distributes network traffic (TCP/UDP) across multiple VMs. | For internal/external traffic balancing at network layer. | Balancing requests between backend VM instances. | **AWS Network Load Balancer (NLB)** |
+| **VPN Gateway** | **Azure VPN Gateway** | Secure site-to-site or point-to-site encrypted connection between on-premises and Azure. | When connecting Azure network to on-prem data center securely. | Hybrid setup with on-prem servers and Azure VMs. | **AWS VPN Gateway** |
+| **ExpressRoute** | **Azure ExpressRoute** | Dedicated private fiber connection between on-prem data center and Azure. | For enterprise-grade, low-latency, high-security private connection. | Banking or healthcare workloads requiring guaranteed performance. | **AWS Direct Connect** |
+| **Firewall / Security Appliance** | **Azure Firewall** | Managed network firewall for centralized policy control and logging. | When you need enterprise-grade protection across VNets. | Centralized firewall protecting all workloads. | **AWS Network Firewall** |
+| **Private Endpoint / Link** | **Azure Private Link** | Enables private access to Azure services via private IPs. | To access Azure services (Storage, SQL) privately without public internet. | Accessing Azure SQL Database securely from VNet. | **AWS PrivateLink** |
+| **Traffic Manager (DNS-based routing)** | **Azure Traffic Manager** | Global DNS load balancer for routing traffic based on geography, latency, or priority. | For distributing traffic across multiple Azure regions. | Global app with users in multiple continents. | **AWS Route 53 (Latency / Geo Routing)** |
+| **Application Gateway + Front Door** | **Azure Front Door** | Global load balancer and CDN for web applications. | For global, high-availability web applications with caching. | Multi-region web app with CDN acceleration. | **AWS CloudFront + Global Accelerator** |
+| **Bastion Host** | **Azure Bastion** | Provides secure RDP/SSH access to VMs via browser (no public IP). | For secure remote access to Azure VMs. | Admins accessing VMs without exposing them publicly. | **AWS Systems Manager Session Manager / AWS Bastion Host** |
+| **DNS Zone** | **Azure DNS** | Host and manage DNS records for your domains within Azure. | When managing custom domains within Azure. | Hosting `myapp.com` DNS zone inside Azure. | **Amazon Route 53 (DNS Management)** |
+| **Peering / Hub-Spoke Network** | **VNet Peering / Hub-Spoke Architecture** | Connect multiple VNets for cross-communication with low latency. | When you have multiple VNets (apps, DBs, regions). | Multi-environment (Dev/Test/Prod) network design. | **AWS VPC Peering / Transit Gateway** |
+| **Content Delivery Network (CDN)** | **Azure CDN** | Delivers content from edge servers close to users. | For fast delivery of static web content globally. | Serving website images, videos, scripts. | **AWS CloudFront** |
+| **NAT Gateway** | **Azure NAT Gateway** | Provides outbound internet access for private resources without exposing inbound access. | For VMs that need outbound access securely. | VM in private subnet accessing internet APIs. | **AWS NAT Gateway** |
+| **Virtual WAN (Global Network)** | **Azure Virtual WAN** | Simplifies connectivity between multiple branches, VNets, and on-prem sites. | For global enterprise networks with many sites. | Connecting multiple branch offices to Azure. | **AWS Transit Gateway / AWS Cloud WAN** |
+
 ## Python
 
 ### reverse the words in a given string
