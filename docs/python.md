@@ -253,6 +253,119 @@ filtering = list(x for x in nums_List if x%2==0)
 print(filtering)
 ```
 
+## Iteration
+
+Iteration just means looping through something — like a list, tuple, or string — one item at a time.
+
+In Python, objects you can loop through (like lists, strings, etc.) are called iterables.
+
+To actually get each item one by one, Python uses something called an iterator.
+
+Example: Iteration using a list
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+# normal for loop (uses iteration internally)
+for fruit in fruits:
+    print(fruit)
+```
+
+Output:
+
+```bash
+apple
+banana
+cherry
+```
+
+How it works internally
+
+You can use **iter()** and **next()** to see what’s happening under the hood:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+iterator = iter(fruits)  # get an iterator object
+
+print(next(iterator))  # apple
+print(next(iterator))  # banana
+print(next(iterator))  # cherry
+# print(next(iterator))  # would raise StopIteration error
+```
+
+Each time you call next(), Python gives the next item until there’s nothing left.
+
+## Generator
+
+A generator is a special kind of iterator that you create yourself using a function and the yield keyword.
+
+Generators don’t store all values in memory — they generate one value at a time and remember where they left off.
+
+That means they’re great for large datasets or infinite sequences.
+
+Example
+
+```python
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count     # yield pauses the function and returns a value
+        count += 1
+
+# create generator
+numbers = count_up_to(3)
+
+print(next(numbers))  # 1
+print(next(numbers))  # 2
+print(next(numbers))  # 3
+# print(next(numbers))  # StopIteration
+```
+
+Each yield gives one value, then pauses the function until the next call.
+
+Using a generator in a loop
+
+```python
+for num in count_up_to(3):
+    print(num)
+```
+
+Output:
+
+```bash
+1
+2
+3
+```
+
+🧩 Small Real Example
+
+```python
+def read_file(filename):
+    with open(filename) as f:
+        for line in f:
+            yield line.strip()  # one line at a time
+
+# create generator object once
+lines = read_file("test.txt")
+
+# now read lines one by one
+print(next(lines))
+print(next(lines))
+print(next(lines))
+print(next(lines))
+
+## or
+
+def read_file(filename):
+    with open(filename) as f:
+        for line in f:
+            yield line.strip()  # one line at a time
+
+for line in read_file("big_log.txt"):
+    print(line)
+```
+
 ## Decorator
 
 Decorators are a powerful and elegant feature in Python that allows you to modify or extend the behavior of functions or methods without changing their actual code.
