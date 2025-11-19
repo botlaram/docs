@@ -733,6 +733,45 @@ The response travels backward:
 
 Pod → Service → Ingress/LoadBalancer → Internet → User's Browser
 
+### How to connect frontend and backend in Kubernetes using ClusterIP (Simple Explanation)
+
+You have two apps in Kubernetes:
+
+Frontend
+
+Backend
+
+To make the frontend talk to the backend, you must expose the backend inside the cluster using a ClusterIP service.
+
+1. Create a ClusterIP service for the backend
+
+Example:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: ClusterIP
+```
+
+This service gets a name: backend-service
+
+2. Use the service name inside the frontend
+
+In the frontend code, set the backend URL to:
+
+```bash
+GET http://backend-service/api
+```
+
+That’s it — no IP needed.
 
 ## Azure
 
