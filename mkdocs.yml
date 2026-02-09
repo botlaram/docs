@@ -16,6 +16,7 @@ nav:
 - Publish: publish.md
 - Devops Project: devops_projects.md
 - Q & A: scenario_based.md
+- AWS: aws.md
 
 theme:
   name: material
