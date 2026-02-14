@@ -1,0 +1,1850 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="this Mkdocs contains Python Modules, about Devops and Cheat Code">
+      
+      
+        <meta name="author" content="botlaram">
+      
+      
+      
+        <link rel="prev" href="../DSA/">
+      
+      
+        <link rel="next" href="../azure/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Devops Tools - UseMe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marmelad:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Marmelad";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#devops-tools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UseMe" class="md-header__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UseMe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Devops Tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cheat_code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../linux/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Linux
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Computer Networking
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DSA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  DSA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../azure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Azure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kubernetes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  K8
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publish/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publish
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devops_projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Project
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scenario_based/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Q & A
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../aws/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AWS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UseMe" class="md-nav__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UseMe
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Tools
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Docker?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Docker?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-vs-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker VS Virtual Machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-docker-over-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage of Docker over Virtual Machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-using-docker-over-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of using Docker over VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-application-runs-before-using-docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How application runs Before using docker Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After Containers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Command
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd-vs-entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMD VS ENTRYPOINT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-multi-stage-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Multi-Stage Build
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Multi-Stage Build">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-building-a-go-application-using-multi-stage-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Building a Go Application Using Multi-Stage Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Packer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-packer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Packer?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stages-of-packer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stages of Packer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-packer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage of Packer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage of Packer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immutable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argocd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ArgoCD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ArgoCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-argocd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is ArgoCD?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges-without-argocd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenges without ArgoCD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ansible
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ansible">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible-role-folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ansible role folder structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Mesh
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops_projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenario_based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q & A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="devops-tools">DevOps Tools</h1>
+<p><br></p>
+<p align="center"><img src="https://miro.medium.com/v2/resize:fit:1400/1*hnrlp3W6kfInWHtJd9Vvag.jpeg" height="200"></p>
+
+<h2 id="docker">Docker</h2>
+<h3 id="what-is-docker">What is Docker?</h3>
+<p>Docker is a software development tool and a virtualization technology that makes it easy to develop, deploy, and manage applications by using containers. A container refers to a lightweight, stand-alone, executable package of a piece of software that contains all the libraries, configuration files, dependencies, and other necessary parts to operate the application.</p>
+<h4 id="docker-vs-virtual-machine">Docker VS Virtual Machine</h4>
+<ul>
+<li>Architecture of Operating System</li>
+</ul>
+<p><img alt="OS-System" src="../png/os-architecture.png" /></p>
+<h4 id="usage-of-docker-over-virtual-machine">Usage of Docker over Virtual Machine</h4>
+<ul>
+<li>docker use system's OS kernel</li>
+<li>where as Virtual MAchine creates its own OS Kernel in users system (it allocate CPU,RAM more compare to docker)</li>
+</ul>
+<p><img alt="Alt text" src="../png/dockervsvm.png" /></p>
+<p><img alt="docker-vs-vm" src="../png/containers-vs-virtual-machines.jpg" /></p>
+<p><img alt="Alt text" src="../gif/dockervsVM.gif" /></p>
+<p><img alt="Alt text" src="../gif/Container_VM.gif" /></p>
+<h4 id="advantages-of-using-docker-over-vms">Advantages of using Docker over VMs</h4>
+<ul>
+<li>Lightweight</li>
+<li>Faster boot up time</li>
+<li>Resource efficient</li>
+<li>Security</li>
+</ul>
+<h3 id="what-is-container">What is Container</h3>
+<ol>
+<li>Container is a way of packing application along with some dependencies, specific version and necessary configuration.  </li>
+<li>This can be portable i.e (easily share and move).  </li>
+<li>So where this containers stored??<br />
+    This can be upload/stored in Repositories (Docker Hub, Global Quay)</li>
+</ol>
+<h3 id="how-application-runs-before-using-docker-containers">How application runs Before using docker Containers</h3>
+<p><img alt="Alt text" src="../png/developer-variant.png" /></p>
+<ol>
+<li>Installation process different (for window-.exe, ubuntu-.zip/tar file)</li>
+<li>Due to Different OS (file wont execute)</li>
+</ol>
+<h3 id="after-containers">After Containers</h3>
+<p><img alt="Alt text" src="../png/after-docker.PNG" /></p>
+<ol>
+<li>Own Isolated Environment</li>
+<li>Can install necessary packages and dependencies</li>
+<li>Run the application without worrying about the underlying infrastructure.</li>
+<li>Lightweight as compared to Virtual Machines.</li>
+<li>Faster than VMs because of sharing resources with other containers.</li>
+<li>Security - No need for installing software on server, just pull from repository.</li>
+<li>Resource Efficient - Only what you need.</li>
+<li>Portability - You can run it anywhere.</li>
+</ol>
+<h3 id="docker-command">Docker Command</h3>
+<p>Docker image command</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>build<span class="w">  </span><span class="c1">## It will build Docker images by using the Dockerfile.  </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>pull<span class="w">  </span><span class="c1">## Docker pull command will pull the Docker image which is available in the docker-hub.  </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker<span class="w"> </span>images<span class="w">  </span><span class="c1">## It will list all the images which are pulled and build in the docker host.  </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>docker<span class="w"> </span>inspect<span class="w">  </span><span class="c1">## It will helps to debug the docker image if any errors occurred while building an image or pulling the image.  </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>docker<span class="w"> </span>push<span class="w">  </span><span class="c1">## Docker command will push the docker image into the Docker hub.  </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>docker<span class="w"> </span>save<span class="w">  </span><span class="c1">## It will save the docker image in the form of dockerfile.  </span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>docker<span class="w"> </span>rmi<span class="w">  </span><span class="c1">## It will remove the docker image.  </span>
+</code></pre></div>
+<p>Docker Container Command</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>attach<span class="w">  </span><span class="c1">## Connecting to an Existing Container</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker<span class="w"> </span>ps<span class="w">  </span><span class="c1">## To list the running containers.  </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>docker<span class="w"> </span>container<span class="w"> </span>inspect<span class="w"> </span>infinite<span class="w">  </span><span class="c1">## To Inspect the Docker containers.  </span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w">  </span><span class="c1">## To execute the commands in the running containers.  </span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>docker<span class="w"> </span>cp<span class="w">  </span><span class="c1">## To copy the file from docker host to the docker containers</span>
+</code></pre></div>
+<h3 id="cmd-vs-entrypoint">CMD VS ENTRYPOINT</h3>
+<p>CMD</p>
+<p>Specifies the default command to run when the container starts.</p>
+<p>Can be overridden at runtime by passing arguments to docker run.</p>
+<p>Often used for providing defaults (like parameters to ENTRYPOINT).</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:20.04</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello from CMD!&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>cmd-example<span class="w"> </span>.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>run<span class="w"> </span>cmd-example
+</code></pre></div>
+<p>👉 Output: Hello from CMD!</p>
+<p>Now override it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>run<span class="w"> </span>cmd-example<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Overridden!&quot;</span>
+</code></pre></div>
+<p>👉 Output: Overridden!</p>
+<p>So CMD is flexible — it’s like a default that the user can change.</p>
+<p>🔹 ENTRYPOINT</p>
+<p>Defines the main command that will always run.</p>
+<p>Arguments passed to docker run are appended to ENTRYPOINT (not overriding it, unless you use --entrypoint).</p>
+<p>Best for containers that behave like executables.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:20.04</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello from ENTRYPOINT!&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>entry-example<span class="w"> </span>.
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>run<span class="w"> </span>entry-example
+</code></pre></div>
+<p>👉 Output: Hello from ENTRYPOINT!</p>
+<p>Now pass extra args:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>run<span class="w"> </span>entry-example<span class="w"> </span>world
+</code></pre></div>
+<p>👉 Output: Hello from ENTRYPOINT! world</p>
+<h3 id="docker-multi-stage-build">Docker Multi-Stage Build</h3>
+<p>A multi-stage build in Docker allows you to use multiple FROM statements in your Dockerfile, each creating a separate stage of the build process. This approach is particularly useful for creating smaller, more efficient Docker images, as it allows you to copy only the necessary artifacts from one stage to another, leaving behind any intermediate or unnecessary files.</p>
+<p>Why Use Multi-Stage Builds?</p>
+<ol>
+<li>Smaller Images: By copying only the necessary files to the final image, you can significantly reduce the size of your Docker image.  </li>
+<li>Better Security: You can avoid including build tools and dependencies in the final image, reducing the attack surface.</li>
+<li>Cleaner Build Process: Each stage can focus on a specific part of the build process, making the Dockerfile easier to understand and maintain.</li>
+</ol>
+<h4 id="example-building-a-go-application-using-multi-stage-build">Example: Building a Go Application Using Multi-Stage Build</h4>
+<p>Step 1: Create a Simple Go Application</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// main.go</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, Docker Multi-Stage Build!&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>Step 2: Create the Dockerfile that uses a multi-stage build.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Stage 1: Build the Go application</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.20</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c"># Set the working directory inside the container</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c"># Copy the Go source code into the container</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c"># Build the Go application</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">RUN</span><span class="w"> </span>go<span class="w"> </span>mod<span class="w"> </span>init<span class="w"> </span>example.com/multistage<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>app
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c"># Stage 2: Create a minimal image</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c"># Set the working directory inside the container</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="c"># Copies the compiled binary from the first stage (build) to the second stage&#39;s /app directory.</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build<span class="w"> </span>/app/app<span class="w"> </span>.<span class="w"> </span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="c"># Run the application</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;./app&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="docker-workflow">Docker workflow</h3>
+<p><img alt="docker-workflow" src="../png/docker-workflow.png" /></p>
+<h2 id="packer">Packer</h2>
+<h3 id="what-is-packer">What is Packer?</h3>
+<p>Packer is a tools which help to create customize Image from multiple platform from a single source configuration.</p>
+<p><img alt="PAcker" src="../png/packer.png" /></p>
+<h3 id="stages-of-packer">Stages of Packer</h3>
+<p><img alt="PAcker" src="../png/stage-define.png" /></p>
+<h3 id="usage-of-packer">Usage of Packer</h3>
+<ul>
+<li>Well there are to stages of create Images &gt; Mutable and Immutable</li>
+<li>Mutable means changing Continuously.</li>
+<li>Immutable means needs to configure only one time.</li>
+<li>Mutable is old way to configure the Images.</li>
+<li>Where it needs to configure after deploying the application</li>
+<li>If any case, we want to deploy to multiple server, configure multiple server individually may create new bugs.</li>
+<li>Where as Packer use Immutable, which is configure deploy deploying to server.</li>
+<li>Using single configure Image we can spin up multiple server.</li>
+</ul>
+<h4 id="mutable">Mutable</h4>
+<p><code>DEPLOY &gt; SERVER &gt; CONFIGURE</code></p>
+<p><img alt="Mutable" src="../png/mutable1.png" /></p>
+<p>Configuring after spinning up server, If any case we need to install dependency into that server
+we need to install it each individual server, which can lead to issues and Bugs.</p>
+<p><img alt="Mutable" src="../png/mutable2.png" /></p>
+<h4 id="immutable">Immutable</h4>
+<p><code>DEPLOY &gt; CONFIGURE &gt; SERVER</code></p>
+<p><img alt="imMutable" src="../png/immutable1.png" /></p>
+<p>In Immutable Deploying and Configuration is done before hosting to server</p>
+<p><img alt="imMutable" src="../png/immutable2.png" /></p>
+<p>In Immutable using One Packer we can spin up multiple server</p>
+<p><img alt="imMutable" src="../png/immutable3.png" /></p>
+<h2 id="argocd">ArgoCD</h2>
+<h3 id="what-is-argocd">What is ArgoCD?</h3>
+<p>ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It automates the deployment of the desired application states from Git repositories directly to Kubernetes clusters. Argo CD monitors these repositories for changes, ensuring that the deployed application states match the declared states in the repository.</p>
+<p>Key Features:</p>
+<ol>
+<li>
+<p>Declarative GitOps: Manages your Kubernetes resources declaratively through Git.</p>
+</li>
+<li>
+<p>Automated Sync: Continuously syncs Kubernetes resources to the desired state defined in Git.</p>
+</li>
+<li>
+<p>Visibility: Provides a web UI and CLI for monitoring and managing application deployments.</p>
+</li>
+<li>
+<p>Rollback and Roll Forward: Easy rollbacks and roll forwards to any git commit.</p>
+</li>
+<li>
+<p>Multi-Cluster Management: Can manage applications across multiple clusters.</p>
+</li>
+</ol>
+<h3 id="challenges-without-argocd">Challenges without ArgoCD</h3>
+<p>Without Argo CD or a similar GitOps tool, managing Kubernetes deployments can present several challenges:</p>
+<ol>
+<li>
+<p>Manual Deployment Processes - Error-Prone: Manual deployment steps can introduce human errors. Inconsistent: Different team members might follow slightly different procedures, leading to inconsistencies. Time-Consuming: Manual deployments take more time and can slow down the development cycle.</p>
+</li>
+<li>
+<p>Lack of Single Source of Truth - Configuration Drift: Without a single source of truth, it’s easy for the actual state of the cluster to drift from the desired state.
+Difficult Rollbacks: Rolling back to a previous state can be challenging without a clear history of changes.</p>
+</li>
+<li>
+<p>Limited Visibility and Auditing - Poor Traceability: Tracking who made changes, what changes were made, and why can be difficult.
+Compliance Issues: Limited visibility can lead to difficulties in ensuring compliance with regulatory requirements.</p>
+</li>
+<li>
+<p>Inconsistent Environments - Environment Parity: Ensuring that different environments (development, staging, production) are consistent can be challenging without automated synchronization.Complex Management: Managing multiple environments manually can become complex and error-prone.</p>
+</li>
+<li>
+<p>Inefficient Resource Management - Resource Wastage: Manual processes can lead to inefficient use of resources, as it’s harder to optimize and automate resource provisioning and scaling.</p>
+</li>
+<li>
+<p>Scalability Issues - Difficulty Scaling: As the number of services and clusters grows, manually managing deployments becomes increasingly difficult and less scalable.
+Coordination Overhead: Coordinating deployments across multiple teams and environments can lead to significant overhead.</p>
+</li>
+<li>
+<p>Operational Overheads - Increased Workload: DevOps teams may spend a significant amount of time on repetitive deployment tasks.
+Focus Diversion: Teams might be diverted from more strategic tasks to handle operational issues.</p>
+</li>
+<li>
+<p>Slow Incident Recovery - Delayed Response: Manually identifying and resolving issues can delay incident recovery. Lack of Automation: Without automated rollback and recovery processes, downtime can be longer.</p>
+</li>
+</ol>
+<p>Summary
+Implementing a tool like Argo CD helps mitigate these challenges by providing automated, consistent, and reliable deployment processes, ensuring a single source of truth, improving visibility and auditing, and enabling efficient resource management and scalability. This leads to faster, safer, and more efficient software delivery.</p>
+<h3 id="benefits">Benefits</h3>
+<p>Benefits of using ArgoCD</p>
+<ol>
+<li>
+<p><strong>Automated Deployments</strong></p>
+<p>Continuous Deployment: Argo CD automates the deployment process, ensuring that changes in the Git repository are automatically applied to the Kubernetes cluster.<br />
+Synchronization: Keeps your applications in sync with the desired state defined in Git, reducing the chances of configuration drift.</p>
+</li>
+<li>
+<p><strong>Declarative Configuration</strong></p>
+<p>Single Source of Truth: The desired state of applications is stored in Git, providing a clear and auditable source of truth.<br />
+Version Control: Every change to the configuration is versioned, enabling easy rollbacks and clear change history.</p>
+</li>
+<li>
+<p><strong>Improved Security</strong></p>
+<p>Pull-Based Mechanism: Clusters pull configuration changes, reducing the need for direct access to the cluster and thus improving security.<br />
+Access Control: Permissions can be managed via Git repository access controls, reducing the need for direct cluster access permissions.</p>
+</li>
+<li>
+<p><strong>Enhanced Visibility and Monitoring</strong></p>
+<p>User Interface: Argo CD provides a web UI and CLI for visualizing the state of applications and monitoring deployment status.<br />
+Notifications and Alerts: Integration with various notification systems to alert users about the state of deployments.</p>
+</li>
+<li>
+<p><strong>Scalability</strong></p>
+<p>Multi-Cluster Management: Manage multiple Kubernetes clusters from a single Argo CD instance.<br />
+Scalable Operations: Easily scale deployments across many clusters and environments.</p>
+</li>
+<li>
+<p><strong>Operational Efficiency</strong></p>
+<p>Reduced Manual Effort: Automates repetitive deployment tasks, freeing up developers and DevOps teams to focus on more strategic work.<br />
+Consistent Environments: Ensures that all environments (development, staging, production) are consistent with each other.</p>
+</li>
+<li>
+<p><strong>Improved Reliability and Resilience</strong></p>
+<p>Self-Healing: Automatically detects and corrects drift from the desired state, enhancing the reliability of deployments.<br />
+Easy Rollbacks: Simplified rollback to previous application states in case of issues, improving resilience.</p>
+</li>
+<li>
+<p><strong>Compliance and Auditability</strong></p>
+<p>Audit Trails: Every change is tracked and logged, providing a complete audit trail of who made changes and why.<br />
+Compliance: Helps in meeting compliance requirements by ensuring configurations are consistent and traceable.</p>
+</li>
+<li>
+<p><strong>Flexibility and Extensibility</strong></p>
+<p>Custom Plugins: Supports custom resource definitions and can be extended with custom plugins for specific use cases.<br />
+Integration: Integrates with other CI/CD tools and workflows, enhancing the overall DevOps pipeline.</p>
+</li>
+<li>
+<p><strong>Community and Ecosystem</strong></p>
+<p>Active Community: Argo CD is part of the CNCF and has an active open-source community, ensuring ongoing improvements and support.<br />
+Ecosystem: Works well with other tools in the Kubernetes ecosystem, such as Helm, Kustomize, and more.</p>
+</li>
+</ol>
+<h3 id="components">Components</h3>
+<p>Component of ArgoCD</p>
+<p><img alt="argo-cd component" src="../png/argocd-component.png" /></p>
+<ol>
+<li>
+<p><strong>API Server</strong></p>
+<p>Function: Serves as the central control plane for Argo CD.<br />
+Usage:<br />
+Exposes the Argo CD API, which can be accessed via CLI, Web UI, or other tools.
+Handles all CRUD operations for Argo CD resources such as Applications, Projects, and Repositories.
+Manages authentication and authorization.</p>
+</li>
+<li>
+<p><strong>Repository Server</strong></p>
+<p>Function: Manages interactions with Git repositories.<br />
+Usage:<br />
+Fetches and caches Git repository contents.
+Serves Git repository information to other Argo CD components, ensuring they have the necessary data to deploy applications.</p>
+</li>
+<li>
+<p><strong>Controller</strong></p>
+<p>Function: Watches the state of applications and ensures they are in sync with the desired state defined in Git.<br />
+Usage:<br />
+Continuously monitors the state of applications in the Kubernetes cluster.
+Compares the current state of applications with the desired state from Git.
+Executes synchronization operations to reconcile any differences.</p>
+</li>
+<li>
+<p><strong>Application Controller</strong></p>
+<p>Function: Manages the lifecycle of Argo CD applications.<br />
+Usage:<br />
+Tracks application resources and manages their state.
+Handles application creation, updates, and deletion.
+Manages synchronization and health status reporting.</p>
+</li>
+<li>
+<p><strong>Dex</strong></p>
+<p>Function: Provides OpenID Connect (OIDC) authentication.<br />
+Usage:
+Integrates with external identity providers like GitHub, Google, LDAP, etc.
+Manages user authentication and provides SSO capabilities.</p>
+</li>
+<li>
+<p><strong>Redis</strong></p>
+<p>Function: Acts as an in-memory data store.<br />
+Usage:
+Enhances performance by caching application state and other data.
+Optional but recommended for large-scale deployments.</p>
+</li>
+<li>
+<p><strong>Web UI</strong></p>
+<p>Function: Provides a graphical interface for interacting with Argo CD.<br />
+Usage:<br />
+Visualizes the state of applications and their synchronization status.
+Allows users to manage applications, view logs, and perform manual synchronization.
+Provides a user-friendly way to interact with Argo CD without needing to use the CLI.</p>
+</li>
+<li>
+<p><strong>CLI</strong></p>
+<p>Function: Command-line interface for interacting with Argo CD.
+Usage:<br />
+Enables users to perform all Argo CD operations via the terminal.
+Useful for scripting and automation of deployment tasks.
+Offers commands to manage applications, projects, and repositories.</p>
+</li>
+</ol>
+<h2 id="ansible">Ansible</h2>
+<h3 id="ansible-role-folder-structure"><a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html">Ansible role folder structure</a></h3>
+<h2 id="service-mesh"><a href="../service_mesh/">Service Mesh</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; <a href="https://github.com/botlaram"  target="_blank" rel="noopener">botlar4</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/botlaram" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ramakrishna-botla-772a8918b/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.path", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

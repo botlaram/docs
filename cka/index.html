@@ -1,0 +1,1569 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="this Mkdocs contains Python Modules, about Devops and Cheat Code">
+      
+      
+        <meta name="author" content="botlaram">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>CKA - UseMe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marmelad:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Marmelad";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cka" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UseMe" class="md-header__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UseMe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CKA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cheat_code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../linux/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Linux
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Computer Networking
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DSA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  DSA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devopsTools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../azure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Azure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kubernetes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  K8
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publish/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publish
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devops_projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Project
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scenario_based/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Q & A
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../aws/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AWS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UseMe" class="md-nav__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UseMe
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devopsTools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops_projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenario_based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q & A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="cka">CKA</h1>
+<h2 id="understand-k8-architecture">Understand K8 architecture</h2>
+<h3 id="vanilla-kubernetes">Vanilla Kubernetes</h3>
+<p>"Vanilla Kubernetes" refers to the standard, unmodified, open-source version of Kubernetes as released by the Kubernetes community, without any vendor-specific customizations, extensions, or added features. It is the pure form of Kubernetes as maintained by the Cloud Native Computing Foundation (CNCF).</p>
+<p>Using Vanilla Kubernetes ensures you’re working with the core features and APIs defined by the Kubernetes project, providing a consistent foundation for container orchestration.</p>
+<h3 id="core-components-of-vanilla-kubernetes">Core Components of Vanilla Kubernetes</h3>
+<p>Vanilla Kubernetes consists of several components categorized as either control plane components or node components:</p>
+<p><strong>Control Plane Components</strong> : These components are responsible for managing the cluster and ensuring the desired state of the system.</p>
+<ol>
+<li>
+<p>API Server (kube-apiserver): Acts as the central management point for Kubernetes. It exposes the Kubernetes API, processes client requests, and communicates with other components.</p>
+<p>Key feature: Handles REST API calls.</p>
+</li>
+<li>
+<p>Controller Manager (kube-controller-manager): Runs controllers that regulate the state of the cluster, such as the Node Controller (monitoring nodes), ReplicaSet Controller (managing replicas), and others.</p>
+<p>Key feature: Ensures the cluster meets the desired state.</p>
+</li>
+<li>
+<p>Scheduler (kube-scheduler):Assigns workloads (Pods) to nodes in the cluster based on resource availability and policies.</p>
+<p>Key feature: Ensures optimal placement of Pods.</p>
+</li>
+<li>
+<p>Etcd: A distributed key-value store that serves as Kubernetes' database, storing all cluster data such as configurations, secrets, and the desired state.</p>
+<p>Key feature: Provides high availability and consistency.</p>
+</li>
+</ol>
+<p><strong>Node Components</strong> : Node components manage the execution of workloads on individual machines.</p>
+<ol>
+<li>
+<p>Kubelet: A daemon running on each node, ensuring that containers are running as defined by the Pod specifications.</p>
+<p>Key feature: Manages container lifecycle on a node.</p>
+</li>
+<li>
+<p>Kube-Proxy: A network proxy that manages network rules and enables service discovery and communication between Pods.</p>
+<p>Key feature: Provides networking for Pods and services.</p>
+</li>
+<li>
+<p>Container Runtime: Executes containers and manages container lifecycle. Examples include Docker, containerd, and CRI-O.</p>
+<p>Key feature: Ensures Pods' containers run smoothly.</p>
+</li>
+</ol>
+<p><strong>Add-Ons (Optional Components)</strong> : These are additional features often deployed in a Kubernetes cluster.</p>
+<ol>
+<li>DNS (CoreDNS): Provides service discovery and DNS resolution for services within the cluster.</li>
+<li>Ingress Controllers: Manages external HTTP and HTTPS access to cluster services.</li>
+<li>Metrics Server: Collects resource metrics for autoscaling and monitoring.</li>
+</ol>
+<h3 id="ecosystem-of-vanilla-kubernetes">Ecosystem of Vanilla Kubernetes</h3>
+<p>Kubernetes has a rich ecosystem of tools and technologies that enhance its functionality and usability. These tools are often open-source and community-driven, but they may also include vendor-specific solutions:</p>
+<ol>
+<li>
+<p>Networking</p>
+<p>CNI (Container Network Interface): Plugins like Calico, Flannel, and Weave Net enable networking in Kubernetes.</p>
+<p>Service Mesh: Istio and Linkerd provide advanced networking features like traffic routing and observability.</p>
+</li>
+<li>
+<p>Storage</p>
+<p>CSI (Container Storage Interface): Allows Kubernetes to interact with storage systems. Examples: Rook, Ceph, and AWS EBS.</p>
+</li>
+<li>
+<p>Observability</p>
+<p>Monitoring: Prometheus, Grafana, and Datadog help monitor cluster health and workloads.</p>
+<p>Logging: Tools like Elasticsearch, Fluentd, and Kibana (EFK stack) collect and analyze logs.</p>
+</li>
+<li>
+<p>Deployment and Scaling</p>
+<p>Helm: A package manager for Kubernetes that simplifies application deployment.</p>
+<p>Kustomize: Provides declarative configuration management for Kubernetes resources.</p>
+</li>
+<li>
+<p>Security</p>
+<p>RBAC (Role-Based Access Control): Manages permissions within the cluster.</p>
+<p>Tools: Falco, Aqua Security, and OPA (Open Policy Agent) for runtime security and policy enforcement.</p>
+</li>
+<li>
+<p>CI/CD Integration</p>
+<p>ArgoCD: A declarative GitOps continuous delivery tool for Kubernetes.</p>
+<p>Jenkins X: Kubernetes-native CI/CD solution.</p>
+</li>
+<li>
+<p>Backup and Disaster Recovery</p>
+<p>Tools like Velero for backing up and restoring Kubernetes resources.</p>
+</li>
+</ol>
+<p><strong>Advantages of Using Vanilla Kubernetes</strong></p>
+<ul>
+<li>Portability: No vendor lock-in; deployable across any environment supporting Kubernetes.</li>
+<li>Flexibility: Offers complete control over how you configure and extend Kubernetes.</li>
+<li>Community Support: Benefits from a vibrant open-source community and frequent updates.</li>
+</ul>
+<p><strong>Challenges with Vanilla Kubernetes</strong></p>
+<ul>
+<li>Complexity: Requires expertise to set up, maintain, and secure.</li>
+<li>Lack of Pre-Configured Features: Unlike managed Kubernetes services (e.g., GKE, AKS, EKS)</li>
+<li>Vanilla Kubernetes doesn’t include out-of-the-box solutions for scaling, logging, or monitoring.</li>
+</ul>
+<h2 id="understand-cluster-node-requirements-install-using-kubeadm">Understand cluster node requirements install using kubeadm</h2>
+<p>Cluster Node Requirements for Installing Kubernetes Using kubeadm.</p>
+<p>Before installing a Kubernetes cluster using kubeadm, it’s essential to ensure that the system requirements and prerequisites are met for the control plane and worker nodes. Below is a comprehensive guide to help you prepare.</p>
+<ol>
+<li>
+<p>Hardware Requirements</p>
+<p>Control Plane Node (Master Node)</p>
+<ul>
+<li>CPU: 2 cores or more.</li>
+<li>RAM: 2 GB or more (4 GB recommended for production).</li>
+<li>Disk Space: 10 GB or more free space.</li>
+<li>Network: Stable network connection (public or private).</li>
+</ul>
+<p>Worker Nodes</p>
+<ul>
+<li>CPU: 1 core or more.</li>
+<li>RAM: 1 GB or more (2 GB recommended for production).</li>
+<li>Disk Space: 10 GB or more free space.</li>
+<li>Network: Network connectivity to control plane and other nodes.</li>
+</ul>
+</li>
+<li>
+<p>Operating System Requirements</p>
+<p>Use one of the following operating systems:</p>
+<ul>
+<li>Ubuntu 20.04, 22.04</li>
+<li>CentOS 7 or 8</li>
+<li>Red Hat Enterprise Linux (RHEL) 7 or 8</li>
+<li>Debian 10 or 11</li>
+<li>Ensure the OS is up-to-date with the latest patches and security updates.</li>
+</ul>
+</li>
+<li>
+<p>Software Requirements</p>
+<p>Container Runtime - Kubernetes supports multiple container runtimes. Ensure one of these is installed and configured:</p>
+<ul>
+<li>containerd (preferred and recommended)</li>
+<li>Docker (requires CRI plugin, deprecated after Kubernetes 1.24)</li>
+<li>CRI-O</li>
+<li>Packages</li>
+</ul>
+</li>
+<li>
+<p>Installation Instructions</p>
+</li>
+<li>
+<p>kubectl: CLI tool to manage the cluster.</p>
+</li>
+<li>kubeadm: Used to bootstrap the cluster.</li>
+<li>
+<p>kubelet: Responsible for running containers on nodes.</p>
+<p>Disable Swap Kubernetes requires swap to be disabled to function correctly.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>swapoff<span class="w"> </span>-a
+</code></pre></div>
+<p>To make this change permanent, comment out any swap entries in /etc/fstab.</p>
+<p>Enable Bridge-NF and IP Forwarding Kubernetes networking requires specific kernel parameters. Configure them as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s">overlay</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s">br_netfilter</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">EOF</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>sudo<span class="w"> </span>modprobe<span class="w"> </span>overlay
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>sudo<span class="w"> </span>modprobe<span class="w"> </span>br_netfilter
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="s">net.bridge.bridge-nf-call-ip6tables = 1</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="s">net.bridge.bridge-nf-call-iptables = 1</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="s">net.ipv4.ip_forward = 1</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="s">EOF</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>sudo<span class="w"> </span>sysctl<span class="w"> </span>--system
+</code></pre></div>
+<p>Firewall Configuration</p>
+<p>Allow traffic on ports used by Kubernetes components:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--add-port<span class="o">=</span><span class="m">6443</span>/tcp<span class="w">   </span><span class="c1"># API server</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--add-port<span class="o">=</span><span class="m">2379</span>-2380/tcp<span class="w"> </span><span class="c1"># etcd server</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo<span class="w"> </span>firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--add-port<span class="o">=</span><span class="m">10250</span>/tcp<span class="w"> </span><span class="c1"># kubelet API</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sudo<span class="w"> </span>firewall-cmd<span class="w"> </span>--reload
+</code></pre></div>
+</li>
+<li>
+<p>Network Requirements</p>
+<p>All nodes must be able to communicate with each other.</p>
+<p>Required ports:
+- Control Plane: 6443, 2379-2380, 10250, 10251, 10252
+- Worker Nodes: 10250, 30000-32767 (NodePort range)</p>
+</li>
+<li>
+<p>Cluster Configuration</p>
+<p>Node Hostnames, Each node should have a unique hostname.<br />
+Update the hostname if necessary:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>&lt;node-name&gt;
+</code></pre></div>
+<p>Time Synchronization
+Ensure time synchronization is set up using chrony or ntp.
+DNS and Host File Configuration
+Update the /etc/hosts file on all nodes with the control plane node's IP and hostname:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;control-plane-node-ip&gt;<span class="w"> </span>&lt;control-plane-node-hostname&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Installing Kubernetes with kubeadm</p>
+</li>
+<li>
+<p>Install Prerequisites
+        Install required packages:</p>
+<div class="highlight"><pre><span></span><code>```bash
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo &quot;deb https://apt.kubernetes.io/ kubernetes-xenial main&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+</code></pre></div>
+</li>
+<li>
+<p>Initialize the Control Plane
+        On the control plane node:</p>
+<div class="highlight"><pre><span></span><code>```bash
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+```
+</code></pre></div>
+</li>
+<li>
+<p>Set Up kubectl for the Admin User</p>
+<div class="highlight"><pre><span></span><code>```bash
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+</code></pre></div>
+</li>
+<li>
+<p>Install a Pod Network Add-On
+        Install a network plugin, such as Flannel:</p>
+<div class="highlight"><pre><span></span><code>```bash
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+```
+</code></pre></div>
+</li>
+<li>
+<p>Join Worker Nodes
+        On each worker node, join the cluster using the command provided by kubeadm init:</p>
+<div class="highlight"><pre><span></span><code>```bash
+sudo kubeadm join &lt;control-plane-ip&gt;:6443 --token &lt;token&gt; --discovery-token-ca-cert-hash &lt;hash&gt;
+```
+
+If you don’t have the join command, you can regenerate it on the control plane node:
+
+```bash
+kubeadm token create --print-join-command
+```
+</code></pre></div>
+</li>
+<li>
+<p>Verification</p>
+<div class="highlight"><pre><span></span><code>Check nodes in the cluster:
+
+```bash
+kubectl get nodes
+```
+</code></pre></div>
+</li>
+<li>
+<p>Check pods in all namespaces:</p>
+<div class="highlight"><pre><span></span><code>```bash
+kubectl get pods --all-namespaces
+```
+</code></pre></div>
+</li>
+</ol>
+<h2 id="understanding-node-network-requirements-in-kubernetes">Understanding Node Network Requirements in Kubernetes</h2>
+<p>Networking in Kubernetes is crucial for enabling communication between cluster nodes, workloads (Pods), and external users or systems. Properly configuring the network requirements ensures smooth operation of your Kubernetes cluster.</p>
+<p>Below is an overview of the key node networking requirements and concepts.</p>
+<ol>
+<li>
+<p>Key Kubernetes Networking Concepts</p>
+</li>
+<li>
+<p>Pod-to-Pod Communication
+   Every Pod in a Kubernetes cluster gets its own IP address, and Pods can communicate with each other directly using these IPs.
+   Requirement: All nodes must be able to reach every Pod on any node without NAT (Network Address Translation).</p>
+</li>
+<li>Pod-to-Service Communication
+   Kubernetes services provide a stable IP and DNS name for accessing Pods, even if Pod IPs change.
+   Requirement: Nodes must allow traffic between Pods and the ClusterIP addresses of services.</li>
+<li>Node-to-Node Communication
+   Nodes communicate to ensure the control plane and worker nodes operate cohesively.
+   Requirement: Nodes need to communicate over specific ports for API server, kubelet, kube-proxy, etc.</li>
+<li>
+<p>External Communication
+   Kubernetes must support traffic from external users or systems to access cluster workloads.
+   Requirement: Nodes must allow traffic for exposing services via NodePort, LoadBalancer, or Ingress.</p>
+</li>
+<li>
+<p>Network Requirements by Node Role</p>
+<p>Control Plane Node Requirements : Communication between the control plane and worker nodes is critical.</p>
+<p>Required ports</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="m">6443</span>/tcp:<span class="w"> </span>Kubernetes<span class="w"> </span>API<span class="w"> </span>server.
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="m">2379</span>-2380/tcp:<span class="w"> </span>etcd<span class="w"> </span>server<span class="w"> </span><span class="o">(</span>key-value<span class="w"> </span>store<span class="o">)</span>.
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="m">10250</span>/tcp:<span class="w"> </span>kubelet<span class="w"> </span>API<span class="w"> </span><span class="k">for</span><span class="w"> </span>managing<span class="w"> </span>workloads.
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="m">10251</span>/tcp:<span class="w"> </span>kube-scheduler<span class="w"> </span><span class="o">(</span>internal<span class="w"> </span>cluster<span class="w"> </span>communications<span class="o">)</span>.
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="m">10252</span>/tcp:<span class="w"> </span>kube-controller-manager<span class="w"> </span><span class="o">(</span>internal<span class="w"> </span>cluster<span class="w"> </span>communications<span class="o">)</span>.
+</code></pre></div>
+<p>Worker Node Requirements : Worker nodes communicate with the control plane and other nodes to manage workloads.</p>
+<p>Required ports:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="m">10250</span>/tcp:<span class="w"> </span>kubelet<span class="w"> </span>API.
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="m">30000</span>-32767/tcp:<span class="w"> </span>NodePort<span class="w"> </span>range<span class="w"> </span><span class="k">for</span><span class="w"> </span>services.
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Any<span class="w"> </span>additional<span class="w"> </span>ports<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>container<span class="w"> </span>runtime<span class="w"> </span><span class="o">(</span>e.g.,<span class="w"> </span>CRI<span class="w"> </span>or<span class="w"> </span>Docker<span class="o">)</span>.
+</code></pre></div>
+</li>
+<li>
+<p>Cluster-Wide Network Requirements</p>
+<ol>
+<li>
+<p>Pod Network CIDR
+    Kubernetes clusters use a Pod network CIDR range to assign IPs to Pods. </p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Flannel<span class="w"> </span>default:<span class="w"> </span><span class="m">10</span>.244.0.0/16
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Calico<span class="w"> </span>default:<span class="w"> </span><span class="m">192</span>.168.0.0/16
+</code></pre></div>
+<p>Requirement: Ensure the Pod CIDR does not overlap with existing network ranges in your environment.</p>
+</li>
+<li>
+<p>Service CIDR</p>
+<p>Kubernetes services are assigned virtual IPs from a separate CIDR range. </p>
+<p>For example: <code>Default: 10.96.0.0/12</code>
+Requirement: Ensure the service CIDR does not conflict with existing network ranges.</p>
+</li>
+<li>
+<p>DNS</p>
+<p>CoreDNS, or another DNS provider, resolves service names to ClusterIPs.<br />
+Requirement: Nodes must have access to the DNS service within the cluster.</p>
+</li>
+<li>
+<p>Required Ports</p>
+<p>Control Plane Node Ports - Port Range Protocol Purpose</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="m">6443</span><span class="w"> </span>TCP<span class="w"> </span>Kubernetes<span class="w"> </span>API<span class="w"> </span>server
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="m">2379</span>-2380<span class="w"> </span>TCP<span class="w"> </span>etcd<span class="w"> </span>server<span class="w"> </span>communication
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="m">10250</span><span class="w"> </span>TCP<span class="w"> </span>Kubelet<span class="w"> </span>API
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="m">10251</span><span class="w"> </span>TCP<span class="w"> </span>kube-scheduler<span class="w"> </span>communication
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="m">10252</span><span class="w"> </span>TCP<span class="w"> </span>kube-controller-manager<span class="w"> </span>communication
+</code></pre></div>
+<p>Worker Node Ports - Port Range Protocol Purpose
+10250 TCP Kubelet API
+30000-32767 TCP NodePort services
+Pod CIDR Range TCP/UDP Pod-to-Pod communication</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Configuring Network Plugins</p>
+<p>Kubernetes itself does not handle networking, it relies on network plugins conforming to the Container Network Interface (CNI) specification. </p>
+<p>Some popular CNI plugins include:</p>
+<ul>
+<li>Flannel: Simple overlay network.</li>
+<li>Calico: Provides advanced networking and network policies.</li>
+<li>Weave Net: Offers automatic service discovery and encryption.</li>
+<li>Cilium: Layer 7 observability and security.</li>
+</ul>
+<p>Steps to Configure Networking Using a CNI<br />
+Choose a CNI plugin compatible with your cluster.<br />
+Apply the CNI plugin’s YAML manifest after initializing the cluster.</p>
+</li>
+</ol>
+<p>Example for Flannel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+</code></pre></div>
+<p>Verify that Pods receive IPs and can communicate across nodes.</p>
+<ol>
+<li>Additional Considerations</li>
+</ol>
+<p>Firewall Rules : Ensure firewall rules allow traffic on the required ports for Kubernetes components and networking.
+Allow traffic between the Pod CIDR range, Service CIDR range, and nodes.</p>
+<p>Cloud-Specific Networking : If running Kubernetes in a cloud environment, configure networking based on the cloud provider’s requirements.<br />
+Most managed Kubernetes services (like AWS EKS, Azure AKS, or GKE) have native integrations.</p>
+<p>Network Policies : Network policies define rules for traffic flow between Pods and services.<br />
+Use tools like Calico or Cilium to enforce these policies.</p>
+<ol>
+<li>Verifying Network Connectivity</li>
+</ol>
+<p>Ping Test Between Pods : Deploy Pods on different nodes and verify they can communicate:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>pod-a<span class="w"> </span>--<span class="w"> </span>ping<span class="w"> </span>&lt;pod-b-ip&gt;
+</code></pre></div>
+<p>Create a test service and ensure it is reachable via its ClusterIP or NodePort.</p>
+<p>DNS Test : Check if DNS resolution is working:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>pod-a<span class="w"> </span>--<span class="w"> </span>nslookup<span class="w"> </span>&lt;service-name&gt;
+</code></pre></div>
+<h2 id="what-different-phases-k8-execute-while-running-kubeadm-init">What different phases k8 execute while running kubeadm init</h2>
+<p>When you run kubeadm init, it executes a series of phases to set up a Kubernetes control plane. Each phase performs a specific task to bootstrap the cluster.</p>
+<p>Phases of kubeadm init</p>
+<ol>
+<li>Preflight Checks
+    Validates system configuration (e.g., swap disabled, required ports open).<br />
+    Ensures prerequisites are met.</li>
+<li>kubelet Configuration
+    Writes the kubelet configuration file (/var/lib/kubelet/config.yaml).<br />
+    Enables and starts the kubelet service.</li>
+<li>Certificates
+    Generates and signs certificates for cluster components (e.g., API server, etcd).<br />
+    Stores them in /etc/kubernetes/pki.</li>
+<li>KubeConfig Files
+    Creates kubeconfig files for communication with the cluster (admin.conf, kubelet.conf, etc.).<br />
+    Stores them in /etc/kubernetes/.</li>
+<li>etcd Initialization
+    Bootstraps the etcd key-value store for cluster state management.</li>
+<li>Kubernetes API Server
+    Starts the API server and configures its certificates and kubeconfig.</li>
+<li>Control Plane Components
+    Deploys static Pods for: kube-apiserver, kube-controller-manager, kube-scheduler</li>
+<li>Bootstrap Token
+    Generates a token to allow worker nodes to join the cluster.</li>
+<li>Cluster Network
+    Configures basic networking (e.g., setting Pod CIDR).<br />
+    Prepares for the installation of a network plugin (like Flannel or Calico).</li>
+<li>Mark the Node
+    Marks the control plane node with a specific taint to prevent scheduling Pods on it.</li>
+</ol>
+<h2 id="installation-cluster">Installation cluster</h2>
+<p>Refer the <a href="https://github.com/sandervanvugt/cka.git">github</a>, this contains script to install cluster.</p>
+<p>install cri : <code>sudo /cka/setup-container.sh</code></p>
+<p>install kubetools : <code>sudo /cka/setup-kubetools.sh</code>, this includes (kubeadm, kubelet, kubectl)</p>
+<p>install cluster : <code>sudo kubeadm init</code>, this need to run only on master node</p>
+<p>setup client in master node:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>mkdir<span class="w"> </span>~/.kube
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-i<span class="w"> </span>/etc/kubernetes/admin.conf<span class="w"> </span>~/.kube/config<span class="w"> </span><span class="c1">#to provide admin access to kubernetes cluster</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span>:<span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span>.kube/config
+</code></pre></div>
+<p>validate</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span><span class="c1"># this should display type: clusterIP</span>
+</code></pre></div>
+<p>Install network add-on</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/projectcalico//calico/v3.25.0/manifests/tigera-operator.yaml
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/projectcalico//calico/v3.25.0/manifests/custom-resources.yaml
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>watch<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>calico-system
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># BAckup options: </span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>cka/calico.yaml
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="c1">#validate</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="c1">#this will display calico status</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="c1"># Join other nodes, execute this in worker nodes</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>join<span class="w"> </span>&lt;join-token&gt;
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="c1"># validate worker nodes, execute this in master node</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span><span class="c1">#this will display worker nodes</span>
+</code></pre></div>
+<h2 id="k8-applications">K8 Applications</h2>
+<p>Running Applications</p>
+<ol>
+<li>deploying k8 applications</li>
+<li>using deployment</li>
+<li>running agents with daemonsets</li>
+<li>understanding0 stateful and stateless applications</li>
+<li>the case for running individual pods</li>
+<li>managing pod initialization</li>
+<li>scaling applications</li>
+<li>sidecar containers for application logging</li>
+<li>Managing storage</li>
+<li>understanding k8 storage options</li>
+<li>accessing storage through pod volumes</li>
+<li>configuring pv storage</li>
+<li>configuring pvc</li>
+<li>configuring pv and pvc with pod storage</li>
+<li>using storage class</li>
+<li>storage provisioner</li>
+<li>using configmap and secrets</li>
+<li>managing application access</li>
+</ol>
+<h2 id="doubts">doubts</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; <a href="https://github.com/botlaram"  target="_blank" rel="noopener">botlar4</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/botlaram" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ramakrishna-botla-772a8918b/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.path", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3140 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="this Mkdocs contains Python Modules, about Devops and Cheat Code">
+      
+      
+        <meta name="author" content="botlaram">
+      
+      
+      
+        <link rel="prev" href="../devopsTools/">
+      
+      
+        <link rel="next" href="../kubernetes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Azure - UseMe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marmelad:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Marmelad";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#all-about-azure-cloud" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UseMe" class="md-header__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UseMe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cheat_code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../linux/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Linux
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Computer Networking
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DSA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  DSA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devopsTools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Azure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kubernetes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  K8
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publish/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publish
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devops_projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Project
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scenario_based/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Q & A
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../aws/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AWS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UseMe" class="md-nav__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UseMe
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devopsTools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Computing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Cloud Computing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-service-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Service Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud Service Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure as a Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure as a Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics-of-azure-iaas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Characteristics of Azure IaaS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform as a Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform as a Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics-of-azure-paas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Characteristics of Azure PaaS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software as a Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software as a Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics-of-azure-saas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Characteristics of Azure SaaS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-model-in-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing the Right Model in Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iaas-paas-saas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IAAS-PAAS-SAAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure CLI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-groups-in-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Groups in Azure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Groups in Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-points-about-resource-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points about Resource Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-resource-manager-arm-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Resource Manager (ARM) Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Resource Manager (ARM) Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features-of-azure-resource-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features of Azure Resource Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-resource-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Resource Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtualization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components-of-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components of Virtualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concepts-in-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts in Virtualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-virtual-machines-on-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Virtual Machines on Azure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Virtual Machines on Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-purpose-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Purpose VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-optimized-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compute Optimized VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-optimized-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Optimized VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-optimized-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Optimized VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPU VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-performance-compute-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Performance Compute VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#burstable-vms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Burstable VMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Networking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Networking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subnets-and-cidr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subnets and CIDR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subnets and CIDR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-uses-of-subnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Uses of Subnets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-in-real-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example in Real Life
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routes-and-route-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routes and Route Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-security-groups-nsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security Groups (NSGs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-security-groups-asgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Security Groups (ASGs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-networking-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Networking Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Networking Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-app-gateway-waf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure App Gateway &amp; WAF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-load-balancer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Load Balancer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure DNS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Firewall
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-network-peering-and-vnet-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual Network Peering and VNet Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VPN Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExpressRoute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DDoS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-blob-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Blob Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-file-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure File Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-queue-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Queue Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-service-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Service usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-managed-identity-vs-service-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Managed Identity vs. Service Principal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Managed Identity vs. Service Principal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-service-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Service Principal?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Service Principal?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics-of-sp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Characteristics of SP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenges
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-managed-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Managed Identity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Managed Identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics-of-manage-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Characteristics of Manage Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-managed-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Managed Identities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases-of-mi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases Of MI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Does It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managed-identity-vs-service-principal-key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managed Identity vs. Service Principal: Key Differences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-which" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Which?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-analytics-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Analytics Workspace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log Analytics Workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Monitor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-monitor-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure monitor agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collection-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Collection Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-cloud-service-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Cloud Service Cheat Sheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops_projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenario_based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q & A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="all-about-azure-cloud">All about Azure Cloud</h1>
+<h2 id="cloud-computing">Cloud Computing</h2>
+<h3 id="what-is-cloud">What is Cloud</h3>
+<p>In simpler terms, imagine the cloud as a vast, virtual space where you can store files, run software, and access various services over the internet.</p>
+<p>It's like having a powerful computer somewhere out there on the web that you can use for tasks without needing to own or physically manage the hardware. This allows users to access data and applications from anywhere with an internet connection.</p>
+<h3 id="what-is-cloud-computing">What is Cloud Computing</h3>
+<p>Cloud computing is a technology model that involves the delivery of computing services over the internet. Instead of owning and maintaining physical servers and infrastructure, users can access and use computing resources, applications, and storage provided by either third-party service providers (public cloud) or their own organization (private cloud) through the internet. These services are hosted in data centers located around the world.</p>
+<p>In essence, cloud computing can involve both third-party providers (public cloud) and an organization's internal resources (private cloud). The distinction lies in whether the computing resources are shared among multiple customers (public cloud) or dedicated to a single organization (private cloud). The flexibility of cloud computing allows organizations to choose the deployment model that best aligns with their needs and requirements.</p>
+<h3 id="public-cloud">Public Cloud</h3>
+<p><strong>Who Uses It:</strong> Everyone, like individuals, businesses, and organizations.</p>
+<p><strong>What It's Like:</strong> Imagine a giant, shared computer space on the internet. It's like using apps, storing files, or doing tasks on the internet that anyone can access.</p>
+<p><strong>Example:</strong> Think of Google Drive or Amazon Web Services (AWS).</p>
+<h3 id="private-cloud">Private Cloud</h3>
+<p><strong>Who Uses It:</strong> One specific organization or business.</p>
+<p><strong>What It's Like:</strong> Picture having your own personal, private computer space. It's like a digital clubhouse where only you and your team have access. Others can't just drop in.</p>
+<p><strong>Example:</strong> A company using its own server for all its digital needs.</p>
+<h3 id="hybrid-cloud">Hybrid Cloud</h3>
+<p><strong>Who Uses It:</strong> A mix of everyone, depending on needs.</p>
+<p><strong>What It's Like:</strong> It's like having your private computer space, but sometimes you use the shared internet space too.</p>
+<p><strong>Example:</strong> A business storing sensitive data in its private space but using the public cloud for hosting web-application or using virtual machines from other cloud providers.</p>
+<h2 id="cloud-service-models">Cloud Service Models</h2>
+<h3 id="infrastructure-as-a-service">Infrastructure as a Service</h3>
+<p>IaaS is a cloud computing model that provides virtualized computing resources over the internet. In Azure, IaaS offerings include virtual machines, storage, and networking components. Users have more control over the infrastructure but are responsible for managing and maintaining the operating system, middleware, and applications.</p>
+<h4 id="key-characteristics-of-azure-iaas">Key Characteristics of Azure IaaS</h4>
+<ul>
+<li>
+<p><strong>Scalability:</strong> Easily scale resources up or down based on demand.</p>
+</li>
+<li>
+<p><strong>Full Control:</strong> Users have control over the underlying infrastructure, including operating systems and applications.</p>
+</li>
+<li>
+<p><strong>Flexibility:</strong> IaaS is suitable for a wide range of applications, offering flexibility in terms of technology stack.</p>
+</li>
+</ul>
+<h3 id="platform-as-a-service">Platform as a Service</h3>
+<p>PaaS is a cloud computing model that provides a platform allowing customers to develop, run, and manage applications without dealing with the complexity of underlying infrastructure. In Azure, PaaS offerings include Azure App Service, Azure SQL Database, and Azure Functions.</p>
+<h4 id="key-characteristics-of-azure-paas">Key Characteristics of Azure PaaS</h4>
+<ul>
+<li>
+<p><strong>Simplified Development:</strong> Developers can focus on coding and application logic, while Azure manages the underlying infrastructure.</p>
+</li>
+<li>
+<p><strong>Automatic Scaling:</strong> PaaS offerings often include built-in scaling capabilities, automatically adjusting resources based on demand.</p>
+</li>
+<li>
+<p><strong>Reduced Maintenance:</strong> Azure handles tasks like patching, updates, and maintenance, freeing up resources for innovation.</p>
+</li>
+</ul>
+<h3 id="software-as-a-service">Software as a Service</h3>
+<p>SaaS is a cloud computing model that delivers software applications over the internet. Users can access the software through a web browser without the need for installation or maintenance. In Azure, SaaS offerings include Microsoft 365, Dynamics 365, and many third-party applications.</p>
+<h4 id="key-characteristics-of-azure-saas">Key Characteristics of Azure SaaS</h4>
+<ul>
+<li>
+<p><strong>Accessibility:</strong> Access software applications from any device with an internet connection.</p>
+</li>
+<li>
+<p><strong>Managed by Providers:</strong> SaaS providers handle maintenance, updates, and security, reducing the burden on end-users.</p>
+</li>
+<li>
+<p><strong>Subscription-Based:</strong> SaaS applications are typically offered on a subscription basis, allowing users to pay for what they use.</p>
+</li>
+</ul>
+<h3 id="choosing-the-right-model-in-azure">Choosing the Right Model in Azure</h3>
+<p>When deciding between IaaS, PaaS, and SaaS in Azure, consider factors such as:</p>
+<ul>
+<li>
+<p><strong>Development Needs:</strong> Choose PaaS for streamlined development, IaaS for more control, and SaaS for off-the-shelf solutions.</p>
+</li>
+<li>
+<p><strong>Maintenance Preferences:</strong> If you want to minimize maintenance tasks, opt for PaaS or SaaS.</p>
+</li>
+<li>
+<p><strong>Resource Control:</strong> Choose IaaS if you need more control over the underlying infrastructure.</p>
+</li>
+<li>
+<p><strong>Cost Considerations:</strong> Evaluate pricing models for each service and choose based on your budget and usage patterns.</p>
+</li>
+</ul>
+<h3 id="iaas-paas-saas">IAAS-PAAS-SAAS</h3>
+<p><img alt="iaaspaassaas" src="../png/iaaspaassaas.png" /></p>
+<h2 id="azure-cli">Azure CLI</h2>
+<ol>
+<li>azure cli to get list of secret</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>az<span class="w"> </span>keyvault<span class="w"> </span>secret<span class="w"> </span>list<span class="w"> </span>--vault-name<span class="w"> </span>&lt;key_vault_name&gt;<span class="w"> </span>--query<span class="w"> </span><span class="s2">&quot;[].id&quot;</span><span class="w"> </span>-o<span class="w"> </span>tsv
+</code></pre></div>
+<h2 id="azure-resources">Azure Resources</h2>
+<p>Azure resources are the building blocks of your cloud infrastructure in Microsoft Azure. These resources can be virtual machines, databases, storage accounts, or any other service offered by Azure. Each resource is a manageable item in Azure, and they are provisioned and managed individually.</p>
+<h3 id="resource-groups-in-azure">Resource Groups in Azure</h3>
+<p>A <strong>Resource Group</strong> in Azure is a logical container for resources that share the same lifecycle, permissions, and policies. It helps you organize and manage related Azure resources efficiently. Resources within a group can be deployed, updated, and deleted together as a single management unit.</p>
+<h4 id="key-points-about-resource-groups">Key Points about Resource Groups</h4>
+<ul>
+<li>
+<p><strong>Lifecycle Management:</strong> Resources within a group can be managed collectively, making it easy to handle deployments, updates, and deletions.</p>
+</li>
+<li>
+<p><strong>Resource Organization:</strong> Grouping resources based on projects, environments, or applications helps keep your Azure environment well-organized.</p>
+</li>
+<li>
+<p><strong>Role-Based Access Control (RBAC):</strong> Permissions and access control are applied at the resource group level, allowing you to manage who can access and modify resources within a group.</p>
+</li>
+</ul>
+<h3 id="azure-resource-manager-arm-overview">Azure Resource Manager (ARM) Overview</h3>
+<p><strong>Azure Resource Manager (ARM)</strong> is the deployment and management service for Azure. It provides a consistent management layer that enables you to deploy resources with declarative templates. ARM templates describe the resources you need and their configurations, allowing you to deploy and update resources in a predictable manner.</p>
+<h4 id="key-features-of-azure-resource-manager">Key Features of Azure Resource Manager</h4>
+<ul>
+<li>
+<p><strong>Template-Based Deployment:</strong> ARM uses JSON templates to define the infrastructure and configuration of your Azure resources. This enables repeatable and consistent deployments.</p>
+</li>
+<li>
+<p><strong>Dependency Management:</strong> ARM automatically handles dependencies between resources, ensuring they are deployed in the correct order.</p>
+</li>
+<li>
+<p><strong>Rollback and Roll-forward:</strong> In case of deployment failures, ARM can automatically roll back changes to maintain the desired state, or roll forward to the last known good state.</p>
+</li>
+<li>
+<p><strong>Tagging and Categorization:</strong> You can use tags to label and categorize resources, making it easier to manage and organize your Azure environment.</p>
+</li>
+</ul>
+<p><strong>Note:</strong> Understanding Azure resources, resource groups, and Azure Resource Manager is fundamental to effectively utilize and manage your resources in the Azure cloud.</p>
+<h3 id="azure-resource-hierarchy">Azure Resource Hierarchy</h3>
+<p><img alt="Azure Resource" src="../png/azure-resource-hierarchy1.png" /></p>
+<h2 id="virtualization">Virtualization</h2>
+<h3 id="background">Background</h3>
+<p>In traditional computing, a single physical server runs a single operating system, and applications are installed directly on that OS. This approach has limitations, such as under utilization of hardware resources, difficulty in managing multiple servers, and lack of flexibility in scaling.</p>
+<p><strong>Virtualization</strong> addresses these challenges by introducing a layer of abstraction between the hardware and the operating system. It enables the creation of multiple virtual instances, each running its own operating system and applications, on a single physical server. This technology has become fundamental in modern data centers and cloud computing environments.</p>
+<h3 id="components-of-virtualization">Components of Virtualization</h3>
+<ol>
+<li><strong>Hypervisor (Virtual Machine Monitor):</strong></li>
+<li>The hypervisor is a crucial component of virtualization. It sits between the hardware and the operating systems, managing and allocating resources to virtual machines (VMs).</li>
+<li>
+<p>There are two types of hypervisors: Type 1 (bare-metal) runs directly on the hardware, while Type 2 (hosted) runs on top of an existing operating system.</p>
+</li>
+<li>
+<p><strong>Virtual Machines (VMs):</strong></p>
+</li>
+<li>VMs are the instances created by the hypervisor. Each VM operates as an independent computer with its own virtualized hardware, including CPU, memory, storage, and network interfaces.</li>
+<li>Multiple VMs can run on a single physical server, allowing for efficient resource utilization.</li>
+</ol>
+<h3 id="key-concepts-in-virtualization">Key Concepts in Virtualization</h3>
+<ol>
+<li><strong>Server Virtualization:</strong></li>
+<li>
+<p>In server virtualization, a physical server is divided into multiple VMs, each running its own OS. This allows for better utilization of hardware resources and easier management of servers.</p>
+</li>
+<li>
+<p><strong>Resource Pooling:</strong></p>
+</li>
+<li>
+<p>Virtualization enables the pooling of physical resources, such as CPU, memory, and storage. These resources can be dynamically allocated to VMs based on demand.</p>
+</li>
+<li>
+<p><strong>Isolation:</strong></p>
+</li>
+<li>
+<p>VMs operate independently of each other. This isolation ensures that issues in one VM do not affect others, providing a more secure and stable environment.</p>
+</li>
+<li>
+<p><strong>Snap shotting and Cloning:</strong></p>
+</li>
+<li>Virtualization allows the creation of snapshots, which capture the state of a VM at a specific point in time. This facilitates easy backup and recovery. Cloning enables the rapid duplication of VMs for scalability.</li>
+</ol>
+<h3 id="types-of-virtual-machines-on-azure">Types of Virtual Machines on Azure</h3>
+<p>Azure provides a variety of virtual machine (VM) offerings to cater to different workload requirements. Each VM type is designed with specific hardware configurations to meet diverse performance and scalability needs.</p>
+<h4 id="general-purpose-vms">General Purpose VMs</h4>
+<p>Example: <strong>Standard_D2s_v3</strong></p>
+<ul>
+<li>
+<p><strong>Description:</strong> General-purpose VMs are well-balanced machines suitable for a variety of workloads. They offer a good balance of CPU-to-memory ratio and are suitable for development, testing, and small to medium-sized databases.</p>
+</li>
+<li>
+<p><strong>Use Case:</strong> Hosting websites, lightweight applications, or development and testing environments.</p>
+</li>
+</ul>
+<h4 id="compute-optimized-vms">Compute Optimized VMs</h4>
+<p>Example: <strong>Standard_F2s_v2</strong></p>
+<ul>
+<li>
+<p><strong>Description:</strong> Compute optimized VMs are designed for compute-intensive workloads that require high CPU power. They provide a high CPU-to-memory ratio, making them suitable for data analytics and computational tasks.</p>
+</li>
+<li>
+<p><strong>Use Case:</strong> Batch processing, gaming applications, and other CPU-intensive workloads.</p>
+</li>
+</ul>
+<h4 id="memory-optimized-vms">Memory Optimized VMs</h4>
+<p>Example: <strong>Standard_E16s_v3</strong></p>
+<ul>
+<li>
+<p><strong>Description:</strong> Memory optimized VMs are tailored for memory-intensive applications. They provide a high memory-to-CPU ratio, making them suitable for databases, in-memory caching, and analytics.</p>
+</li>
+<li>
+<p><strong>Use Case:</strong> Running large databases, in-memory caching, and analytics applications.</p>
+</li>
+</ul>
+<h4 id="storage-optimized-vms">Storage Optimized VMs</h4>
+<p>Example: <strong>Standard_L8s_v2</strong></p>
+<ul>
+<li>
+<p><strong>Description:</strong> Storage optimized VMs are designed for workloads that require high storage throughput and I/O performance. They provide high local disk throughput, making them suitable for big data and large databases.</p>
+</li>
+<li>
+<p><strong>Use Case:</strong> Big data applications, data warehousing, and large-scale databases.</p>
+</li>
+</ul>
+<h4 id="gpu-vms">GPU VMs</h4>
+<p>Example: <strong>Standard_NC6s_v3</strong></p>
+<ul>
+<li>
+<p><strong>Description:</strong> GPU (Graphics Processing Unit) VMs are equipped with powerful graphics processors, suitable for graphics-intensive applications and parallel processing tasks.</p>
+</li>
+<li>
+<p><strong>Use Case:</strong> Machine learning, graphics rendering, and simulations that require GPU acceleration.</p>
+</li>
+</ul>
+<h4 id="high-performance-compute-vms">High-Performance Compute VMs</h4>
+<p>Example: <strong>Standard_H16r</strong></p>
+<ul>
+<li>
+<p><strong>Description:</strong> High-Performance Compute VMs are designed for demanding, parallel processing and high-performance computing (HPC) applications.</p>
+</li>
+<li>
+<p><strong>Use Case:</strong> Simulations, modeling, and scenarios that require massive parallel processing.</p>
+</li>
+</ul>
+<h4 id="burstable-vms">Burstable VMs</h4>
+<p>Example: <strong>B1s</strong></p>
+<ul>
+<li>
+<p><strong>Description:</strong> Burstable VMs provide a baseline level of CPU performance with the ability to burst above the baseline for a certain period. They are cost-effective for workloads with varying CPU usage.</p>
+</li>
+<li>
+<p><strong>Use Case:</strong> Development and testing environments, small websites, and applications with variable workloads. Benefits of Virtualization</p>
+</li>
+<li>
+<p><strong>Server Consolidation:</strong></p>
+</li>
+<li>
+<p>Multiple VMs can run on a single physical server, reducing the need for a large number of physical machines. This leads to cost savings and energy efficiency.</p>
+</li>
+<li>
+<p><strong>Flexibility and Scalability:</strong></p>
+</li>
+<li>
+<p>Virtualization allows for the easy creation, modification, and scaling of VMs. This flexibility is essential in dynamic computing environments.</p>
+</li>
+<li>
+<p><strong>Disaster Recovery:</strong></p>
+</li>
+<li>
+<p>Virtualization simplifies disaster recovery by enabling the quick restoration of VMs from snapshots or backups.</p>
+</li>
+<li>
+<p><strong>Resource Optimization:</strong></p>
+</li>
+<li>
+<p>Resources can be allocated and de-allocated dynamically based on workload, optimizing resource utilization.</p>
+</li>
+<li>
+<p><strong>Testing and Development:</strong></p>
+</li>
+<li>Virtualization provides a sandbox for testing and development. VMs can be easily created, modified, and discarded without affecting the production environment.</li>
+</ul>
+<h2 id="azure-networking">Azure Networking</h2>
+<h3 id="virtual-network">Virtual Network</h3>
+<p>A Virtual Network (VNet) in Azure is a logically isolated network that securely connects Azure resources and extends on-premises networks. </p>
+<p>Key features include:</p>
+<ul>
+<li>
+<p><strong>Isolation</strong>: VNets provide isolation at the network level for segmenting resources and controlling traffic.</p>
+</li>
+<li>
+<p><strong>Subnet</strong>: Divide a VNet into subnets for resource organization and traffic control.</p>
+</li>
+<li>
+<p><strong>Address Space</strong>: VNets have an address space defined using CIDR notation, determining the IP address range.</p>
+</li>
+</ul>
+<h3 id="subnets-and-cidr">Subnets and CIDR</h3>
+<p><strong>Subnets</strong> : Subnets are subdivisions of a Virtual Network, allowing for better organization and traffic management.</p>
+<p>A <strong>subnet</strong> (short for <em>subnetwork</em>) is a <strong>smaller network inside a larger network</strong>.<br />
+It divides a big IP network into smaller, manageable segments.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-<span class="w"> </span>You<span class="w"> </span>have<span class="w"> </span>a<span class="w"> </span>network:<span class="w"> </span><span class="sb">`</span><span class="m">192</span>.168.0.0/16<span class="sb">`</span><span class="w">  </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-<span class="w"> </span>You<span class="w"> </span>can<span class="w"> </span>split<span class="w"> </span>it<span class="w"> </span>into<span class="w"> </span>smaller<span class="w"> </span>subnets<span class="w"> </span>like:
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>-<span class="w"> </span><span class="sb">`</span><span class="m">192</span>.168.1.0/24<span class="sb">`</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>-<span class="w"> </span><span class="sb">`</span><span class="m">192</span>.168.2.0/24<span class="sb">`</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>-<span class="w"> </span><span class="sb">`</span><span class="m">192</span>.168.3.0/24<span class="sb">`</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Each<span class="w"> </span><span class="sb">`</span>/24<span class="sb">`</span><span class="w"> </span>subnet<span class="w"> </span>can<span class="w"> </span>hold<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>**254<span class="w"> </span>hosts**.
+</code></pre></div>
+<h4 id="main-uses-of-subnets">Main Uses of Subnets</h4>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Better Network Management</strong></td>
+<td>Splitting a large network makes it easier to manage — you can isolate departments, environments (dev/test/prod), or regions.</td>
+</tr>
+<tr>
+<td><strong>2. Improved Security</strong></td>
+<td>You can apply <strong>firewall rules</strong> or <strong>access controls</strong> per subnet, limiting communication between groups (e.g., only DB subnet can talk to App subnet).</td>
+</tr>
+<tr>
+<td><strong>3. Efficient IP Address Usage</strong></td>
+<td>Avoid wasting IP addresses — allocate only as many as you need for each subnet.</td>
+</tr>
+<tr>
+<td><strong>4. Reduced Network Congestion</strong></td>
+<td>Broadcast traffic (like ARP requests) stays inside a subnet, preventing unnecessary traffic across the whole network.</td>
+</tr>
+<tr>
+<td><strong>5. Easier Troubleshooting</strong></td>
+<td>Problems are contained within one subnet, making it easier to identify and fix issues.</td>
+</tr>
+<tr>
+<td><strong>6. Logical Separation</strong></td>
+<td>Commonly used to separate layers — e.g. Web, App, and Database tiers.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-in-real-life">Example in Real Life</h4>
+<p>In a cloud environment like <strong>Azure</strong> or <strong>AWS</strong>:</p>
+<ul>
+<li>
+<p>You might have a <strong>Virtual Network (VNet)</strong> or <strong>VPC</strong>:
+10.0.0.0/16</p>
+</li>
+<li>
+<p>And you divide it into subnets:</p>
+</li>
+</ul>
+<p>10.0.1.0/24 → Web subnet
+10.0.2.0/24 → App subnet
+10.0.3.0/24 → Database subnet</p>
+<p>Then you apply:
+- NSG/Security Group rules<br />
+- Route tables<br />
+- Different availability zones or gateways  </p>
+<p>Each subnet is <strong>isolated</strong> but can <strong>communicate</strong> via configured routing.</p>
+<p>Analogy</p>
+<p>Imagine a large office building (the whole network) 🏢<br />
+- Each floor is a <strong>subnet</strong> — it has its own rooms (devices) and local rules.<br />
+- People can move between floors (routing), but each floor controls its own space and traffic.</p>
+<p>In Short: A <strong>subnet</strong> divides a large network into smaller, isolated sections — improving <strong>security</strong>, **performan</p>
+<p><strong>CIDR (Classless Inter-Domain Routing)</strong> : CIDR notation represents IP addresses and their routing prefix, specifying the range of IP addresses for a network.</p>
+<h3 id="routes-and-route-tables">Routes and Route Tables</h3>
+<p><strong>Routes</strong> : Routes dictate how network traffic is directed, specifying the destination and next hop.</p>
+<p><strong>Route Tables</strong> : Route Tables are collections of routes associated with subnets, enabling custom routing rules.</p>
+<h3 id="network-security-groups-nsgs">Network Security Groups (NSGs)</h3>
+<p>NSGs are fundamental for Azure's network security, allow filtering of inbound and outbound traffic.</p>
+<p>Key aspects include:</p>
+<ul>
+<li>
+<p><strong>Rules</strong>: NSGs define allowed or denied traffic based on source, destination, port, and protocol.</p>
+</li>
+<li>
+<p><strong>Default Rules</strong>: NSGs have default rules for controlling traffic within the Virtual Network and between subnets.</p>
+</li>
+<li>
+<p><strong>Association</strong>: NSGs can be associated with subnets or individual network interfaces.</p>
+</li>
+</ul>
+<h3 id="application-security-groups-asgs">Application Security Groups (ASGs)</h3>
+<p>ASGs group Azure virtual machines based on application requirements, simplifying network security:</p>
+<ul>
+<li>
+<p><strong>Simplification</strong>: ASGs allow defining rules based on application roles instead of individual IP addresses.</p>
+</li>
+<li>
+<p><strong>Dynamic Membership</strong>: ASGs support dynamic membership based on tags or other attributes.</p>
+</li>
+<li>
+<p><strong>Rule Association</strong>: Security rules can be associated with ASGs for intuitive and scalable network security management.</p>
+</li>
+</ul>
+<p><img alt="Azure network" src="../png/vnet-subnet.png" /></p>
+<h2 id="azure-networking-advanced">Azure Networking Advanced</h2>
+<h3 id="azure-app-gateway-waf">Azure App Gateway &amp; WAF</h3>
+<p>Azure Application Gateway is a web traffic load balancer that enables you to manage and route traffic to your web applications. Web Application Firewall (WAF) provides protection against web vulnerabilities.</p>
+<p>Key features include:</p>
+<ul>
+<li>
+<p><strong>Load Balancing</strong>: Distributes incoming traffic across multiple servers to ensure no single server is overwhelmed.</p>
+</li>
+<li>
+<p><strong>SSL Termination</strong>: Offloads SSL processing, improving the efficiency of web servers.</p>
+</li>
+<li>
+<p><strong>Web Application Firewall (WAF)</strong>: Protects web applications from common web vulnerabilities and exploits.</p>
+</li>
+</ul>
+<h3 id="azure-load-balancer">Azure Load Balancer</h3>
+<p>Azure Load Balancer distributes incoming network traffic across multiple servers to ensure no single server is overwhelmed.</p>
+<p>Key features include:</p>
+<ul>
+<li>
+<p><strong>Load Balancing Algorithms</strong>: Supports different algorithms for distributing traffic, such as round-robin and least connections.</p>
+</li>
+<li>
+<p><strong>Availability Sets</strong>: Works seamlessly with availability sets to ensure high availability.</p>
+</li>
+<li>
+<p><strong>Inbound and Outbound Traffic</strong>: Balances both inbound and outbound traffic.</p>
+</li>
+</ul>
+<h3 id="azure-dns">Azure DNS</h3>
+<p>Azure DNS is a scalable and secure domain hosting service. It provides name resolution using the Microsoft Azure infrastructure.</p>
+<p>Key features include:</p>
+<ul>
+<li>
+<p><strong>Domain Hosting</strong>: Hosts domain names and provides name resolution within Azure.</p>
+</li>
+<li>
+<p><strong>Integration with Azure Services</strong>: Easily integrates with other Azure services like App Service and Traffic Manager.</p>
+</li>
+<li>
+<p><strong>Global Availability</strong>: Provides low-latency responses globally.</p>
+</li>
+</ul>
+<h3 id="azure-firewall">Azure Firewall</h3>
+<p>Azure Firewall is a managed, cloud-based network security service that protects your Azure Virtual Network resources.</p>
+<p>Key features include:</p>
+<ul>
+<li>
+<p><strong>Stateful Firewall</strong>: Allows or denies traffic based on rules and supports stateful inspection.</p>
+</li>
+<li>
+<p><strong>Application FQDN Filtering</strong>: Filters traffic based on fully qualified domain names.</p>
+</li>
+<li>
+<p><strong>Threat Intelligence Integration</strong>: Integrates with threat intelligence feeds for enhanced security.</p>
+</li>
+</ul>
+<h3 id="virtual-network-peering-and-vnet-gateway">Virtual Network Peering and VNet Gateway</h3>
+<p><strong>Virtual Network Peering</strong> : Virtual Network Peering allows connecting Azure Virtual Networks directly, enabling resources in one VNet to communicate with resources in another.</p>
+<p>Key features include:</p>
+<ul>
+<li>
+<p><strong>Global VNet Peering</strong>: Peering can be established across regions.</p>
+</li>
+<li>
+<p><strong>Transitive Routing</strong>: Traffic between peered VNets flows directly, improving performance.</p>
+</li>
+</ul>
+<p><strong>VNet Gateway</strong> : VNet Gateway enables secure communication between on-premises networks and Azure Virtual Networks. </p>
+<p>Key features include:</p>
+<ul>
+<li>
+<p><strong>Site-to-Site VPN</strong>: Connects on-premises networks to Azure over an encrypted VPN tunnel.</p>
+</li>
+<li>
+<p><strong>Point-to-Site VPN</strong>: Enables secure remote access to Azure resources.</p>
+</li>
+</ul>
+<h3 id="vpn-gateway">VPN Gateway</h3>
+<p>Azure VPN Gateway provides secure, site-to-site connectivity between your on-premises network and Azure.</p>
+<p>Key features include:</p>
+<ul>
+<li>
+<p><strong>IPsec/IKE VPN Protocols</strong>: Ensures secure communication over the Internet.</p>
+</li>
+<li>
+<p><strong>High Availability</strong>: Supports active-active and active-passive configurations for high availability.</p>
+</li>
+<li>
+<p><strong>BGP Support</strong>: Allows dynamic routing between your on-premises network and Azure.</p>
+</li>
+</ul>
+<p><img alt="Azure vnet" src="../png/azure-vnet.png" /></p>
+<h3 id="expressroute">ExpressRoute</h3>
+<p><strong>Azure ExpressRoute</strong> is a <strong>private internet connection</strong> between your <strong>on-premises data center</strong> (or office) and <strong>Microsoft Azure</strong>.</p>
+<p>Think of it like a <strong>dedicated fiber cable</strong> that connects your company’s network <strong>directly</strong> to Azure —<br />
+<strong>not through the public internet</strong>.</p>
+<p>ex: It’s like having your <strong>own private highway</strong> to Azure, instead of driving on the <strong>public internet roads</strong> 🚗💨  </p>
+<p>Why Companies Use ExpressRoute</p>
+<ul>
+<li><strong>Private and secure</strong> → Data never travels over the public internet.  </li>
+<li><strong>Faster and more reliable</strong> → Dedicated bandwidth (e.g., 1 Gbps, 10 Gbps).  </li>
+<li><strong>Consistent performance</strong> → No internet congestion or fluctuations.  </li>
+<li><strong>Supports hybrid setups</strong> → Connect on-prem servers and Azure VMs like one big network.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Private connection</strong></td>
+<td>Data bypasses the public internet.</td>
+</tr>
+<tr>
+<td><strong>High speed</strong></td>
+<td>Choose bandwidth up to 100 Gbps.</td>
+</tr>
+<tr>
+<td><strong>Low latency</strong></td>
+<td>Faster and more consistent response times.</td>
+</tr>
+<tr>
+<td><strong>Secure</strong></td>
+<td>Enterprise-grade encryption and network isolation.</td>
+</tr>
+<tr>
+<td><strong>Reliable</strong></td>
+<td>99.95% availability SLA from Microsoft.</td>
+</tr>
+</tbody>
+</table>
+<p>Use Case</p>
+<p>A <strong>bank or hospital</strong> might use <strong>ExpressRoute</strong> to:</p>
+<ul>
+<li>Connect securely to <strong>Azure SQL Database</strong> from their private network.  </li>
+<li>Transfer large volumes of data (terabytes) to <strong>Azure Storage</strong>.  </li>
+<li>Run <strong>hybrid applications</strong> between on-premises systems and Azure.</li>
+</ul>
+<p>Comparison Table with other network resources</p>
+<table>
+<thead>
+<tr>
+<th><strong>Connection Type</strong></th>
+<th><strong>Goes over Internet?</strong></th>
+<th><strong>Speed / Reliability</strong></th>
+<th><strong>Security</strong></th>
+<th><strong>Best For</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public Internet (normal)</td>
+<td>✅ Yes</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Small apps, testing</td>
+</tr>
+<tr>
+<td>VPN (Site-to-Site)</td>
+<td>✅ Yes (encrypted)</td>
+<td>Medium</td>
+<td>High</td>
+<td>Small/medium hybrid networks</td>
+</tr>
+<tr>
+<td><strong>ExpressRoute</strong></td>
+<td>❌ No</td>
+<td><strong>Very High</strong></td>
+<td><strong>Very High</strong></td>
+<td><strong>Enterprise-grade, mission-critical workloads</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ddos">DDoS</h3>
+<p>Azure Distributed Denial of Service (DDoS) Protection safeguards your applications and resources in Azure against DDoS attacks. These attacks aim to overwhelm your application by flooding it with fake traffic, causing slowdowns or making it unavailable to legitimate users.</p>
+<p>Azure provides two tiers of DDoS protection:</p>
+<p><strong>Basic</strong> (Default): Enabled automatically for all Azure services, offering protection at the network level.<br />
+<strong>Standard</strong> (Enhanced): Offers advanced mitigation capabilities and is ideal for applications that require higher protection.</p>
+<p>Key Features of Azure DDoS Protection</p>
+<ol>
+<li>
+<p>Automatic Protection</p>
+<p>Basic Protection: Built into Azure and available for all customers without extra cost.
+Standard Protection: Automatically detects and mitigates threats when a resource (like a virtual network) is under attack.</p>
+</li>
+<li>
+<p>Advanced Threat Detection</p>
+<p>Analyzes traffic patterns to differentiate between legitimate traffic and malicious attacks.
+Protects against various DDoS attack types, such as:<br />
+Volumetric Attacks: Flood the network with high traffic (e.g., UDP floods).<br />
+Protocol Attacks: Exploit weaknesses in network protocols (e.g., SYN floods).<br />
+Resource Layer Attacks: Target the application directly (e.g., HTTP/S floods).</p>
+</li>
+<li>
+<p>Integration with Azure Resources</p>
+<p>Works seamlessly with Azure services like Virtual Networks, Load Balancers, and Application Gateways.<br />
+Protects applications hosted on Azure without requiring changes to the infrastructure.</p>
+</li>
+<li>
+<p>Cost Protection</p>
+<p>Offers cost protection for scaled resources during an attack.<br />
+For example, if an attack causes your application to scale up, Azure provides credits for additional resource costs incurred during the attack.</p>
+</li>
+<li>
+<p>Attack Analytics</p>
+<p>Detailed reports and insights are available via Azure Monitor and Log Analytics.<br />
+You can analyze attack metrics such as:<br />
+Attack type<br />
+Attack duration<br />
+Traffic volume</p>
+</li>
+<li>
+<p>Alerting and Monitoring</p>
+<p>Azure Monitor can trigger alerts when an attack is detected or mitigated.<br />
+Alerts allow you to stay informed and take additional actions if required.  </p>
+</li>
+<li>
+<p>Easy Configuration</p>
+<p>DDoS Standard protection is enabled by associating it with a Virtual Network (VNet) in your Azure subscription.<br />
+No complex setup or deployment is required.</p>
+</li>
+</ol>
+<p><strong>How Azure DDoS Protection Works</strong></p>
+<ul>
+<li>
+<p>Traffic Monitoring:</p>
+<p>Azure continuously monitors traffic for anomalies.<br />
+It uses machine learning and global threat intelligence to detect unusual patterns.</p>
+</li>
+<li>
+<p>Attack Detection:</p>
+<p>When abnormal traffic is detected, Azure automatically triggers mitigation.</p>
+</li>
+<li>
+<p>Traffic Scrubbing:</p>
+<p>Malicious traffic is filtered out while legitimate traffic continues to flow to your application without disruption.</p>
+</li>
+</ul>
+<p><strong>Pricing</strong></p>
+<p>DDoS Basic: Free and included with all Azure resources.<br />
+DDoS Standard: Paid, with a flat monthly fee and additional data charges. It is more
+cost-effective for mission-critical applications requiring higher protection.</p>
+<p>When to Use DDoS Standard?</p>
+<ol>
+<li>Applications that handle sensitive data or critical workloads.  </li>
+<li>Public-facing web applications, APIs, or online services.  </li>
+<li>Resources that require compliance with strict security regulations.  </li>
+</ol>
+<p>Benefits of Azure DDoS Protection  </p>
+<ol>
+<li>Reduced Downtime: Ensures application availability during attacks.  </li>
+<li>Cost Savings: Provides cost protection during attack-related scaling.  </li>
+<li>Ease of Use: Seamlessly integrates with Azure resources.  </li>
+<li>Global Reach: Uses Microsoft's global infrastructure for high availability.</li>
+</ol>
+<h2 id="storage">Storage</h2>
+<h3 id="azure-blob-storage">Azure Blob Storage</h3>
+<ol>
+<li>
+<p>What is it?</p>
+<p>Azure Blob Storage is a cloud-based object storage solution provided by Microsoft Azure.
+It is designed to store and manage large amounts of unstructured data, such as documents, images, videos, and other types of binary and text data.
+Blobs are organized into containers, and each blob is assigned a unique URL for access.</p>
+</li>
+<li>
+<p>When to use it?</p>
+<p>Use Azure Blob Storage when you need to store and retrieve large amounts of unstructured data.
+It is suitable for scenarios like serving images or videos to a website, storing backups, and handling data for analytics and big data processing.</p>
+</li>
+<li>
+<p>Example from DevOps Engineer point of view?</p>
+<p>A DevOps engineer may use Azure Blob Storage to store artifacts and binaries produced during the build process, ensuring a centralized and scalable storage solution.
+Azure Storage Explorer or Azure CLI can be used to automate the uploading and retrieval of artifacts during deployment pipelines.</p>
+</li>
+<li>
+<p>Equivalent service in AWS:</p>
+<p>The equivalent service in AWS is Amazon Simple Storage Service (S3). S3 is also an object storage service designed for scalable and secure storage of objects, such as files and data.</p>
+</li>
+</ol>
+<h3 id="azure-file-storage">Azure File Storage</h3>
+<ol>
+<li>
+<p>What is it?</p>
+<p>Azure File Storage is a fully managed file share service in the cloud.
+It provides the Server Message Block (SMB) protocol for sharing files across applications and VMs in the Azure cloud.
+Azure File Storage is useful for applications that require shared file access, such as configuration files or data files.</p>
+</li>
+<li>
+<p>When to use it?</p>
+<p>Use Azure File Storage when you need a shared file system that can be accessed from multiple VMs or applications.
+It is suitable for scenarios like storing configuration files, sharing data between applications, and serving as a common storage location for applications in a cloud environment.</p>
+</li>
+<li>
+<p>Example from DevOps Engineer point of view?</p>
+<p>A DevOps engineer may leverage Azure File Storage to store configuration files that are shared among multiple application instances.
+In a deployment pipeline, scripts or configuration files stored in Azure File Storage can be mounted to VMs or containers during the deployment process.</p>
+</li>
+<li>
+<p>Equivalent service in AWS:</p>
+<p>The equivalent service in AWS is Amazon Elastic File System (EFS). EFS provides scalable file storage for use with Amazon EC2 instances, supporting the Network File System (NFS) protocol.</p>
+</li>
+</ol>
+<h3 id="azure-tables">Azure Tables</h3>
+<ol>
+<li>
+<p>What is it?</p>
+<p>Azure Tables is a NoSQL data store service provided by Azure.
+It stores large amounts of semi-structured data and allows for fast and efficient querying using a key-based access model.
+Data is organized into tables, and each table can store billions of entities.</p>
+</li>
+<li>
+<p>When to use it?</p>
+<p>Use Azure Tables when you need a highly scalable NoSQL data store for semi-structured data with simple key-based access.
+It is suitable for scenarios like storing configuration data, user profiles, and other data where a key-value or key-attribute data model is appropriate.</p>
+</li>
+<li>
+<p>Example from DevOps Engineer point of view?</p>
+<p>A DevOps engineer may use Azure Tables to store configuration settings for applications or services.
+During the deployment process, scripts can retrieve configuration data from Azure Tables to customize the behavior of deployed applications.</p>
+</li>
+<li>
+<p>Equivalent service in AWS:</p>
+<p>While AWS does not have a direct equivalent service for Azure Tables, Amazon DynamoDB is a similar NoSQL database service that provides key-value and document storage. DynamoDB can be used for similar use cases.</p>
+</li>
+</ol>
+<h3 id="azure-queue-storage">Azure Queue Storage</h3>
+<ol>
+<li>
+<p>What is it?</p>
+<p>Azure Queue Storage is a message queue service that allows decoupling of components in a distributed application.
+It provides a reliable way to store and retrieve messages between application components, ensuring asynchronous communication.</p>
+</li>
+<li>
+<p>When to use it?</p>
+<p>Use Azure Queue Storage when you need to enable communication and coordination between different parts of a distributed application.
+It is suitable for scenarios like handling background jobs, managing tasks asynchronously, and facilitating communication between loosely coupled components.</p>
+</li>
+<li>
+<p>Example from DevOps Engineer point of view?</p>
+<p>A DevOps engineer may use Azure Queue Storage to implement a message queue for processing background tasks or managing communication between microservices.
+During deployment, scripts can enqueue messages to trigger specific actions or coordinate tasks between different components.</p>
+</li>
+<li>
+<p>Equivalent service in AWS:</p>
+<p>The equivalent service in AWS is Amazon Simple Queue Service (SQS). SQS provides a fully managed message queue service for decoupling components in a distributed system.</p>
+</li>
+</ol>
+<p><img alt="azure-storage" src="../png/azure-storage.png" /></p>
+<h3 id="app-service-usage">App Service usage</h3>
+<p><img alt="app-service" src="../png/app-service.png" /></p>
+<h2 id="azure-managed-identity-vs-service-principal">Azure Managed Identity vs. Service Principal</h2>
+<h3 id="overview">Overview</h3>
+<p>When dealing with authentication and authorization in <strong>Azure</strong>, two key mechanisms are commonly used for securing access to resources: <strong>Managed Identity</strong> and <strong>Service Principal</strong>. Both serve the purpose of enabling secure access to Azure services, but they have different use cases and advantages.</p>
+<hr />
+<h3 id="what-is-a-service-principal">What is a Service Principal?</h3>
+<p>A <strong>Service Principal</strong> is an identity used by applications, services, or automation scripts to authenticate and access Azure resources. It is created within <strong>Microsoft Entra ID (formerly Azure AD)</strong> and functions similarly to a user account, but for applications.</p>
+<h4 id="key-characteristics-of-sp">Key Characteristics of SP</h4>
+<ul>
+<li>It has <strong>credentials</strong> (client ID &amp; secret or certificate).</li>
+<li>It must be <strong>manually managed</strong> (rotation of secrets, permissions, etc.).</li>
+<li>It can be assigned <strong>RBAC roles</strong> (Role-Based Access Control).</li>
+<li>It can be used in <strong>multi-tenant</strong> scenarios (i.e., across different Azure Active Directory tenants).</li>
+</ul>
+<h4 id="use-cases">Use Cases</h4>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CI/CD Pipelines</strong></td>
+<td>Used in <strong>Azure DevOps, GitHub Actions, or Jenkins</strong> for deploying applications to Azure resources (e.g., VMs, AKS, App Services).</td>
+</tr>
+<tr>
+<td><strong>Third-party applications</strong></td>
+<td>When an <strong>external system</strong> needs to authenticate with Azure, Service Principals provide authentication.</td>
+</tr>
+<tr>
+<td><strong>Custom applications</strong></td>
+<td>Applications running <strong>outside Azure</strong> (e.g., on-premises or other cloud providers) can use a Service Principal to authenticate.</td>
+</tr>
+<tr>
+<td><strong>Automation scripts</strong></td>
+<td>PowerShell or Python scripts that need to access Azure resources can use a Service Principal for authentication.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="how-it-works">How It Works</h4>
+<ol>
+<li>Register an <strong>Application</strong> in <strong>Microsoft Entra ID</strong>.</li>
+<li>Create a <strong>Service Principal</strong> for this application.</li>
+<li>Assign it necessary <strong>permissions/RBAC roles</strong>.</li>
+<li>Use the <strong>Client ID</strong> and <strong>Client Secret/Certificate</strong> for authentication.</li>
+</ol>
+<h4 id="challenges">Challenges</h4>
+<ul>
+<li><strong>Secret Management</strong>: The <strong>client secret</strong> expires and needs rotation.</li>
+<li><strong>Security Risk</strong>: If credentials are leaked, it can lead to unauthorized access.</li>
+<li><strong>Manual Setup</strong>: Requires additional configuration and maintenance.</li>
+</ul>
+<hr />
+<h3 id="what-is-managed-identity">What is Managed Identity</h3>
+<p><strong>Azure Managed Identity</strong> is an <strong>automated identity service</strong> provided by Azure that allows Azure resources to authenticate to services securely without needing explicit credential management.</p>
+<h4 id="key-characteristics-of-manage-identity">Key Characteristics of Manage Identity</h4>
+<ul>
+<li>It is <strong>tied to an Azure resource</strong> (like VM, Function App, or Logic App).</li>
+<li>It does not require <strong>explicit credentials</strong> (Azure handles authentication).</li>
+<li>It can only be used <strong>within Azure</strong> (not for external systems).</li>
+<li>It supports <strong>RBAC-based access</strong> to Azure resources.</li>
+</ul>
+<h4 id="types-of-managed-identities">Types of Managed Identities</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>System-assigned Managed Identity</strong></td>
+<td>Created and tied to a specific <strong>Azure resource</strong> (e.g., VM, App Service). <strong>Automatically deleted</strong> when the resource is deleted.</td>
+</tr>
+<tr>
+<td><strong>User-assigned Managed Identity</strong></td>
+<td>Created independently and can be <strong>shared across multiple Azure resources</strong>. Managed separately from any single resource.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="use-cases-of-mi">Use Cases Of MI</h4>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Virtual Machines (VMs) Accessing Azure Services</strong></td>
+<td>VMs need to access <strong>Azure Key Vault</strong>, <strong>Blob Storage</strong>, or <strong>SQL Database</strong> without storing credentials.</td>
+</tr>
+<tr>
+<td><strong>Function Apps Authenticating to Other Azure Services</strong></td>
+<td>Azure Functions need to access <strong>Event Hubs, Cosmos DB, or Storage Accounts</strong> securely.</td>
+</tr>
+<tr>
+<td><strong>App Services (Web Apps) Interacting with Azure Resources</strong></td>
+<td>An Azure Web App requires access to <strong>Azure Key Vault</strong> to fetch secrets or certificates.</td>
+</tr>
+<tr>
+<td><strong>AKS Pods Needing Secure Access</strong></td>
+<td>Kubernetes workloads running on <strong>Azure Kubernetes Service (AKS)</strong> need secure access to Azure services.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="how-does-it-works">How Does It Works</h4>
+<ol>
+<li>Enable <strong>Managed Identity</strong> for an Azure resource.</li>
+<li>Assign necessary <strong>RBAC roles</strong> (e.g., Reader, Contributor).</li>
+<li>The resource can request an <strong>OAuth token</strong> from Azure AD.</li>
+<li>Use the token to authenticate to other Azure services.</li>
+</ol>
+<h4 id="advantages">Advantages</h4>
+<p>✅ <strong>No Credential Management</strong>: Azure automatically handles authentication.<br />
+✅ <strong>More Secure</strong>: No client secrets or certificates that can be leaked.<br />
+✅ <strong>Automatic Identity Lifecycle</strong>: System-assigned identity gets deleted with the resource.<br />
+✅ <strong>Easy Integration</strong>: Works natively with Azure services like Key Vault, Storage, etc.  </p>
+<hr />
+<h3 id="managed-identity-vs-service-principal-key-differences">Managed Identity vs. Service Principal: Key Differences</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Managed Identity</th>
+<th>Service Principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credential Management</strong></td>
+<td>No credentials required</td>
+<td>Requires client ID &amp; secret/certificate</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>More secure (no secrets stored)</td>
+<td>Potential risk (secrets can be exposed)</td>
+</tr>
+<tr>
+<td><strong>Lifespan</strong></td>
+<td>Auto-created and managed by Azure</td>
+<td>Needs manual creation and rotation</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>Works only within Azure</td>
+<td>Works within and outside Azure</td>
+</tr>
+<tr>
+<td><strong>RBAC Integration</strong></td>
+<td>Directly integrates with Azure resources</td>
+<td>Needs explicit RBAC assignment</td>
+</tr>
+<tr>
+<td><strong>Multi-tenant Support</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Best for Azure-native applications</td>
+<td>Best for external apps, automation scripts</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="when-to-use-which">When to Use Which?</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Use <strong>Managed Identity</strong>?</th>
+<th>Use <strong>Service Principal</strong>?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Azure VM accessing Key Vault</strong></td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><strong>External app (outside Azure) accessing Azure APIs</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>CI/CD pipeline deploying to Azure</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Azure Function calling Azure SQL Database</strong></td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><strong>On-premises script running against Azure API</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Multi-tenant applications needing authentication</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Long-lived access for automation tools</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="log-analytics-workspace">Log Analytics Workspace</h2>
+<p><img alt="alt text" src="../png/loganalyticswkspace.png" /></p>
+<p>Azure Log Analytics Workspace is like a central storage and analysis hub for logs and data from different Azure services, applications, and resources. It helps you collect, store, and analyze logs in one place, making it easier to monitor and troubleshoot your systems.</p>
+<p><img alt="alt text" src="../png/loganalyticsusage.png" /></p>
+<h3 id="key-features">Key Features</h3>
+<p>✅ Collect Logs – Gathers logs from Azure services, on-premises servers, and applications.<br />
+✅ Store Data – Keeps logs securely for a defined period.<br />
+✅ Analyze with Queries – Uses Kusto Query Language (KQL) to search and analyze logs.<br />
+✅ Alerts &amp; Monitoring – Helps detect issues and trigger alerts for unusual activity.<br />
+✅ Integrates with Azure Services – Works with Azure Monitor, Security Center, Sentinel, and more.</p>
+<h3 id="azure-monitor">Azure Monitor</h3>
+<h4 id="azure-monitor-agent">Azure monitor agent</h4>
+<p>The purpose of azure monitor agent is to collect logs from guest operating system and inject to log analytics workspace. The OS can be windows/linux, machines can be client/server. They can exist anywhere in azure or on-premise resources.</p>
+<p><img alt="alt text" src="../png/loganalyticsarchitecture.png" /></p>
+<ol>
+<li>Azure monitoring agent use manage identity for monitoring agent</li>
+<li>Data collection rule need to create to define what type of data need to collect
+<img alt="alt text" src="../png/workflowdatacollection.png" />
+<img alt="alt text" src="../png/datacollectionusage.png" /></li>
+<li>Azure monitor used ETL (extract, transform and load) data ingestion pipeline</li>
+</ol>
+<h4 id="data-collection-rule">Data Collection Rule</h4>
+<p>Data collection is basically a configuration, which lets azure monitor agents know what type of data must be collected and forward to data ingestion pipeline, which then data ingested to workspace.<br />
+Data collection rule must be applied to Azure VM or Azure Arc-enabled servers (Azure Arc-enabled servers lets you manage Windows and Linux physical servers and virtual machines hosted outside of Azure, on your corporate network, or other cloud provide).</p>
+<p>Workflow of DCR</p>
+<p><img alt="alt text" src="../png/dcrworkflow.png" /></p>
+<p>Once you create DCR and select resources (VM, VMSS), it will install Azure Monitor Agent in that particular resources. Example in below figure.</p>
+<p><img alt="alt text" src="../png/amainstall.png" /></p>
+<p><img alt="alt text" src="../png/amaworkflow.png" /></p>
+<p>Whenever the AMA is installed on machine, it create a folder as WindowsAzure &gt; Resources in which it stores log and the machine sends heartbeat which is recorded in HeartBeat table of logs analytics workspace.<br />
+When a DCR is created to capture performance and windows event logs, the data ingested in perf and Event table of workspace.</p>
+<h2 id="cheat-sheet">Cheat Sheet</h2>
+<h3 id="cloud-comparison">Cloud Comparison</h3>
+<p><img alt="cloud-comparison" src="../gif/cloud-actions.gif" /></p>
+<h3 id="azure-cloud-service-cheat-sheet">Azure Cloud Service Cheat Sheet</h3>
+<p><img alt="Azure cloud" src="../gif/Azure_cloud_service_cheat_sheet.gif" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; <a href="https://github.com/botlaram"  target="_blank" rel="noopener">botlar4</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/botlaram" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ramakrishna-botla-772a8918b/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.path", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

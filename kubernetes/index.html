@@ -1,0 +1,2138 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="this Mkdocs contains Python Modules, about Devops and Cheat Code">
+      
+      
+        <meta name="author" content="botlaram">
+      
+      
+      
+        <link rel="prev" href="../azure/">
+      
+      
+        <link rel="next" href="../publish/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>K8 - UseMe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marmelad:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Marmelad";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UseMe" class="md-header__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UseMe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              K8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cheat_code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../linux/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Linux
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Computer Networking
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DSA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  DSA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devopsTools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../azure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Azure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  K8
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publish/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publish
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devops_projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Project
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scenario_based/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Q & A
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../aws/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AWS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UseMe" class="md-nav__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UseMe
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devopsTools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K8
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-to-use-k8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why to use K8
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k8-workflow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K8 workflow diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#master-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cluster IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodeport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NodePort
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadbalancer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoadBalancer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#externalname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExternalName
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingress
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ingress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-of-ingress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture of Ingress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingress-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingress YAML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingress-vs-internal-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingress Vs Internal Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingress-yaml-for-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingress YAML for path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Volumes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-of-persistent-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture of Persistent Volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup Volumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storageclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StorageClass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pv-and-pvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PV and PVC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daemonset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daemonset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hpa-and-vpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HPA and VPA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stateful-vs-stateless-in-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stateful vs Stateless in Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k8-pipeline-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        k8-pipeline architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k8-yaml-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K8 yaml generator
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops_projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenario_based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q & A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="kubernetes">Kubernetes ☸️</h1>
+<p>All about k8.</p>
+<h2 id="definition">Definition</h2>
+<p>Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.</p>
+<p>For more information visit <strong><a href="https://kubernetes.io/docs/concepts/overview/components/">here</a></strong></p>
+<h2 id="why-to-use-k8">Why to use K8</h2>
+<p>Containers are a good way to bundle and run your applications. In a production environment, you need to manage the containers that run the applications and ensure that there is no downtime. For example, if a container goes down, another container needs to start. Wouldn't it be easier if this behavior was handled by a system?</p>
+<p>That's how Kubernetes comes to the rescue! Kubernetes provides you with a framework to run distributed systems resiliently. It takes care of scaling and failover for your application, provides deployment patterns, and more. For example: Kubernetes can easily manage a canary deployment for your system.</p>
+<p>Kubernetes provides you with:</p>
+<ul>
+<li><strong>Service discovery and load balancing</strong> Kubernetes can expose a container using the DNS name or
+  using their own IP address. If traffic to a container is high, Kubernetes is able to load balance and distribute the network traffic so that the deployment is stable.</li>
+<li><strong>Storage orchestration</strong> Kubernetes allows you to automatically mount a storage system of your 
+  choice, such as local storages, public cloud providers, and more.</li>
+<li><strong>Automated roll outs and rollbacks</strong> You can describe the desired state for your deployed
+  containers using Kubernetes, and it can change the actual state to the desired state at a controlled rate. For example, you can automate Kubernetes to create new containers for your deployment, remove existing containers and adopt all their resources to the new container.</li>
+</ul>
+<p>Automatic bin packing You provide Kubernetes with a cluster of nodes that it can use to run containerized tasks. You tell Kubernetes how much CPU and memory (RAM) each container needs. Kubernetes can fit containers onto your nodes to make the best use of your resources.</p>
+<ul>
+<li>
+<p><strong>Self-healing</strong> Kubernetes restarts containers that fail, replaces containers, kills containers
+  that don't respond to your user-defined health check, and doesn't advertise them to clients until they are ready to serve.</p>
+</li>
+<li>
+<p><strong>Secret and configuration management</strong> Kubernetes lets you store and manage sensitive
+  information, such as passwords, OAuth tokens, and SSH keys. You can deploy and update secrets and application configuration without rebuilding your container images, and without exposing secrets in your stack configuration.</p>
+</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<h3 id="architecture-diagram">Architecture Diagram</h3>
+<p><img alt="Architecture" src="../png/k8_architecture.jpg" /></p>
+<h3 id="k8-workflow-diagram">K8 workflow diagram</h3>
+<p><img alt="K8 Work flow Architecture" src="../png/k8_timezone_architect.PNG" /></p>
+<h2 id="components">Components</h2>
+<h3 id="master-components">Master Components</h3>
+<p>The master components form the control plane of the Kubernetes cluster, responsible for managing the cluster's overall operations, making high-level decisions (e.g., scheduling), and monitoring/responding to cluster events.</p>
+<ol>
+<li>
+<p>API Server (kube-apiserver)</p>
+<p>Serves as the front-end interface for the Kubernetes control plane.
+Exposes the Kubernetes API, enabling interaction between all components within the cluster.<br />
+Validates and processes API objects such as pods, services, and replication controllers, ensuring proper configuration and functionality.</p>
+</li>
+<li>
+<p>Etcd</p>
+<p>A distributed key-value store that serves as Kubernetes primary datastore for cluster information.
+Stores critical data, including configuration details, cluster state, and metadata, accessible by all cluster components.
+Guarantees strong consistency and durability, making it a vital component for reliable cluster operations.</p>
+</li>
+<li>
+<p>Controller Manager (kube-controller-manager)</p>
+<p>Manages the cluster’s state by running various controller processes.</p>
+<p>Examples include:</p>
+<ul>
+<li>Node Controller: Handles situations where nodes become unavailable.</li>
+<li>Replication Controller: Ensures the desired number of pod replicas.</li>
+<li>Endpoint Controller: Manages endpoint objects for services.</li>
+</ul>
+<p>Combines multiple logically independent controllers into a single process, reducing operational complexity.</p>
+</li>
+<li>
+<p>Scheduler (kube-scheduler)</p>
+<p>Allocates newly created pods to suitable nodes based on resource availability, affinity/anti-affinity rules, and other constraints.<br />
+Continuously monitors for unscheduled pods and assigns them to appropriate nodes to maintain cluster efficiency and balance.</p>
+</li>
+</ol>
+<h3 id="node-components">Node Components</h3>
+<p>Node components run on every node in the cluster and manage the containers running on those nodes.</p>
+<ol>
+<li>
+<p>kubelet</p>
+<p>An agent that runs on each node in the cluster.<br />
+Ensures that the containers described by pod specs are running and healthy.<br />
+Communicates with the Kubernetes API server and reports the status of the node and the pods running on it.</p>
+</li>
+<li>
+<p>kube-proxy</p>
+<p>A network proxy that runs on each node.<br />
+Manages the network rules on nodes, allowing network communication to your pods from inside or outside the cluster.<br />
+Handles the forwarding of requests to the appropriate pod and ensures that services are accessible.</p>
+</li>
+<li>
+<p>Container Runtime</p>
+<p>The software responsible for running the containers (e.g., Docker, containerd, CRI-O).<br />
+Kubernetes supports multiple container runtimes, and the kubelet uses the Container Runtime Interface (CRI) to communicate with them.  </p>
+</li>
+</ol>
+<h3 id="additional-components">Additional Components</h3>
+<ol>
+<li>
+<p>Pod</p>
+<p>The smallest and simplest Kubernetes object, representing a single instance of a running process in the cluster.<br />
+Typically contains one or more containers that share the same network namespace and storage.</p>
+</li>
+<li>
+<p>Service</p>
+<p>A Service is an abstraction that defines a logical set of pods and enables network access to them. It provides a stable endpoint (IP and DNS) to access a group of pods, regardless of the underlying changes to the pod instances (e.g., pods scaling up or down)  </p>
+</li>
+<li>
+<p>ConfigMaps and Secrets:</p>
+<p>ConfigMaps: Used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or configuration files.  </p>
+<p>Secrets: Similar to ConfigMaps but specifically designed to store sensitive data like passwords, tokens, and keys.  </p>
+</li>
+<li>
+<p>Namespaces:</p>
+<p>Virtual clusters backed by the same physical cluster.<br />
+Useful for dividing cluster resources between multiple users, teams, or projects.</p>
+</li>
+<li>
+<p>Persistent Volumes (PVs) and Persistent Volume Claims (PVCs):</p>
+<p>PV: Storage resources in the cluster, such as an external disk, network storage, etc.<br />
+PVC: Requests for storage by a user, which are then matched to available PVs.</p>
+</li>
+<li>
+<p>Ingress</p>
+<p>An Ingress is a more advanced resource that manages external HTTP(S) traffic into the cluster. It provides rules to control how external clients access services within the cluster.</p>
+<p>Key Features:</p>
+<ul>
+<li>Path-Based Routing: Routes incoming traffic based on the URL path (e.g., /api or /static).</li>
+<li>Host-Based Routing: Routes traffic based on the host name <code>(e.g., api.example.com vs www.example.com)</code>.</li>
+<li>TLS Support: Manages HTTPS traffic with SSL/TLS certificates.</li>
+<li>Custom Rules: Supports more advanced traffic management compared to a Service</li>
+</ul>
+</li>
+</ol>
+<h3 id="deployment">Deployment</h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">deployment</a></li>
+</ul>
+<h3 id="node">Node</h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/architecture/nodes/">nodes</a></li>
+</ul>
+<h3 id="pod">Pod</h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/pods/">pods</a></li>
+</ul>
+<h3 id="service"><a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service</a></h3>
+<h4 id="cluster-ip">Cluster IP</h4>
+<ul>
+<li>ClusterIP is the default and most common service type.</li>
+<li>Kubernetes will assign a cluster-internal IP address to ClusterIP service. This makes the service only reachable within the cluster.</li>
+<li>You cannot make requests to service (pods) from outside the cluster.</li>
+<li>You can optionally set cluster IP in the service definition file.</li>
+</ul>
+<p><strong>Use Cases</strong>: Inter service communication within the cluster. For example, communication between the front-end and back-end components of your app.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-backend-service</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span><span class="w"> </span><span class="c1"># Optional field (default)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">clusterIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.10.0.1</span><span class="w"> </span><span class="c1"># within service cluster ip range</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</code></pre></div>
+<h4 id="nodeport">NodePort</h4>
+<ul>
+<li>NodePort service is an extension of ClusterIP service. A ClusterIP Service, to which the NodePort Service routes, is automatically created.</li>
+<li>It exposes the service outside of the cluster by adding a cluster-wide port on top of ClusterIP.</li>
+<li>NodePort exposes the service on each Node’s IP at a static port (the NodePort). Each node proxies that port into your Service. So, external traffic has access to fixed port on each Node. It means any request to your cluster on that port gets forwarded to the service.</li>
+<li>You can contact the NodePort Service, from outside the cluster, by requesting <code>&lt;NodeIP&gt;:&lt;NodePort&gt;</code>.</li>
+<li>Node port must be in the range of 30000–32767. Manually allocating a port to the service is optional. If it is undefined, Kubernetes will automatically assign one.</li>
+<li>If you are going to choose node port explicitly, ensure that the port was not already  used by another service.</li>
+</ul>
+<p><strong>Use Cases</strong> : When you want to enable external connectivity to your service. Using a NodePort gives you the freedom to set up your own load balancing solution, to configure environments that are not fully supported by Kubernetes, or even to expose one or more nodes’ IPs directly. Prefer to place a load balancer above your nodes to avoid node failure.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-frontend-service</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePort</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">nodePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30000</span><span class="w"> </span><span class="c1"># 30000-32767, Optional field</span>
+</code></pre></div>
+<h4 id="loadbalancer">LoadBalancer</h4>
+<ul>
+<li>LoadBalancer service is an extension of NodePort service. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.</li>
+<li>It integrates NodePort with cloud-based load balancers.</li>
+<li>It exposes the Service externally using a cloud provider’s load balancer.</li>
+<li>Each cloud provider (AWS, Azure, GCP, etc) has its own native load balancer implementation.</li>
+<li>The cloud provider will create a load balancer, which then automatically routes requests to your Kubernetes Service.</li>
+<li>Traffic from the external load balancer is directed at the backend Pods. The cloud  provider decides how it is load balanced.</li>
+<li>The actual creation of the load balancer happens asynchronously.</li>
+<li>Every time you want to expose a service to the outside world, you have to create a new LoadBalancer and get an IP address.</li>
+</ul>
+<p><strong>Use Cases</strong>: When you are using a cloud provider to host your Kubernetes cluster.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-frontend-service</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LoadBalancer</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">clusterIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.171.123</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">loadBalancerIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123.123.123.123</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</code></pre></div>
+<h4 id="externalname">ExternalName</h4>
+<ul>
+<li>Services of type ExternalName map a Service to a DNS name, not to a typical selector such as my-service.</li>
+<li>You specify these Services with the <code>spec.externalName</code> parameter.</li>
+<li>It maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value.</li>
+<li>No proxy of any kind is established.</li>
+</ul>
+<p><strong>Use Cases</strong>: This is commonly used to create a service within Kubernetes to represent an external datastore like a database that runs externally to Kubernetes. You can use that ExternalName service (as a local service) when Pods from one namespace to talk to a service in another namespace.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-service</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalName</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">externalName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.database.example.com</span>
+</code></pre></div>
+<h3 id="ingress">Ingress</h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">ingress</a></li>
+</ul>
+<h4 id="architecture-of-ingress">Architecture of Ingress</h4>
+<p><img alt="image" src="../png/ingress1.png" /></p>
+<h4 id="ingress-yaml">Ingress YAML</h4>
+<p><img alt="image" src="../png/ingress2.png" /></p>
+<h4 id="ingress-vs-internal-service">Ingress Vs Internal Service</h4>
+<p><img alt="image" src="../png/ingress3.png" /></p>
+<h4 id="ingress-yaml-for-path">Ingress YAML for path</h4>
+<p><img alt="image" src="../png/ingress4.png" /></p>
+<h3 id="volumes">Volumes</h3>
+<h4 id="architecture-of-persistent-volume">Architecture of Persistent Volume</h4>
+<p><img alt="pvc" src="../png/pvc-architecture.png" /></p>
+<h4 id="backup-volumes">Backup Volumes</h4>
+<ul>
+<li>
+<p><a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a></p>
+</li>
+<li>
+<p>We also use <strong>Git Repo</strong> as Persistent Volume - <a href="https://kubernetes.io/docs/concepts/storage/volumes/#gitrepo">link</a></p>
+</li>
+</ul>
+<h4 id="storageclass">StorageClass</h4>
+<p>Follow the docs for further info of <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">StorageClass</a></p>
+<p>Template for storage class</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.k8s.io/v1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StorageClass</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azurefile-sc</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">provisioner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/azure-file</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">reclaimPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Retain</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nt">mountOptions</span><span class="p">:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dir_mode=0777</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">file_mode=0777</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nt">volumeBindingMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WaitForFirstConsumer</span>
+</code></pre></div>
+<p>Key definition:</p>
+<ul>
+<li>
+<p><strong>volumeBindingMode</strong>:
+  This field specifies when volume binding should occur. In this case, Immediate means that a volume should be provisioned and bound as soon as a PersistentVolumeClaim (PVC) is created. This is in contrast to WaitForFirstConsumer, where the binding is delayed until a pod using the PVC is scheduled onto a node.</p>
+</li>
+<li>
+<p><strong>reclaimPolicy</strong> : in Persistent Volumes specifies what should happen to the underlying storage when the associated PersistentVolume (PV) is released or the PersistentVolumeClaim (PVC) is deleted:</p>
+</li>
+<li>
+<p><strong>Retain</strong>: When the reclaimPolicy is set to Retain, the PV is not automatically deleted when the associated PVC is deleted.
+The PV is marked as released, and it's up to the cluster administrator to decide what to do with the data on the storage.</p>
+</li>
+<li>
+<p><strong>Delete</strong>: When the reclaimPolicy is set to Delete, the PV is automatically deleted when the associated PVC is deleted.
+The storage resources associated with the PV are also deleted.</p>
+</li>
+</ul>
+<h4 id="pv-and-pvc">PV and PVC</h4>
+<p><strong>PersistentVolume (PV)</strong>: A piece of storage in the cluster that has been provisioned by an administrator or dynamically through Storage Classes. PVs are used to store data persistently.</p>
+<p><strong>PersistentVolumeClaim (PVC)</strong>: A request for storage by a user. PVCs abstract the details of how storage is provided and consumed, making it easy to request and use persistent storage in pods.</p>
+<h3 id="rbac"><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">RBAC</a></h3>
+<p>service account: user groups<br />
+role: define permissions to user<br />
+role binding: connect role with service account  </p>
+<h3 id="daemonset">Daemonset</h3>
+<p>A DaemonSet in Kubernetes ensures that a specific Pod runs on all (or selected) nodes in a cluster. It is primarily used for running background processes or system-level tasks that are required on every node.</p>
+<p>By understanding and leveraging DaemonSets, administrators can efficiently handle logging, monitoring, networking, and other system-wide tasks.</p>
+<p>Key Features of DaemonSet</p>
+<ul>
+<li>Node-Wide Coverage: Ensures a Pod is scheduled on every eligible node in the cluster.</li>
+<li>Automatic Updates: When a new node is added to the cluster, the DaemonSet automatically schedules its Pods on the new node.</li>
+<li>Selective Node Targeting: By using node selectors, taints, and tolerations, DaemonSets can restrict Pods to specific nodes.</li>
+<li>Resiliency: If a node is deleted or fails, the DaemonSet recreates the Pod on a healthy node.</li>
+</ul>
+<p>Use Cases of DaemonSet</p>
+<ol>
+<li>Log Collection: Running log collection agents (e.g., Fluentd or Logstash) on every node.</li>
+<li>Monitoring: Deploying monitoring agents (e.g., Prometheus Node Exporter) to collect node-level metrics.</li>
+<li>Networking: Running network-related applications like CNI plugins or proxy daemons (e.g., Calico or Istio).</li>
+<li>Storage: Deploying storage daemons for distributed storage solutions (e.g., Ceph, GlusterFS).</li>
+</ol>
+<p>How DaemonSet Works : A DaemonSet controller ensures that a single copy of the specified Pod is running on every eligible node:</p>
+<ol>
+<li>When the DaemonSet is created, the controller schedules a Pod on each matching node.</li>
+<li>If a new node is added, the controller automatically schedules the Pod on that node.</li>
+<li>If a node is removed, the associated Pod is deleted.</li>
+</ol>
+<h3 id="hpa-and-vpa">HPA and VPA</h3>
+<p><strong>Horizontal Pod Autoscaler (HPA)</strong> : The Horizontal Pod Autoscaler (HPA) automatically adjusts the number of Pods in a Deployment, ReplicaSet, or StatefulSet based on observed CPU, memory usage, or custom metrics. It ensures that the application can handle workload variations without over-provisioning or under-provisioning.</p>
+<p>How It Works</p>
+<ul>
+<li>HPA monitors the target resource's metrics (e.g., CPU utilization).</li>
+<li>Based on the observed metrics and the scaling configuration, HPA increases or decreases the number of Pods in the resource.</li>
+</ul>
+<p>Use Case - HPA is ideal for scaling stateless applications or services that need to handle fluctuating workloads, such as web servers or APIs.</p>
+<p>Key Features</p>
+<ul>
+<li>Scales Pods horizontally by increasing or decreasing their count.</li>
+<li>Supports both resource metrics (CPU/memory) and custom/external metrics.</li>
+</ul>
+<p>Example YAML</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoscaling/v2</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HorizontalPodAutoscaler</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-hpa</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">scaleTargetRef</span><span class="p">:</span><span class="w"> </span><span class="c1"># Specifies the target resource (Deployment, ReplicaSet, or StatefulSet).</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-deployment</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">minReplicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">maxReplicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"> </span><span class="c1"># Define the minimum and maximum number of Pods.</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span><span class="w"> </span><span class="c1"># Sets the metric type and target utilization (e.g., CPU utilization at 50%).</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="l l-Scalar l-Scalar-Plain">Commands to Deploy HPA</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">- type</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">resource</span><span class="p p-Indicator">:</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpu</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">      </span><span class="nt">target</span><span class="p">:</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Utilization</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="nt">averageUtilization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+</code></pre></div>
+<p><strong>Vertical Pod Autoscaler (VPA)</strong> : The Vertical Pod Autoscaler (VPA) adjusts the resource requests and limits (CPU and memory) of Pods automatically based on actual usage. It ensures that Pods have sufficient resources to run efficiently without wasting resources.</p>
+<p>How It Works</p>
+<ul>
+<li>VPA monitors the resource usage of Pods.</li>
+<li>Based on the observed usage, VPA recommends or directly updates the resource requests and limits for the Pods.</li>
+<li>In update mode, Pods are restarted to apply the new resource requests and limits.</li>
+</ul>
+<p>Use Case - VPA is ideal for workloads with predictable scaling patterns or that need fine-tuned resource management, such as batch jobs or databases.</p>
+<p>Key Features</p>
+<ul>
+<li>Adjusts resource requests and limits (CPU/memory) for Pods.</li>
+<li>Operates in three modes:<br />
+  Off: Only provides recommendations.<br />
+  Auto: Updates resource requests/limits and restarts Pods.<br />
+  Initial: Sets resource requests/limits only for new Pods.</li>
+</ul>
+<p>Example YAML</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoscaling.k8s.io/v1</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VerticalPodAutoscaler</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-vpa</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">targetRef</span><span class="p">:</span><span class="w"> </span><span class="c1"># Specifies the target resource for VPA (e.g., Deployment).</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-deployment</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nt">updatePolicy</span><span class="p">:</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">updateMode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Auto&quot;</span><span class="w"> </span><span class="c1"># Updates resource requests/limits and restarts Pods.</span>
+</code></pre></div>
+<h3 id="stateful-vs-stateless-in-kubernetes">Stateful vs Stateless in Kubernetes</h3>
+<p>In Kubernetes, workloads can be classified as either stateful or stateless, depending on how they handle and persist data. Understanding the difference is critical for designing applications that run effectively in a Kubernetes environment.</p>
+<p><strong>Stateless Applications</strong>: Stateless applications do not store any data or state between sessions or transactions. Each request is independent and does not rely on previous interactions.</p>
+<p>Characteristics</p>
+<ul>
+<li>No dependency on underlying storage.</li>
+<li>Can be scaled easily as there is no need to synchronize state.</li>
+<li>Requests can be processed by any instance of the application.</li>
+<li>Commonly used for APIs, web servers, and microservices.</li>
+</ul>
+<p>Examples</p>
+<ul>
+<li>Web servers (e.g., Nginx, Apache).</li>
+<li>RESTful APIs.</li>
+<li>Batch job workers.</li>
+</ul>
+<p>Kubernetes Implementation:</p>
+<p>Deploy using Deployments or ReplicaSets.<br />
+Stateless pods can be scaled horizontally using kubectl scale or Horizontal Pod Autoscaler (HPA).<br />
+Use ephemeral storage like /tmp or environment variables for temporary data.</p>
+<p><strong>Stateful Applications</strong>: Stateful applications maintain a state or rely on persisted data across sessions or interactions. This state might be specific to a user, session, or process.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Depend on persistent storage (e.g., databases, file systems).</li>
+<li>Require a unique identity for each instance (pod) to preserve state.</li>
+<li>Often need order or consistency in the deployment and scaling process.</li>
+<li>More complex to scale compared to stateless applications.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Databases (e.g., MySQL, PostgreSQL, MongoDB).</li>
+<li>Message queues (e.g., RabbitMQ, Kafka).</li>
+<li>Stateful systems like Elasticsearch.</li>
+</ul>
+<p>Kubernetes Implementation:
+Deploy using StatefulSets to ensure each pod gets a unique identity (e.g., mypod-0, mypod-1).<br />
+Use PersistentVolume (PV) and PersistentVolumeClaim (PVC) for storage.<br />
+Data is preserved even if pods are deleted or rescheduled.</p>
+<p><strong>Use Cases</strong>.</p>
+<p><strong>Stateless Applications</strong>:</p>
+<p>Use cloud-native storage solutions for external state (e.g., S3, RDS).<br />
+Leverage Kubernetes' scalability features for performance optimization.</p>
+<p><strong>Stateful Applications</strong>:</p>
+<p>Use StatefulSets to ensure unique pod identities and persistent data.<br />
+Employ proper backup strategies for PersistentVolumes.<br />
+Configure pod anti-affinity to distribute pods across nodes for high availability.</p>
+<h2 id="deployment-strategy">Deployment Strategy</h2>
+<p><img alt="deployment_strategy" src="../gif/k8_deployment_strategy_bytebytego.gif" /></p>
+<p>Kubernetes provides several deployment strategies to manage application updates, ensuring minimal downtime, stability, and user experience during the deployment process.<br />
+Below is a detailed explanation of Canary, Blue-Green, Recreate, and Rolling Update strategies, along with real-world scenarios for when and why they are used.</p>
+<ol>
+<li>
+<p><strong>Canary Deployment</strong></p>
+<p><strong>Description:</strong><br />
+In a canary deployment, a new version of the application is gradually rolled out to a small subset of users or traffic. If it performs well, the rollout continues until the new version fully replaces the old version.</p>
+<p><strong>Steps:</strong></p>
+<ul>
+<li>Deploy the new version to a small percentage of users (e.g., 5-10% of traffic).  </li>
+<li>Monitor metrics like performance, error rates, or user feedback.  </li>
+<li>Gradually increase the traffic directed to the new version until it fully replaces the old one.</li>
+</ul>
+<p><strong>Use Case:</strong><br />
+Scenario: A retail website launching a new search feature. The search functionality is critical, and any errors could impact customer satisfaction.<br />
+Why Use: Canary deployment ensures that only a small fraction of users experience issues, allowing rollback with minimal impact if the new feature causes errors.</p>
+<p>Pros:<br />
+  - Minimizes risk by exposing new changes to a small subset of users initially.<br />
+  - Real-world testing under production conditions.<br />
+  - Easier to detect issues early in the rollout process.  </p>
+<p>Cons:
+  - Requires advanced traffic management tools (e.g., Istio or NGINX for traffic splitting).<br />
+  - Monitoring and rollback processes need to be well-defined.    </p>
+</li>
+<li>
+<p><strong>Blue-Green Deployment</strong></p>
+<p><strong>Description</strong>: Two environments, "Blue" (current version) and "Green" (new version), are maintained simultaneously. Once the new version is verified in the Green environment, traffic is switched from Blue to Green.</p>
+<p><strong>Steps</strong>:</p>
+<ul>
+<li>Deploy the new version to the Green environment.  </li>
+<li>Test the Green environment for functionality, performance, and stability.  </li>
+<li>Redirect all traffic from the Blue to the Green environment (via a load balancer or DNS change).  </li>
+<li>The Blue environment serves as a backup in case of rollback.</li>
+</ul>
+<p><strong>Use Case</strong>:</p>
+<p>Scenario: A banking application rolling out a new version of its transaction processing service. Downtime is unacceptable, and rollback must be quick.<br />
+Why Use: Blue-Green ensures zero downtime during deployment and allows for an instant rollback by switching back to the Blue environment.</p>
+<p>Pros:
+- Zero downtime during deployment.<br />
+- Instant rollback by switching traffic back to the old environment.<br />
+- Both environments are fully isolated, reducing the risk of deployment errors.</p>
+<p>Cons:
+- Requires double the infrastructure (temporary) for both environments.<br />
+- Higher cost during deployment phases due to resource duplication.  </p>
+</li>
+<li>
+<p><strong>Recreate Deployment</strong></p>
+<p><strong>Description</strong>: The current version of the application is terminated completely, and the new version is deployed in its place. This is a "replace all" strategy.</p>
+<p><strong>Steps</strong>:
+- Terminate all pods running the old version of the application.<br />
+- Deploy the new version.</p>
+<p><strong>Use Case</strong>:
+Scenario: A batch processing job where downtime is acceptable and maintaining multiple versions concurrently is unnecessary.<br />
+Why Use: Recreate is simple, cost-effective, and appropriate when the application doesn't need to handle live user traffic during deployment.</p>
+<p>Pros:
+- Simple to implement with minimal complexity.<br />
+- No need to manage traffic splitting or multiple versions.<br />
+- Suitable for stateless or low-traffic applications.</p>
+<p>Cons:
+- Causes downtime as the old version is terminated before the new version becomes available.<br />
+- No gradual transition, so any errors immediately impact all users.</p>
+</li>
+<li>
+<p><strong>Rolling Update Deployment</strong></p>
+<p><strong>Description</strong>: A gradual replacement of old pods with new pods, ensuring some pods of the old version remain available while new pods are deployed.</p>
+<p><strong>Steps</strong>:
+- Deploy the new version pod-by-pod, gradually replacing old pods.
+- Maintain a specified number of pods running at all times during the update.
+- Continue until all old pods are replaced.</p>
+<p><strong>Use Case</strong>:
+Scenario: A video streaming platform updating its content delivery service. Continuous service is critical, and downtime is unacceptable.<br />
+Why Use: Rolling updates ensure zero downtime by maintaining the availability of old pods while the new version is rolled out.</p>
+<p>Pros:
+- Zero downtime during deployment.<br />
+- Gradual replacement reduces the risk of introducing issues.<br />
+- Supports controlled rollout by limiting the number of simultaneous updates.</p>
+<p>Cons:
+- Rollback is slower compared to Canary or Blue-Green.<br />
+- Not suitable for breaking changes that require all pods to be updated simultaneously.</p>
+</li>
+</ol>
+<p><strong>Comparison Table</strong>:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Strategy</strong></th>
+<th><strong>Downtime</strong></th>
+<th><strong>Risk</strong></th>
+<th><strong>Rollback Complexity</strong></th>
+<th><strong>Resource Requirements</strong></th>
+<th><strong>Best For</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Canary</strong></td>
+<td>No</td>
+<td>Low</td>
+<td>Easy (stop traffic to new pods)</td>
+<td>Moderate</td>
+<td>Gradual rollouts for feature testing.</td>
+</tr>
+<tr>
+<td><strong>Blue-Green</strong></td>
+<td>No</td>
+<td>Very Low</td>
+<td>Very Easy (switch traffic back)</td>
+<td>High (requires two environments)</td>
+<td>Critical applications needing zero downtime.</td>
+</tr>
+<tr>
+<td><strong>Recreate</strong></td>
+<td>Yes</td>
+<td>High</td>
+<td>Moderate</td>
+<td>Low</td>
+<td>Simple updates where downtime is acceptable.</td>
+</tr>
+<tr>
+<td><strong>Rolling Update</strong></td>
+<td>No</td>
+<td>Moderate</td>
+<td>Moderate</td>
+<td>Low</td>
+<td>Applications requiring zero downtime with gradual updates.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="k8-pipeline-architecture">k8-pipeline architecture</h2>
+<p><img alt="k8-pipeline" src="../png/k8-pipeline.png" /></p>
+<h2 id="scenario">Scenario</h2>
+<ol>
+<li>
+<p>How to fix K8 deployment
+  <img alt="fix-deployment" src="../png/how_to_fix_k8_deployement.png" /></p>
+</li>
+<li>
+<p>How to manage k8 resource (so that pods should not exceeds resources / should not consume
+whole cluster/namespace Quota
+  <img alt="k8-scenario1" src="../png/k8-scenario1.png" /></p>
+</li>
+<li>
+<p>How to upgrade <a href="https://devopscube.com/setup-kubernetes-cluster-kubeadm/">k8 version</a></p>
+</li>
+</ol>
+<h2 id="k8-yaml-generator">K8 yaml generator</h2>
+<p>Link <a href="https://k8syaml.com/">here</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; <a href="https://github.com/botlaram"  target="_blank" rel="noopener">botlar4</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/botlaram" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ramakrishna-botla-772a8918b/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.path", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

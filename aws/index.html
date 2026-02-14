@@ -1,0 +1,1722 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="this Mkdocs contains Python Modules, about Devops and Cheat Code">
+      
+      
+        <meta name="author" content="botlaram">
+      
+      
+      
+        <link rel="prev" href="../scenario_based/">
+      
+      
+        <link rel="next" href="../database/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>AWS - UseMe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marmelad:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Marmelad";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aws" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UseMe" class="md-header__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UseMe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AWS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cheat_code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../linux/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Linux
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Computer Networking
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DSA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  DSA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devopsTools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../azure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Azure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kubernetes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  K8
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publish/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publish
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devops_projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Project
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scenario_based/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Q & A
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AWS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UseMe" class="md-nav__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UseMe
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devopsTools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops_projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenario_based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q & A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-tier-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Tier Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="aws">AWS</h1>
+<h2 id="3-tier-application">3 Tier Application</h2>
+<p><img alt="3tierappaws" src="../png/3tierapplicationaws.png" /></p>
+<h1 id="aws_1">AWS</h1>
+<h2 id="deploying-a-3-tier-application-architecture-in-aws">Deploying a 3-Tier Application Architecture in AWS</h2>
+<p><img alt="3tierappaws" src="../png/3tierapplicationaws.png" /></p>
+<p>This guide explains how to deploy a production-style 3-tier architecture in AWS with:</p>
+<ul>
+<li>Route 53</li>
+<li>ACM (SSL)</li>
+<li>VPC (Public &amp; Private Subnets)</li>
+<li>Bastion Host</li>
+<li>RDS MySQL (Multi-AZ)</li>
+<li>Presentation Tier (Frontend)</li>
+<li>Application Tier (Backend)</li>
+<li>Auto Scaling</li>
+<li>CloudWatch Monitoring</li>
+</ul>
+<hr />
+<h3 id="3-tier-architecture">3-Tier Architecture</h3>
+<ol>
+<li><strong>Presentation Tier</strong></li>
+<li>Public ALB</li>
+<li>
+<p>EC2 instances (Frontend)</p>
+</li>
+<li>
+<p><strong>Application Tier</strong></p>
+</li>
+<li>Internal ALB</li>
+<li>
+<p>EC2 instances (Backend - Node.js)</p>
+</li>
+<li>
+<p><strong>Data Tier</strong></p>
+</li>
+<li>RDS MySQL (Multi-AZ)</li>
+</ol>
+<hr />
+<h4 id="1-create-route-53-hosted-zone">1️⃣ Create Route 53 Hosted Zone</h4>
+<p>Create Hosted Zone</p>
+<ul>
+<li>Domain Name: xyz.com</li>
+<li>Type:</li>
+<li>Public Hosted Zone (Public Access)</li>
+<li>Private Hosted Zone (VPC Only Access)</li>
+</ul>
+<p>After creation:</p>
+<ul>
+<li>Copy assigned Name Servers (NS records)</li>
+<li>Go to external domain provider (e.g., GoDaddy)</li>
+<li>Replace existing nameservers with AWS NS values</li>
+</ul>
+<hr />
+<h4 id="2-request-public-ssl-certificate-acm">2️⃣ Request Public SSL Certificate (ACM)</h4>
+<p>Navigate to:</p>
+<p>AWS Certificate Manager → Request Certificate</p>
+<p>Add domain names:</p>
+<p>xyz.com<br />
+xyz.in  </p>
+<p>Choose:</p>
+<p>DNS Validation</p>
+<p>Create validation records in Route 53.</p>
+<p>Wait until certificate status shows:</p>
+<p>Issued</p>
+<hr />
+<h4 id="3-create-vpc-and-subnets">3️⃣ Create VPC and Subnets</h4>
+<p>VPC Configuration</p>
+<ul>
+<li>Availability Zones: 2</li>
+<li>Public Subnets: 2</li>
+<li>Private Subnets: 4 (2 per AZ)</li>
+<li>NAT Gateway: 1 (single AZ)</li>
+<li>Endpoints: Not used</li>
+</ul>
+<hr />
+<h4 id="4-subnet-configuration">4️⃣ Subnet Configuration</h4>
+<p>Enable for Public Subnets:</p>
+<p>Auto-Assign Public IP → Enabled</p>
+<p>Private Subnets:</p>
+<p>Auto-Assign Public IP → Disabled</p>
+<hr />
+<h4 id="5-security-groups-configuration">5️⃣ Security Groups Configuration</h4>
+<p>Bastion Host SG</p>
+<p>Inbound:
+- SSH (22) → Allow from specific IP (Production Best Practice)</p>
+<hr />
+<h5 id="presentation-layer-alb-sg">Presentation Layer ALB SG</h5>
+<p>Inbound:
+- HTTP (80) → 0.0.0.0/0</p>
+<p>Note: HTTPS can be configured later using CloudFront + ACM.</p>
+<hr />
+<h5 id="presentation-layer-ec2-sg">Presentation Layer EC2 SG</h5>
+<p>Inbound:
+- SSH (22) → Bastion SG
+- HTTP (80) → Presentation ALB SG</p>
+<hr />
+<h5 id="application-layer-alb-sg">Application Layer ALB SG</h5>
+<p>Inbound:
+- HTTP (80) → Presentation EC2 SG</p>
+<hr />
+<h5 id="application-layer-ec2-sg">Application Layer EC2 SG</h5>
+<p>Inbound:
+- SSH (22) → Bastion SG
+- TCP (3200) → Application ALB SG</p>
+<hr />
+<h5 id="data-tier-sg">Data Tier SG</h5>
+<p>Inbound:
+- MySQL (3306) → Application EC2 SG
+- MySQL (3306) → Bastion SG</p>
+<hr />
+<h4 id="6-launch-bastion-host">6️⃣ Launch Bastion Host</h4>
+<p>EC2 → Launch Instance</p>
+<ul>
+<li>AMI → Amazon Linux</li>
+<li>Key Pair → Create new</li>
+<li>VPC → Public Subnet</li>
+<li>Security Group → Bastion SG</li>
+</ul>
+<hr />
+<h4 id="7-create-db-subnet-group">7️⃣ Create DB Subnet Group</h4>
+<p>RDS → Subnet Groups → Create</p>
+<ul>
+<li>Select VPC</li>
+<li>Select Private Subnets</li>
+</ul>
+<hr />
+<h4 id="8-create-rds-mysql-multi-az">8️⃣ Create RDS MySQL (Multi-AZ)</h4>
+<p>RDS → Create Database</p>
+<ul>
+<li>Engine → MySQL</li>
+<li>Deployment → Multi-AZ (Primary + Standby)</li>
+<li>Master Username</li>
+<li>Master Password</li>
+<li>Storage</li>
+<li>VPC</li>
+<li>DB Subnet Group</li>
+<li>Security Group → Data Tier SG</li>
+</ul>
+<hr />
+<h4 id="9-connect-to-rds">9️⃣ Connect to RDS</h4>
+<h5 id="ssh-to-bastion">SSH to Bastion</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>key.pem<span class="w"> </span>ec2-user@bastion-public-ip
+</code></pre></div>
+<h5 id="connect-to-mysql">Connect to MySQL</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mysql<span class="w"> </span>-h<span class="w"> </span>&lt;rds-endpoint&gt;<span class="w"> </span>-u<span class="w"> </span>masteruser<span class="w"> </span>-p
+</code></pre></div>
+<h5 id="create-app-database-user">Create App Database &amp; User</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">appdb</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;appuser&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">appdb</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;appuser&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span>
+</code></pre></div>
+<p>All application operations should use appuser.</p>
+<hr />
+<h4 id="setup-presentation-tier">🔟 Setup Presentation Tier</h4>
+<h5 id="create-launch-template">Create Launch Template</h5>
+<ul>
+<li>AMI</li>
+<li>Key Pair</li>
+<li>Public Subnet</li>
+<li>Presentation EC2 SG</li>
+</ul>
+<h5 id="user-data-script">User Data Script</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>yum<span class="w"> </span>update<span class="w"> </span>-y
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>yum<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>-y
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nginx
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nv">INSTANCE_ID</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>http://169.254.169.254/latest/meta-data/instance-id<span class="k">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nv">PUBLIC_IP</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>http://169.254.169.254/latest/meta-data/public-ipv4<span class="k">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Instance ID: </span><span class="nv">$INSTANCE_ID</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/usr/share/nginx/html/index.html
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Public IP: </span><span class="nv">$PUBLIC_IP</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/usr/share/nginx/html/index.html
+</code></pre></div>
+<hr />
+<h4 id="11-create-presentation-target-group">1️⃣1️⃣ Create Presentation Target Group</h4>
+<ul>
+<li>Target Type → Instance</li>
+<li>Protocol → HTTP</li>
+<li>Port → 80</li>
+<li>VPC → Select VPC</li>
+<li>Health Check → /</li>
+</ul>
+<hr />
+<h4 id="12-create-presentation-load-balancer-internet-facing">1️⃣2️⃣ Create Presentation Load Balancer (Internet Facing)</h4>
+<p>ALB Configuration:</p>
+<ul>
+<li>Scheme → Internet Facing</li>
+<li>Subnets → Public Subnets</li>
+<li>Security Group → Presentation ALB SG</li>
+<li>Listener → HTTP → Forward to Presentation Target Group</li>
+</ul>
+<hr />
+<h4 id="13-create-auto-scaling-group-presentation-tier">1️⃣3️⃣ Create Auto Scaling Group (Presentation Tier)</h4>
+<ul>
+<li>Launch Template → Presentation Template</li>
+<li>Subnets → Public</li>
+<li>Attach → Presentation Target Group</li>
+<li>Enable Health Check</li>
+<li>Enable CloudWatch</li>
+<li>Min Capacity → 2</li>
+<li>Max Capacity → 4</li>
+<li>Target CPU Utilization → 50%</li>
+</ul>
+<hr />
+<h4 id="14-test-auto-scaling">1️⃣4️⃣ Test Auto Scaling</h4>
+<p>SSH to Presentation Instance:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>stress<span class="w"> </span>-y
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>stress<span class="w"> </span>--cpu<span class="w"> </span><span class="m">2</span><span class="w"> </span>--timeout<span class="w"> </span><span class="m">300</span>
+</code></pre></div>
+<p>Monitor CloudWatch for scaling activity.</p>
+<hr />
+<h4 id="15-setup-application-tier">1️⃣5️⃣ Setup Application Tier</h4>
+<h5 id="create-launch-template_1">Create Launch Template</h5>
+<ul>
+<li>Instance Type → t2.micro</li>
+<li>Private Subnet</li>
+<li>Application EC2 SG</li>
+</ul>
+<h5 id="user-data-script_1">User Data Script</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>yum<span class="w"> </span>update<span class="w"> </span>-y
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>yum<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>nodejs<span class="w"> </span>npm<span class="w"> </span>-y
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;repository-url&gt;
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">cd</span><span class="w"> </span>app
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>npm<span class="w"> </span>install
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; .env</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="s">DB_HOST=&lt;rds-endpoint&gt;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="s">DB_USER=appuser</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="s">DB_PASS=password</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="s">DB_NAME=appdb</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="s">EOF</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>npm<span class="w"> </span>start
+</code></pre></div>
+<hr />
+<h4 id="16-create-application-target-group">1️⃣6️⃣ Create Application Target Group</h4>
+<ul>
+<li>Target Type → Instance</li>
+<li>Protocol → HTTP</li>
+<li>Port → 3200</li>
+<li>VPC → Select VPC</li>
+<li>Health Check → /</li>
+</ul>
+<hr />
+<h4 id="17-create-application-load-balancer-internal">1️⃣7️⃣ Create Application Load Balancer (Internal)</h4>
+<ul>
+<li>Scheme → Internal</li>
+<li>Subnets → Private Subnets</li>
+<li>Security Group → Application ALB SG</li>
+<li>Listener → HTTP → Forward to Application Target Group</li>
+</ul>
+<hr />
+<h4 id="18-create-auto-scaling-group-application-tier">1️⃣8️⃣ Create Auto Scaling Group (Application Tier)</h4>
+<ul>
+<li>Launch Template → Application Template</li>
+<li>Subnets → Private</li>
+<li>Attach → Application Target Group</li>
+<li>Enable Health Check</li>
+<li>Enable CloudWatch</li>
+<li>Min → 2</li>
+<li>Max → 4</li>
+<li>Target CPU → 50%</li>
+</ul>
+<hr />
+<h4 id="19-verify-application-ec2">1️⃣9️⃣ Verify Application EC2</h4>
+<p>SSH:</p>
+<p>Bastion → Application EC2</p>
+<p>Check logs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>app
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>cat<span class="w"> </span>logs/app.log
+</code></pre></div>
+<hr />
+<h4 id="20-update-presentation-tier-frontend">2️⃣0️⃣ Update Presentation Tier (Frontend)</h4>
+<p>Create New Launch Template Version.</p>
+<h5 id="updated-user-data">Updated User Data</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>yum<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>nodejs<span class="w"> </span>npm<span class="w"> </span>-y
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;frontend-repo&gt;
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">cd</span><span class="w"> </span>frontend
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>npm<span class="w"> </span>install
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; .env</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="s">API_URL=http://&lt;internal-application-alb&gt;</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="s">DOMAIN=xyz.com</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="s">SUBDOMAIN=xyz.in</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="s">EOF</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>npm<span class="w"> </span>start
+</code></pre></div>
+<p>Update Launch Template Version in ASG.</p>
+<hr />
+<h5 id="21-deploy-latest-version">2️⃣1️⃣ Deploy Latest Version</h5>
+<p>Auto Scaling → Presentation ASG</p>
+<ul>
+<li>Select Latest Launch Template Version</li>
+<li>Terminate Old Instances</li>
+</ul>
+<p>Access:</p>
+<p>http://xyz.com</p>
+<hr />
+<h4 id="22-setup-cloudwatch">2️⃣2️⃣ Setup CloudWatch</h4>
+<h5 id="create-iam-role">Create IAM Role</h5>
+<ul>
+<li>Attach Policy → CloudWatchLogsFullAccess</li>
+<li>Attach Role → EC2</li>
+</ul>
+<hr />
+<h4 id="23-create-log-group">2️⃣3️⃣ Create Log Group</h4>
+<p>CloudWatch → Log Groups → Create</p>
+<hr />
+<h4 id="24-install-cloudwatch-agent">2️⃣4️⃣ Install CloudWatch Agent</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>amazon-cloudwatch-agent<span class="w"> </span>-y
+</code></pre></div>
+<p>Attach IAM role to EC2 instance.</p>
+<p>Configure CloudWatch agent.</p>
+<hr />
+<h4 id="25-view-logs">2️⃣5️⃣ View Logs</h4>
+<p>CloudWatch → Log Groups</p>
+<p>Monitor:</p>
+<ul>
+<li>Application logs</li>
+<li>System logs</li>
+<li>Metrics</li>
+</ul>
+<hr />
+<h4 id="final-architecture-flow">✅ Final Architecture Flow</h4>
+<p>Route53<br />
+   ↓<br />
+Public ALB<br />
+   ↓<br />
+Presentation ASG (Public Subnets)<br />
+   ↓<br />
+Internal ALB<br />
+   ↓<br />
+Application ASG (Private Subnets)<br />
+   ↓<br />
+RDS MySQL (Multi-AZ)  </p>
+<hr />
+<h4 id="production-recommendations">🎯 Production Recommendations</h4>
+<ul>
+<li>Enable HTTPS (ACM + ALB)</li>
+<li>Use AWS Secrets Manager for DB credentials</li>
+<li>Enable Automated RDS Backups</li>
+<li>Use WAF for security</li>
+<li>Consider CloudFront for CDN</li>
+<li>Implement Infrastructure as Code (Terraform)</li>
+</ul>
+<hr />
+<p>🚀 You now have a scalable, secure, production-ready 3-tier architecture in AWS.</p>
+<h2 id="scenario-based-questions">Scenario Based Questions</h2>
+<h3 id="read-and-write-separate-database-how-to-scale-application-to-1m-users">Read and Write Separate Database (How to scale application to 1M users)</h3>
+<p><img alt="aws1" src="../png/aws1.png" /></p>
+<p>Scaling AWS RDS with Read Replicas in EKS Architecture</p>
+<p>I want to understand how database architecture works in AWS.
+Suppose I have a web application hosted on AWS with an RDS database, and everything is functioning correctly.</p>
+<p>In what scenarios should I use two separate databases — one primary database for write operations and another read replica for read-only operations?</p>
+<p>How does this architecture work internally, and how can it be implemented in AWS?</p>
+<p>1️⃣ Current Scenario: Single RDS Instance</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Users<span class="w"> </span>→<span class="w"> </span>ALB<span class="w"> </span>→<span class="w"> </span>EC2<span class="w"> </span>/<span class="w"> </span>EKS<span class="w"> </span>→<span class="w"> </span>RDS<span class="w"> </span><span class="o">(</span>Single<span class="w"> </span>DB<span class="o">)</span>
+</code></pre></div>
+<p>All operations go to one database:</p>
+<ul>
+<li><code>SELECT</code> (Read)</li>
+<li><code>INSERT</code></li>
+<li><code>UPDATE</code></li>
+<li><code>DELETE</code></li>
+</ul>
+<p>This works perfectly when:</p>
+<ul>
+<li>Traffic is low to medium</li>
+<li>Read/write ratio is balanced</li>
+<li>Database CPU and connections are within limits</li>
+</ul>
+<hr />
+<h4 id="2-when-do-you-need-a-separate-write-db-and-read-replica">🚨 2️⃣ When Do You Need a Separate Write DB and Read Replica?</h4>
+<p>You introduce <strong>Read Replicas</strong> when scaling read operations becomes necessary.</p>
+<hr />
+<p>🔹 Condition 1: Heavy Read Traffic</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>E-commerce application</li>
+<li>10,000 users browsing products (reads)</li>
+<li>500 users placing orders (writes)</li>
+<li>Reads are 20x more than writes</li>
+</ul>
+<p>Problem:</p>
+<ul>
+<li>Primary DB overloaded handling <code>SELECT</code> queries</li>
+<li>CPU spikes</li>
+<li>Slow queries</li>
+<li>Application performance degradation</li>
+</ul>
+<p>👉 <strong>Solution:</strong> Offload read traffic to replicas</p>
+<hr />
+<p>🔹 Condition 2: Reporting &amp; Analytics Queries</p>
+<p>If:</p>
+<ul>
+<li>BI team runs large <code>SELECT</code> queries</li>
+<li>Long-running reporting jobs</li>
+<li>Heavy analytical workloads</li>
+</ul>
+<p>These queries:</p>
+<ul>
+<li>Lock tables</li>
+<li>Consume CPU</li>
+<li>Impact production users</li>
+</ul>
+<p>👉 Run them on a <strong>Read Replica</strong></p>
+<hr />
+<p>🔹 Condition 3: Scaling Without Sharding</p>
+<p>Instead of vertically scaling (larger DB instance),<br />
+use horizontal scaling with read replicas — often more cost-efficient.</p>
+<hr />
+<h4 id="3-architecture-with-read-replica">🏗 3️⃣ Architecture with Read Replica</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">                    </span>┌────────────┐
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">                    </span>│<span class="w">  </span>Primary<span class="w">   </span>│
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">                    </span>│<span class="w">   </span><span class="o">(</span>Write<span class="o">)</span><span class="w">  </span>│
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">                    </span>└─────┬──────┘
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">                          </span>│
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">                    </span>Replication
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">                          </span>│
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">                </span>┌─────────┴─────────┐
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">                </span>│<span class="w">                   </span>│
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">         </span>┌────────────┐<span class="w">      </span>┌────────────┐
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">         </span>│<span class="w"> </span>Read<span class="w"> </span>Replica│<span class="w">      </span>│<span class="w"> </span>Read<span class="w"> </span>Replica│
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">         </span>└────────────┘<span class="w">      </span>└────────────┘
+</code></pre></div>
+<h4 id="application-flow">Application Flow</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>App<span class="w"> </span>Server
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">   </span>│
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">   </span>├──<span class="w"> </span>Write<span class="w"> </span>→<span class="w"> </span>Primary<span class="w"> </span>DB
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">   </span>│
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">   </span>└──<span class="w"> </span>Read<span class="w"> </span>→<span class="w"> </span>Read<span class="w"> </span>Replica
+</code></pre></div>
+<hr />
+<p>🔁 4️⃣ How Read Replica Works Internally</p>
+<p>For MySQL / PostgreSQL:</p>
+<ul>
+<li>Asynchronous replication</li>
+<li>Binary logs (binlog)</li>
+</ul>
+<h4 id="replication-flow">Replication Flow</h4>
+<ol>
+<li>Client writes to Primary DB</li>
+<li>Primary writes changes to binlog</li>
+<li>Replica reads binlog</li>
+<li>Replica applies changes</li>
+</ol>
+<p>⚠ <strong>Important:</strong></p>
+<ul>
+<li>Replication is asynchronous</li>
+<li>Small delay (milliseconds to seconds)</li>
+<li>Called <strong>replication lag</strong></li>
+<li>Provides <em>eventual consistency</em>, not strong consistency</li>
+</ul>
+<hr />
+<h4 id="when-not-to-use-read-replicas">🎯 When NOT to Use Read Replicas</h4>
+<p>❌ Write-heavy workloads<br />
+❌ Applications requiring strict real-time consistency<br />
+❌ Systems that cannot tolerate replication lag  </p>
+<hr />
+<h4 id="multi-az-vs-read-replica-critical-difference">🆚 Multi-AZ vs Read Replica (Critical Difference)</h4>
+<p>🔹 Multi-AZ</p>
+<ul>
+<li>High Availability</li>
+<li>Standby DB</li>
+<li>Not used for reads</li>
+<li>Automatic failover</li>
+</ul>
+<p>🔹 Read Replica</p>
+<ul>
+<li>Used for scaling reads</li>
+<li>Application connects to it</li>
+<li>No automatic failover (unless promoted)</li>
+</ul>
+<hr />
+<p>⚙ 5️⃣ How to Implement Read Replica in AWS</p>
+<p>Option 1: AWS Console</p>
+<ol>
+<li>Go to RDS</li>
+<li>Select your database</li>
+<li>Click <strong>Actions</strong></li>
+<li>Choose <strong>Create Read Replica</strong></li>
+<li>Select instance size</li>
+<li>Deploy</li>
+</ol>
+<hr />
+<p>Option 2: AWS CLI</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>aws<span class="w"> </span>rds<span class="w"> </span>create-db-instance-read-replica<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span>--db-instance-identifier<span class="w"> </span>mydb-replica<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>--source-db-instance-identifier<span class="w"> </span>mydb-primary<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span>--db-instance-class<span class="w"> </span>db.t3.medium
+</code></pre></div>
+<hr />
+<p>Option 3: Terraform (Recommended for DevOps)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_db_instance&quot;</span><span class="w"> </span><span class="nv">&quot;primary&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="na">identifier</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;mydb-primary&quot;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="na">engine</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;mysql&quot;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="na">instance_class</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;db.t3.medium&quot;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="na">allocated_storage</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">20</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="na">username</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="na">password</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;password&quot;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">}</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_db_instance&quot;</span><span class="w"> </span><span class="nv">&quot;replica&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">  </span><span class="na">identifier</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;mydb-replica&quot;</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">  </span><span class="na">replicate_source_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">aws_db_instance.primary.identifier</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">  </span><span class="na">instance_class</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;db.t3.medium&quot;</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<p>🧠 6️⃣ Application-Level Implementation (Most Important)</p>
+<p>AWS does <strong>NOT</strong> automatically split read/write traffic.</p>
+<p>Your application must handle it.</p>
+<h3 id="example-python-concept">Example (Python Concept)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">write_db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">primary_endpoint</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">read_db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">replica_endpoint</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Write operation</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">write_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO users VALUES (...)&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># Read operation</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">read_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="real-world-example">🏢 Real-World Example</h2>
+<p><strong>Netflix-like workload:</strong></p>
+<ul>
+<li>Browse catalog → Read</li>
+<li>Watch list → Read</li>
+<li>Signup → Write</li>
+<li>Like button → Write</li>
+</ul>
+<p>If 90% traffic is reads:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="m">1</span><span class="w"> </span>Primary
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="m">5</span><span class="w"> </span>Read<span class="w"> </span>Replicas
+</code></pre></div>
+<hr />
+<h2 id="scaling-strategy">📊 Scaling Strategy</h2>
+<p>Start simple:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="m">1</span><span class="w"> </span>Primary
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="m">0</span><span class="w"> </span>Replica
+</code></pre></div>
+<p>If CPU consistently &gt; 70% due to reads:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="m">1</span><span class="w"> </span>Primary
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="m">1</span><span class="w"> </span>Replica
+</code></pre></div>
+<p>As traffic increases:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="m">1</span><span class="w"> </span>Primary
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="m">3</span><span class="w"> </span>Replicas
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; <a href="https://github.com/botlaram"  target="_blank" rel="noopener">botlar4</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/botlaram" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ramakrishna-botla-772a8918b/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.path", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
