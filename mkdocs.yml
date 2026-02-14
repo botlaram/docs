@@ -17,6 +17,7 @@ nav:
 - Devops Project: devops_projects.md
 - Q & A: scenario_based.md
 - AWS: aws.md
+- Database: database.md
 
 theme:
   name: material
