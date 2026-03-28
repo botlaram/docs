@@ -373,20 +373,31 @@ Why each step is needed:
 
 ## Image Validate
 
-Steps for local testing : 
- 
-Powershell -> wsl -d Ubuntu
+```powershell
+wsl -d Ubuntu
+```
  
 ### step 1 - Go to working directory
+
+```bash
 cd "/templates"
- 
+```
+
 ### step 2 - Build the image
+
+```bash
 packer build tool-dir/template.json
- 
+```
+
 ### step 3 - Create cloud-init seed ISO for local manual boot
+
+```bash
 cloud-localds seed.iso build-init/user-data build-init/meta-data
+```
  
 ### step 4 - Boot the built image manually with QEMU
+
+```bash
 qemu-system-x86_64 \
   -cpu max \
   -m 4096 \
@@ -395,17 +406,23 @@ qemu-system-x86_64 \
   -cdrom seed.iso \
   -nic user,hostfwd=tcp::2222-:22,hostfwd=tcp::8069-:8069,hostfwd=tcp::8080-:80,hostfwd=tcp::8443-:443 \
   -nographic
- 
+ ```
  
 ### step 5 - Open another WSL terminal and prepare SSH key:
+
+```bash
 cd "/templates"
  
 mkdir -p ~/.ssh
 cp build-init/id_ed25519 ~/.ssh/id_ed25519_packer
 chmod 600 ~/.ssh/id_ed25519_packer
- 
+ ```
+
 ### step 6 - SSH into the running VM
+
+```bash
 ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519_packer root@127.0.0.1 -p 2222
+```
 
 ## tools
 
