@@ -392,12 +392,17 @@ packer build tool-dir/template.json
 ### step 3 - Create cloud-init seed ISO for local manual boot
 
 ```bash
+sudo apt-get update
+sudo apt-get update --fix-missing
+sudo apt install cloud-image-utils
 cloud-localds seed.iso build-init/user-data build-init/meta-data
 ```
  
 ### step 4 - Boot the built image manually with QEMU
 
 ```bash
+sudo apt install qemu-system-x86
+
 qemu-system-x86_64 \
   -cpu max \
   -m 4096 \
