@@ -285,3 +285,130 @@ apt-get -qqy clean
 ```
 - Removes cached package `.deb` files downloaded during previous installs
 - Frees disk space in the VM image (important for keeping image sizes small)
+
+-------------
+
+## Trivy scan
+
+from start to finish to scan the nanoclaw image:
+
+
+### Step 1 — Verify Trivy is available
+
+```bash
+/c/tools/trivy/trivy.exe --version
+```
+
+### Step 2 — Confirm the built image exists in the build folder
+
+```bash
+ls -lh /c/POC/packer_templates_newfold/packer_templates/templates/build/
+```
+
+### Step 3 — Check the image format (confirms it is qcow2)
+
+```bash
+qemu-img info "C:/POC/packer_templates_newfold/packer_templates/templates/build/nanoclaw-ubuntu-24.04-amd64"
+```
+
+### Step 4 — Convert qcow2 → raw
+
+Required because Trivy on Windows cannot parse qcow2 directly.
+The virtual size is 20G so the raw file will be ~20G on disk.
+
+```bash
+qemu-img convert \
+  -f qcow2 \
+  -O raw \
+  "C:/POC/packer_templates_newfold/packer_templates/templates/build/nanoclaw-ubuntu-24.04-amd64" \
+  "C:/POC/packer_templates_newfold/packer_templates/templates/build/nanoclaw-ubuntu-24.04-amd64.raw"
+  ```
+
+### Step 5 — Run Trivy VM scan and save results
+
+```bash
+cd /c/POC/packer_templates_newfold/packer_templates/templates
+
+/c/tools/trivy/trivy.exe vm \
+  --scanners vuln \
+  --timeout 60m \
+  --output "nanoclaw-trivy-scan.txt" \
+  "build/nanoclaw-ubuntu-24.04-amd64.raw" \
+  2>&1 | tee -a "nanoclaw-trivy-scan.txt"
+  ```
+
+### Step 6 — View summary of findings by severity
+
+```bash
+grep "^Total:" nanoclaw-trivy-scan.txt
+```
+
+### Step 7 — View only CRITICAL and HIGH vulnerabilities
+
+```bash
+/c/tools/trivy/trivy.exe vm \
+  --scanners vuln \
+  --severity HIGH,CRITICAL \
+  --timeout 60m \
+  --output "nanoclaw-trivy-scan-critical-high.txt" \
+  "build/nanoclaw-ubuntu-24.04-amd64.raw" \
+  2>&1 | tee -a "nanoclaw-trivy-scan-critical-high.txt"
+  ```
+
+### Optional — Clean up the raw file after scanning (saves ~20G disk space)
+
+```bash
+rm "C:/POC/packer_templates_newfold/packer_templates/templates/build/nanoclaw-ubuntu-24.04-amd64.raw"
+```
+Why each step is needed:
+
+|Step	| Reason |
+|--------|--------|
+|qemu-img info|	Confirm format before converting|
+|qemu-img convert|	Trivy vm on Windows requires a raw disk image — it cannot open qcow2 directly (Invalid master boot record signature error)|
+|--scanners vuln|	Scan for vulnerabilities only (skips secrets/misconfig for a faster run)|
+--timeout 60m	The 20 GB raw image + Java DB download takes several minutes|
+|--output + tee	|Saves results to file and also prints to terminal simultaneously|
+|--severity HIGH,CRITICAL|	Optional filtered run to focus on the most important findings|
+
+## Image Validate
+
+Steps for local testing : 
+ 
+Powershell -> wsl -d Ubuntu
+ 
+### step 1 - Go to working directory
+cd "/templates"
+ 
+### step 2 - Build the image
+packer build tool-dir/template.json
+ 
+### step 3 - Create cloud-init seed ISO for local manual boot
+cloud-localds seed.iso build-init/user-data build-init/meta-data
+ 
+### step 4 - Boot the built image manually with QEMU
+qemu-system-x86_64 \
+  -cpu max \
+  -m 4096 \
+  -smp 2 \
+  -drive file=build/image-name,if=virtio \
+  -cdrom seed.iso \
+  -nic user,hostfwd=tcp::2222-:22,hostfwd=tcp::8069-:8069,hostfwd=tcp::8080-:80,hostfwd=tcp::8443-:443 \
+  -nographic
+ 
+ 
+### step 5 - Open another WSL terminal and prepare SSH key:
+cd "/templates"
+ 
+mkdir -p ~/.ssh
+cp build-init/id_ed25519 ~/.ssh/id_ed25519_packer
+chmod 600 ~/.ssh/id_ed25519_packer
+ 
+### step 6 - SSH into the running VM
+ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519_packer root@127.0.0.1 -p 2222
+
+## tools
+
+### Paperclip
+
+### Nanoclaw
