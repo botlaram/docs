@@ -1,0 +1,1566 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="this Mkdocs contains Python Modules, about Devops and Cheat Code">
+      
+      
+        <meta name="author" content="botlaram">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Virtualization & Image Concepts - UseMe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marmelad:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Marmelad";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#virtualization-image-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="UseMe" class="md-header__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UseMe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Virtualization &amp; Image Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cheat_code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../python/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../linux/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Linux
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../networking/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Computer Networking
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../DSA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  DSA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devopsTools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Tools
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../azure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Azure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kubernetes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  K8
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publish/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publish
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../devops_projects/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Devops Project
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scenario_based/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Q & A
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../aws/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AWS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="UseMe" class="md-nav__button md-logo" aria-label="UseMe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UseMe
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/botlaram" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devopsTools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    K8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops_projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devops Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenario_based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q & A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="virtualization-image-concepts">Virtualization &amp; Image Concepts</h1>
+<p>A practical guide to understanding ISO, QCOW2, QEMU, KVM, Docker, and related tools — especially in the context of building VM images with Packer.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#big-picture">Big Picture: How Everything Fits Together</a></li>
+<li><a href="#iso">ISO — The OS Installer</a></li>
+<li><a href="#qcow2">QCOW2 — The Virtual Disk</a></li>
+<li><a href="#qemu">QEMU — The VM Engine</a></li>
+<li><a href="#kvm">KVM — The Accelerator</a></li>
+<li><a href="#docker">Docker — A Different Approach</a></li>
+<li><a href="#comparisons">Comparisons at a Glance</a></li>
+<li><a href="#packer-flow">Packer Flow: Your Use Case</a></li>
+<li><a href="#supporting-concepts">Supporting Concepts</a></li>
+</ol>
+<hr />
+<h2 id="big-picture-how-everything-fits-together">Big Picture: How Everything Fits Together <a name="big-picture"></a></h2>
+<p>When you run a virtual machine, several layers stack on top of each other:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│         Host Machine             │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   (Your laptop or server OS)     │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└────────────────┬─────────────────┘
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                 │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>         ┌───────▼───────┐
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>         │      KVM      │  ← Hardware acceleration (Linux kernel feature)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>         └───────┬───────┘
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                 │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>         ┌───────▼───────┐
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>         │     QEMU      │  ← Software that runs the virtual machine
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>         └───────┬───────┘
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                 │
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>         ┌───────▼───────┐
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>         │  QCOW2 File   │  ← Virtual hard disk stored on host
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>         └───────┬───────┘
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                 │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>         ┌───────▼───────┐
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>         │  Ubuntu Guest │  ← The operating system running inside the VM
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>         └───────────────┘
+</code></pre></div>
+<p><strong>How they work together</strong></p>
+<p>When you use Packer with the QEMU builder:</p>
+<p>Packer tells QEMU to start a VM
+QEMU may use KVM for acceleration
+The VM installs/configures your OS
+The resulting disk is saved as a QCOW2 image</p>
+<p>👉 So the flow is:</p>
+<p>Packer → QEMU (+KVM) → outputs QCOW2 image</p>
+<hr />
+<h2 id="iso-the-os-installer">ISO — The OS Installer <a name="iso"></a></h2>
+<p>An ISO is a disc image of an operating system installer. Think of it as the CD/DVD you'd use to install Ubuntu on a physical machine — just in file form.</p>
+<p><strong>What it contains:</strong>
+- OS installation files
+- A bootloader to start the install process
+- The setup/configuration wizard</p>
+<p><strong>Role in the flow:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ISO → Boot VM → Install OS → QCOW2 disk image
+</code></pre></div>
+<blockquote>
+<p>The ISO is consumed during installation and is not needed again once the QCOW2 image is built.</p>
+</blockquote>
+<hr />
+<h2 id="qcow2-the-virtual-disk">QCOW2 — The Virtual Disk <a name="qcow2"></a></h2>
+<p>A QCOW2 file is a virtual hard disk. It lives on your host machine as a single file but acts as a full storage drive inside the VM.</p>
+<p><strong>What it contains after installation:</strong>
+- The installed operating system (e.g., Ubuntu)
+- All files, applications, and configurations
+- Any changes made by your provisioning scripts</p>
+<p><strong>Key concept:</strong> Ubuntu is installed <em>inside</em> the QCOW2 file. The QCOW2 is the disk; Ubuntu lives on it.</p>
+<p><strong>Persistence behavior:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Data Persists?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Same QCOW2 reused across boots</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>QCOW2 file deleted</td>
+<td>No — all data lost</td>
+</tr>
+<tr>
+<td>Fresh build from ISO</td>
+<td>No — starts clean</td>
+</tr>
+</tbody>
+</table>
+<p><strong>QCOW2 vs other virtual disk formats:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Used By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QCOW2</td>
+<td>QEMU / KVM</td>
+</tr>
+<tr>
+<td>VMDK</td>
+<td>VMware</td>
+</tr>
+<tr>
+<td>VDI</td>
+<td>VirtualBox</td>
+</tr>
+<tr>
+<td>RAW</td>
+<td>Generic (fast, but no compression)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="qemu-the-vm-engine">QEMU — The VM Engine <a name="qemu"></a></h2>
+<p>QEMU (Quick EMUlator) is the software that creates and runs virtual machines. It emulates the hardware that the guest OS sees.</p>
+<p><strong>What QEMU does:</strong>
+- Emulates CPU, RAM, disk controllers, and network interfaces
+- Boots a guest OS from an ISO or an existing QCOW2
+- Manages VM lifecycle (start, pause, stop)</p>
+<p>QEMU can run entirely in software (slow) or delegate CPU instructions to KVM (fast).</p>
+<hr />
+<h2 id="kvm-the-accelerator">KVM — The Accelerator <a name="kvm"></a></h2>
+<p>KVM (Kernel-based Virtual Machine) is a feature built into the Linux kernel. It allows QEMU to pass CPU instructions directly to the physical hardware instead of emulating them in software.</p>
+<table>
+<thead>
+<tr>
+<th>Setup</th>
+<th>Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QEMU alone (no KVM)</td>
+<td>Slow — every CPU instruction is emulated</td>
+</tr>
+<tr>
+<td>QEMU + KVM</td>
+<td>Fast — hardware handles most instructions directly</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requirements:</strong> KVM only works on Linux hosts with a CPU that supports hardware virtualization (Intel VT-x or AMD-V). Most modern CPUs do.</p>
+<hr />
+<h2 id="docker-a-different-approach">Docker — A Different Approach <a name="docker"></a></h2>
+<p>Docker is often compared to VMs, but it solves a different problem. Docker is for <strong>running applications</strong>, not for running full operating systems.</p>
+<p><strong>Docker flow:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Docker Image → Container → Application runs
+</code></pre></div>
+<p><strong>Key differences from a VM:</strong>
+- No OS boot sequence — containers start in milliseconds
+- Shares the host machine's Linux kernel instead of running its own
+- Much smaller footprint (MBs vs GBs)
+- Less isolation than a full VM</p>
+<hr />
+<h2 id="comparisons-at-a-glance">Comparisons at a Glance <a name="comparisons"></a></h2>
+<h3 id="iso-vs-docker-image">ISO vs Docker Image</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>ISO Image</th>
+<th>Docker Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Install a full OS</td>
+<td>Run an application</td>
+</tr>
+<tr>
+<td>Requires OS boot</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Contains full OS</td>
+<td>Yes</td>
+<td>No (only app + libraries)</td>
+</tr>
+<tr>
+<td>Startup time</td>
+<td>Slow (minutes)</td>
+<td>Fast (seconds)</td>
+</tr>
+<tr>
+<td>Primary use case</td>
+<td>VM creation</td>
+<td>Containerized apps</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vm-vs-container">VM vs Container</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>VM (QEMU + KVM)</th>
+<th>Container (Docker)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Full OS per VM</td>
+<td>Shared host OS kernel</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>Strong</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Startup speed</td>
+<td>Slower</td>
+<td>Very fast</td>
+</tr>
+<tr>
+<td>Disk size</td>
+<td>Large (GBs)</td>
+<td>Small (MBs)</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Full system control</td>
+<td>Running apps quickly</td>
+</tr>
+</tbody>
+</table>
+<h3 id="when-to-use-which">When to use which</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Best Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build a VM image for Packer or cloud</td>
+<td>ISO + QCOW2 + QEMU + KVM</td>
+</tr>
+<tr>
+<td>Run a full OS with complete isolation</td>
+<td>VM</td>
+</tr>
+<tr>
+<td>Run an application quickly</td>
+<td>Docker container</td>
+</tr>
+<tr>
+<td>Lightweight, reproducible environments</td>
+<td>Docker container</td>
+</tr>
+<tr>
+<td>Full system control and customization</td>
+<td>VM</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="packer-flow-your-use-case">Packer Flow: Your Use Case <a name="packer-flow"></a></h2>
+<p><strong>Using QEMU/KVM builder (ISO-based):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ISO
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a> └─ QEMU + KVM boot the ISO
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>     └─ Ubuntu installs onto QCOW2 virtual disk
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>         └─ Provisioning scripts (.sh) run inside the VM
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>             └─ Final QCOW2 image is saved as output
+</code></pre></div>
+<p><strong>Using Docker builder:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Base Docker image
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> └─ Container is created
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>     └─ Commands / scripts run inside the container
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>         └─ New Docker image is saved as output
+</code></pre></div>
+<hr />
+<h2 id="supporting-concepts">Supporting Concepts <a name="supporting-concepts"></a></h2>
+<h3 id="bootloader">Bootloader</h3>
+<p>A bootloader is a small program that runs immediately after the machine powers on. Its job is to bridge the gap between firmware (BIOS/UEFI) and the operating system.</p>
+<p><strong>Sequence:</strong>
+1. Power on
+2. BIOS/UEFI initializes hardware
+3. Bootloader runs
+4. Bootloader locates and loads the Linux kernel into RAM
+5. OS starts</p>
+<hr />
+<h3 id="grub">GRUB</h3>
+<p>GRUB (GNU GRand Unified Bootloader) is the standard bootloader for most Linux systems.</p>
+<p><strong>What GRUB does:</strong>
+1. BIOS/UEFI hands control to GRUB
+2. GRUB displays a menu (if multiple OSes are installed)
+3. GRUB loads the selected Linux kernel into memory
+4. The OS takes over</p>
+<hr />
+<h3 id="ufw-uncomplicated-firewall">UFW (Uncomplicated Firewall)</h3>
+<p>UFW is a command-line tool for managing Linux firewall rules. It wraps the lower-level <code>iptables</code> system with a simpler interface.</p>
+<p><strong>Why it matters:</strong>
+By default, a Linux server exposes all its ports to the network. Without a firewall, services like SSH or MySQL can be attacked by anyone who can reach the server.</p>
+<p><strong>What UFW lets you do:</strong>
+- Allow only the traffic you need (e.g., SSH on port 22, HTTP on port 80)
+- Block everything else by default
+- Add rate limiting to slow down brute-force login attempts</p>
+<p><strong>Simple mental model:</strong> UFW is a security guard at the door — it only lets in traffic you've explicitly approved.</p>
+<p><strong>When not to use UFW:</strong>
+- In advanced networking setups where <code>iptables</code> or <code>nftables</code> are managed directly
+- When a cloud provider's security groups are already handling traffic rules</p>
+<hr />
+<h3 id="cloud-init">cloud-init</h3>
+<p>cloud-init is a system service that runs automatically when a VM first boots in a cloud environment. It is not part of your project — it comes pre-installed in cloud OS images (like Ubuntu AMIs on AWS).</p>
+<p><strong>What cloud-init does on first boot:</strong>
+- Configures networking
+- Sets the hostname
+- Creates user accounts
+- Runs any user-data scripts you provided at launch</p>
+<p><strong>Why this matters for Packer:</strong> cloud-init runs during the early boot phase and takes a few seconds to complete. Packer's SSH communicator needs to wait for this to finish before it can connect and run provisioners. This is why Packer templates often include a boot wait time.</p>
+<hr />
+<h3 id="common-apt-commands-explained">Common APT Commands Explained</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apt<span class="w"> </span>-qqy<span class="w"> </span>update
+</code></pre></div>
+- <code>apt update</code> — refreshes the local package repository index (does not install anything)
+- <code>-qq</code> — quiet mode; suppresses most output
+- <code>-y</code> — automatically answers "yes" to any prompts</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>apt-get<span class="w"> </span>-qqy<span class="w"> </span>clean
+</code></pre></div>
+- Removes cached package <code>.deb</code> files downloaded during previous installs
+- Frees disk space in the VM image (important for keeping image sizes small)</p>
+<hr />
+<h2 id="trivy-scan">Trivy scan</h2>
+<p>from start to finish to scan the nanoclaw image:</p>
+<h3 id="step-1-verify-trivy-is-available">Step 1 — Verify Trivy is available</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/c/tools/trivy/trivy.exe<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="step-2-confirm-the-built-image-exists-in-the-build-folder">Step 2 — Confirm the built image exists in the build folder</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ls<span class="w"> </span>-lh<span class="w"> </span>/c/POC/packer_templates_newfold/packer_templates/templates/build/
+</code></pre></div>
+<h3 id="step-3-check-the-image-format-confirms-it-is-qcow2">Step 3 — Check the image format (confirms it is qcow2)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>qemu-img<span class="w"> </span>info<span class="w"> </span><span class="s2">&quot;C:/POC/packer_templates_newfold/packer_templates/templates/build/nanoclaw-ubuntu-24.04-amd64&quot;</span>
+</code></pre></div>
+<h3 id="step-4-convert-qcow2-raw">Step 4 — Convert qcow2 → raw</h3>
+<p>Required because Trivy on Windows cannot parse qcow2 directly.
+The virtual size is 20G so the raw file will be ~20G on disk.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>qemu-img<span class="w"> </span>convert<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span>-f<span class="w"> </span>qcow2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span>-O<span class="w"> </span>raw<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="s2">&quot;C:/POC/packer_templates_newfold/packer_templates/templates/build/nanoclaw-ubuntu-24.04-amd64&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="s2">&quot;C:/POC/packer_templates_newfold/packer_templates/templates/build/nanoclaw-ubuntu-24.04-amd64.raw&quot;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="sb">```</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1">### Step 5 — Run Trivy VM scan and save results</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="sb">```</span>bash
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="nb">cd</span><span class="w"> </span>/c/POC/packer_templates_newfold/packer_templates/templates
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>/c/tools/trivy/trivy.exe<span class="w"> </span>vm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span>--scanners<span class="w"> </span>vuln<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span>--timeout<span class="w"> </span>60m<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span>--output<span class="w"> </span><span class="s2">&quot;nanoclaw-trivy-scan.txt&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span><span class="s2">&quot;build/nanoclaw-ubuntu-24.04-amd64.raw&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">  </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;nanoclaw-trivy-scan.txt&quot;</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">  </span><span class="sb">```</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="c1">### Step 6 — View summary of findings by severity</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="sb">```</span>bash
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>grep<span class="w"> </span><span class="s2">&quot;^Total:&quot;</span><span class="w"> </span>nanoclaw-trivy-scan.txt
+</code></pre></div>
+<h3 id="step-7-view-only-critical-and-high-vulnerabilities">Step 7 — View only CRITICAL and HIGH vulnerabilities</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>/c/tools/trivy/trivy.exe<span class="w"> </span>vm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span>--scanners<span class="w"> </span>vuln<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span>--severity<span class="w"> </span>HIGH,CRITICAL<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span>--timeout<span class="w"> </span>60m<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span>--output<span class="w"> </span><span class="s2">&quot;nanoclaw-trivy-scan-critical-high.txt&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="s2">&quot;build/nanoclaw-ubuntu-24.04-amd64.raw&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;nanoclaw-trivy-scan-critical-high.txt&quot;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="sb">```</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1">### Optional — Clean up the raw file after scanning (saves ~20G disk space)</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="sb">```</span>bash
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>rm<span class="w"> </span><span class="s2">&quot;C:/POC/packer_templates_newfold/packer_templates/templates/build/nanoclaw-ubuntu-24.04-amd64.raw&quot;</span>
+</code></pre></div>
+Why each step is needed:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>qemu-img info</td>
+<td>Confirm format before converting</td>
+</tr>
+<tr>
+<td>qemu-img convert</td>
+<td>Trivy vm on Windows requires a raw disk image — it cannot open qcow2 directly (Invalid master boot record signature error)</td>
+</tr>
+<tr>
+<td>--scanners vuln</td>
+<td>Scan for vulnerabilities only (skips secrets/misconfig for a faster run)</td>
+</tr>
+<tr>
+<td>--timeout 60m   The 20 GB raw image + Java DB download takes several minutes</td>
+<td></td>
+</tr>
+<tr>
+<td>--output + tee</td>
+<td>Saves results to file and also prints to terminal simultaneously</td>
+</tr>
+<tr>
+<td>--severity HIGH,CRITICAL</td>
+<td>Optional filtered run to focus on the most important findings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="image-validate">Image Validate</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">wsl</span> <span class="n">-d</span> <span class="n">Ubuntu</span>
+</code></pre></div>
+<h3 id="step-1-go-to-working-directory">step 1 - Go to working directory</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;/templates&quot;</span>
+</code></pre></div>
+<h3 id="step-2-build-the-image">step 2 - Build the image</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>packer<span class="w"> </span>build<span class="w"> </span>tool-dir/template.json
+</code></pre></div>
+<h3 id="step-3-create-cloud-init-seed-iso-for-local-manual-boot">step 3 - Create cloud-init seed ISO for local manual boot</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span>--fix-missing
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cloud-image-utils
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>cloud-localds<span class="w"> </span>seed.iso<span class="w"> </span>build-init/user-data<span class="w"> </span>build-init/meta-data
+</code></pre></div>
+<h3 id="step-4-boot-the-built-image-manually-with-qemu">step 4 - Boot the built image manually with QEMU</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>qemu-system-x86
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>qemu-system-x86_64<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span>-cpu<span class="w"> </span>max<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span>-m<span class="w"> </span><span class="m">4096</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span>-smp<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span>-drive<span class="w"> </span><span class="nv">file</span><span class="o">=</span>build/image-name,if<span class="o">=</span>virtio<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span>-cdrom<span class="w"> </span>seed.iso<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span>-nic<span class="w"> </span>user,hostfwd<span class="o">=</span>tcp::2222-:22,hostfwd<span class="o">=</span>tcp::8069-:8069,hostfwd<span class="o">=</span>tcp::8080-:80,hostfwd<span class="o">=</span>tcp::8443-:443<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span>-nographic
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1">### step 5 - Open another WSL terminal and prepare SSH key:</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="sb">```</span>bash
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;/templates&quot;</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.ssh
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>cp<span class="w"> </span>build-init/id_ed25519<span class="w"> </span>~/.ssh/id_ed25519_packer
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/id_ed25519_packer
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="c1">### step 6 - SSH into the running VM</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="sb">```</span>bash
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_ed25519_packer<span class="w"> </span>root@127.0.0.1<span class="w"> </span>-p<span class="w"> </span><span class="m">2222</span>
+</code></pre></div>
+<h2 id="tools">tools</h2>
+<h3 id="paperclip">Paperclip</h3>
+<h3 id="nanoclaw">Nanoclaw</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; <a href="https://github.com/botlaram"  target="_blank" rel="noopener">botlar4</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/botlaram" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ramakrishna-botla-772a8918b/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.path", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
